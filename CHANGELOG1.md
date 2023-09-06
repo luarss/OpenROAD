@@ -1,0 +1,8694 @@
+<a name="unreleased"></a>
+## [Unreleased]
+
+
+<a name="v0.0.3"></a>
+## [v0.0.3] - 2023-09-07
+### Gui
+- handle cell w/o Liberty in DbMasterDescriptor::getMasterEquivalent
+
+### Odb
+- handle multiple techs in write_lef
+
+### Ppl
+- fix coverity issues
+
+### Rsz
+- skip nets that are isConnectedByAbutment
+
+### Pull Requests
+- Merge pull request [#3951](https://github.com/luarss/OpenROAD/issues/3951) from openroadie/update_sta
+- Merge pull request [#3952](https://github.com/luarss/OpenROAD/issues/3952) from The-OpenROAD-Project-staging/rsz-isConnectedByAbutment
+- Merge pull request [#3949](https://github.com/luarss/OpenROAD/issues/3949) from The-OpenROAD-Project-staging/gui-no-cell
+- Merge pull request [#3948](https://github.com/luarss/OpenROAD/issues/3948) from The-OpenROAD-Project-staging/lef
+- Merge pull request [#3947](https://github.com/luarss/OpenROAD/issues/3947) from eder-matheus/ppl_coverity
+
+
+<a name="v0.0.2"></a>
+## [v0.0.2] - 2023-09-06
+### Grt
+- iterating all the nets when generating the progress report
+
+### Gui
+- restore gui hide behavior
+
+### Reverts
+- gui: restore gui hide behavior
+
+### Pull Requests
+- Merge pull request [#3946](https://github.com/luarss/OpenROAD/issues/3946) from The-OpenROAD-Project/revert-3940-restore-gui-hide
+- Merge pull request [#3942](https://github.com/luarss/OpenROAD/issues/3942) from luis201420/grt_congestion_report_fix
+- Merge pull request [#3940](https://github.com/luarss/OpenROAD/issues/3940) from gadfort/restore-gui-hide
+
+
+<a name="v0.0.1"></a>
+## v0.0.1 - 2023-09-03
+### Ant
+- fix antenna factors ([#2167](https://github.com/luarss/OpenROAD/issues/2167))
+
+### Ant
+- remove the circular dependency between ant_lib & grt_lib
+- update ok files
+- merge checks
+- simplify check
+- clang-format
+- check if layer has antenna rules before calculating PAR and variants
+- update ok files
+- clang-tidy fixes
+- ofstream constructor truncates by default
+- add violating nets/pins to metrics
+- update unit tests
+- add missing new lines in antenna report
+- update tests for new stt-pd
+- support par_margin
+- update ok files
+- update report format
+- use fmt to format logs and report file messages
+- clang-format
+- add python report test
+- open report file once instead of for each net
+- update how to set report file name
+- add unit test for -report_file
+- make -report_file keyword works
+- fix compiler warns
+- fix compiler warns
+- clang-format
+- change checkAntennas to take dbNet* not net_name
+- clang-format
+- lower missing thickness to a warning
+- optimizations
+- move thickness checks to initAntennaRules()
+- THICKNESS error only when side area is checked
+- lower no thickness error to warn until fixed
+- clang-format
+- optimizations
+- error when thickness or width are missing
+- handle objects by reference for efficiency
+- remove find_max_allowed_length command
+- optimisations
+- define MaxLength struct
+- minor optimisations
+- update Readme and tests
+- improve findMaxAllowedLength command + optimizations
+- update regression test results
+- fix error message
+- make method names to conform to the coding standar
+- limit public API to what needs to be public
+
+### Block
+- add blockvias(descriptor) / top module / children
+- add corearea and diearea
+- add modules
+
+### Build
+- print c++ standard and extension status
+
+### CI
+- Update actions/checkout version
+
+### Changes
+- 1. Added support for displacement limit specified in terms of row height. 2. Changed everything related to layout to int from double. 3. Changed everything related to cell positions from int from double; now    work with bottom left corner of cells instead of cell centers. 4. Removed interleaving algorithm until I can clean it up a bit more.
+
+### Ci
+- add check for messages ID conflicts
+- gha c++ dont change user
+- use new docker image
+- gha for macos uses installer script
+- rm arg not needed
+- add cmake prefix to macos workflow
+- use root as path to fix issue with centos7
+- spellcheck
+- fix or-tools compile in docker
+- fix untar of or-tools
+- add or-tools to installer
+- whitespace
+- add ubuntu dep for or-tools
+- rm unused argument
+
+### Cmake
+- add or-tools path for Ubuntu and macOS
+- code coverage options set on etc/Build.sh
+
+### Cr
+- default=nullptr in QAction::QAction
+
+### Cts
+- fix miscalculation of sinks in countSinksPostDbWrite
+- destroy charBlock_ at the end of TechChar
+- fix check for slew_limit to output pin
+- Move length units to DBU ([#3689](https://github.com/luarss/OpenROAD/issues/3689))
+- don't skip clock nets downstream of a special net
+- skip special nets (eg RDL routing from bump to pad)
+- Rename graphics class to disambiguate header files
+- avoid revisiting a generated clock
+- fix tool on message 115 from GRT to CTS
+- stop infinite recursion when length is not found
+- add guard for enable_tests
+- don't propagate through black boxes
+- minor refactoring
+- change protected to private where no inheritance is used
+- rm unneeded charLengthUnit_
+- consolidate lengthUnit_ and LENGTH_UNIT_MICRON (rm the latter)
+- handle lookup of non-existant tech entry
+- Fixing divide by zero try 2
+- Fix divide by zero error
+- clang-tidy
+- Avoid making a copy when iterating through sinks
+- fix a warning
+- clang-format
+- refactoring
+- make computeSinkRegion O(n)
+- light refactoring
+- SegmentBuilder::build remove unused sink arg
+- remove old post-cts opt
+- fix wrong option parsing in clock_tree_synthesis_debug
+- update tests for new stt-pd
+- clang-format
+- fix compile warnings
+- remove unused TritonCTS::parseClockNames
+- remove unused options
+- some api cleanups
+- clang-format
+- restore old code
+- fix format
+- clang-format
+- scope the use of SteinerTreeBuilder
+- error on overlapping clocks
+- Update techchar steps to uniformly divide max value
+- fix buffer location generated by SegmentBuilder
+- Cluster.* cleanup
+- cleanup Clustering.*
+- add more details to TechChar::reportSegment
+- fix coverity warning and minor output change
+- general cleanups
+- make array test routable
+- add test case to show trouble with arrays
+- draw white lines between clusters
+- draw links from the space filling curve in sink clustering
+- remove characterization block if it exists
+- handle case of clock mux with generated clock
+- fixup tests to be independent
+- make methods private that have no outside callers
+- add check for buffer w/o Liberty
+- improve style compliance, mostly _memvar to memvar_
+- add dbSourceType::TIMING to clock buffers
+- clang-format
+- add check_argc_eq0 for all commands
+- add marker style to SinkClustering::writePlotFile
+- remove dead code in SinkClustering
+- fix double in log file + update unit tests
+- revert clang-format from CMakeLists.txt
+- clang-format
+- minor fixes
+- rename files
+- use debugPrint for characterization report
+- use const &
+- fix nullptr dereference
+- fix small flow issues
+- fix uninitialized members
+- detect if a clock net is already buffered and skip with a warning
+- use stt builder instead of call pdII
+- fix compiler error in debug mode
+- fix cmake and include
+- make sure maxWirelength is large enough for fake lut generation
+- fix typo
+
+### DFT
+- Refactor code structure
+- Adding some comments for rollbackScanReplace
+
+### DRT
+- saving memory by removing unnecessary setters and variables from FrLayer
+
+### Database
+- switch to ifstream, less code, more idiomatic C++
+
+### Db
+- fix dbModule
+- ignore RECT in order_wires
+- fix handling of rect in dbWire::getProperty
+- add dbBPin::getBBox convenience method
+- fix a boost inclue issue
+- add module hierarchy
+- remove cmake_minimum_required from lef/def as no longer submodules
+- update module names to new standard
+- ignore lex/yacc files
+- logger.cpp -> dbLogger.cpp
+
+### DbSTA
+- make power density heat mpa belong to dbSTA
+
+### DbSta
+- ignore the load of a child DEF
+- update ok files with new IDs
+- use 2000 as base msg index for ORD
+- clang-tidy
+- clang-format
+- correctly set the port direction on the top cell in sta
+- fix startup sequence
+- clang-tidy fix
+- add the new id() methods to dbNetwork
+- use override not virtual to denote overrides per Google style
+- enable string redirection in openroad to function with with_output_to_variable
+- correct the parent lookup with Verilog hierarchy
+- swig include power.i
+- Power.i moved
+- check liberty cells for corners
+- clang-format
+- handle hier inst in findNet
+- skip supply nets in the network adapter
+- adding dbNetwork callback observer class
+- add comment per code review
+- fix missing _ on member
+- build dbModule/dbModInst during read_verilog
+- ensure all output goes through logger and is buffered if not complete
+- remove commented code and format
+- update results for message id fix
+- rename find_clk_nets -> find_all_clk_nets
+- rename NetVector to dbNetVector
+- rename get_all_clk_nets to find_clk_nets
+- add sta::get_all_clk_nets tcl api
+
+### Dbsta
+- ensure gui is active when registering the path renderer
+- enable file redirects
+- fix crash in sta due to calling id() on a null Port
+- add callback for after reading the db
+
+### Debian
+- disable dh_dwz due to debian10 error
+- fix path to or-tools
+- disable LTO optimization
+
+### DeltaDebug
+- flush output at key points
+- add --exit_early_on_error option to speed up bisection
+- make the time a bit less aggressive
+
+### Depedencyinstaller
+- Ubuntu 22.10 support
+
+### DependencyInstaller
+- add debian and ubuntu packaging tools
+
+### Dependencyinstaller
+- fix error message
+
+### Dft
+- migrate unit testing to gtest
+- clang-format
+- removing alias for scan cell sort function
+- Reserve space ahead of moving the scan cells into the sorted vector
+- remove default from swtich in getClockEdgeName
+- fix showing change of edge in a scan chain in preview_dft
+- Misc refactor
+- refactor to use unique_ptr instead of shared_ptr for ScanCells
+- fix repeated messages in DFT
+- Calling messages in CMakeLists.txt for DFT
+- Fixes format string with C++20 and fmt 9+
+- updating readme to document current status of the tool
+- Adding support for clock mixing
+- clang-tidy
+- fix test/ to use standard test structure
+
+### Docker
+- separate runtime into two.
+
+### Docker
+- install all llvm pkgs
+- add file for ubuntu c++ 20
+- rm arg not needed anymore
+- add readline as a dev dependency
+- create and test, do not push
+- dry-run push
+- style
+- install complete boost
+- add test_wrapper.sh to load scl libraries
+- add option to choose tag (sha/latest)
+- default ARG use latest tag
+- add doc on file header
+- update
+- rename files
+- combine scripts into DockerHelper
+- organize setup
+- build.sh -> create-images.sh
+- test.sh -> test-regression.sh
+- use one file per os
+
+### DockerHelper
+- add ubuntu 22.10 option
+- delete duplicate docker push message
+
+### Docs
+- add config file
+- add build to toc
+- always revert back links
+- change to make links work
+- fix broken links
+- README typo
+- add Build to toc
+- index paths points to main
+- README break long line
+- add comment to avoid docs compile warn
+- pdn: fix header levels
+- remove stale pdr references
+- remove stale pdn references
+- remove stale pad references
+- single source of truth for building OpenROAD
+- add section for tools and cmds
+- fix header levels
+- make usage of sudo more clear
+- update dependencies
+- fix local install
+- fix title
+- clarify
+- remove duplicated file
+- add mentions to Installer.sh and Build.sh
+-  add badges for build, coverity and docs
+- style CodingPractices.rst
+- style CodingPractices.rst
+- style CodingPractices.rst
+- style CodingPractices.rst
+- add code guard in DeveloperGuide
+- rm duplicated Contributions.rst
+- update GettingInvolved
+- update userguide
+- update OpenroadArch
+- update ToolLimitations
+- update GettingStarted
+- update faqs
+- update index
+- add checklinks to makefile
+- add site map
+- update for integrated TR
+
+### Dpl
+- Fixes out of bounds in grid paint
+- Fixes double height placement already present error
+- Move Grid from pointers to vectors
+- skip PAD rows/sites consistently
+- add error for no found masters and link to PR that changed the behavior
+- fix filler tests that incorrectly matched extra filler cells
+- fix overly permissive filler cell selection by using string match instead of regexp
+- move instance off macro checking all corners
+- clang-tidy
+- improve error message for unplaced instances
+- improve the instance on macro strategy
+- clang-format
+- detailed_placement_debug uses wrong command name
+- don't reorient fixed instances
+- coverity fixes
+- speed up calculation of hopeless grid cells
+- change filler error to warning as it mis-fires on some tapcells
+- update ok files
+- use row orientation and drop bogus multi-height tests
+- mark fill instances dbSourceType::DIST
+- update for errors
+- make check_placement error if violations found
+- fix wrong range in moveHopeless
+- handle placement where the nearest sites are very far away
+- fix guiActive per feedback
+- initial gui
+- adding prefix control to filler placement
+- partially revert "dpl ignore ENDCAP instances" to avoid endcap/filler overlap
+- fix bad .ok files
+
+### Dpo
+- handle when there are no movable cells
+- avoid div by zero in unused result
+- clang-tidy
+- make DetailedMgr fields private
+- clang-format
+- remove redundant check
+- rm unused isDefinedByShapes
+- remove unneeded comments
+- handle the orient command in command parsing
+- clang-format
+- remove unused SHAPE type
+- rm TERMINAL_NI leftover from bookshelf format
+- remove unused ShiftLegalizerParams class
+- clang-format
+- fix compile warnings
+- clang-format
+- coverity fixes
+- minor effiency improve to use !empty() rather than size() > 0
+- Fix compile errors
+- clang-format
+- modernize
+- more const and include cleanup
+- more const and another enum
+- remove c-style string functions
+- re-clang-format for renames
+- turn Node type & fixity into enums
+- convert membering naming to google style
+- clang-format
+- sort instances to make the results stable under shuffling
+- merge updates from akk
+- start of encapsulating data members as non-public
+- fix many Coverity uninit-ctor
+- many small cleanups
+- add unit tests
+- adding missing LEMON include
+
+### Dr
+- fix via2via forbidden len
+
+### Draft
+- save the version in which solvers are seperated.
+- Second GPU version. log, macros, memory protection, and error recording problems solved
+- Cleaned CUDA code for GPU.
+- Cleaned CUDA version of GPL
+- CUSOLVER for GPL
+
+### Draft
+- Relative residual error information can be printed for GPU version.
+
+### Drr
+- fix mterm serialization
+
+### Drt
+- factor UniqueInsts out of FlexPA
+- more pa refactoring
+- pa rm dead code
+- pa const
+- minor pa refactoring
+- required pr changes
+- address gh-actions suggestions
+- macro only
+- fix bugs
+- warning when no routing tracks pass through the center of the pin
+- fix var name
+- fix bug when creating segments between non-orthogonal connections
+- create different PathSegs for non orthogonal wires
+- update error message with net name information
+- warn on terms with no routing tracks
+- correct format
+- revert changes to io_parser_helper.cpp and io.cpp, but not changes to printed outputs
+- skip second CUT layer in the event multiple CUTs are defined in a row
+- update tests that changed due to change in vias printed
+- set VIA_ACCESS_LAYERNUM when adding the first routing level to ensure it matches the layer stack + just loop over layers to init gcells  + minor changes to error message
+- undo only printing from bottom layer
+- only print vias in layers getting routed
+- iterate over just valid indecies in layers
+- deprecate reading from parameter file
+- retur drc_report_iter_step to 0
+- fix include related compiler error
+- change default drc_report_iter_step to 1
+- use std::optional for drc_report_iter_step
+- fix missing update
+- skip routing empty workers distributed
+- clean unused comments
+- reduce data serialized and sent
+- update defok
+- fix compile warnings
+- update defok
+- clang-format
+- add comment
+- create stack of vias after updating dbWires
+- handle when a layer above the max routing layer has no single cut vias
+- destroy wire when updating db during snapshot iterations
+- update ispd19_10 metrics
+- update defok
+- reduce forbidden penalty in estCost
+- minarea patch center if better
+- fix modulo unsigned conversion
+- check placement of all cells
+- update error message
+- clang-format
+- use dbTechLayer* instead of string
+- clang-tidy
+- create new path seg when via is found
+- fix tech via point
+- create new path seg when tech via is found
+- update error message to use microns and add layer name
+- update ISPD metrics
+- fix ta costing for vias
+- include coordinates in non-ortho error message 1010
+- unset distributed flag after job
+- cost vias in ta
+- remove unused ta costing
+- eof and copyRights updates
+- cleanup
+- support distributed pa in full run
+- init cloud pa
+- fix gc check for minimum cut
+- cast to correct common base class
+- update ok files
+- refactor check for ndr vias
+- remove multi threads from unit tests
+- rename unit test
+- add new unit test for ndr vias
+- add unit test for ndr vias
+- use correct layer index to fetch NDR via
+- cleanup FlexWavefront.h
+- add files for new unit tests
+- Fix some typos
+- fix gr macro defs
+- Remove block_ from frBTerm
+- Shrink frInstBlockage and frInstTerm
+- use via box for bterms above top routing layer only when bterm net has routing
+- skip special nets in processBTermsAboveTopLayer
+- create function to add pin figs
+- add a single pin fig for pins above max routing layer
+- add function to get the via box for terms above max routing layer
+- clang format FlexGridGraph.h
+- Move drt specific cmake options into src/drt
+- Use constexpr int and catch overflow in addToByte
+- Add DEBUG_DRT_UNDERFLOW option
+- clang-format
+- add new unit test with multiple pins above max routing layer
+- always use the pin center to place the stack of vias
+- fix pin box assignment with via box when net has multiple pins above max routing layer
+- bug fix for nets with more than one pin above max routing layer
+- fix wire initialization with wire encoder
+- simplify check
+- remove unnecessary check
+- simplify layer selection to avoid storing a vector of tech layers
+- add py version for the top_level_term testcase
+- remove obsolete function
+- in checkDRC, ensure the gcell patterns exist
+- optionally write track assignment info to db
+- clang-format
+- remove tcl command
+- run processBTermsAboveTopLayer before reading the design
+- look for default vias when stacking vias
+- break readDb into two different functions
+- add internal function to process pins above max routing layer
+- clang-format again
+- clang-format again
+- clang-format
+- update unit test
+- clang-tidy
+- avoid multiple initializations on frBTerm ctor
+- simplify pin box code
+- small fixes on TritonRoute.cpp
+- error message if net has routes before inserting stacked vias
+- use single path for stacked vias
+- fix Tcl code for new process_ports_above_top_layer command
+- clang-format
+- update unit test
+- remove debug print
+- append routing if dbWire is not null
+- update pin above max routing layer with via shape in max routing layer
+- ignore guides above max routing layer for nets with pins above max routing layer
+- add isAboveTopLayer attribute in frBTerm
+- use pin center if no PA is found
+- add command process_ports_above_top_layer
+- add function to stack vias for a pin above the top routing layer
+- set guide routing layer to drt top routing layer when it is out of layer range for pin access
+- add unit test for pins above max routing layer
+- use dx()/dy()
+- improve via selection
+- ispd19_test10 drvs 20 -> 19
+- remove wrong function
+- Fix a couple of spelling mistakes
+- fix fetching for APs during fixing for endpoints
+- check if pin PA has APs
+- use non-preferred APs for pinCoord when preferred AP is nullptr
+- update iroute endpoints only for connections with macro pins and bterms
+- use guide centers when failing to update iroute endpoints with APs coords
+- properly update begin and end coords of iroute
+- clang-format
+- update error message to use Logger
+- do not add DRC cost for overlaps connecting to a pin
+- update iroutes endpoins considering pins APs to avoid DRCs during TA
+- remove debug print
+- consider block, pad and ring instances during prepPA
+- Explain prep_via2viaForbiddenLen_minimumCut
+- improve via selection
+- Add comment explaining multi patterning limitation
+- Add comment explaining multi patterning limitation
+- write preferred aps back to database in debug mode
+- gc::checKeepOutZone_main
+- patch wrongway if allowed
+- fix cutspctbl check
+- Remove workaround in initMazeCost_fixedObj()
+- Remove duplicated code in initMazeCost_fixedObj()
+- More uses of rect.area()
+- Remove layerPathArea from FlexWavefront
+- Use Point::squaredDistance
+- Use Point::manhattanDistance
+- Use rect.area()
+- Remove via2turnMinLen
+- Remove via2viaMinLen()
+- Remove via2viaMinLenNew()
+- clang-format again
+- remove unnecessar check over getBestRouteConnFigs
+- remove unnecessary check and fix typo
+- clang-format
+- fix error message
+- add error messages when detecting drNet for patch owner
+- detect drNet for drPatchWire during FlexGC
+- fix warnings
+- fix excepteol in cornerSpc checking
+- fix marker serialization
+- fix subFromByte underflow
+- dump multiple workers
+- fix typo in run-ispd.py
+- Enable TA tests
+- Remove unused variables
+- clang-format
+- remove if-else block copy and simplify code
+- use half area when previous shape is via when adding wire area
+- clang-format
+- update calculation of min area for stacked vias
+- fix area checks and rename variables for clarity
+- use correct layer index when initializing area for next routing shapes
+- fix assignment to areaMap
+- fix gc markerid operator < overload
+- Better formatting of SearchRepairArgs
+- Fix single step tests
+- Add debug for fixed_shape_cost and marker_decay
+- Move FIXEDSHAPECOST and MARKERDECAY into SearchRepairArgs
+- fix init gc
+- fixes
+- reduce memory usage by check drc
+- fix possible non-determinstic results
+- repair pdn vias
+- clang-format
+- updates in checkDRC
+- specify pdn layer to ignore violations on
+- parallelize the standalone drc check
+- fix check on same layer
+- fix
+- clang-format
+- ignore pdn via drvs in cmd params
+- fix bug in "Use getMinSpacingValue()"
+- Fix a few typos
+- add an on-grid pre-check to pin access
+- Add ta access point alignment test
+- Add ta pin alignment test
+- ignore pdn vias on gc check
+- clang-format
+- error if TA can't find any tracks inside a guide segment
+- fix InterCutSpcTbl gc check
+- clang-format FlexDR_graphics.cpp
+- Use getDbLayer()
+- Consolidate spacing calculation code
+- clear design before running pin access
+- remove self-assignments
+- initialize variables to fix warnings
+- fix bug in METALWIDTHVIAMAP handling in rp
+- fix gc test again
+- fix adj cuts gc test
+- fix check for adjacent cuts with NOPRL
+- update cpp tests for adjacent cuts
+- use WITHIN spacing for every owner
+- add test for ADJACENTCUTS on gcTest
+- gc support lef58_spacing eol wrongdirspc
+- Add net name to genGuides_final error messages
+- fix transform orientation for AP path segs
+- fix merge error
+- Fix double -> int narrowing warning
+- correct use of dx and dy in mincut cost
+- fixed shapes minimumcut costs
+- fix modMinimumCutCost
+- block bterm edges based on preferred routing direction
+- support LEF58_METALWIDTHVIAMAP
+- add warn messages for unsupported keywords
+- required changes
+- fix check for second layer
+- fix check for second layer
+- fix typo + minor fix
+- add patch when only the AREA is defined
+- simplify check for min width
+- bug fix on except rectangle check
+- add caller for lef58 area checker
+- fix extension odb: support wrongdir width
+- small fix
+- add support for EXCEPTRECTANGLE and RECTWIDTH on LEF58_AREA
+- refactor patch process into checkMetalShape_addPatch function
+- add LEF58 AREA constraint to operator<<
+- add report function for frLef58AreaConstraint
+- read and store LEF58_AREA in drt
+- clang-format
+- remove obsolete initDefaultVias_N16
+- clean up io/
+- fix temp ap problems
+- extend external box
+- fix name and remove unneeded changes
+- fix message id
+- convert FlexDRWorker::initNetObjs_pathSeg to iso style
+- fix alignment
+- required changes
+- pa consider unidirectional layers
+- ispd19_test10 22->20 drvs
+- fix hasOutOfDieViol to handle no default via
+- flip report table
+- report violations in log
+- required pr changes
+- remove defdist
+- initdr border segments terms
+- conform to the coding standard
+- add default values for width and minWidth in frlayer
+- fix rcx names test
+- fix gc_test
+- fix run single worker
+- update gsd image for doc
+- required edits
+- doc edits
+- document distributed drt
+- move check_drc under drt
+- fix min area patch origin
+- fix end iter off by one
+- add snapshot debug
+- remove obsolete flags -guide & -output_guide
+- add support for ENDPRLSPACING/PRL eol rule options
+- skip top layer in FlexPA::getViaFromMetalWidthMap
+- fix handling of via on worker boundary
+- allow patching of patches for corner spacing violations
+- ensure corner patch is applied to object inside the routeBox
+- add support for LEF58_METALWIDTHVIAMAP in pin access
+- edits
+- fix comments
+- snap BTerm coords to manufacturing grid
+- add function to snap coords to manufacturing grid
+- check_drc command
+- fix origin of corner spacing patches
+- add corner spacing patches & allow via access to macro pins
+- Fix error message for invalid via in pin options
+- add a per iteration drc report debug option
+- update insts ids after deletion
+- remove all filler instances at once
+- update ta to consider vias
+- update insts_ ids
+- remove destroyed filler instances
+- handle contact OBS inside pin
+- cornertocorner support
+- enhance frLef58EolExtensionConstraint::report to include layer names
+- corrected zIdx in costing
+- maze trial
+- mod cost
+- init blockage idx
+- update run-ispd
+- rename all to index_in_owner
+- fix command flag save_guide_access
+- fixes
+- monpathcost mincut
+- convert earlier
+- remove debug code and support no-length mincut rules
+- debug cont.
+- debug
+- gc minimumcut
+- LEF58_MINCUT support init
+- clean reportDRC and clang-format
+- use odb twowidth spacing table
+- gc use odb sptw
+- stop dr once at zero drvs
+- fix divide by zero
+- cleanup pr
+- remove unneeded boost serialization code cont.
+- remove unneeded boost serialization code
+- pa consider target objects in gc
+- const numLayers
+- cleanup
+- add check_cardinal to -min_access_points
+- add user control -min_access_points <cnt>
+- calculate and report guide coverage
+- remove vU_ and vD_ serialization
+- update debugSingleWorker
+- send ViaData once and fix memory leakage
+- actual masterslice layer name
+- change NO_PA to DO_PA
+- fix single worker debug
+- debug worker params
+- use odb and updates
+- clang-format
+- drUpdates in FlexDRConnectivityChecker
+- serialize updates threaded
+-  serialize threaded
+- send updates in asio isntead of file
+- use capnp with design updates
+- update test cases threads no
+- fix negative index in FlexGridGraph::gridIdxBox
+- debug worker
+- serialize updates opt
+- remove hasTAUpdates
+- profile sending updates
+- initdrobj earlier
+- fixed inconsistent results
+- cleanup and send ta earlier
+- set pref access point
+- dumpDir
+- write TIEOFF aps
+- test_worker.tcl (to be removed)
+- debug worker
+- update stubs
+- ta updates and send db
+- add single step mode
+- refactor searchRepair
+- skip 1st metal layer in ignoreLongSideEOL
+- send updates only (not fully tested)
+- re-enable setIgnoreLongSideEOL
+- add drv counts to autotuner msg
+- fix backwards x/y in gcell grid report
+- add per worker elapsed time debugPrint for the autotuner
+- reply every % done drt: communicate directly with workers
+- user_selected_vias
+- add autotuner debug reporting
+- detailed_route_set_default_via
+- split 265 warnings
+- testing sth
+- reduce waiting
+- fix profiles
+- more profiles
+- increase dr batch size
+- worker batches
+- ispd18_test4 17->11
+- fix halt
+- serialize in stringstream
+- max cpu time
+- remove unused global vars
+- remove unneeded commented code
+- cleanup
+- stubs for trTest
+- update ispd drvs due to corrected error detection
+- add -o pipefail to run.sh generated by run-ispd.py to properly catch failures
+- pr changes
+- pinAccess on specific instances
+- increase stub length for planar pa test to avoid minStep
+- skip planar access when test shape is fully enclosed
+- add pa debug gui for top level pins
+- update metal_short test for zero width marker change
+- fix issue with zero area drc markers
+- send design separately dst: thread pool implemented
+- catch exceptions in OpenMP threads and rethrow them in the main thread
+- log memory
+- proper error msg
+- add aes_nangate45_distributed test drt: fix different results in distributed routing
+- fix gui bug with inspecting stale data
+- fix design frIArchive deep serialization
+- update trTest
+- smart serialization and fix memory leakage
+- minor refactor
+- fix missing fields in _dbAccessPoint::_dbAccessPoint
+- cleanup genGuides_gCell2APTermMap
+- fix uninit net_ in frBTerm ctor
+- yet more mac fixes
+- more mac fixes
+- initialize variables to make mac happy (false error)
+- fix missing override for mac
+- fix handling of duplicate viadef in pa
+- fix bterms pins mismatch
+- Rewrite run-ispd from tcl to python
+- add via name into viaRawPriorityTuple
+- better handling for horizontal pins in PA + gui debugging
+- ParamStruct default values odb: fix macos build
+- custom archive
+- change protected to private
+- minor pa gui improvements
+- add insts info to pa msg
+- store all access points in odb
+- transform access point before stroing in odb
+- pin_access_cmd
+- archive ISPD logs in Jenkins
+- update via-in-pin to use layer names
+- write pref access points to  odb
+- fix coverity uninit in ctor
+- add check on pinName to graphics
+- fix misplaced paren
+- minor make function local
+- fix erroneous eol violation
+- skip EOL violations on preferred direction edges during pin access
+- make pa debug map pin names to the unique instance
+- add frBlock::getInst by name
+- fix macos build
+- fix build
+- unwanted merge changes
+- use fastroute's gcellgrid patterns
+- trTest frBox->Rect
+- update prep with merge
+- add gui for planar PA
+- add debug to write drv .rpt file on each iteration
+- consider ndr in eol costs
+- vector<bool> is not thread-safe
+- update flexdrgraphics to reflect customcontrols
+- avoid excess vtune events
+- use fewer adds for minor speedup
+- remove unnecessary friends in FlexDRWorker
+- fix compiler warning
+- minor speedup with vector::reserve
+- fix include loop frDesign.h/global.h
+- fix unused variable warning
+- modify DRC report to include identifier for sources and convert two cout to logger
+- one less DRV on ispd19_test10 with ACCESS_PATTERN_END_ITERATION_NUM=10
+- bump ACCESS_PATTERN_END_ITERATION_NUM to 10 for difficult AOI gate
+- replace FlexPA::macroCellPinNoApCnt_ with ACCESS_PATTERN_END_ITERATION_NUM
+- fix duplicate message id
+- add debug GUI for pin access' combining step
+- get/free tree with stt builder
+- add stt builder object
+- handle dangling net in gr
+- fix erroneous message in gr
+- report all constraints properly in the drc report
+- skip graph enablement on special nets
+- cut at net & inst during serialization
+- update messages.txt
+- move dr worker serialization after init
+- update comments
+- allow last iter ==0
+- get trTest building
+- serializers for DR worker and required classes
+- remove design dependency from FlexDRWorker::route_queue
+- clarify design dependencies in gc
+- clang-format src/dr
+- minor cleanups
+- fix assert
+- fix assert
+- fix non-gui error
+- add inspector for grid graph nodes/edges
+- cross-thread qt signals are not working so single thread dr gui
+- fix useless return value
+- partial retreat on USENONPREFTRACKS
+- remove stale comment
+- fix compile error in unit test
+- many small improvements
+- updates for unidirectional routing
+- remove more dead code
+- remove dead code
+- take bottomRoutingLayer/topRoutingLayer by name to match the flow
+- remove deadcode
+- log net/pin/ap info in debug
+- change unsupported via to warning from error
+- change initial DRCCOST=8 for bp_single
+- remove unused test code
+- remove unused route_2 code
+- changed methods to free functions
+- Integer overflow results in tracks outside die area
+- fix bug in 72401a934b4 (squared wrong term)
+- Avoid negative sqrt in modMinSpacingCostPlanar()
+- Fix a number of integer overflow issues (merge from public PR [#605](https://github.com/luarss/OpenROAD/issues/605))
+- Fix a number of integer overflow issues
+- clang-format
+- add gcell to debug msg
+- update messages.txt
+- relax debug threading limits when gcell is specified
+- revert while fixing edge conditions
+- add debug visibility controls
+- remove unued initMazeCost_pin_helper
+- fix comment error
+- remove unused var
+- remove duplicate startNet call
+- handle cases of access points on worker top/right edges
+- minor gui code cleanup
+- use area helper
+- cleanup compiler warnings
+- Fixing clang error when implicitly using stringstream
+- cleanup unused args
+- fix tcl namespace and drt_report_constraints -> drt::report_constraints
+- print all layer constraints
+- rework constraint reporting
+- refix pad types lost in update
+- add (bottom|top)RoutingLayer to .param file parser
+- fix logger message
+- Fix potential overflow in area calculation.
+- more logger updates
+- update test for logging changes
+- increase logger usage
+- Modifying param file fstream to ifstream
+- fix invalid graph access
+- gr dead code cleanup
+- support polygon instance blockages
+- handle all endcap types in LEF
+- fix incomplete pad type handling in DEF
+- baby step in writing metrics
+- add gui debug for PA markers
+- fix stupid bug
+- add object name to messages in Parser::genGuides_gCell2TermMap
+- fix PA issue during searchRepair
+- move gui startNet call earlier
+- make new NearbyGrid ap only a last resort
+- only pause when on the right pin
+- force single-threaded when using the GUI
+- modernize > > to >> in templates
+- in dr_conn check for pins with min-width square rather than point to accomodate NearbyGrid APs
+- Add nearby grid pin access strategy
+- strip redundant AP suffix in frAccessPointEnum
+- properly capture aps for debug
+- cleanup frAccessPointEnum usage in pa
+- add pa debug gui
+- store parent frBlock on frTerm
+- quiet lef warning
+- allow multi-port power pins in DEF
+- append _ gr members variables
+- update messages.txt
+- fix test for logging change
+- partial conversion to logger
+- fix def writer bug when PORT is present
+- add missing messages and fix numbering
+- remove residual standlone TR code/target
+- remove unused FLEXROUTE_HEADER
+- src/FlexRoute.cpp -> src/TritonRoute.cpp
+- fix depracation warnings
+- add missing override keyword to fix clang warnings
+- clamp +/- on byte cost values in grid graph
+
+### Dst
+- clang-tidy fixes
+- fix error
+- fix cmake to properly state depedencies
+- coverity fixes
+- clang-format
+- move export balancerJobDescription to dst
+- non-interactive worker
+- remove worker threads
+- use default arg for basic_stream_socket
+- warning cleanup
+- remove drt dependency and add callbacks
+- messages & drt: stubs
+- shared volume
+- cleanup
+
+### Error
+- history.tcl, 330 invoked "return" outside of a proc
+
+### Etc
+- remove libgtest-dev from DependencyInstaller
+- user The-OpenROAD-Project fork
+- formatting
+- correctly build for code coverage
+- build script correctly forward options
+- code style
+- cleanup or-tools tarfile after install
+- fix brew prefix
+- macos instructions
+- macos or-tools
+- fix issue in macos with openmp
+- add wget as dep to download or-tools
+- DependencyInstaller no need to use sudo
+- add hash check for downloaded files
+- fix missing export
+- fix boost install
+- update boost url
+- scl script has unbound variable
+- move Installer.sh -> DependencyInstaller.sh
+- remove tk from Installer.sh
+- add missing set flag on Build.sh
+- pipe stderr to build log
+- append docker arguments
+- remove '-it' from DockerHelper.sh test
+- move coverity push to CodeCoverage.sh
+- rename files
+- update _help functions
+- cleanup DockerHelper
+- unify coverage files
+- builder change to repo root before running
+- builder should exit not return
+- rename installer
+
+### FR
+- support any length name in Net
+- fix two memory errors
+- use isBlock
+
+### FastRoute
+- fix bad copy-paste error
+- merge estimate_rc branch
+- fix bug in checkUsage to update usage on loop removal
+- add check for invalid layer to addLayerAdjustment
+- code cleanups
+- generate Tcl wrapper in binary dir and remove improper include
+
+### Fastroute
+- fix overflow in total wirelength
+- fix copy-paste-error found by Coverity scan
+
+### Fin
+- don't write a mask number for single mask layers
+- clang-format
+- coverity fixes
+- clang-format
+- update to coding standard using clang-tidy as a checker
+- fix missed logger conversion
+- convert to logger
+
+### Finale
+- minor change to use namespace alias
+- properly handle line end rule
+- write opc flag to opendb
+- improve performance by skipping fill area update on last shape
+
+### Fix
+- add debug code for looking at steiner trees
+- mismatch between .hh and .cc in argument name
+- duplicate messages
+- Added a test to show gate cloning
+- Added graph handle + use the output pin of an instance to clone
+- enhance to create netlist to test gate cloning
+- Steiner tree load computation functions
+- Steiner tree load computation functions
+- max wire length difference (2393->2395)
+- minor change in resizer insertions/upsize
+- Update to latest OpenSTA
+- Update to fix a typo that was addressed in OpenSTA
+- Remove unnecessary argument to function
+- Fixes/improvements to pin swap + ability to skip pin swap
+- clang_tidy
+- clangtidy
+- Address PR comments
+- Fix gcc8 compiler warning/error on centos
+- Updated ok file for pin swaps
+- update comments
+- enable pin swapping for timing optimization
+- change envar option to something more reasonable
+- remove debug printfs
+- clang_tidy
+- clang tidy cleanup
+- remove debug
+- readability/cleanup
+- Remove debug statements
+- Remove debug print
+- updated to latest OpenSTA
+- update to latest OpenSTA
+- update to latest OpenSTA
+- Fix power unit suffix nw -> nW
+- Fix power unit suffix nw -> nW
+- Updated OpenSTA to fix test crashes in the last update
+- WiP pin swap undo code
+- WiP pin swap undo code
+- Add missing dependency needed to link with OpenSTA
+- Make clang-tidy happy
+- Add missing dependency needed to link with OpenSTA
+- OpenSTA API return type changes
+- Latest OpenSTA
+- Updated to latest OpenSTA to fix compile warning treated as error in OR
+- update golden due to STA update
+- update to the latest OpenROAD/OpenSTA
+- update to the latest OpenROAD/OpenSTA
+- update golden due to STA changes
+- Add missing gTest dependency
+- cleanup + added logging to pin swaps
+- Resizer enhancements (WiP)
+- Resizer enhancements (WiP)
+- update for OpenSTA 1e53cc3
+- update for OpenSTA 1e53cc3
+- Updated to latest OpenROAD/OpenSTA
+- update for OpenSTA 1e53cc3
+- update for OpenSTA 1e53cc3
+- update for https://github.com/openroadie/OpenSTA/commit/deeaaee9a3deb9699f8994969a1b0c353ef2b0bd
+- Fixed some paths/imports to handle the OpenDb->odb name change. TCL/python regressions work now (fail after [#7](https://github.com/luarss/OpenROAD/issues/7) due to a different issue)
+- make drVia point to drNet
+
+### Fixes
+- file non flusing issue in saveLef block command.
+- file non flusing issue in saveLef block command.
+
+### Floorplan
+- add error message when liberty for cell or port is missing
+
+### Flow
+- turn repair_antennas off
+- update limits for drt change to sorting shapes in rq
+
+### Fr
+- change default grid offset to 0,0
+
+### GPL
+- removing CImg
+
+### GRT
+- Fix typo
+- make routing congestion heat map belong to GRT
+
+### Gha
+- use master version for clang-tidy-review
+- update deb action
+- fix runs-on statement
+- fix brew paths
+
+### Gitignore
+- ignore Scala .metals/ folders
+
+### Gpl
+- mock-array rename comment fix
+- make exclusion of nets consistent in timing driven mode
+- fix compile warnings
+- simply and correct BinGrid::initBins
+- improve error message upon too big die area
+- improve error message upon too big die area
+- ensure hpwl of a dangling net is zero
+- fix a variety of bugs
+- force hypot to to float
+- avoid overflow in GNet::hpwl
+- fix bin count calculation
+- handle the case of no wire gradient
+- fix false divergence on small block with -timing_driven
+- remove early stopping code
+- consider the aspect ratio of the block when building the BinGrid
+- address convergence for a few gates in a sea of fixed macros
+- update medium05 for "partially overlapped site" fix
+- properly account for partially overlapped site as fully unusable
+- add density & overflow heatmap for debugging
+- whitespace format
+- make initNesterovPlace private
+- cleanup init sequence
+- ensure index in BinGrid::getDensityMinMaxIdx[XY] is valid
+- Increase routability mode overflow iterations from 0 to 1
+- handle the case where all slacks are equal in TD
+- adjust moveHopeless to account for cell width & height
+- update tests for new stt-pd
+- update medium05.ok for macros on inst change
+- update medium05.defok for inst-on-macros PR
+- clang-format
+- optimizations and documentation of area scaling
+- rename integration function and parameters for better readability
+- remove scaling for non-fixed macros and modify area scaling factor
+- fix cells being placed inside macros
+- Add -timing_driven_nets_percentage
+- Remove deprecated options from README, add missing one
+- update medium/large tests for the random noise (PR [#2271](https://github.com/luarss/OpenROAD/issues/2271))
+- add -timing_driven_net_weight_max
+- Update global_placement args
+- update flow tests
+- add -inst to global_placement_debug & weights to pin info
+- update flow tests
+- update flow tests
+- update medium/large test for the new cross-lang style
+- ensure the pin access is from the preferred routing direction
+- update unit tests
+- update noise formula
+- add random noise to initial locations
+- skip placement if there are no placeable objects
+- coverity fixes
+- ensure -density in [0, 1]
+- remove obsolete -verbose_level
+- removing unused stt dependency
+- fix ok for large/medium tests
+- update residual ok
+- use residual instead of error
+- print target density rounded up to two digits
+- fix Werror errors
+- address reviews from PR-1458
+- add testcase for td-gpl reweight iter tuning
+- enable td-gpl reweight-iter tuning on tcl
+- Fix reset of routabilityTargetRcMetric_
+- Fix a few documentation issues
+- avoid step length disappering due to backtracking
+- Fix routability_max_density option
+- update incremental02 for iteration limit
+- limit incremental place to 300 iterations
+- update selection in Renderer to match Rect instead of point
+- add incremental placement for unplace instances
+- update ok files
+- ensure minimum number of bins is 2x2
+- remove messages.txt
+- tcl interface for cimg plotting of progress
+- remove unneeded using decls
+- make backtracking warning into debugPrint
+- updated regression for msg limit
+- report_hpwl.tcl file dbBPin getBox->getBBox
+- in NesterovPlace::updateInitialPrevSLPCoordi correct sign
+- change placeable objects to green for better visibility
+- fix mismatched new/delete
+- fix dtor error
+- properly initialize all fields of FFT
+- change spdlog::spdlog to utility in CMakeLists.txt
+- report forces on selected instance in debug gui
+- fix another wrong format string
+- fix wrong format string
+- convert backtrack limit from divergence error to warning
+
+### Grt
+- clang-format
+- removing prints and commented code
+- correct calculate hor and ver blockages for congestion map
+- fix updateDbCongestion with the correct values for the last col/row
+- running without prints
+- removing runtime prints
+- avoiding iterating all ggrids
+- adding prints to get runtime
+- avoiding iterating all nets to count ways
+- ignore trailing whitespace in a layer range
+- generalize layer name regex in layer range parsing
+- refactor copied code into a small function
+- check jct_id before creating new path or virtual path
+- update ok file
+- avoid false positives when fetching congestion sources
+- clang-format
+- update ok files
+- avoid creating unnecessary vias
+- adding the suggested modification
+- changing the name of the option to generate congestion report
+- adding the congestion_report_iter_step option in the README
+- update tests basedon changed printout in DRT
+- skip routing flow if nets netCount is zero
+- update gitignore
+- remove zero length test
+- check if net is connected by abutment before adding net
+- clang format
+- adding the requested modifications
+- remove check from GlobalRouter's Net
+- adding an argument to the DRC report option
+- clang-format
+- fixing bug
+- clang-format
+- clang format
+- add unit test for zero length net
+- do not create guides for zero length nets
+- update boxes to compare with remaining pins
+- do not route zero length routing nets
+- add function to check if net have all pins touching each other
+- generating DRC report on overflow iterations
+- do not destroy existing gcell grid when reading guides
+- clang-format
+- modifying variable name
+- clang format
+- adding comments
+- increasing the radius around overflow to get more nets
+- clang-format
+- update ok file
+- fuse two different maps into one
+- remove unnecessary check
+- remove unnecessary custom comparator
+- use map iterator to avoid multiple look ups
+- use struct instead of pair
+- remove unused includes
+- clang-format and undo wrong commit
+- clang-format
+- update rptok file
+- use custom comparator for the correct map
+- use custom comparator for map
+- use map instead of unordered_map
+- add missing include
+- update ok file and restore congestion7 test
+- use set instead of unordered_set to store net names
+- store only edges with congestion and save the nets crossing them
+- disable failing test
+- annotate function with override
+- update ok file
+- clang-tidy
+- store all the nets crossing an edge for quick search for nets in congested areas
+- minor fixes
+- clang format
+- set grid variables in render
+- remove unused vars
+- clang-tidy
+- add unit test
+- update congestion report with the nets crossing the congested area
+- add function to find the nets crossing congested areas
+- clang-format
+- use const&
+- get correct row orientation when diode is connected to pad or macro
+- converting long to int64_t
+- adding static_cast long for multiplication
+- fixing issue
+- moving the 3D debug after maze3D function
+- clang-format
+- update ok files
+- use intersection between pin and die area as pin shape when pin is partially outside the die area
+- update ok files
+- do not create virtual wires on first routing layer
+- improve runtime with static variables
+- use boost::hash to avoid overflow reported by sanitizer
+- add new unit test for top level terms
+- fix stacking of guides for local nets with top layer pins
+- calculate layer extensions only for layers inside the layer range
+- remove function header
+- fix net min layer calculation
+- Remove unused variable
+- Correctly iterate Steiner Tree in gui
+- avoiding calculating nets with overflow multiple times
+- rerouting two times with more nets when has congestion too high
+- update pin_edge.ok
+- bug fix
+- implement voting system to determine the pin edge
+- refactor determineEdge function
+- fix pin edge for macro pins
+- clang-format
+- add unit test for pin edge update
+- fix port edge
+- fix averageTrackPattern function
+- add usage and capacity to heatmap
+- Remove dynamic allocation of routing_tracks_
+- Remove dynamic allocation of routing_tracks_
+- clang-format
+- refactor code into new getNetMaxRoutingLayer function
+- simplify code by using std::min
+- update unit test
+- add TODO comment
+- clang-format
+- add unit test for net min routing layer according min pin layer
+- set net min routing layer according pin min layer
+- fix failing unit tests
+- add unit test for top level terms
+- connect to top layer pins above max routing layer from the layer below
+- add isCoveringPin function
+- use pin name in comparison
+- Add a test for routing a bus around an obstruction
+- create fake pin position when another IO/macro pin is inside the offset region
+- minor refactor
+- update ok files
+- do not create fake pin position only when another pin is inside the pin offset region
+- simplify check to create fake pin position to not use position indices
+- refactor createFakePin function
+- Check pin positions using grt positions
+- clang-format
+- remove repeated code and avoid run dpl when design has macros
+- fixing some bugs and creating function to add the nets that are in the overflowed gcells
+- move debug tree3D after maze3D
+- update functions to avoid rerouting
+- avoid rerouting nets if the dpl movement is within a single cell
+- fix update usage on fixOverlapping function
+- update usage 2D after fix overlapping edges
+- add flag to initialize listener on grt
+- fix missing ok files
+- clang-format
+- fix check for max usage
+- fix duplicated points during routeLShape
+- Update tests
+- Fix routing capacity adjustment at edges of die
+- add checks for debug
+- decrease the capacity for fake pins segments
+- save out empty congestion report file to erase old report
+- std::ofstream constructor truncates file by default
+- remove class members that can be passed around during estimation run
+- add load congestion report tip routing failure
+- Remove unused red field from h_edges_3D_
+- estimate parasitics over corners based on rsz corner values if availabel
+- Update tests
+- Correctly round up when subtracting obstructions
+- Update tests
+- Route non leaf clock nets first
+- avoid create a new loop when fixing embedded edges
+- in fastroute update usage after fixing Embadded Trees
+- add unit test for pin not aligned to track
+- snap pin position on grid only when track is not at the edge of the shape
+- fix case where all of net's pins are out of core area
+- check if route vector is empty
+- update ratio_margin explanation
+- update readme
+- check percentage range for ratio_margin
+- prevent indexing beyond the end of the cost table
+- fix bug usage updating during loop removal
+- update multiple_calls ok file
+- remove unit test
+- remove unnecessary db file
+- clang-format
+- more ok files
+- fix crash
+- update ok files
+- add unit tests for estimate_parasitics when reading/loading the guides
+- remove mergeGuides to preserve routing topology
+- check if via is aligned with adjacent segment
+- update vias when reading or loading guides
+- update edges usage when loading guides from odb
+- refactor duplicated code
+- initialize necessary class members on loadGuidesFromDB
+- load guides from db when checking if guides exists
+- add function to load the guides from odb
+- update tests for new stt-pd
+- fix save_guideok for multi-language tests
+- cleanup some more cases of wrongly assuming #nodes = 2*degree-2
+- fixup node/edge assumptions
+- update ok files
+- warn instead of error when diode is not found
+- fix GlobalRouter.i
+- clang-format
+- add par_margin option for repair_antennas
+- warn instead of error when diode is not found
+- make the number of nodes in StTree flexible
+- clang-format last change
+- skip guides on nets grt ignores, with warning
+- update repair_antennas1.py for ant API change
+- fix bad def files in tests
+- Print pin name in findInstancesObstructions() error
+- remove dead code
+- further refactoring of fastroute core code
+- clang-format
+- releaseNetResources only when there are resources being used
+- clear routes_ when reading guides
+- Fix crash when calling read_guides before loading design
+- use unique_ptr in StTree
+- clang-format last change
+- remove degree from FrNet as it is redudant to the number of pins
+- consolidate many FrNet setters into a reset method
+- clang-format src/fastroute/...
+- inline convertToVector
+- minor comment sharing
+- convert edge_cost_per_layer_ to unique_ptr
+- refactor FrNet to class
+- Use pin access position for parasitics
+- Create pinAccessPointPositions helper
+- fixing incremental grt bugs
+- handle multiple track patterns for a layer
+- include via to pin in estimating parasitics
+- fix bug in incremental mode leading to wrong edge usage
+- move percentage division to computeNetSlacks
+- update critical_nets_percentage test
+- update critical_nets_percentage ok files
+- update metrics limits
+- update mtetrics limits
+- accept critical nets percentage as float
+- fix compile warning
+- rename var for clarity
+- ensure the slack threshold is negative
+- update readme
+- remove useless files
+- fix tests
+- update critical_nets_percentage option to take a percentage
+- update ok files
+- adding option congestion_report_file in README
+- adding option to save stt input with debug command
+- creating file to save stt inputs
+- adding requested changes
+- fixing the bug that usage is less than edge cost
+- improving repair antennas avoiding removing all nets
+- small changes and clang-format
+- remove removeDirtyNetsRouting function of GlobalRouter
+- creating function to release 2D and 3D resources from a net
+- improving repair antennas avoiding initializing the resources again
+- update metrics limits
+- Error mentions wrong LEF property
+- update ok files
+- update high congestion error message
+- check pad and macro pins to update net layer range
+- coverity fixes
+- update metrics limits
+- update isNonLeafClock to look for pads
+- update multiple_calls unit test
+- fix typo
+- update net layer range based on the ports layers
+- update unit tests
+- ensure 1 track minimum for layers during user defined reductions
+- const&
+- rename Box struct to Guides
+- remove unnecessary default ctor for Net
+- creating function to store the guides in the DB directly from the file
+- rename unit test
+- update ok files
+- remove large files from read_guides1 unit test
+- initialize nets with wires and ignore them when creating FastRoute nets
+- creating unit test to read guides
+- fix instability on repair_antennas results
+- clang-format
+- fix bugs on divide segment
+- dividing large segment into segments of grid size
+- turn warn into error + unit test
+- update readme
+- diode pin name not necessary
+- fix error checking
+- refactor fetching for diode cell
+- fix bug when diode cell has definitions in multiple liberty files
+- Fix boxToGlobalRouting function
+- update aes_nangate45.metrics_limits
+- update readme
+- allow positive slack threshold
+- use -critical_nets_percentage as argument instead of new cmd
+- update aes_nangate45 limits
+- use stable sort
+- fix instability on repair_antennas results
+- update ok files
+- sort nets by clock status
+- use sta::check_percent
+- update unit tests
+- prioritize timing critical nets when sorting nets during congestion iterations
+- set slack values only for the percentage of critical nets and ensure all values are negative
+- add unit test for critical nets percentage
+- add option to set percentage of critical nets
+- add slack value to FrNet
+- add function to get net slack
+- clang-format
+- fix order of member in the initializer
+- small changes and adding the option to place another line in congestion report file
+- Remove warnings after load congestion report on DRC viewer and add option on global route command to generate congestion report file
+- separating the horizontal and vertical overflow in the congestion report file
+- generation of report file when congestion too high error is found
+- add typedef for tuple
+- move include away from public header
+- clear interval maps
+- update unit tests
+- clang-format
+- small cleanups
+- update reduction calculation to obstacles on gcell
+- add check for nullptr in tech for loading and setting heatmap values
+- correct out of bounds indexing error in read_guides
+- add layers option to routing congestion heatmap
+- Fixing function name and changing to static function
+- Layer index fix
+- save_guides option
+- Updating ok files
+- sorting nets by name before starting FastRoute
+- read/write guides from/to odb drt: read/write guides from/to odb
+- Reduce priority of missing OR_DEFAULT vias warning
+- don't insert into routes_ when you only want to lookup
+- remove whole app dependency
+- Removing code duplication and changing the variable type
+- fixing bug in mazeMSMD function
+- check if diodes are placed out of rows
+- simplify check for pin and wire intersection
+- add option to set pin offset
+- update unit tests
+- fix loops when creating local connections
+- keep init_x/y <= final_x/y
+- add function to avoid loops when creating local connections
+- create fake pins only when gcells offset greater than zero
+- fix coverity issue
+- fix conversion from segment to global routing grid
+- print correct cmd name
+- update FastRouteCore and DB congestion for congestion heatmap
+- update readGuides to initialize the capacities and adjustments for the congestion map
+- call initEdges inside applyAdjustments
+- add functions to manipulate FastRouteCore resources
+- try using the route layer above the pin layer for rc estimation
+- update readme
+- add option to draw the pin positions on grid for draw_route_guides cmd
+- draw circles for the pin positions on grid in draw_route_guides cmd
+- add unit test for macro obs
+- block the obs edges according layer direction
+- add function to check if a obs is blocked in the above and below layers
+- refactor findInstancesObstructions to handle macros separated from std insts
+- add function to extend obstructions based on obstructions in the upper layer
+- update unit tests
+- update printTree3D function
+- avoid adding duplicated segments to the final groute
+- add hash function for GSegment struct
+- refactor search for APs
+- fix APs for pins connected to macros or pads
+- update readme with the description of the new command
+- remove file before start the report
+- fix verbose option + new unit tests
+- update unit test
+- remove close() call for ofstream
+- add first line comment on wl report file
+- add new report_wire_length unit test
+- write wl report into file with more information
+- add -file option for report_wire_length cmd
+- small fixes
+- update repair_antennas2 for SOURCE DIST
+- detect design status and report detailed and global routing according it
+- addd check if net have global route
+- skip power/ground nets
+- get tech layer from db instead of grt structs
+- fix print of floats
+- add unit tests for report_wire_length cmd
+- add verbose option for report_wire_length cmd
+- fix read_guides
+- add command to report net wire length
+- add top level read_guides command
+- refactor computeWirelength()
+- refactor tile width and height into tile size
+- fix confused math
+- fold loops
+- fix coverity issue
+- add read_guides
+- Restore draw_route_guides documentation
+- Update ok files
+- Algorithm should not change with execution time
+- fix bug in grid_on_pos
+- update ok files (again)
+- update aes_sky130hd metrics after adding pin_access cmd to regression tests
+- minor fixes
+- use -verbose 0 for pin_access unit tests
+- fix typo
+- call pin_access command before grt on regression tests
+- add unit tests for pin access
+- use pin access points stored on the database to calculate pin positions on grid
+- clang-format
+- use odb::Point::set instead of setX and setY separately
+- update Grid init function
+- more refactoring of horizontal/vertical adjustments
+- refactor horizontal and vertical adjustments
+- update blocked tiles api
+- remove useless Tile struct
+- update ok files
+- refactor obstructions processing to avoid copying data from odb
+- remove obstructions_ map from Grid
+- update readme
+- add check_argc_eq0 for commands
+- use int instead of long
+- use bool instead of int for verbose
+- merge debug prints
+- turn congestion info into report under debugCheck
+- add warn messages under verbose
+- update ok files
+- update unit tests scripts
+- remove silence flag and turn verbose into bool
+- add unit test for silence flag
+- add silence flag
+- use debugPrint in GlobalRouter.cpp + update unit tests
+- fix incorrect grammar
+- use debugPrint instead of Logger::info on core code
+- better align code to style standard
+- use proper padding API for antenna repair
+- delete db_net in routes_
+- check overlap before computing intersection between obs and die area
+- gcell pattern update
+- add unit test for inst pin out of die area
+- error out when instance pins outside die area are detected
+- sort db_net_map_ by net id
+- skip local connection when segment overlaps with pin
+- get closest pin geometry to create local connection
+- update unit tests
+- fix bug and check all redundant vias
+- avoid loops when creating local connections
+- unit test for obs out of die area
+- ignore obstructions completely outside the die area
+- small updates
+- update GrouteRenderer to use drawLayer to properly obey visibility controls
+- simplify die area on class Grid
+- handle obstructions out of die area
+- call fluteNormal before fluteCongest in reInitTree
+- use std::unique_ptr
+- fix dead code
+- remove unused assignments
+- fix memory leak in FastRouteCore::debug_
+- fix uninitialized members of FastRouteRenderer
+- fix embedded trees after 3-bend routing
+- move visualization of rectilinear tree to right before maze routing
+- refactor fix for embedded trees
+- update function name
+- call checkTree only for the re-initialized net
+- fix typos
+- improve warn and error messages
+- avoid skipping all maze routing iterations
+- add unit tests for tracks pattern
+- check tracks pattern count and if pattern exists in the necessary direction
+- simplify check for routed nets
+- don't call fastroute when there are no nets to be routed
+- add unit test for pre routed nets
+- ignore routed nets
+- refactor assignEdge
+- update net layer range during layer assignment
+- enhance layer assignment for out-of-range edges
+- fix layer assignment to avoid segments in layers with wrong direction
+- add comments to layer assignment update
+- ok files
+- relax layer restriction when edge does not have enough resources
+- call checkTree in reInitTree
+- remove call for newRipupNet since the routing will be reset
+- turn GRT-0169 and GRT-170 into warning messages
+- turn GRT-0167 into warning so reInitTree can run
+- update unit tests
+- ensure gui is updated when draw_route_guides is called
+- check congestion reduction percentage to avoid unnecessary iterations
+- add net degree information to GRT-169 and GRT-170
+- update unit tests
+- get correct min/max routing layers when checking pin layers
+- set top layer for pins considering max routing layer
+- simplify cbk initialization
+- fix leak in AntennaRepair
+- fix typo
+- call checkTree only when running congestion iterations
+- avoid duplicated points in routeLShape + comments
+- fix routeLShape
+- enhance error 122 message
+- simplify areEdgesOverlapping
+- update function name
+- move check for edges size
+- add comments
+- use L shape route for reembedding
+- refactor fix into bendEdge function
+- fix invalid embedding
+- refactor check function and start fix of embedding
+- clang-format
+- add function to check for invalid embedded tree
+- improve 170 error message
+- refactor isNonLeafClock
+- fix isNonLeafClock
+- use enum
+- refactor getEdgeCapacity
+- refactor clock nets detection
+- clang-format
+- update draw_route_guides command
+- use set instead of vector
+- update command names
+- restore const
+- fix min/max layers
+- compute actual capacities for nets with layer restriction
+- add clear_route command
+- add support for wildcars in highlight_route command
+- add highlight_route as a public command
+- refactorings for maze routeres
+- ok files
+- check obstruction layer before processing it
+- check for min-max layers before adding obstructions to grid
+- fix code style
+- update ok files
+- add iteration number
+- avoid loops when creating wires for checkAntennaViolations
+- add operator== to GSegment and update constructor
+- plot actual route guides with highlight_net_route
+- remote RoutingTracks::HORIZONTAL and ::VERTICAL
+- iterate over routing_layers_ map
+- remove unnecessary dbTech usage
+- update usage of routing_layers_
+- move consts for horizontal and vertical to RoutingTracks
+- add level to layer map
+- more cleanups
+- remote RoutingLayer.h
+- check if layer is MIMCAP
+- add layer name in error message
+- use reference instead of pointer
+- fix uninitialized vars
+- DTYPE -> int
+- update struct definitions
+- use enum class
+- use stt::Tree
+- remove deprecated functions
+- remove redundant Tree and Branch structures
+- more cleanups
+- minor code cleanups in maze.cpp
+- add comment for resizing check
+- add check for negative resize
+- clang-format
+- resize initializing with zero
+- add const to vector references
+- use vector in Route struct
+- turn sttrees_ and sttrees_bk_ into vector
+- remote deprecated member from Segment struct
+- update Tree struct to use vector
+- update flute functions
+- fix uninitialized member
+- update pd4 test with new message
+- fix coverity issues
+- free tree
+- add test using flute
+- remove alpha from grt
+- fix includes
+- get tree for stt builder
+- get alphas from stt builder
+- remove deprecated functions
+- update constructor
+- fix check for wrong-way layer assignment
+- minor update
+- fix constructor and destructor
+- update metrics
+- update ok files
+- avoid assign edges to invalid layers
+- get clocks first
+- refactor check
+- small update
+- remove deprecated functions
+- update ok files
+- add layer range information to FastRouteCore
+- update maze3D to be aware of net layer range
+- add min-max layers to FrNet
+- fix code style
+- use range-for
+- move const to function
+- arrays to vectors/multi_array again
+- return const ref&
+- add enum for RouteType
+- remove defines
+- reorganize class members
+- minor fixes
+- more arrays to vectors + fix deleteComponents
+- move global vars to FastRouteCore class
+- move utility functions to FastRouteCore class
+- remove unnecessary includes
+- fix coverity issues
+- move RipUp functions to FastRouteCore class
+- move route functions to FastRouteCore class
+- move maze3D functions to FastRouteCore class
+- move RSMT functions to FastRouteCore class
+- move DataType.h to include/
+- move maze functions to FastRouteCore class
+- remove ADIFF, use abs instead
+- move EdgeShift functions to utility
+- remove dead code
+- small fixes
+- remove useless ()
+- turn arrays into boost::multi_array
+- clang-format
+- turn arrays into vectors
+- remove more deprecated variables
+- restore metrics
+- remove messages
+- add max_connections const for heights and eID arrays size
+- typedef Bool -> bool
+- remove deprecated files
+- remove global vars 2nd round
+- remove global vars 1st round
+- fix undefined behavior in coeffADJ
+- fix uninitialized variable
+- fix GlobalRouter vars and class members names
+- fix Grid vars and class members names
+- fix MakeWireParasitics vars and class members names
+- fix more vars and class members names
+- fix AntennaRepair vars and class members names
+- fix uninitialized class member
+- update metrics
+- increase arrays size
+- set default alpha as 0.3
+- bug fix
+- overflow_iterations -> congestion_iterations
+- minor fixes
+- more congestion tests
+- check overflow only after routing
+- restore -allow_overflow
+- fix route.gridsL initialization
+- correct initialize sttrees
+- fix float in logger
+- update readme
+- more congestion tests
+- another bug fix
+- add congestion test
+- allow overflow by default
+- bug fix
+- add warn when hit max overflow increases
+- add limitation to the number of overflow increases
+- initialize treeedge->route.gridsL
+- fix message code
+- check invalid edge usage
+- update readme
+- minor fixes
+- fix readme
+- minor fixes
+- remove random tests
+- add set_global_routing_random description
+- avoid pass local nets to fastroute core
+- return error in test scripts
+- fix message
+- factor nets[newnetID] to a local variable
+- remove check_pdrev_alpha proc
+- _netsAlpha -> _nets_alpha
+- set_pdrev_alpha -> set_routing_alpha
+- update readme
+- getFastRoute -> getGlobalRouter
+- add unit tests using pd
+- use pd instead of pdrev
+- check net alpha to enable pdrev
+- refactor nets[i]
+- pass root index to pdrev instead of swap
+- correct check for alpha value + unit tests
+- rm set_clock_routing
+- set_pdrev_alpha_for_net -> set_pdrev_alpha
+- remove unnecessary check
+- use reference for root pin idx
+- Pin::isDriver()
+- fixes for pdrev vars and command names
+- remove message
+- add debugCheck
+- report -> debugPrint
+- minor fixes
+- remove unused var
+- fix message
+- avoid pass local nets to fastroute core
+- fix comment
+- fastRoute_ -> global_router_
+- add comment
+- add warn message when insert diode hit max iters
+- allow dpl to move illegal placed diodes
+- add iterations limit to legally place a diode
+- check current capacities before restoring old capacities
+- remove default value from addAdjustment function
+- add test for repair_antennas with iterations
+- bug fix for diodes inserted near macros
+- fix -iteration option for repair_antennas
+- add unit tests for repair_antennas
+- fix comment
+- check diode in tcl
+- update readme
+- allow dpl modifies diodes
+- update repair antenans loop with correct diode names and iteration report
+- add iterations option for repair_antennas command
+- get macro pin box instead of macro box
+- remove unnecessary limit
+- remove wronge delete[]
+- add limit for pins out of die warns
+- error out when detect invalid tree
+- ok files
+- fix random bool
+- update messages.txt
+- unit tests
+- random sum/subtract perturbation amount
+- add option to set the capacity perturbation amount
+- add function to perturb edge capacities
+- add option to set the capacities perturbation percentage
+- refactor iterm->getNet()
+- revert unnecessary changes
+- ignore special nets when detecting dirty nets
+- unit test for random
+- shuffle nets vector when set seed
+- add option to set seed for random runs
+- fix messages
+- simplify std::max for l2v
+- fix coverity issue
+- fix overflow message
+- clang-format
+- remove dead code
+- remove deprecated function
+- fix edgeCostsPerLayer assignment
+- use per-layer tracks consumption in maze3D
+- fix overflow check
+- update ndr tests
+- allow 3D overflow for ndrs
+- use per layer track consumption
+- add per layer track consumption for ndrs
+- add gcell blockage information into database
+- check overflow after 3D routing
+- use short for H and V capacities
+- add gcell blockage information into database
+- stores original capacity into database
+- remove *100 for congest driven place api
+- ok files
+- update ok files
+- print actual l2v value
+- ignore l2v_up for max routing layer and l2v_down for min routing layer
+- update getUsePitch
+- fix updateDbCongestion
+- remove dead code
+- update messagrs.txt
+- deprecate set_global_routing_layer_pitch
+- update ok files
+- print actual l2v value
+- add max h and max v overflow in congestion report
+- update ok files
+- update resources analysis information
+- minor improvement, take map by const& not value
+- update functions that returns congestion information
+- update ok files
+- new congestion report
+- return congestion information
+- remove deprecated overflow report
+- update logger codes and messages
+- add isUnidirectional function
+- add new ndr test
+- rename ndr unit test
+- update track consumption calculation
+- add message when chosing a default via
+- remove deprecated clock_tracks_cost option
+- test ndr1
+- initial support for NDRs
+- add extra pin access guide for pins in routing layer 1
+- repair_hold10.ok again
+- add debugPrint for vias
+- repair_hold10.ok
+- debugPrint in microns
+- fix l2v report
+- add extra pin access guide for rect only layers
+- update messagrs.txt
+- update ok files
+- add report for track pitch and l2v pitch
+- use l2v pitch from db to compute capacities
+- update readme
+- update messages.txt
+- fix uninitialized variables
+- fix null pointer dereference
+- add set_clock_routing command
+- remove deprecated commands
+- fix overwriting of macro extension
+- remove deprecated code and correct initialization of ptp
+- fix crash during stable_sort
+- update db congestion after fail during remove overflow
+- unit test for invalid routing layer
+- add check for layer name
+- remove deprecated function
+- reserve netEO
+- std::sort -> std::stable_sort
+- clear vectors
+- use vector and std::sort for netEO
+- use vector and std::sort for ptp in RSMT.cpp
+- use vector and stable_sort for treeOrderCong
+- use stable_sort
+- use vector and std::sort for treeOrderPV
+- add debugPrint for GlobalRouter::ROUTE_ in getRoute
+- add debugPrint for layer capacities
+- take rect by const& not value
+- pass vector by const& not value
+- fix null pointer dereference
+- avoid division by zero
+- fix uninitialized variables
+- update ok files
+- update messages with layer names
+- update readme
+- update test scripts
+- set_layer_ranges -> set_routing_layers
+- combine statements
+- add checks for db objects
+- remove useless command calls for sky130 tests
+- update global routing vars
+- update unit tests
+- use layer names instead of layer indices
+- fix flow.tcl
+- update readme
+- update macro extensions + warn messages
+- deprecated warns
+- update unit tests
+- update functions to get layer range from the commands by default
+- remove deprecated unidirectional_routing flag
+- refactor layer range to avoid copying code
+- update logger codes
+- cmpByName -> cmpById
+- restore set with custom comparator
+- use net id for custom comparator
+- repair_hold10.ok
+- update messages.txt
+- add comparator for NetRouteMap to avoid non-determinism
+- use vector to store dbNets to avoid non-determinism
+- fix coverity issues in utility.cpp
+- fix coverity issues in maze3D.cpp and route.cpp
+- fix coverity issues in FastRoute.cpp
+- add command to set macro extension
+- add command to set layer range
+- refactor
+- remove dead code
+- move declaration
+- refactor
+- rename .tcl and .i files
+- repair_hold10.ok
+- update log messages
+- update unit tests
+- remove unidirectional routing flag
+- clearFlow -> clearObjects
+- refactor runFastRoute into two separate functions
+- min/max routing layers as arguments
+- remove dead code
+- update clock route flow
+- remove capacities info from the GlobalRouter class structure
+- add Capacities class
+- remove dead code
+- update ok files
+- get congestion info from db
+- function names
+- add isVia()
+- stack allocation for antennaRepair
+- fix messages
+- consistent usage of TLA
+- update messages.txt
+- remove casts
+- unit test for clock tracks cost
+- update maze3D functions
+- add option to set routing tracks consumption by clock nets
+- remove silly code
+- update FastRoute API to set edge cost per net
+- update route functions
+- update maze and utility functions
+- update RipUp functions to get edge cost from each net
+- add edgeCost attribute in FrNet struct
+- drop pointer for Rect
+- add dtor for GCellCongestion
+- fix layer index in GCellCongestion initialization
+- add horizontal and vertical cap and usage information
+- use class for GCellCongestion
+- remove class var inits from the class definition
+- remove obsolete declaration
+- move RoutePt class to GlobalRouter.h
+- remove usage of erase in mergeSegments
+- ok files
+- avoid merge segments that cover pins
+- use Rect::mergeinit and Rect::merge
+- fix pin mapping to routing grid
+- more refactoring
+- refactor pinOverlapsWithSingleTrack function
+- ok files
+- use blockage for user messages
+- update function names for consistency with opendb terminology
+- ok files
+- update logger messages
+- update clock_route and repair_antennas2
+- add comment in unit tests tcl scripts
+- public function to get congestion information per gcell
+- data structure and function to find congestion information for gcells
+- guard against accessing freed memory in deleteComponents
+- avoid low level allocations and associated memory error on cleanup
+- don't delete what you don't own
+
+### Gui
+- fix two UNINIT_CTOR from Coverity
+- dont draw if image is null
+- fix performance inefficiencies
+- consider last row/column when populating routing map
+- exit all render threads at exit
+- correct copyright date/owner
+- rm unused includes
+- fix clang-tidy feedback
+- clang-format
+- initial work towards multi-block display for 3D-IC designs
+- remove unneeded else
+- add special case to README
+- fix map view
+- update readme
+- add case for IO nets
+- allow filtering properties
+- allow attribute filter to be used with name
+- compare values
+- use black outline for macro labels and other centered text
+- -through intermediate points
+- traverse properties
+- unneeded include
+- clean and format
+- handle different commands
+- menu for injecting commands
+- rightclick will select a path in timing report
+- use rise and fall
+- script receives command from timing through mainwindow
+- fix text rendering, recalculate dimensions after elide
+- fix a crash related to ScriptWidget destruction
+- fix mac build error
+- clang-format
+- convert mainWindow.cpp to functor-based connections
+- convert timingWidget.cpp to functor-based connections
+- convert timingWidget.cpp to functor-based connections
+- convert tclCmdInputWidget.cpp to functor-based connections
+- convert staGui.cpp to functor-based connections
+- convert selectHighlightWindow.cpp to functor-based connections
+- convert scriptWidget.cpp to functor-based connections
+- convert layoutViewer.cpp to functor-based connections
+- convert inspector.cpp to functor-based connections
+- convert heatMapSetup.cpp to functor-based connections
+- convert gui.cpp to functor-based connections
+- convert GotoLocationDialog to functor-based connections
+- convert globalConnectDialog.cpp to functor-based connections
+- convert drcWidget.cpp to functor-based connections
+- convert displayControls.cpp to functor-based connections
+- convert CmdInputWidget to functor-based connections
+- convert clockWidget.cpp to functor-based connections
+- correct input format
+- convert ChartsWidget to functor-based connections
+- convert BrowserWidget to functor-based connections
+- coding style for centering text
+- remove unneeded include
+- tclcmd access method public
+- complete report cmd
+- only center text for macros and pads
+- render instance text centered, easier to read
+- switch to use optional
+- make same_clocktree_image a regular tcl command and add options to save with width/height and specify timing corner
+- error messages for selection attribute filter
+- attribute filtering divided in methods based on type
+- selection filter attribute==value
+- remove layer selectability as requirement for drawing text iterm label
+- add filter to display only IO nets
+- call right method
+- draw pin labels on pin shapes to avoid pins floating around
+- ensure open DB is disabled during DB read to avoid segfault if triggered again
+- ensure pin selections can be controlled
+- timing report has access to script
+- skip virtual clocks in the clock tree viewer
+- hold paths also use new subclass
+- call method from right clicking selected row
+- format
+- available space from bounds
+- correct available space
+- format
+- correct semicolon
+- markers' texts scaled from default font
+- test right click QTableView Override
+- remove unneeded loops for drawing texts
+- fixes typo / increase text size to benefit from all boundary space
+- pin texts height is calculated from gap
+- add trigger action command to swig to allow for easier debugging
+- refactor drawTextInBBox()
+- refactor instanceBelowMinSize()
+- clang-format
+- made iterm label color customizable
+- made iterm label color customizable
+- fixed typo in display controls class comment
+- fixed capitization in virtual function
+- removed redundant header, changed capitalization
+- addressed feedback in pr
+- show iterm labels in layout viewer
+- fix drawing via in pin shapes
+- added instnace iterm labels to display controls
+- check if bbox is inverted in inst/block/bterm descriptors
+- fix a race between rendering and initialization
+- in LayoutViewer::exit() check if the thread is running
+- wait for thread to finish
+- fix valgrind & coverity issues
+- render in separate thread
+- correct nullptr logic and ensure interactive sessions do not exit
+- fix tooltip check to avoid segfault on nullptr
+- fix typo in LayoutViewer::drawInstanceNames
+- add slack histogram
+- add slack histogram widget
+- check for child blocks efficiently
+- change postReadDef to not signal on child blocks
+- limit the drawing of sites in detailed mode
+- repaint after child block loaded
+- clang-format
+- initial stab at hierarchical DEF display
+- use die box rather than bbox for pin orientation
+- yet one more instance_limit -> shape_limit
+- add some drawing timers
+- fix missed instance/shape limit confusion
+- fix instance/shape limit confusion
+- skip drawing enclosure shapes when cut shapes would be skipped
+- speed up drawing of instances below the min size threshold
+- partial clang-tidy
+- avoid using vector to store heatmap points to draw, but draw them directly
+- draw heatmaps by combining neighbors when zoomed out
+- switch from boost rtree to 2darray for heatmaps
+- fix last painted time
+- color inverters differently in the clock tree viewer
+- limit number of physical instances shown in hierarchy browser to address performance slowdown after fill is added
+- check if rows are visible before iterating over rows
+- handle selection and searchNearest in new via search
+- fix clang-tidy warning
+- reduce the rtree size by storing dbSBox instead of the cuts
+- Reattach comment to code it refers to
+- Fix undefined behavior sanitizer error
+- address clang-tidy suggestion
+- save row settings save and restore for group
+- remove virtual from inDbRowCreate
+- add forward declare to options.h
+- make default_site_color_ regular member instead of constexpr
+- add site based controls to rows
+- remove messages on shapes on non-routing/via layers
+- handle shapes on non-routing/via layers
+- improve display of min cut rule and remove trailing zeros in the inspector
+- draw pin labels with alpha=255 for better visibility
+- fix PinSet for sta update
+- change HeatMapDataSource::getBounds to use die area
+- add HeatMapDataSource::getBounds to stub_heatMap.cpp
+- allow customization of the heatmap bounds
+- fix PR feedback
+- rename aggregate nets to buffer trees
+- add focus nets to aggregate nets
+- add i/bterms and insts to Aggregate net
+- add check for supply nets
+- add route guides to aggregate nets
+- add agrigate net descriptor
+- fix startup behavior to show error message in supplied script
+- fix handling of TCL commands and results in GUI
+- add controls for timing renderer to control data path, launch, and capture clocks
+- correct GUI exit behavior to ensure correct exit code is used
+- Convert delta() to angleDelta()
+- Use drawRoundedRect()
+- Tcl_Interp is a struct not a class
+- add option to select just one path per endpoint in staGui
+- avoid scoping functions intended to be overriden
+- move missing enter handling
+- add common base class for cmd input widgets and clean up tcl input
+- remove all Tcl related functions from ScriptWidget and moved to tcl input widget, making room for Python
+- fix settings group name
+- make text() const
+- moving tclExit handler to tcl input widget
+- move history handling to tcl input widget
+- add warning button in hierarchy browser to enable view
+- account for via in pins in gui
+- change CTS viewer to default to only showing the currently active clock: https://github.com/The-OpenROAD-Project/OpenROAD/issues/2637
+- add warning about timing data
+- remove DEF option from GUI open menu
+- set buffer outputs when calling processEvents
+- remove logger hack
+- fix type in logger
+- make default CTS viewer type an unknown gate if liberty information is not available
+- redirect some messages to cout
+- add open menu item for ODB and DEF
+- change color generator to select brighter colors first
+- add clockgate to cts viewer
+- add depth to clock tree renderer
+- add color generator class
+- add subtree selection in renderer when selecting a buffer
+- handle null liberty function in cts viewer
+- fix clock tree building to avoid mixing roots
+- fix crash on null clock in cts viewer
+- use QPainter rather than setDevicePixelRatio
+- fix qmessage handler install to wait until logger is present
+- set background brush to white in the CTS viewer
+- set render pixel ratio for large drawings
+- ensure renderImage does not request an impossibly large QImage
+- explicitly set background bush on ClockTreeScene
+- force convert images to RGB to avoid transparent backgrounds
+- add inverter option to buffer to remove inverter class
+- add inverter shape to CTS viewer
+- add message handler for Qt to direct messages to the utl::Logger and suppress plugin warnings when offscreen
+- fix hold path in timing widget
+- get offscreen CTS rendering to work
+- add tcl command save_clocktree_image to save screenshot of clock
+- adding brief comments about the itemview classes
+- ensure brush is also get for clock tree rendering
+- rename poorly named receivers->sinks
+- remove nested ifs and replace with template
+- remove min/max getter and use const auto& for getPairedReceiver
+- ensure fit is handled on other clock tabs
+- remove QDebug headers
+- cleanup clock tree viewer with graphics, timing tooltips, tabs for clocks, selection of min/max delays for trees, clock tree renderer
+- convert remaining additional_datas
+- initial removal of additional_data
+- update row/site selection to build correct Selected
+- fix dbSite/dbRow additional_data handling
+- add symmetry to dbMaster
+- clang-format
+- remove makeSelected_ and replace with direct call to gui->makeSelected
+- remove deleted code
+- add additional_data to bbox so dbRow can show bbox of selected site
+- store row and rect in Selected
+- switch additional_data from void* to std::any
+- initial selectbility of rows
+- row and site descriptors
+- fix timing widget that broke on change to STA interface object
+- removing return; from highlight
+- typo fix in README
+- add NDR to descriptors
+- refactor GUI sta interface and Qt modules to allow for better sharing for CTS clock trees
+- start of cts gui
+- address coverity results on auto copy
+- clang format
+- address coverity scan in mainwindow
+- correctly draw tracks over full die area
+- add check for effectively empty regex
+- add regex test for global connect add and enable/diable add button accordingly
+- check for null mod_inst in DbModuleDescriptor::getProperties
+- add label to accounce number of connections completed
+- add message box on failed rule
+- make fields gray, using disabled prevents selecting and copying
+- limit drop down menu to just sepecial nets
+- clang-format staGui
+- add global connect dialog to main window
+- add fanout column to detailed view
+- capture fanout in timing node
+- use single exit() in startGUI to ensure main_window is correctly cleaned up before exiting
+- fix painting of violations to ensure crosses are used when highlighting
+- add focus to DRC viewer
+- rename inspector_focus_ to focus_
+- fix initialization of pad inout
+- add pitch to layer descriptor
+- protect actions from errors thrown
+- option to draw gcell grid
+- fix case on misc options
+- guard editor from exceptions
+- only filter shapes on CUT layers, but still draw renderers and obstructions
+- only use main_window postReadDb on loading GUI instead of announcing designCreated to all
+- remove load_design in favor of ord::designCreated
+- control visiblility of DRC violations in tree view
+- ensure manufacturing grid is drawn with cosmetic pen
+- only update drawRect
+- optimize memory by not separating polygon storage
+- do not draw flywires on special nets with routing
+- clang-format
+- check if returned callback is valid before comparing selection
+- add vias to pin access descriptor
+- correct ruler euclidian vs. manhattan
+- add option to control default ruler style
+- add ruler options to readme
+- add region to group descriptor
+- add a region's boxes to its highlight
+- add option to make rulers show x/y components
+- fix highlighting of a group within a region
+- add color comment per PR feedback
+- draw regions with a brush rather than an outline and make selectable
+- add callback for removing sboxes
+- adding manufacturing grid to the layout viewer
+- check correct setting in edge search for inst pin/obs and only search insts if either is on
+- dont select layers when right clicking
+- fix search of edges
+- just track best edge when looking for snapping and pick the smaller edge when multiple possible edges would be posisble
+- remove unused GCellData struct
+- add shapes to via descriptors
+- tech via and generate via rule initial descriptors
+- add check for bad cast in ruler editor
+- consider obs in LayoutViewer::generateCutLayerMaximumSizes()
+- requested changes
+- removeRouteGuides and remove GuideRenderer
+- adding ODB properties to odb descriptors
+- add check for row count to see if model is empty
+- add pad subtypes to instance descriptor and associated display controls
+- ensure output logger is escaped to html
+- avoid glibc conflict on pause
+- fix mac compiler warning
+- add repaint interval to layout viewer and connect script widget signals
+- add signals from script widget to announce state of TCL execution
+- only update browser data after modification of ODB and when repainting widget
+- search only clear models on update and only announce modified once to keep QT event queue small
+- switch to use plain text edit with HTML as it is faster
+- add missing overrides in BrowserWidget
+- check if sta_ is null before attempting to access
+- update name of path-width
+- add additional parameters to tech layer descriptor
+- fix typo
+- categorize physical only cells too
+- remove StdCell prefix from descriptions
+- ensure changed is emited after reading db to assign visibility controls
+- move instnace type determination from display control to instance descriptor and using new descriptions for leaf cells in hierarchy browser
+- ensure highlight dialog cancel is honored
+- adding back navigation to inspector
+- correct expand to account for already open modules
+- removing yellow from module colors
+- adding number formatting to browser
+- fix dbModule descriptor to account for bboxes of children
+- making browser respond to expand and collapse events
+- provide visibility controls and color controls to modules
+- adding remove from selection and highlight to browser
+- install event filter to allow QMenu to work seperately from selections
+- restore click select in browser and add "all" options to menu
+- add context menu to browser
+- browser expand top and allow interacitve columns
+- save header settings from hierarchy browser
+- browser collect more stats on modules
+- add top as root module in browser
+- chane Orphans to Physical only in hier browser
+- add initial version of hierarchy browser
+- adding module view to hierarchy
+- remove hard coded 100.0 limit from density maps
+- modify alpha when drawing levels of modules
+- LeafInsts -> Insts
+- update group properties
+- adding module descriptor
+- adding group and region descriptors
+- draw cuts without vias in stdcell pins
+- ensure a direct match to a select is used instead of the regex
+- make pin markers independent of fit_pixels_per_dbu and ensure markers are visible when zoomed in
+- fix coverity issue
+- check across all layers to determine rotation
+- using RTree to query for overlapping shapes when rotating IO pin markers
+- rotate top and bottom IO pin markers when there is not enough space to draw horizontally
+- enable snapping to rows and sites
+- adding other to physical cells
+- track exit signal so GUI does not call exec()
+- fix inconsistant behavior around hide/exit
+- track if GUI is interactive and rethrow errors when not to ensure they are handled further up in OpenROAD
+- switch polarity of pins/blockages and decouple routing blockages and instance blockages
+- adding options to hide pins and blockages in instances
+- make the instance orientation tag a bit bigger and more adaptive
+- fix typo in README
+- add dump_heatmap to provide the raw data from the heatmaps
+- add change group to highlights and update highlight to remove already highlighted
+- removing unused highlight delegate
+- move expand clock to settings and cleanup detail path to provide more space
+- add splitter to timing widget
+- add flag to assume library is loaded when postReadLiberty is called
+- add dbNetworkObserver to display controls and use that to disable/enable stdcell options
+- check if unchecked so partially checked appears as true
+- change default from nullptr to instance group when libertycell is not available
+- ensure GUI initialization occurs as soon as possible
+- getOutputTerm does not always give correct term, so loop over terms instead to find clock nets
+- unify plural and singlar options in display controls
+- reorganizing physicals (also adding tie, antenna, and bump), removing extra function that was not needed
+- fix isCore check
+- simplify save and read settings for display controls
+- redo functional groups
+- add options to remove and remove selected in timeing widget
+- also search ports in timing
+- incorporate new region callback
+- removing create callback on region and delaying drawing of regions until after rows
+- adding callback listeners to region events
+- just draw region rects instead of merging
+- ensure rulers are deselected when all are removed
+- adding region outlines to layout viewer
+- limit access points to just visible instances
+- adding missing check for current thread in sink_it_
+- add missing stubs getDescriptor & removeSelectedByType
+- reworking pin selection in timing widget
+- adding helper functions for layers, nets, and instances in display controls to unify the selection logic
+- adding display controls by functional type
+- fix heatmap scale
+- fix heatmap scale
+- updating vertical headers on table views to adjust to the content
+- adding setting to control the application font
+- adding check in timing cone renderer to check for supply pins
+- adding check if pin is supply, do not add timing actions
+- add missing initilization to Gui
+- moving placement density heat map to GUI class
+- correct header copyright year
+- adding de-focus icon
+- adding signals to inspector to reload actions when focus nets changes
+- adding de-focus option to net actions
+- adding clearFocusNets and signal to emit when focus nets change
+- adding loupe icon as focus icon in inspector
+- adding action to net descriptor to add net to focus
+- adding GUI clear option to remove focus nets
+- adding focus_net command to limit nets drawn in layout
+- check if cone is unconstrained and select 0.5 color from spectrum
+- reworking heat maps into interfaces other tools can extend
+- add Painter::drawX and refactor usages
+- refactor transform creation
+- correct properties in access point per feedback
+- add iterm ap descriptor
+- fix typo in readme
+- set_center -> center_at in reload code
+- ensure paint device ends before new GUI events are possible and only process events for script widget in sink to prevent segfault on reload
+- adding option to heatmap to reverse the log scale
+- fix set_heatmap behavior for booleans
+- make ir drop map scale consistant across layers
+- correct deletion behavior in popup pin list
+- adding ability to specify multiple throughs in timing settings
+- initial support for multiple through selections
+- adding support for unconstrained paths and formatting of infinity
+- generate error when TCL errors occur in GUI
+- fix log scale on heat maps
+- removing Net setting from IR Drop
+- fix temporary variable per Matts fix
+- remove default button behavior
+- adding clear button to timing settings
+- make silent execution less silent by reporting errors
+- account for PSM throwing error
+- ensure color map is initilized
+- switch to combo boxes for pin selection in timing controls
+- initial version of ir drop map
+- correct legend for heat maps
+- add option for all corners in timing options dialog box
+- adding settings option to Timing Widget
+- making sure timing path node can handle multiple paired nodes
+- removing use of fanin/fanout and just to BFS instead
+- check for no pins
+- switch to use dx instead of area to determine largest pin box
+- removing unneeded if
+- adding wait cursor
+- changing tcl command to display_timing_cone and mirroring get_fanin/out tcl command to support get_pin
+- filter out clock pins from timing cones
+- unregister timing cone if there are no cones selected
+- sort tmiming cone pins to draw critical nets last
+- misc_.access_points
+- drawAccessPoints
+- apply worst slack color to instances in timing cone
+- adding legend to timing cone
+- adding tcl wrapper for timing cones
+- add ability to toggle timing cones
+- moving legend drawing to spectrum generator
+- address PR feedback + ensure flywires in timing cone originates from a shape in the pins
+- save scale value in SpectrumGenerator class
+- check if GUI is active in unregisterRenderer before calling display controls
+- adding selection box to timing cone action to allow for selecting in, out, or both
+- adding action for inspector deselection to allow timing cone to be deselected
+- switching function from isLargeHighlight to isSlowHighlight
+- adding actions to iterm and bterm descriptors
+- adding initial timing cone renderer
+- move sta gui findPathEnds to utility function
+- move heatmap spectrum to SpectrumGenerator class
+- ensure DRC widget opens after loading a DRC file
+- adding return value to select commands in GUI
+- adding flag to Selected and Descriptors to indicate if highlighting is slow and apply to mouse over events
+- re-enable GUI warning about heatmap not populated
+- switch to queued connection to handle adding text to output log
+- replace inner up/down arrow with actual up/down arrow and make helper function to make actions
+- update layer menu text
+- moving renderers to after the pin markers
+- adding right click menus to layers in display controls
+- exposing save and restore display controls to tcl
+- correct save_image behavior when area is specified
+- ensure region is set during save_image
+- switch from rand() to mt19937
+- generate initial color for via if the first techlayer is a CUT instead of ROUTING
+- logger might not be ready when reading settings
+- update power heatmap to select corner if more than one is defined
+- allow for renderer settings to be std::string
+- use selection model in display control to detect selection changes
+- correct bbox of net to use iterm bbox and not inst bbox
+- removing units from location status bar
+- use placed iterms and bterms to determine dbNet bounding box
+- correct net descriptor sink/source for bterms
+- correct gui stub and ensure static function pointers are set to valid functions
+- allow Qt to handle deletion of HeatMapSetup so it doesnt cause a segfault in the event queue
+- adding option to switch to DBU or micron units
+- dont clear map, but use flag to indicate map clearing on next ensureMap to prevent RTree access after clear
+- correct modify combineMapData and correct power density assignments
+- adding warning to unknown datatypes in heatmap settings
+- fix painter segfault when repaint gets called while painting
+- moving logger to data source instead of renderer
+- removing heat map warning until solution is found to logging deadlock
+- dont draw anything if there is nothing to paint
+- rename check_data to first_paint_
+- allow setup window to display ranges based on the underlying data, specifically for power
+- rename placement congestion to placement density
+- ensuring power density uses real units in setup window
+- adding background to heat map legend
+- do not bypass draw zero unless specified by the settings
+- limiting rebuilding of color ranges
+- adding odb listener to placement heat map
+- adding return from drawObjects in heat maps when there is nothing populated
+- adding concept of mutually exclusive options
+- mode setting of drawObject loop bool earlier
+- make heat map setup dialog modeless
+- move color map definition to heatMap.cpp
+- add stringBoundaries to Painter to provide Rect of text and use that in legend drawing to prevent overlapping text, and dont draw text if there is no room
+- show numbers does not include units
+- remove commented code and correct log scale
+- split ensure map up to allow for populating of heat maps without rebuilding entire tree
+- simplifying handling of heat maps in MainWindow
+- allow for columns in inspector to be resized by user and automatically select widths when viewing new item
+- updating README and removing need for value
+- removing apply signal and use DataSource to determine redraw
+- provide warning when attempting to draw an unpopulated map
+- switch to using continuous color range
+- add ability to force a specific grid in the heat map and apply that to routing grid
+- adding um suffix to grid sizes
+- removing repaint button from heatmaps
+- removing dedicated routing congestion action and replacing with heat map tools menu option
+- adding option to control drawing above and below minimum values in heat map range
+- adding underline to display controls that can be edited
+- adding intitial routing/placement/power density heatmaps
+- adding initial heatmaps classes
+- removing congestion map gui and dedicated painting function
+- add ability to share parent item in display controls for custom renderers
+- simplify handling of display control double click options
+- adding settings saving and restore to renderers
+- pass in drawing bounds for painter
+- fix renderer segfault on exit
+- make display controls header icons
+- making search the dbCallbackListener
+- make search a QObejct and only update RTrees when needed
+- make better Color constructor
+- unify highlight colors so alpha is set correctly once
+- making highlight buttons icons
+- adding basic functionality to add and remove highlighting + moving highlight dialog to mainwindow for consistent behavior
+- adding highlighted to inspector
+- const-ify has_* in Inspector data
+- updating iterms property in inst to return PropertyList
+- adding PropertyList to Descriptor to support list returns and adding getShortName
+- ensure findMenu handles top addMenu correctly
+- const-ify dbu_per_micron
+- remove getBlock from layoutviewer and replace with saving block_ instead
+- addressing PR feedback, removing inaccessable code and combining findMenu code
+- correct selection behavior after sorting list
+- add README for create_menu_item and correct define_cmd_args for create_menu_item create_toolbar_button
+- add menu actions from tcl
+- ensure removal of button if there is a naming conflict
+- ensure scale and centering is updated on new design load
+- only paint or update layout area if design is loaded and has an area
+- correct selection behavior after sorting list
+- use global cmd_argv/cmd_argc when reopening GUI
+- honor QT requirements for QApplication arguments (https://doc.qt.io/qt-5/qapplication.html)
+- undo incorrect change to comment in drawRows
+- on detailed view draw rows without considering minimum resolution
+- switch from just saving pen and brush to using qt save/restore options
+- fix overly optimized code to ensure clock colors are kept
+- adding check for node in priority queue to guard against routing loops
+- split large drawPathSegment into three smaller functions
+- remove hard-coded minimum size from display controls
+- remove hover timer and ensure all exit events in inspector emit defocus
+- avoid use of QTimer pointer when timing double clicks
+- delay emitting focus events from inspector
+- highlight net segment on routed nets if sink is identified
+- draw iterms and bterms for nets
+- only draw flywires for placed instances in nets + only draw iterms on placed instances
+- ability to save and restore pen and brush + ensure pen and brush are saved and restore between calls to the renderers
+- cleanup clang warnings
+- add checks for pin type before static_cast in TimingPathNode
+- make setPenAndBrush utility function
+- fix typo agai -> again in layoutViewer.cpp
+- adding flag to script widget to prevent calls to processEvents when printing, since that can cause segfaults
+- ensure scrolling in detail window skips over hidden elements
+- cleanup db change listener, ensure dbchangelistener is listening for changes and clearing widget when detected
+- simplify timing path renderer to use descriptors
+- removing static definitions for columns and column names + making colors const
+- make TimingPathNode a class and keep track of connections
+- adding unified call to set both pen and brush
+- correct range checking on highlightNode
+- updating icon for action buttons
+- correct TimingPathsModel arguments to match invocation
+- switch from using iterators to indexes in guiSta
+- adding list of icon replacements for actions
+- adding custom layout manager for actions to better organize the buttons
+- moving inspector update to model and provide special signal for item modified to get rid of blockSignals, and basic updating of fields after update
+- ensure QT ownership is handled by QT
+- clearing compiler warnings
+- separate DRC renderer into different class to fix Valgrind violation on exit
+- ensure timing path renderer is deleted on close
+- checking if renderer is still registered before attempting to clear
+- adding Zoom to action to Selected items by default if a bounding box is present
+- switch to use xMin/Max and yMin/Max instead of ll() and ur()
+- re-enable continuous animations
+- adding die bounding box to edge snapping
+- ensure next node is not past the end of the list
+- adding timeout to animate to stop long animations, such as highlighting VDD/VSS
+- disable detailed path views when no path is selected
+- ensure timing path has a path, if not disable detail path and check if model has nodes before accessing
+- account for path differences between data and capture path
+- fix node finding in timing widget, add hidden row for clock summary, and add ability to draw hidden clock path when selected
+- ensure all DRCs are unselected when loading a new report
+- adding function to remove groups of items from selected based on the type
+- moved path populate code to common function and added is_clock field to Node + fixed find in timing widget
+- give capture clock different color from launch clock
+- adding support for timing widget to handle capture path
+- adding support for renderer to handle capture path
+- adding launch and capture path tabs
+- make timing paths use unique_ptr
+- adding checkbox to timing widget to collapse or expand the clock path in timing details
+- adding accessors to path in detailed timing model and path start in timing path
+- making start point in sta widget the launch point in the path and not just the second pin in the timing path
+- switching clock name returns to const&
+- fix coverity scan result for missing return value
+- sta renderer account for clock on iterms too
+- update highlight in dbNetDescriptor to honor sink and add information about additional_data
+- switching timing path renderer to use highlight color for highlighting and clock nets are cyan
+- correcting stage highlighting
+- const descriptor getter
+- switching timing path renderer to use net descriptor highlighting
+- making highlight in Descriptor public and adding getter to desciptors
+- correct behavior when deleting selected rulers, and adding Selection argument to update for inspector to move to the newly selected item
+- speed up animation and switch default from tcl to repeat 0 to simplify the updating
+- make focus selection animate at first
+- switch from Wildcard to WildcardUnix to allow for escaping of [] as they appear in ports and are a group in Wildcard
+- ensure path details are cleared before loading new timing to prevent segfaults after repair_timing is called
+- adding tcl command to initiate selection animation
+- adding brush to animation when animation will be the same as usual
+- removing color selection from focus items and using highlight color instead
+- add pen_width option to highlight and renaming blinks to animate
+- provide ability to limit blinking of objects
+- switch to use blinking outline to identify current item in inspector
+- removing hashed brush function and replacing with Brush enum to allow other renderers access to a couple of patterns
+- initial version of inspector highlighting
+- making sure selected item in inspector are highlighted to indicate which item is currently in view
+- switching use find instead of find_if_not to simplify code
+- adding equality operator to selected and Color
+- make layer selectable in DRC properties
+- make dbu storage in Property static and remove unneeded setDb in selection browser
+- fix comment about blockSignals
+- correctly update status bar when selecting and deselecting
+- remove use of singleton and pass around dbDatabase as needed for toString
+- make property toString handle BBox
+- making name and type automatic members of properties for Selected items
+- correct segfault issue when setSelected is used and adjust inspector behavior
+- implementing remaining getAllObjects
+- adding error when select does not find descriptor
+- restore getTypeName with input object incase needed for future use
+- update select documentation to reflect globbing vs. full regex
+- fix typo in select function that caused highlight to not work
+- adding check for empty selection to next and previous and updating language related to blockSignals
+- correct saveImage behavior when using resolution with area
+- removing addSelectedNets/Insts and using common function select instead
+- select function to enable selecting all items handled by a specific descriptor
+- adding getAllObjects to descriptors
+- convert descriptor getTypeName to take no arguments
+- adding getAllObjects to descriptor to enable selection by type
+- adding display option to toggle visibility of selected items
+- adding navigation to tcl for inspector selected items
+- adding ability to select items from tcl based on coordinate
+- adding get_selection_property to allow for access to Selected properties from tcl
+- providing accessor to inspectors selection
+- fix selection behavior when deselecting object
+- add Selected to toString()
+- add welltap to visibility and selectability controls
+- use point paint when instance outline is less than 1 pixel and only point instance boxes when large enough to see
+- adding detailed view control to toggle between high resolution and normal views
+- modify exit behavior on error to only exit if "-exit" was used
+- intercept loading of startup files when gui is enabled
+- iterate over selections and highlights to ensure only non-empty selections are inclued
+- allow Qt to handle entire quit sequence, otherwise QSettings may not be saved fully
+- ensure empty selections are not added to selection set or highlights
+- raise drc widget on report load
+- add .drc file extension to the DRC Viewer
+- adding removeSelected signal/slot and modifing selection behavior in inspector to keep list of selections when using actions
+- switching (*). to ->
+- add label to indicate which item index is begin inspected
+- adding toString to Property to unify the std::any -> string code
+- update README to reflect changes to gui::show command
+- split init into smaller functions to avoid padding in openroad
+- cleanup of GUI init to save pointers to tools instead of the openroad singleton
+- add ability to remove descriptors and move Ruler descriptor into MainWindow since it contains a pointer to that instance and needs to be removed when main_window is destroyed
+- add signal to selection window to be able to inspect different elements
+- add nagivation to inspector
+- enable click and drag selection
+- updating readme to include glob
+- move layer details tooltip to model
+- add back missing display control set command
+- allow for glob regex in display control items
+- save state of congestion setup
+- updates based on initial PR feedback
+- save display controls state and zoom and centering information
+- switch from escaped commands to {} wrapped text for restore commands
+- correct order of operations when opening GUI
+- add ability to open gui without displaying and switching saveImage to take advantage of this
+- fix issue with double load of display controls tech
+- move custom visibility controls to renderer
+- add buffer to hold tcl commands needed to restore toolbar buttons and rulers
+- move descriptors into gui class to preserve them between gui sessions
+- initial ability to reload GUI
+- change behavior of gui::Gui::get to return singleton regardless, only enabled() can indicate if gui is active
+- adding static function to check if gui is enabled
+- adding special flag to dbdescriptor for nets and iterms
+- correct pin marker font metrics to use correct font
+- switch pin position to outside block
+- ensuring pin markers are the same size
+- limit bterm marker names based on zoom level and block size
+- add marker for bi-directional pins
+- safeguard sta gui when clocks are not present/found
+- correcting drawString anchors, adding text to pin markers
+- adding font option for pin markers and ensuring changed() is emitted when font changes
+- correct save image after caching was enabled
+- making highlighter build functions static
+- bundle lots of small regexes into larger regex which is faster to evaluate
+- ensure the swig completion does not show up when line is broken by key characters
+- add json DRC parser to DRCWidget
+- update readme based on PR feedback
+- update documentation based on PR feedback
+- correct inconsistancy between addSelectedNets and addSelectedInsts to have the same default values
+- initial stab at adding gui readme
+- fix missing headers for macos
+- ruler, adding missing header
+- correcting units on capacitance for layer descriptor
+- removing isRepaint code, remapping redraw to full repaint, and adding shortcut for renderers to redraw
+- adding basic tech layer descriptor and adding signal to select layer from display controls
+- switch unicode of mu to variable for readablility
+- add tooltip for routing layers with direction, min width/spacing, and resistance and capacitance if available
+- fix coverity issues
+- fix sta and drc renderers to correctly request repaints
+- correct instance name drawing
+- adding cache to layout viewer
+- reverts 016f37dcc28a76752c036ad96289a13ac10a6bc4 + gives RulerDescriptor copy of rulers vector
+- ruler manager singleton + renable editing on name
+- ensure ruler names are unique and prevent modifying ruler name
+- switch from using bool& to return pair instead
+- fix ANCHOR -> Anchor
+- addressing comments about const and d1/dl
+- fix copyright
+- remove left over code
+- snap to end points and center, fix drawing of ruler ticks for small rulers, adding shift to allow of different snapping
+- fix font hack in drawString and remove need to track unique transforms
+- fixing ruler intersection check to handle angled rulers better
+- make single function to handle next ruler point
+- adjust drawing of rulers to account for angled rulers and text
+- make rulers controllable from display controls
+- basic snapping to metal shapes + point and click rulers
+- changing drawString to use anchor
+- adding label to drawRulers
+- initial conversion to rulers as classes with descriptor
+- partial revert of 27281826ea6e78d0c73def81caa893942c23fd27
+- update comments
+- fix layout viewer size when viewport changes
+- give obstructions and blockages basic names in descriptors
+- switch addToOutput to rely on outputChanged, which calls repaint instead of processes events, to prevent recursive paint calls
+- switch redraw to use update as it ensures recursive calls are handled properly
+- adding comments to the layout viewer
+- standardize some of the highlighting commands in gui
+- fixing segfault in timing widget when switching models
+- correct behavior of DRC widget to account for keyboard selection changes
+- correct centering behavior when zooming in and out
+- correct behavior of fit_pixels_per_dbu_ to ensure it is updated when window changes
+- ensure 0 and scale bar size do not overlap and avoid drawing ticks when they are spaced closely together
+- change scale bar view
+- ensure entire view is redrawn when scrolling through the layout
+- center scale bar text over bar
+- adding picometer scale
+- add scale bar to layout view
+- add countdown to pause button
+- adding timeout to pause
+- adding line number to DRC violation
+- adding combined file open filter
+- ensuring inspector columns are resized on load
+- add help action to gui to open help URL
+- add main window icon
+- coverity rand() is not used for crypto, no security concerns
+- no point in drawing timing stage if there is no destination
+- ensure ScriptWidget variables are initialized
+- ensure HighlightGroupDelegate variables are initialized
+- switch to use db_ in selectAt
+- inspector coverty fix Matt identified
+- ensure TimingPathRenderer variables are initialized on startup
+- ensure path_ is initialized in DetailedModel
+- inspector + dbDescriptor coverty fixes
+- add unordered_map to mainWindow header and correct keyPressEvent in timingWidget.h
+- clang-format drcWidget.cpp
+- convert drc to use new report
+- clears timing path if its deselected
+- inspector grab focus when selected
+- correct column behavior in DRC viewer
+- switch DRC violation to use odb geoms
+- minor formatting
+- adding error and warns to TritonRoute parsing
+- only adding non-found sources to comment list
+- correct horizontal labels
+- provide feedback to DRC to mark violations as viewed
+- remove sorting flag from detailed path in timing report
+- make use of polygon drawing
+- adding draw polygon to Painter
+- adding some zoom margin for the DRC
+- switch name of drc violation to layer and sources for TR report violations
+- drc viewer automatically render when visible
+- convert render registration to be based on widget visibility, connect signals for sorting
+- change name from timing_dialog_ to timing_widget_
+- modify timing model to allow for sorting across all data
+- basic interface for viewing DRC
+- convert Renderer select to return set of selctions
+- adding option for hashed brush in painter
+- make options and pixels_per_dbu available from Painter
+- provide access function in tcl to show/hide widgets in main window
+- dockify timing report
+- make row color part of display controls
+- only draw instance obstructions if routing obstructions are visible
+- ensure dbInst properties and editors are using same values
+- adding center and resolution access to tcl + correct behavior when zooming in/out
+- make ruler precision dependent on DBU
+- disable tcl input when paused
+- adding tcl access for pause
+- make helper functions to compute different minimum resolution levels
+- cache maximum via sizes by layer and use cache to control drawing
+- check is vias layer has width before rejecting drawning
+- ensure conversion to double is validated
+- ensure editor gets new value from new selected item and do not process callbacks when value is identical
+- ensure no nullptr are in master list
+- moving lists/sets to makeItem command
+- switch to use background in inspector to indicate an item can be edited
+- make db inst use db master descriptor
+- adding master db descriptor
+- correcting clang failure in Editor
+- converting property, action, editoroption, and editors from pair to structs
+- updating db descripters based on PR feedback 20210810
+- make seperate color for items when both selectable and editable
+- distinguish between single and double in inspector
+- correct signal handling from inspector to prevent loops
+- adding slot to update Selected name in status bar and connecting inspector
+- modifying inspector signal to emit Selected as well
+- add listener to update combo box changes immediately
+- get newly set data from properties to ensure formatting is correct
+- adding single propery accessor to selected and descriptor
+- adding initial editors and actions
+- initial support for editors in gui
+- initial addition of actions
+- adding slot to update all models in selection/highlight window without changing focus
+- adding io type to ITerm
+- switching check for text height outside loop, swap order of checking height limits
+- viewer clang format names
+- make use of options instance name font
+- making font selectable in display controls
+- initial switch to pin instance name to ll corner
+- rotate instance names when possible, elide name to keep text readable
+- fix clang warnings about return values
+- check if congestion map is empty before getting x and y vectors
+- check if congestion map is on before processing anything
+- only modify button name if not specified, report error if duplicate name is used
+- limit instance names to width of cell
+- obstruction adding effective width and min spacing properties
+- clang format brush selection button
+- adding tcl commands to gui
+- adding ability to request user input via gui
+- support for creating + removing new buttons
+- modifying script widget to pass command for execution + control for echo of command
+- adding support to change and save instance name colors
+- adding blockage and obstructions
+- draw instance names on instance + separate function for drawing instance outlines
+- display controls saving and reading simplified
+- seperate making swatch icon
+- correct behavior of parent toggling
+- remove fixed size from color dialog + size radio button to ensure non-overlap of brush style
+- adding tcl commands for clear selection, rules, highlights, and modifying display controls
+- adding ability to save to image from layout viewer and support tcl commands to access from commandline
+- fix addInstTransform on MX90 and MY90
+- resize highlight and select views to content
+- correct columns in inspector
+- correct columns in displayControls
+- make iterm limit static + clang
+- limit iterms to keep gui responsive
+- renaming setCenteringShift to computeCenteringShift and adding check for loaded database to gui.i
+- center layout
+- adding zoom in/out to tcl and cleanup of swig file + prevent scroll events from jumping around design
+- do not create Selected on ITerm when not connected to a net
+- cycle through selections when there are overlapping choices
+- removing arguments for functions for the parent items
+- switching to use isCover
+- break makeItem into two
+- fix newline in nets
+- adding CallbackFunction to displayControls
+- add comment about non-null argument for selection boxes
+- add comment about non-null argument for selection boxes
+- correcting handling of ignore callback
+- adding selectable checkbox for nets
+- switch to use openDB calls for is* on instance viewing and selecting
+- adding endcap instance group
+- fix clang format
+- adding controls for instances
+- disabled selectable column when visible is is turned off
+- adding drawing and selection limits to instances
+- adding instances to options.h
+- switch to 5x minimum resolution for draw rows and tracks
+- correcting row outline loop and selection of rows for outline
+- correct handling of site height and width for vertical rows
+- draw outline of rows when zoomed out
+- only draw rows and sites in visible area and selectively draw site vs. rows depending on resolution
+- change drawTracks to only draw over block, and to skip drawing if the steps of tracks is less than the minimum resolution
+- adding resolution helper function
+- providing feedback to display controls to partially check parent
+- selectively show SWIG object arguments
+- add accessor to SWIG methods
+- switch CommandArguments from using to struct + clarify comment about comment index
+- adding command completer to input widget
+- add successful commands to tcl history during session
+- fix wrong bounds check in congestion display
+- in SelectHighlightWindow set the tab based on the current action (select/highlight)
+- removing leftover updateEnabled toggles
+- forward declare Tcl_Interp in gui.cpp
+- speedup logger output and add colors to error messages
+- remove extra tcl.h includes
+- correcting highlighting for else, elseif, and commands within {}
+- address coverity
+- break adding to output into seperate functions and provide python style command line continuation
+- only add new lines to commands if they are incomplete
+- remove output prefix and only add prefix to first line of command
+- use unique pointer for context menu items
+- adding syntax highlighting for tcl and openroad commands
+- add support to drag and drop file into command input area
+- adding support for multi-line input commands
+- adding support function to add lines to output and setting max line length
+- ignore mouse events before block is initialized
+- ensure layout does not attempt to paint while design is still loading
+- fix fit of design with zero bounds
+- fix non-gui build missing symbols
+- use q as inspector hotkey
+- fix non-gui build
+- remove Descriptor::getLocation
+- make inspector case consistent
+- initial inspector snapshot
+- handle non-zero ORIGIN by using placement boundary
+- include master name in path details
+- add design_created and fit tcl commands
+- store all non-layer display controls in settings
+- save net visibility to settings
+- skip drawing net fly-lines for supply nets (too slow)
+- modifying puts command to redirect into logger
+- cleanup report timing dialog
+- add Tools menu and make Toolbar hideable
+- tweaks for the timing gui
+- add more db observers to catch missing updates
+- add master name to instance name when selected
+- centralize ruler drawing
+- treat transform by value
+- make io markers pointier
+- remove obsolete stub
+- fit on inDbBlockSetDieArea callback
+- display location with correct precision
+- update on wire & swire changes in the db
+- add gui::enabled tcl api
+- add BUILD_GUI option
+- draw rows without filling
+- fix circle radius bug
+- fix non-gui build
+- add missing override keywords
+- match naming standard
+- update stub for rename
+- clang-format
+- update to coding standard using clang-tidy as a checker
+- fix last checkin that caught unintended change
+- use monospace font in output panel
+- fix clang warning
+- avoid busy waiting on user continue
+- use logger
+- fix case where die area is offset from the origin (eg ispd18_sample2)
+- fixup mem vars
+- add zoomTo stub
+- fix misc bugs when bounds are smaller than die area
+- add alpha override to setBrush
+- draw bounds and add z/Z zoom in/out keys
+- change delta to angleDelta due to deprecation
+- put via shapes on the right layer
+- take die area into account when fitting or resizing
+- make fill a different color than OBS
+- process events at the end of pause to update button
+- show command before tcl eval in case it is long running
+- move drawing instance bounds before drawing shapes
+- left-shift click adds to selection
+- net visibility controls
+
+### Ifp
+- update ok files with new IDs
+- update multi_height2.ok for recent change
+- remove .findSite from python tests in all but a few to ensure test coverage
+- rename ifp sites to extra_sites
+- change site -> sites in ifp
+- update tests to match new python interface
+- make -site take in a list of sites to support adding rows for non-instantiated cells
+- skip isBlock from site check
+- property LEF58_PITCH aplication
+- fix incorrect iterator handling
+- don't create a track grid for layers with no tracks
+- clang-format
+- refactor checks
+- update comments
+- update ok files
+- check if last track is usable for routing
+- check if first track is usable for routing
+- move x_offset check
+- minor cleanup
+- add tests without liberty file
+- remove IFP dependence on liberty units
+- align voltage domain sites to grid
+- py test, read single LEF
+- make imports pep8 compliant
+- add make_tracks1.py with refactoring
+- fix copy-paste error
+- take args by string instead of char*
+- remove obsolete auto_place_pins command
+- add validation to makeTracks
+- move make_tracks to C++
+- make a class based API for use with Python
+- clang-format
+- make the interface in terms of dbu not meters
+- adding insert_tiecells command
+- make large track pattern offset into warning
+- add warning on snapping of core area
+- skip tracks on MIMCAP layers
+- fix double to int rounding in meterToDbu
+- fix message code
+- remove unnecessary message
+- move check
+- unit tests for placement blockages
+- cut rows around placement blockages
+- accessors to die and core areas as tcl lists
+
+### Implemented
+- - GC handling nondefault spacing (metal spacing checks) - Adding nondefault wire extensions - Considering nondefault via for min area check and patch metal insertion - Brought some features from the gui of TritonRoute-new-search branch to this branch
+
+### IoPlacer
+- generate tcl wrapper in the binary dir and remove legacy code
+
+### Iop
+- cleanup after placement
+- remove useless ctor/dtor
+- more clean ups
+- break IOPin inheritance from InstancePin
+- put private section after public
+- update munkres from K&R style
+- re-clang-format for c++17
+- clang-format
+- clang-format
+
+### Ioplacer
+- remove odd 2X factor from track pattern
+- update golden files for corrected slots
+- add dbMaster::isCoreAutoPlaceable
+
+### Jenkins
+- fix issue with archive on test failure
+- archive ISPD log
+- add notification by email on build fail
+- fix stage name
+- use nightly file
+- parallel docker
+- coverage run regression
+- add missing designs
+- join docker tests
+- use all threads
+- force retry
+- use multiple machines
+- add timeout
+- fix syntax
+- add try/catch to avoid sleep on success
+- retry docker pull on failure
+- add option to set max number of threads
+- fix conflict with build dir
+- add build without gui
+- update paths to scripts
+- formatting
+- unify build and test scripts
+
+### Lef
+- check if windows compile in lef.y and avoid referencing the lef_parser.hpp as it fails to compile
+
+### Lefin
+- LEF parser for property LEF58_PITCH
+
+### Logging
+- fix lockup when resizing window in Docker
+- fix lockup when resizing window in Docker
+
+### Main
+- pass argc by reference so cmd_argc is kept up-to-date with cmd_argv
+- initial enablement closing GUI and return to tcl
+
+### Many
+- fix coverity nullptr dereference
+- fix tools to handle PAD rows correctly
+- update check for gui active
+- make renderers in other tools always require repainting
+
+### Messages
+- print out next free message id on duplicate
+
+### Meta
+- Fixes using namespace std bug in GCC 12
+- Adds CI for c++20
+
+### Metrics
+- update tinyRocket
+- fix timing metrics
+- Use absolute value of clock skew
+- convert DBU per micron to double to avoid premature int rounding
+- avoid double formatting metrics and adding core_area and die_area metrics
+- use sta::endpoint_violation_count for metrics
+- use defaultfloat and 6 point precision to avoid truncating small numbers, such as leakage power
+- add -setup -hold for ws and tns report
+- fix min/max for hold/setup
+
+### Mpl
+- update ok files with new IDs
+- bump messages id to avoid conflict with mpl2
+- clang-format missed file
+- clang-format
+- change calling without macros to a warning rather than an error
+- fix array mis-initialization
+- update residual ok
+- fix memory error
+- remaining clang-format
+- partial clang-format
+- cleanup Coverity uninit errors and misc others
+- update tests for gpl change
+- add basic gui
+- minor formatting
+- remove unused ParquetFP files
+
+### Mpl2
+- skip if there are no unplaced macros to work on
+- add error if the instance area with halos exceeds the core area
+- rm unused inflated areas
+- remove exit from test/bp_fe_top.tcl
+- fix snapping the macro so that the pins are on the routing tracks
+- clang-format
+- remove unneeded includes in bus_synthesis.cpp
+- clang-format
+- fix a couple of coverity warnings
+- clang-format
+- expand the mpl2 gui to show cost terms
+- small refactor
+- start improving messages
+- rename metric->metrics
+- handle pins which extend outside die area
+- fix unnecessary copy warning
+- more naming & const cleanups
+- initial debug GUI & use mpl2 namespace (not mpl)
+- make two functions local in scope
+- add missing limits headers
+- clang-format
+- avoid auto causing copy
+- make report_directory_ a std::string
+- avoid copying caused by auto
+- pass std::string by reference not value
+- fix compile warn
+- [refactor] mostly adding {} to if/for stmts
+- make functions pure virtual
+- remove deadcode
+- [refactor] remove unneeded ==true/false
+- [refactoring] reorder sections
+- fix naming to coding conventions
+- clean excessive includes
+- clang-format
+- set default CMAKE_PREFIX_PATH for or-tools
+- remove cmake commented out code
+- coverity fixes
+- update defok for dbGroup creation
+- create a region for each placed cluster (dbGroup)
+- round macro location to match old results
+- skip with there are no macros to place
+- turn on unit test (the results are poor but better than nothing)
+- move odb writeback to c++
+- make -report_file work ([#1877](https://github.com/luarss/OpenROAD/issues/1877))
+- clang-format
+- read unused vars
+- update mp_test1.ok
+- fix clang warnings and old style iteration
+- add unit test mp_test1
+- update opendb
+- remove debug output
+- remove redundant aes_cluster test (aes_macro_place is a superset)
+- get aes_macro_place test working
+- enable aes_macro_place test
+- Hook up unit test
+- minor cleanups
+- use dbOrientType
+- use vector to fix mem leaks
+- fix mem leaks
+- Specify -> Set
+- more out-of-lining
+- remove unneeded decl
+- replace DUMP_INFO_PARAM with a templated function to reduce code bloat
+- fix MacroPlacer2::place
+- mv private headers to src
+
+### Notice
+- no logger noise
+
+### Odb
+- rm obsolete apis for writing lef & def
+- exception handling when `ITerm` is trying to be connected with a net in the other block
+- Remove old python tests that are not run.
+- fix comment in dbDatabase.h and remove unused destructor
+- add regression test for read_def 5.8
+- address clang-tidy feedback
+- defIn add parsing and writing of COMPONENTMASKSHIFT
+- codgen - simplify with shutil.copy
+- codgen - use exceptions rather than return codes
+- correct issue where a previously removed section reappeared
+- rm empty sections (result of codegen update)
+- elide empty sections from code gen
+- updates from re-running codegen (no schema change)
+- fomat codeGenerator/generate
+- refactor dbAttrTable
+- rm unneeded fwd decl
+- rm unused INVALIDATETIMING
+- rm unused bits in dbBlock
+- remove dbBlock::_(max|min)ExtModelIndex.  Update schema.
+- rm unused dbBlock::_WNS/_TNS
+- rm unused dbBlock::_ptFile
+- rm unused dbBlock::_bterm_pins
+- don't allow odb to read a future schema version.
+- yet more mv vars to smallest scope in tmg*
+- tmg_conn::ptDist const args
+- more mv vars to smallest scope in tmg*
+- partial mv vars to smallest scope in tmg*
+- rm unused tmg_conn::_cut_length
+- rm unused tmg_conn::_max_length
+- light renaming tmg_conn_g
+- clang-tidy tmg*
+- make tmg_conn_graph::_e private
+- out-of-line big fn in tmg_conn_graph
+- use set in tmg_conn::checkConnOrdered
+- tmg_conn_search use Rect
+- tmg_conn_search sort1 -> sort_level
+- tmg_conn_search make _search_box a Rect
+- tmg_conn_s.cpp rename s to shape
+- tmg_conn_s.cpp add sort_threshold and improve naming
+- tmg_conn_s.cpp coding style cleanup
+- use Rect for bounds in tcs_lev
+- use Rect for bounds in tcs_shape
+- rm useless include in tmg_conn_s.cpp
+- rm unused tmg_conn_search::sort()
+- rm unused tmg_conn_search::set(X|Y)(min|max)
+- rm unused tmg_conn_search::resetSorted()
+- init fields of tcs_shape
+- rm unused tmg_conn_search::printShape()
+- use unique_ptr in tmg_conn_search
+- rename tmg_conn_search_internal -> tmg_conn_search::Impl
+- rm unused fields in order_wires
+- add multi_tech test
+- Initial work to support 3d with tech moved to block & lib
+- small fixes
+- fix check
+- check if inst is placed or fixed
+- add check for nets connected by abutment
+- expand vias in iterms in lef out
+- fix swig issues with recent refactoring
+- fix refactoring error in Rect::area()
+- clang-format
+- undo pass-by-ref that causes swig to break
+- brackets, overrides, etc
+- if stmt braces
+- geom.h cleanup
+- fix modernize-use-default-member-init
+- use =default as needed
+- (unsigned) short -> (u)int16_t
+- switch typedef to using
+- fix const of args
+- update c header includes
+- NULL -> nullptr
+- re-generated for class sorting
+- add classes_dir option to codeGen to simplify
+- update generated results for template update
+- format templates
+- add some debugging options to gen.py
+- format templates/impl.h
+- mv codeGenerator/impl -> codeGenerator/templates
+- rm unneeded close in with-open
+- rm unused parent field in schema files
+- codeGen rm empty enums in schema files
+- rm unused constructors code in codeGen
+- sort lists in codeGen
+- pylint codeGen
+- sort comparables
+- simplify code gen for relationships
+- mv remaining schema data to json files
+- move codegen schema files to subdir
+- move user code into user section
+- Maps Pin SigType(SCAN, RESET, TIEOFF) to SIGNAL
+- Update error messages
+- Modifies abstract LEF writer to work on ostreams
+- fix compile warnings
+- add dbMaster::destroy
+- fix mis-commit of codeGenerator/gen.py
+- clang-tidy dbGCellGrid
+- clang-format dbGCellGrid.cpp
+- avoid false sanitizer bound violation
+- add one bit to _dbBoxFlags::_layer_id by removing _mark
+- rm obsolete checkStream & markStream
+- remove ORIGIN from lefout
+- error instead of crash on illegal malloc size
+- fix rounding error in lefout
+- add callback inDbBTermSetIoType
+- make dbRt Tree/Node/Edge private
+- fix comment in gs.cpp
+- remove possible exception from ~Ath__parser
+- Don't leak memory in MACRO PORT statements
+- minor code cleanup
+- remove unnecessary nullptr after new checks
+- correct argument type to mode in ATH__openFile
+- use logger in Ath__parser
+- db_schema_keepout_zone
+- support schema versions in code generator
+- fix missing break in switch
+- read NDRs in INCREMENTAL mode
+- clang-format
+- revert cmath -> math.h because somehow grt breaks
+- rm unused Ath__parser printString
+- rm unused Ath__parser printInt & printDouble
+- backward version compat
+- fold files into their only user
+- misc clang-tidy
+- rm unused arg in parser::parseNextLine
+- reorder sections in parse.h
+- format parse.cpp
+- rm dbg from Ath__parser
+- remove unused portions of Ath__parser
+- rm unused array2d.h
+- rm unused darr.h
+- ignore LEF58_REGION layers
+- use logger error instead of exit(2) in definReader
+- add warning for unsupported keyword ORIENT in LEF58_CUTCLASS
+- don't crash on invalid CUTCLASS in lefin
+- rm diffs.rpt leftover in test
+- fix a crash in tmg_conn::treeReorder
+- clang-format
+- dbNetTrack
+- LEF58_PITCH odb suport
+- rm WIN32 ifdefs
+- rm dead code
+- fix mac compiler error
+- fix msg number conflict
+- rm dbLogger odb: rm milos & ade functions odb: reduce ZInterface odb: simply orderWires API odb: rm AthResourceLog odb: rm adjustMetalFill & misc odb: rm ZNamespace & ZSession
+- add WRAP_DB_CONTAINER(odb::dbGuide) to correctly swig
+- log unsupported LEF properties
+- log unsupported LEF properties
+- more cleanup of the gs class
+- support keepoutzone rule
+- general refactoring of 'gs' class
+- fix for swig 4.1.0
+- add missing call to setViaParams in lefin::via
+- add dbWireGraph::Node::setObject
+- virtual dtor to dbWireGraph::Edge
+- Add missing braces
+- clang-format
+- clang-format
+- add Rect::[xy]Center
+- clang-format
+- fix check for all routing layers in NDR defintion
+- set long array flag on ARRAYSPACING rule
+- generate array spacing rules for non-LEF58 array spacing
+- update ndr tests
+- error if NDR doesn't contain all layers
+- remove cut layers from abstract lef and refactor obs finding to unify insertion into a single function
+- change default bloat to 10x
+- update lefoks for write_abstract_lef tests
+- add back block obstructions for lefout
+- correctly place instance master obs into LEF
+- use spacing if pitch is not available for lef bloat factor
+- add ADJACENTCUTS to cpp_tests
+- properly error out and make bad via message more informative
+- remove cout print from abtract lef writer
+- write multiple lef files if needed during write_lef
+- pass file to diffs report
+- revert parser change
+- change global connections to return number of connections made
+- define string parser once
+- fix _string parser in lefin parsers
+- initialize dbTechLayerAreaRule class members on create function
+- fix backward compatibility
+- backward compatibility
+- update row cutting warning number
+- create instances will duplicates names is now an error
+- fix cmake dependencies
+- update schema version
+- fix read widthtable
+- update wrongdir width
+- adding global connects to odb
+- never allow SITE before UNITS in LEF
+- fix WIDTHTABLE parsing to support multiple width tables
+- use snake case for var names
+- update tests
+- use int for mask and overlap and remove setNumber
+- use 2 bits for overlap instead of int
+- small fixes
+- add trailing to the end of class field names
+- fix typo (again)
+- move user defined funcs to properly section
+- fix typo
+- update design.odb
+- update schema version
+- add cpp tests for PROPERTY LEF58_AREA
+- call LEF58_AREA parser on lefin.cpp
+- update dbTechLayerAreaRule with functions needed for the parser
+- add dbAreaRule data structures
+- make corner IO cells not auto placeable
+- fix v54 rule to use correct Except flag
+- modernize getV54SpacingRules & getV55InfluenceRules
+- fix handling of null net in bterm destroy
+- fix crash in de-looping during order wires
+- allow create of block/chip without an dbLib
+- remove size only and refine dont touch
+- update TechLayerCutEnclosureParser to use boost "blank" instead of " " to parse lef with tabs in that property
+- prevent modification of dont touch insts & nets
+- add iso methods to Point & Rect
+- add isotropy.h for generic programming
+- add Point dbInst::getLocation
+- add getViaXY() returning a Point overload
+- fix lefMacroClassTypeParser to properly qi::copy sub expressions
+- simplify cutRows
+- cut one row for all blockages intersecting it
+- update cutRows to consider new rows on every macro
+- fix warnings
+- typemap dbTechLayerCutSpacingTableDefRule::LOOKUP_STRATEGY
+- generate warning instead of error in CDL when encountering a cell with no pins and no CDL model
+- pr changes requested
+- support LEF58_METALWIDTHVIAMAP
+- detect if supply nets have bterms and use those instead of extracting whole net as pin
+- add destroy to sboxes
+- remove unused Ath__gridTile
+- switch dbBlock::getDieArea dbBlock::getCoreArea dbRow::getBBox to return value
+- switch dbBox::getBox to return a value
+- avoiding undefined behavior
+- fix segfault hidden bug
+- add comments to read_db and update_db scripts
+- add test for reading odb files to ensure ODB version is correctly updated
+- add utl logger ODB and ID
+- cornertocorner support
+- init and test dbGuide
+- requested chages
+- remove region children odb: implement group defin and defout dpl: fix groups dpo: fix groups gui: fix groups
+- test group-region relationship
+- format & region_prev_ & removeGroup fix
+- region voltageDomain and remove group box
+- remove setRegion & setParentGroup
+- sort blockages/obstructions when writing DEF
+- dbRegion<->dbGroup
+- fix dbModuleInstItr::reverse
+- fix DEF PINS count
+- fix get1stITerm / get1stBTerm when non 1st object is present
+- update schema version
+- dbVia default
+- fix getHeirarchal name
+- put all headers in the odb namespace
+- try to fix mac build error
+- fix bug with above/below in cut enclosure
+- add missing dbSet containers to swig
+- add accessor to LEF58 type as a string
+- fix memleak in swig container typemaps
+- fix small memleak in dbTech
+- add sanity checks to definVia::viaEnd for malformed via
+- remove check of return value from new
+- remove ZException and derived classes
+- update schema version
+- update schema number for "remove GeomShape" change (64303c89907)
+- fix mem leak in unit test (Coverity CID 1436528)
+- missing dbname
+- fix out of bound array access in tmg_conn::addToWire
+- remove unused var
+- remove GeomShape
+- support new lef58 mincut, widthtable, arrayspacing
+- in dbModule::addInst handle add to current module
+- make dbModule & dbModInst destroy recursive
+- add physical_only option to dbInst::create
+- add type to dumpAPs
+- add dumpAPs for testing
+- remove obsolete test code
+- add dbModule methods getHierarchicalName & getLeafInsts
+- fix mac build
+- remove dead code
+- add dbITerm::getGeometries convenience method
+- remove obsolete clock/output APIs
+- fix bug in dbRegion::destory
+- add dbShape::getLength
+- add dbBlockCallBackObj::inDbRegionAddBox
+- fix clang error
+- change dbAccessPoint::AccessType into dbAccessType
+- fix test access point
+- access points owned by block odb: pin access index for unique instances odb: access point for bpins drt: write bpin access points & pin_access cmd separation gui: required changes
+- set/getAccesses
+- fix error
+- add dbAccessPoint to odb
+- swig dbTechLayer::LEF58_TYPE
+- align connect/disconnect methods between dbITerm and dbBTerm
+- change TECHNOLOGY statement in DEF to a warning
+- add missing 5.7 to write_def versions
+- fix order-wires issue where Rect being allocated with malloc skips constructor
+- change TECHNOLOGY statement in DEF to a warning
+- add missing 5.7 to write_def versions
+- fix order-wires issue where Rect being allocated with malloc skips constructor
+- add ctor to tmg_rcpt and use vector of them rather the malloc
+- remove _top_module from top module name
+- store DESIGNRULEWIDTH from LEF on rect & polygons
+- make lef errors into logger errors
+- change cmake to use TCL_LIBRARY rather than tcl
+- include sstream for mac build error
+- add -masters to write_cdl
+- check that MIMCAP layers are routing before adjusting rlevel
+- update lef_data_access.tcl
+- routing level equals to zero for MIMCAP layers
+- ensure bbox is set on inst when swapping masters
+- compiler warning cleanup ([#917](https://github.com/luarss/OpenROAD/issues/917))
+- adding isCover to master and mastertype
+- ifFill() == CORE SPACER and nothing else
+- start to commonize swig between python & tcl
+- remove unneeded dbITerm::print
+- add dbOrientType::flipX/Y
+- make dbMaster getWidth and getHeight const
+- make auto messages.txt work
+- clang-format
+- update codeGenerator for dbGCellGrid
+- remove commented out code
+- remove unused _schema from dbSearch
+- deadcode in dbSearch
+- removing many dead classes and trim unused methods/members
+- fix handling of non-zero ORIGIN in LEF
+- set MASK from LEF on the dbTechLayer
+- remove unused inspect methods
+- remove hash.h
+- remove unused Graph
+- add dbSigType::isSupply
+- remove unused _shape_id from dbRSeg
+- add inDbInstPlacementStatusBefore callback
+- rename arg to setDieArea to avoid swig typemap converting input arg to output
+- add inDbBlockSetDieArea callback
+- clang-format
+- fix compiler error from Cherry
+- use Py_DecodeLocale to build argv for python
+- add lefin/defin to swig/common deps
+- update cpp regressions for tests -> test rename
+- rename tests to test to be consistent
+- fix tcl path for ubuntu
+- make tm depend on tcl
+- last merge error
+- fix another merge error, import std
+- fix template merge error
+- fix missing include
+- deadcode cleanup
+- fix string property concat
+- format code gen templates
+- more minor codegen cleanups
+- add missing include
+- sort pins/nets/specialnets/components in def out for easier comparison
+- make iterators STL compliant
+- cleanup pylint/pyflakes warnings in codeGenerator
+- minor format
+- simplify logic in code generator
+- apply pep8 formatting to code generator
+
+### OpenDB
+- only write NAMESCASESENSITIVE in def 5.5 or earlier
+- copyright & unit tests
+- add check on return value of findLayer and findMaster
+- add fills to the db and defin/defout
+- add bloat/shrink with seperate x/y values
+- ignore RECT in dbWirePathItr
+- fix units for cap in db.h
+- Multiple antenna improvements
+- add dbObstruction::destroy
+- hash tech via by name for faster def reading
+- make swig ignore apis it does not understand
+- add antenna rule getters
+- RECT in routing support
+- in dbITerm::getAvgXY make x&y into return values
+- store resistance per cut from lef on via layers
+
+### OpenPhySyn
+- Remove shared flag
+- Clean-up CMake again
+- Update regression print format
+- Remove spdlog
+- Remove transforms installation command
+- remove using namespace psn
+- remove continue
+- #ifdef -> #pragma once
+
+### OpenRCX
+- fix compiler warnings
+- remove ARM reference
+- remove options for proprietary tools
+
+### Opendb
+- fix boost dependency in unit tests
+- remove a lot of useless cruft
+- store lef properties on vias
+- fix misc compiler warnings
+- add dbBlock::getCoreArea
+- add getRectangles to tcl polygon API
+- exclude unplaced insts and bterm fromblock bbox
+- Improve LEF 5.7 antenna rule support
+- use odb namespace in swig and remove prefix from wrappers
+
+### Opendp
+- rm unused Group::pixels
+- rm unused group_analyze()
+- rm redundant Cell::grid_x,y
+- do not move inst if placement fails
+
+### Openroad
+- add more GUI timers
+
+### Ord
+- bump metrics limits that changed
+- ensure python helper uses utl.report to ensure correct print over in logs
+- clang-tidy
+- add ICeWall to Design.h/cc
+- rm redundant Openroad::write_verilog
+- fix typo in doc
+- fix read_def -floorplan_init false error
+- prevent reloading by read_db/def
+- add diff_dbs for detailed odb diff
+- add rpath for default or-tools install
+- clang-format
+- change write_lef multi-file to info
+- add report_clock_skew_metric
+- add set_dont_touch helper function for instances and nets
+- add design_created command
+- fix for stacktrace compile error on mac
+- change local C to en_US.UTF-8 for python
+- ensure microns_to_dbu rounds the result, otherwise larger numbers will be rounded down incorrectly.
+- moving get_die/core_area to OpenRoad.tcl
+- correcting function naming format
+- enabling threads flag from command line and providing tcl interface to threads to control sta
+- Fix ctrl-c handling
+- adding support for tclX and org::profile_cmd to help profile tcl-based scripts
+- add splash to python & -no_splash
+- properly setup python modules & tcl interp/app
+- fix python arg conversion
+- fix unused var
+
+### PSM
+- make IR drop heat map belong to PSM
+
+### Pad
+- add error checking for master cell
+- add notice when creating the terminals and check for pad type
+- check for empty list to avoid swig segfault
+- add place_io_terminals command to place bpins on iterms in the padring
+- add debugging to RDL router
+- add option to assign bumps but not route them
+- use block findITerm
+- update test to use assignments
+- add routing map for bump assignments
+- improve error messages related to failed routes
+- add flag for rdl turn penalty + testcase
+- update test cases to account for wire straightening
+- add turn penalty to RDL router to straighten wires
+- update ok files with new IDs
+- fix filler insertion to honor shape of placed filler
+- fix corner sites for skywater tests now that corners are calcuated correctly
+- fix horizontal rotations
+- fix corner calculation in pad
+- update tests
+- remove -rotation and provide explicit controls for each row orientation
+- add row name to error message in ICeWall::placeFiller
+- add error checking to pad::connect_iterm
+- clang-format
+- clang-tidy
+- update wordig of warning 33
+- clang-format
+- add warning message when creating new bterms
+- ensure special nets and iterms in pad match, otherwise DRT fails despite net being special
+- ensure that net is marked specials if pad is creating the bterm
+- update and fix tests after correcting naming
+- correct access of $args
+- rename router target for clarity
+- add warning if bond pad constains more than 1 shape on the top metal
+- add obstructions from access vias and update tests
+- splitting rdl vias into two categories
+- add ability to handle overlapping filler cells
+- add error when unable to fill IO gaps
+- rename route_rdl -> rdl_route
+- add helper function to connect iterms in tests
+- use constexpr for common names and helper function to check for row edge
+- switch from polygon to interval
+- cleanup bterm adding
+- check if gaps will appear in ring and generate error
+- switch to use floor instead of ceil to avoid overflow
+- add error messages for nullptrs
+- add check for master type on bondpads and bumps
+- ensure new sites are PAD class
+- move makeSpecial into utility class for ICeWall
+- fix typo in GUI debugger
+- change data member declarations
+- remove extra directory in CMakeLists
+- rewrite ICeWall
+- clang-format
+- make in proper module
+- update ok files
+- update PAD to account for change in PDN add_pdn_connection call
+- fix bad message string in 163 & 164
+- update caravel_sky130.ok for minor message change
+- fix tests that depend on PDN
+- add copyright header
+- adding missing -offset to command args
+- adding missing offset option to ICeWall
+- correcting calls to logger
+- correct variable referenced in error PAD-15
+- correcting ok files for ICeWall to account for new numbering in info messages
+- updating unit tests to accept new warning/info messages
+- format correction in ICeWall
+- Adding net creation helper function to ensure info message is printed, ensuring if pads are already connected to a signal, they will stay connected to that signal, if only one segment is found in the padring, new net names do not include the _0 extension, ensure ICeWall honors power pad names, fix ICeWall message numbers
+
+### Par
+- fix copy-paste error with GetLowerVertexBalance
+- rm dead code
+- fix mis-formatting and update partition_gcd.ok
+- fix the .i - look to have been clang-formatted
+- make Hypergraph a proper class
+- split Refiner.h
+- further refactoring
+- fix c++20 compile error (needs istring include)
+- cleanup comments in Refiner.h
+- rm unused includes
+- split out PriorityQueue.h
+- clang-format
+- rm pass through constructors
+- rename MATRIX to Matrix
+- cleanup includes
+- rm unneeded inline keywords
+- rename GainHyperedge -> HyperedgeGainPtr
+- remove TP prefix from the code
+- rm TP prefix from files
+- fix unnecessary header defns
+- rm unused default ctors
+- clang-tidy
+- update timing-aware-partitioning to use shared files
+- fix invalid comparison of const and non-const iterators
+- update unit tests and messages
+- update messages to par_lib
+- fix compiler errors
+- fix unit tests
+- clang-format
+- clang-format
+- rm unused var
+- remove unneeded settings in the CMakeLists.txt
+- add back read_partitioning
+- clang-tidy
+- restore write_partition_verilog command
+- Remove unused files
+- fix more coverity warnings
+- fix more coverity warnings
+- Add edge_score method to replace repeated code
+- rm unneded TPHypergraph cpoy ctor and assignment
+- update hypergraph comments
+- rm unneeded friend
+- rm unneeded inline keywords
+- clang-format
+- remove a lot of unneeded default operators'
+- enum IORegion -> enum class IORegion
+- enum RefinerChoice -> enum class RefinerChoice
+- enum order -> enum class Order
+- more formatting
+- naming style cleanup
+- cleanup Utilities.*
+- cleanup various Coverity warnings (including many UNINIT_CTOR)
+- disabled TPpartitioner::OptimalPartCplexWarmStart due to non-determinism
+- add python unit test
+- add paths & graph to unit test
+- add -hypergraph_file to triton_part_design to control the output
+- add -paths_file to triton_part_design to control the output
+- add a unit test to partition ng45/gcd
+- add explanatory comment to KPMRefinement.h
+- fix asserts
+- start to use logger properly
+- update PartitionMgr verbiage and move private section last
+- rm unused KPMrefinementPtr
+- fix compiler error related to asssert
+- make ~TPrefiner virtual
+- scripting interface cleanup
+- remove erroneous assert (c++20 error)
+- fix typo
+- fix c++20 compiler error
+- restore test infra w/o tests
+- fix copyright header
+- fix many compiler warnings include a few real bugs
+- partial clang format
+- clang-format
+- create a dbGroup for each non-macro cluster
+- enable write verilog test diff
+- remove unsed clustering and add cluster unit test
+- remove unused scheme option
+- remove unused HYPERGRAPH option
+- update error messages to provide more detail
+- enable verilog_write without file diff at end
+- update readme and define_cmd_args
+- disabling verilog writing test until writing of verilog files honors sorting modules
+- update verilog write test to match sorting
+- sort the verilog writing to ensure name order
+- ensure terms are created on top inst
+- add missing read_partitioning to readme
+- fix readme file to avoid using non-ASCII characters
+- correct okay files for unit tests
+- remove references to run time
+- update read file to include an optional instance map and unit test
+- enable report_netlist_partitions test
+- enable unit test for changing evaluation criteria for partitioing
+- ensure pins/terms are created on child instances in partition, and add unit test for writing partitioned netlist
+- enable unit test for partition of GCD
+- move autocluster to use odb instead of sta verilog network
+- clang-format
+- code cleanup
+- quiet unused result warning again
+- quiet unused result warning
+- remove dead code
+- fix args in wrong order (coverity)
+- one more clang/osx fix
+- fix min/max methods to be static
+- remove random_shuffle from MLPart
+- MLPart clang cleanup
+- import MLPart
+- add const
+- cleanup all coverity warnings
+- update class member names to trailing underscore per style guidelines.
+- cleanup & minor improvements of verilog writer
+- remove unused vars
+- general cleanup, no functional changes
+- some coverity issues addressed
+- remove unused using/includes
+- fix old iteration style
+- fix autocluster clang warning that is a bug
+- reset partitioners to off by default
+- move mkdir to tcl where it is recursive
+- use vector to fix mem leak
+- fix compiler errors
+- rename traverseLogicalHierarchy to computeMetrics
+- allow RVO
+- clarify io bundling
+- add error in dbPartitionDesign if PARTITIONERS were compiled in
+- many small cleanups
+- remove unused BundledIO
+- minor style fix
+- remove deadcode
+- fix partition solutions from getting pinned to wrong metric
+- ensuring random seeds change from run to run with option (random_seed) to keep seeds the same
+- switching std::vectors to const to conform with swig interface template
+- simplify swig wrapping of std::vector
+- switch from using sstream to using swig list
+- adding pragma once to headers
+- verilog writing testcase, for when those are enabled
+- adding option to write partitioned netlist to verilog
+
+### Pdn
+- fix message numbering
+- add error checking for non-fixed macros
+- add check for empty grids and error out
+- ensure pins are marked fixed and special if the bterm and bpin already exists
+- add test for macros with internal straps
+- add cleanup step to building of grid to remove shapes that will be contained inside a macro exclusively
+- fix failing tests due to change in swig interface
+- fix formatting
+- add unit test for connecting bumps
+- add bump grid option to allow for better handling of bump cover cells
+- add check if instance is conneced to any power nets
+- save obstruction for instance grid
+- update tests that changed because of change to obstruction cutting
+- use largests obstruction halo when cutting shapes
+- clang-tidy
+- use overlap()
+- fix the repair strap offset calculation
+- shape.h GridObsShape clang-tidy fixes
+- use RTree filter instead of rebuilding for each grid
+- add GridObsShape class
+- remove unused type variable
+- fix defoks which changed due to changes in PDN to account for obstructions and pins
+- fix black parrot core offset which is too large to avoid DRC violations
+- ensure all pins are captured in obstructions and correct filtering of instances to be just core and endcaps
+- use shape obstruction box when cutting shapes to ensure shape is correctly constrained
+- fix names of via/shape sets
+- rename ripup_vias to ripup_shapes to reflect that it contains shapes along with vias
+- fix via count and check for via type before getting avgxy
+- adjust pad edge connection checking to allow for pins that extend beyond the instance boundary as in sky130
+- clang-format
+- fix other tests with overlapping vias
+- add filtering to vias to remove overlapping definitions
+- expand comment about why followpins can ignore other grids
+- add obs_filter option to ::cut to avoid rebuilding rtrees for followpins
+- add debugging messages during build
+- minor formatting
+- add out-of-line ~PdnGen to simplify .i
+- remove repair_pdn_vias from python and use std::set properly
+- spelling fixes in error messages
+- check if region is null
+- account for via location in mpins
+- account for vias in macro pins
+- sort obs before writing to db for result stability
+- make the results determinisitc by avoid pointer comparison
+- clang format
+- remove access to old TCL PDNGEN and move remainder to PAD
+- update tests in PDN to account for change to pad connections
+- ensure all pads get connected with the same strategy
+- add ability to remove straps
+- switch old calls to global connect in PDN to new
+- fix dont touch test to match new log
+- ensure power switches are added to the correct region that maches the domain region
+- make PDN global connects use ODB dbGlobalConnect
+- allow pads to connect to rings in non-preferred directions when it is the only direction possible
+- honor dont_touch in global connect
+- update readme
+- just check if file is open and generate warning
+- make failedViaReason a enum class
+- fix check on recheck to include combined shape
+- add debug to search for enclosure rules
+- add copy to Enclosure
+- unit test for failed via report
+- initial capability to generate DRC report of failed vias
+- remove use of -defer_connection from tests
+- add -defer_connection deprication warning
+- add comments to adjacent cuts lookup
+- only connect the new rule in global connect when adding
+- make sure pdn checks for adjacent cut rules
+- unlock tapcells when moving them for power switches
+- ensure halos with negative values are not honored for instance obs and pins
+- print halo as part of report
+- switch reports to use ->report instead of info
+- fix checking top and bottom layers to use the real rect
+- adding call to recheck constraints when adding a patch metal
+- check heights too for min-cut checks
+- fix report with nullptrs
+- use generator sizing when checking constraints
+- fix usage of cut in generate height and width
+- add generator to DbVia to preserve access
+- update taper test based on changes to EOL
+- correct EOL enclosure
+- correct typo in debug
+- fix coverity for dynamic_cast
+- repair vias before attempting to repair channels to avoid generating a channel with the via repair
+- sort by name not swig wrapper string (ie pointer)
+- apply halo to instance blockages and pins to ensure its honored on non-grid layers
+- use instance obstructions instead of inst bbox to allow for power straps that go through un-obstructed layers in macros
+- correct types of instances to generate obs for to avoid triggering on endcaps
+- track component shapes in grid build to prevent rebuilding of grid shapes
+- ripup vias with spacing violations on enclosures metals
+- add flag to indicate shape can be modified
+- correct accounting for instances in grids
+- collect insts not in grids to account for obs correctly
+- add capability to connect to pads from above
+- modify init in pad connections to make room for over pad cell connections
+- fix nangate45 pad lef + flipchip def
+- remove vias that will cause non-preferred direction changes to metals and track SBox with shape so only problematic vias are removed
+- fix via spacing determination and grid selection
+- allow vias to be snapped to top or bottom layers
+- generate obstructions for vias based on rules
+- initial repair_pdn_vias
+- for vias to iterms do not cache and always check against the full shape
+- check if channel has straps or followpins to ensure intersect is called on a valid area_obs rect
+- fix renderer to update on reset and enable
+- fix ripup of bterm/bpins to prevent segfault
+- ensure instance grids only add their obs obstructions and not the aggregate of all the prior grids
+- elaborate isEmpty
+- add continue repair if the same area appears twice
+- cleanup repair channels to allow for continuation of repairs if selected settings does not work
+- add check layer specification check to final offset
+- correct via END/SIDE selection in pitch calculation
+- remove unused techlayer function
+- add more debug statements
+- correct via rect handling and remove default enclosure rule
+- move help functions to techlayer
+- correct debug statement in via sort
+- update tests to account for min enclosures
+- ensure generate statements get same constraints as tech vias
+- build list of possilbe overlaps for via generation and include min width option, then build and pick best via
+- make via index a type
+- add -nets option to limit straps and rings to a subset of nets
+- correct intersection of repair channel
+- allow shapes to be removed, but not modified when they appear on pin layers
+- adjusting dbtechvia to account for offcenter vias
+- update odb above/below cut enclosure fix
+- Update results for odb cut ENCLOSURE parsing
+- ensure multiple cut techvias account for the shape of the combined via and total cuts
+- correct fixed_vias option
+- correct global connect with wild card
+- for instance grids only include nets connected to that instance + test with two macros connected to two different nets
+- ensure repairs are inside the core
+- bump ibex sky130hd limits
+- simplify pad test with black parrot to just include upper straps and IO
+- use via generate rule enclosures when enclosures rules are not available
+- switch array spacing to odb
+- switch min cut rules to use odb
+- remove width table and use odb, plus ensure repair channel honors width table
+- restore preferred direction behavior in obstructions and add additional width to ensure extra obstructions in non-preferred direction
+- correct obstruction test
+- ensure extra obstruction strap
+- only return always on pin shapes for via consideration
+- switch repair channel to to keep trying all channels
+- move control of row checking to powercell class and add comment
+- use else if
+- break out setup functions in power switch build
+- add warnings for power switch
+- account for core area offset when building sites for power switches
+- correct tests to account for tech via enclosures
+- switch nullptr via check to avoid erase
+- keep track of enclosures for tech vias, to ensure proper extension
+- fix bterm assignment
+- remove nullptr via
+- modify handling of enclosures and correct picking side/end
+- add debugging messages
+- ensure enclosures honor END/SIDE/etc
+- fix tests and add tests
+- ensure vias are only interested ongrid and honoring constraints
+- apply constraints to tech via generation
+- mark inst pins and exisiting routing as fixed
+- add cpp version of power switches + test case for switches in regions
+- add missing check for the offset
+- decompose complex channels
+- only check critical area for obstructions in repair channels
+- add debug to track vias added to database
+- ensure repair straps snaps to grid and correct end point checks
+- correct strap checking when snapping to grid to prevent rounding down
+- add missing print information to strap report
+- correct tests based on corrected techvia enclosures
+- avoid clipping min area adjustments
+- fix handling of techvias by not shifting to 0,0
+- add handling of via stack with taper
+- fix coverity
+- correct routing obstruction test
+- switch renderer to manual update or update on build
+- update tests based on new enclosure search method
+- loop over all possible enclosures to find the best via combination for a given area
+- remove partially overlapping vias
+- remove oct shapes from list of shapes to connect to
+- correct starting grid boundary
+- correct cut calculation, which resulted in incorrect rounding
+- correct search area in vias from grid to domain
+- fix missing macro vias
+- use extents of channels instead of rects to avoid splitting channels into different rects
+- mirror tcl version for routing obstructions
+- fix obstruction calls
+- add missing obstructions option
+- ignore straps that are completely disconnected in channel repair
+- correct adding of patch metals to ensure they are min area and move that out of split cut handling
+- correct looking for min enclosure rules
+- adding helper function for debugging
+- fix check setup regression
+- remove optional logger
+- adding intial check for setups that cannot be built
+- adding checks for offgrid user inputs
+- fix coverity results
+- add header for macos
+- adding comments to via.h
+- more clang fixes
+- fix clang errors
+- remove RingBoundary function
+- remove comment
+- correct term sorting and associated testbench
+- PR feedback
+- correct comment in Connect and make micronsToDBU private
+- fix toggle renderer, comment about via map, and cleanup getDomains
+- update domain based on PR feedback
+- rework tests for PDN
+- initial version of PDN as C++
+- fix message numbering
+- fix clobbering of connect list with layers that are not alphabetical
+- add missing fields to via_rule
+- temporarily make error into warning until a proper fix is available
+- updating messages
+- updating tmep sensor test to correct for different order of VDD/VIN connections
+- adding global connect list and license statements
+- initial addition of c++ wrapper for global connections
+- adding net/term connection function to handle all connections once
+
+### Pdngen
+- check if net is in domain net list before looking in net_map
+- fix iterator error in ripup
+
+### Pdr
+- add missing header
+- adding missing limits include
+
+### Pdrev
+- fix missing ;
+- fix a bunch of Coverity PASS_BY_VALUE errors
+
+### Ppl
+- update ok file
+- move check to the correct place
+- fix report
+- clang-format
+- update unit tests
+- place_pin always set pins as fixed
+- fix format of floats
+- clang-tidy
+- clang-format
+- update readme
+- add unit tests for write_pin_placement option
+- fix check for overlap with blocked interval
+- group pins by edge in pin placement tcl file
+- add Edge information to IOPin
+- fix float format
+- add -write_pin_placement option to dump pin placement to a tcl file
+- add placed_status option to place_pin command
+- avoid accessing invalid indices in slots vector
+- clang-tidy again
+- fix encapsulation issue
+- clang-tidy
+- update pins per slot limit to run shiftGroup and rearrangeGroups
+- refactor to remove repeated code
+- update movements for groups
+- add rearrangeConstrainedGroups function
+- add shiftGroup function
+- fix bug in random placement for groups to avoid overlaps
+- error out when constraint does not have enough slots for its pins
+- clang-format
+- update ok files
+- calculate perturb per iterations based on number of pin groups
+- add debug message for annealing config
+- update ok files
+- print design info on annealing runs
+- allow move pin groups to slots that it was previously using
+- fix infinite loop in simulated annealing
+- update missing ok files
+- int instead of int_64
+- limit default offset to 1 micron
+- update ok files
+- change default offset from corner to 15 tracks on the specific layer
+- remove default 1 micron offset from the corners
+- add error message when cannot place group during fallback
+- during random assignment, return after adding pin group to fallback
+- correct missing override
+- format
+- annealing is local / unregister renderer
+- renderer takes care of drawing logic
+- remove unneeded variable
+- entering no argument in debug will result in an error
+- renderer header is private
+- renderer uses cosmetic pen
+- correct debug struct members name pattern
+- fix typo
+- annealing is unique
+- uncomment painter param
+- remove unneeded methods
+- correct different params in declaration
+- remove const from declarations
+- format
+- remove unneed code
+- print first iteration during annealing debug
+- remove unneeded message
+- format
+- add flag to print annealing state without pausing OR
+- update readme with information on how to use the annealing
+- printing fly-wires each iters_per_painting
+- clang-tidy
+- minor fix
+- more unit tests
+- support mirroring inside pin groups
+- add unit tests for mirrored pins during annealing
+- fix bug when mixing mirrored pins and constraints
+- don't swap mirrored pins
+- add visualization method for simulated annealing
+- support mirrored lone pins during annealing
+- add drawandpause renderer function /
+- annealing is now a member variable of IOPlacer
+- creates method for setting painting interval/ instanciates debugsettings
+- support mirrored lone pins during random annealing
+- add random mode for annealing
+- add aux functions for mirroring inside annealing
+- add mirror pin index information to IOPin
+- const methods
+- simulated annealing can access ioplacerenderer
+- clang-format
+- renderer is properly instantiated and moved
+- update ok files
+- respect pin order when placing groups during annealing
+- ensure single pin will be moved when it is not possible to move a group
+- creates abstractrenderer for ioplacer
+- avoid dead end when constraint has only one pin
+- update isFreeForGroup function to consider last slot for a constraint
+- undo unnecessary changes
+- update ok files
+- clang-format
+- fix random assignment for groups to respect IO constraints
+- add a bunch of new unit tests for ppl with annealing
+- fix bug to avoid moving constrained pins to invalid positions
+- add unit tests for annealing with constraints
+- clang-format
+- update swapPins to respect IO constraints
+- add pin indices to each constraint
+- avoid swapping a pin with itself
+- clang-format
+- update movePin and moveGroup to respect IO constraints
+- update random annealing to respect IO constraints
+- fix bug when assigning constraint idx to io pins
+- add constraints list to annealing
+- add constraint index information to IOPin
+- register new renderer
+- fix compile error
+- clang-tidy again
+- clang-tidy
+- make pins list a class member
+- add function to check for overlaps
+- clang-format
+- simplify restorePreviousAssignment
+- make prev_slots and new_slots class members
+- move pin groups inside the movement of single pins
+- add group_idx info to IOPin
+- creates renderer class
+- clang-format
+- use boost::uniform_real_distribution instead of the std version
+- use boost::uniform_int_distribution instead of the std version
+- increment slot_idx after assgining group during random
+- add function to check if slot is free for group
+- clang-format
+- update ok files
+- ensure pin groups will not overlap on random assignment
+- use uniform_int_distribution and uniform_real_distribution properly
+- move vectors to outside the for loops
+- add const to getIOGroups
+- add debugger cmd
+- add comments to clarify code
+- if moving pin group fails, move single pin instead
+- add max number of iterations to find a free slot for pin group
+- update metric name
+- add metric info for IO nets HPWL
+- clang-format
+- check if groups and constraints exists before iterating
+- check if pins are inside multiple groups
+- run swapPins only if there are at least 2 pins outside a group
+- update ok files
+- ensure pins from a same group are placed in the same edge
+- add new annealing unit test
+- add command to configure simulated annealing
+- clang-format
+- refactor restorePreviousAssignment for better runtime
+- add unit test for annealing with pin groups
+- add function to compute group placement cost
+- update functions to work with vectors instead of single pins and slots
+- update ok files
+- fix to avoid same pin for swapping
+- add function to move pin groups
+- simplify how to restore old assignment
+- place groups randomly before regular pins and avoiding overlaps
+- add function to randomly place pin groups
+- add pin_groups_ to annealing class
+- remove pin group error message
+- update Netlist's io_groups_ to use PinGroupByIndex struct
+- use delta cost instead of iterating over all nets
+- minor fixes
+- make init private
+- remove unnecessary virtual
+- fix rand generator
+- fix license year
+- clang-tidy
+- clang-format
+- add error message for unsuported features during SA
+- minor refactoring
+- remove unused function
+- refactor annealing to avoid copying vectors
+- update ok files + remove unused vars
+- fix file name
+- update perturb function to run pin swapping or change pin location randomly
+- mar slots as used after random pin placement
+- add debug message
+- add function to move pins to free slot
+- update cost when perturbation is accepted
+- implement swapPins function
+- make number of perturbs per iteration a funciton of the number of pins
+- add reportHPWL function
+- reorganize annealing code
+- write base annealing algorithm
+- remove debug prints
+- add annealing unit test
+- add option to run pin placer with annealing
+- start simulated annealing implementation for the pin placement problem
+- place fallback groups and pins after placing the remaining pins ([#3497](https://github.com/luarss/OpenROAD/issues/3497))
+- fix ok file
+- new unit tests
+- place fallback groups in the middle of constraint region
+- place pins in a fallback group in the proper order
+- coverity fixes
+- update ok files
+- avoid passing empty pin list when creating group
+- use for loop to generate large pin groups in unit tests
+- fix crash
+- remove redundant call for placement of fallback groups
+- clang-format
+- new unit test + update ok files
+- update ok file
+- fix error when large groups are assigned together in the same section
+- remove duplicated message
+- place fallback groups before assigning to sections
+- add new unit test
+- merge pins constrained to the same region
+- add operator== for Interval struct
+- small fix on while condition
+- remove redundant check
+- add unit test
+- add error message when creating up constraint without top layer grid created
+- update readme
+- clang-tidy
+- update unit tests
+- error out if pin is assigned to multiple constraints
+- add info of max contiguous slots on error message
+- place fallback pins first
+- add the name of the first pin of a group in error message
+- fix false warns about conflicts between constraints
+- add warn message for constraints conflicts
+- skip pins in fallback mode during random placement
+- during fallback mode in random placement, do not respect constraints
+- add fallback mode during random placement
+- update readme
+- add error message when using -order without -group
+- clang-format
+- new unit test
+- add option to define slots per section for debug
+- update unit test
+- clear already placed pins and groups from sections
+- refactor check
+- check if section has available slots to place pin
+- Fix build error on Fedora 38
+- avoid div by zero
+- update ok file
+- fill dist_matrix_in with zeros
+- update check for group created
+- use int64 to avoid overflow
+- allow region, group and order flags all at the same time + unit tests
+- clang-format
+- add unit tests for large groups
+- avoid accessing invalid vector index
+- rename flag
+- error message if contiguous slots not found for pin group in getFirstSlotToPlaceGroup
+- check mirrored pins only if necessary on getFirstSlotToPlaceGroup function
+- clang-tidy
+- use long int for netlist hpwl
+- add warning message for fallback groups
+- check if mirrored slot is available when placing fallback pins
+- place fallback groups that are not constrained
+- avoid counting mirrored pins twice
+- refactor funciton to place fallback groups
+- count mirrored pins for unconstrained groups
+- account fallback pins in constrained pins count
+- implement placement of fallback pins
+- add first and last slot info on Constraint
+- skip pins in fallback
+- mark pins when added to fallback
+- add failed groups to fallback_pins
+- move check to cpp code
+- remove wrong check for pin count and slots count
+- avoid going off the end of the slots vector
+- clang-format
+- small fixes
+- advance to the next available slot first
+- remove long function from header
+- advance to the next free slot after find an unavailable slot
+- compare group size with available contiguous slots
+- fix typo
+- add isAvailable method for Slot
+- fix crash
+- add error message when can't create matrix for groups
+- compile and bug fixes
+- check if section has the necessary amount of contiguous slots to place group
+- add function to get max contiguous slots inside a section
+- add unit test for partially mirrored group
+- clang-format
+- add unit test for mirrored groups
+- update ppl flow to place pin groups with mirrored pins first
+- update check for overlaps when placing mirrored pins
+- update hungarian to place pin groups with mirrored pins first
+- print section coords in microns
+- clang-tidy
+- change error to warn and give more details
+- clang-format
+- update constraint sections after assigning constrained groups
+- fix issue where groups were not placed in a section where they could be
+- adding missing header
+- update constraint sections after assigning groups
+- error message when constrained pins don't fit in the specified region
+- fix segfault in error message
+- add new constraint unit test
+- fix mirrored pins when one of the pins is on a group during section assignment
+- fix mirrored pins when one of the pins is on a group
+- clang-tidy
+- update readme
+- add unit tests for constraints error
+- add error message when multiple constraints are used together
+- ensure pin shape width/height is an even multiple of the dbus since they are divided by 2 causing off grid violations
+- add missing const&
+- new tests now working
+- clang-format
+- fix ppl_aux.py
+- add py tests for new flags on set_io_pin_constraints
+- error when pin names are not given for -group flag
+- fix warn message
+- refactor PinGroup into a struct
+- fix readme
+- update readme
+- add unit tests for -group and -order flags
+- add missing order bool on addPinGroup call at ppl_aux.py
+- add group and order options to set_io_pin_constraint
+- ascending order only if flag exists
+- add order flag for pin groups
+- place pins of pin groups in ascending order for all edges
+- clang-format
+- fix cmd name for error message
+- fix typo
+- add unit test for mirrored pins during random placement
+- properly place mirrored pins during random placement
+- add auxiliar function to find slot idx
+- add warn message when mirrored pin is constrained
+- init mirrored pins
+- add unit test for error in constraints
+- error out if both -region and -mirrored_pins are used in the same constraint
+- clang-format
+- add new add_constraint test
+- fix counting of assigned pins to sections when mirrored pins are constrained
+- error when pin assignment goes off the rails
+- fix pin counting in mirrored pins to fix infinite loop
+- check slot layer on getSlotIdxByPosition function
+- check if slot idx is negative
+- address PR review comments
+- clang-format again
+- clang-format
+- check if list of pins for -mirrored_pins option has an even number of pins
+- update readme with the new -mirrored_pins option
+- remove unnecessary check from getFinalAssignment
+- update add_constraint9 test
+- simplify -mirrored_pins option syntax
+- fix assignment to avoid losing the optimality of the hungarian matching
+- fix assignment to sections for constrained pins
+- simplify mirrored pins logic
+- add logging for mirrored pins
+- fix overlaps between mirrored pins
+- add new add_constraint test
+- correctly assign mirrored pins before remaining pins
+- add -mirrored_pins keyword for set_io_pin_constraint cmd
+- update metrics limits
+- ok files
+- update findSlots to use only the current layer information for min dists and offsets
+- clang-format
+- add const
+- new unit test for place_pin
+- compute correct width and height for place_pin when pin size is not given
+- make pin_size optional for place_pin cmd
+- remove unnecessary default constructors
+- fix compile warning messages
+- clang-format
+- -force_to_die_boundary fails on vertical layers
+- print area in microns
+- simplify getArea function
+- add unit test for pin area error
+- check pin min area
+- add getArea function to IOPin
+- fix set_pin_length* commands
+- fix crash by checking if matrix is not empty
+- fix access to invalid positions on slots_
+- improve the API
+- init matrix for groups with infinite to avoid invalid assignment
+- initialize matrix with infinite to avoid assignment to used slot
+- fix available positions comparison + warn message
+- only convert to dbu when coord is not an extreme
+- explicit return edge extreme
+- clang-format
+- small refactor
+- improve error message
+- add unit test for place_pin
+- check min width of pins placed with place_pin cmd
+- add check_argc_eq0 for all commands
+- turn wrong layer direction into an error
+- small fixes
+- add units to readme
+- update README
+- add Tcl command to set pin hor and ver thick multiplier + unit tests
+- add Tcl command to set pin hor and ver extension + unit tests
+- add Tcl command to set pin hor and ver length + unit tests
+- get die boundary only one time
+- fix uninitialized variable
+- new unit test
+- avoid overlaps between pin shapes
+- avoid pins sharing the same track
+- update readme
+- exclude pin interval to avoid overlaps
+- update Interval to have layer information and check the layer in checkBlocked
+- use round instead of floor
+- new unit tests for place_pin command
+- add flag to force pins to die boundary or not
+- move pin to a valid position on the die boundary
+- fix missing _
+- add arguments names
+- const&
+- ok files
+- print only hpwl after pin placement
+- printf hpwl in microns
+- print hpwl for non-random runs
+- remove deprecated variables
+- remove copy of vectors
+- update HungarianMatching
+- add pin indices instead of a netlist to sections
+- update var name
+- fix runtime issue in randomPlacement()
+- add check for manufacturing grid
+- unit tests
+- update readme
+- add flag to allow min_distance in number of tracks instead of microns
+- fix messages
+- use static_cast
+- update messages.txt
+- add check to avoid division by zero
+- fix uninitialized struct member
+- add comment for sortConstraints
+- restore createSectionsPerConstraint function
+- sort only overlapping constraints
+- sort constraints by pins per slots
+- ok files for add_constraint8
+- update num_slots for constraint sections
+- new unit test
+- move sections initialization to initConstraints
+- add sections to Constraint struct
+- modifying obstruction box for top layer code to make code mode legible
+- adding keepout parameter to define_pin_shape so pins honor existing routing
+- new unit test
+- check pin placement status for constraints
+- remove wrong break
+- new unit tests for random pin placement
+- add getValidSlots function
+- respect constrained pin groups during random placement
+- respect pin groups during random placement
+- update ok files
+- fix pin overlaps when define multiple constraints
+- unit tests
+- use set for PinList
+- switching parse_pin_names to use database instance conversion instead of using names to find bterms
+- clear_constraints -> clear_io_pin_constraints
+- correct typo in warn 44 message referencing missing variable
+- update messages.txt
+- readme
+- unit tests
+- add clear_constraints command
+- add warn message when pin is assigned to multiple constraints
+- fix random placement for constraints
+- keep constraints information between consecutive runs
+- update messages.txt
+- check if there is enough positions for constraints
+- update messages.txt
+- fix clear function
+- minor fixes in readme
+- warn for invalid edge on set_io_pin_constraint command
+- rename functions
+- check if pins fit in the available slots
+- unit tests for random top layer placement
+- add top layer placement into random
+- sort pins vector only when size > 1
+- new tests for random
+- random placement aware of constraints
+- add is_placed_ attribute
+- refactor randomPlacement
+- update messages.txt
+- add check for pin count on place_pin command
+- small fixes
+- more unit test
+- update readme
+- unit tests for place_pin command
+- add place_pin command
+- ignore FIRM and LOCKED pins
+- add placePin function
+- more unit test for top layer placement
+- update readme
+- update parse_pin_names
+- rename .t and .tcl files
+- check and error message for empty pin list
+- on manufacturing grid placement on top layer
+- more unit test for top layer placement
+- support for * keyword for region and pin_names
+- -origin -> -region
+- report layer name in top layer constraint
+- fix readme
+- initialize top_grid_
+- update messages.txt
+- update readme
+- top layer slots as global attribute
+- more unit test for top layer placement
+- unit tests for top layer placement
+- verify region constraint for top layer pins
+- avoid recompute slots for top layer
+- correctly placement of pins at the top layer
+- remove addPattern function from Core class
+- unit test
+- start slots and section creation for top layer constraints
+- add define_pin_shape_pattern command and support top layer constraint
+- const &
+- assigned constrained pins first
+- remove constraints arguments
+- ok files
+- assign constrained groups to special sections
+- use stable sort
+- update constraints tests
+- remove constraints check for hpwl computation
+- assign names constraints first
+- add sections for constraints that have pins
+- place constrained pins into special sections
+- refactor assignPinsToSections function
+- remove header
+- remove random modes
+- remove deprecated message
+- remove deprecated random alternatives
+- update custom shuffle
+- update messages.txt
+- update flow tests
+- use layer names
+- update ok files
+- add custom shuffle function
+- refactor check
+- fix uninitialized members
+- fix null pointer dereference
+- const& everywhere
+- add funciton to create sections for constraints
+- refactor section creation
+- fix section creation from multiple layers
+- remove using statements
+- update log messages
+- add comments and update readme
+- update README
+- update unit tests
+- min distance in microns
+- remove dead code
+- update function calls to add pin lists
+- swig type for PinList
+- function to add pin groups
+- check if macro is placed
+- check if intersection region is not inside the die area
+- check regions blocked by dbObstructions
+- refactor function
+- remove wrong check
+- unit test for blocked region
+- detect regions blocked by macros in the die boundary
+- update messages.txt
+- PinGroup -> PinList
+- function to add pins to constraint
+- use pin list in Constraint
+- fix check in set_io_pin_constraint
+- update messages.txt
+- random tests ok
+- update unit tests scripts and ok files
+- add warn message for layer preferred direction
+- add comments and update section struct
+- update messages.txt
+- fix check for valid layer and track grid
+- update set_io_pin_constraint description
+- -pin_names instead of -names
+- consistent usage of TLA
+- use abbreviation for manufacturing grid var
+- on_grid ok files
+- add unit test for on grid pins
+- place pins on manufacturing grid
+- update messages
+- update README
+- update option name
+- fix README
+- remove more dead code
+- update documentation
+- use const
+- remove dead code
+- use std::find_if
+- update README
+- more unit tests
+- bug fix when reducing available slots in a section after assign groups
+- preference for sections with more slots available
+- correct check constraints for sections
+- update random tests ok files
+- update ok files
+- add penalty cost for sections assigned using the first or the last slot
+- use all slots of a section
+- enhance pin assignment to section
+- add unit test for design with cells not placed
+- update unit tests
+- set default offset as 1u
+- avoid sections with slots in different edges
+- add edge information for slot
+- use center of die area as position for unplaced instances
+- random ok
+- correct computation of num_tracks in Tcl
+- get iterm avg xy position for instance pins
+- use int64_t to avoid overflow
+- new unit test with group_pins and set_io_pin_constraint
+- update ok files
+- fix assignment for groups
+- fix overflow in cost computation
+- update unit test
+- warn instead of error for invalid pin name
+- use range iteration
+- return value instead of reference
+- minor update in README
+- new unit test for group_pins
+- use std::vector to store pin indices of a group
+- avoid negative values in hungariam matching matrix
+- add api to create pin group
+- fix bug and use std::max
+- update messages.txt
+- use range iteration on containers and remove deprecated functions
+- add map for dbBTerm to pin index
+- parse pins in Tcl and use dbBTerm
+- fix README
+- update README
+- ok files for grou_pins tests
+
+### Psm
+- split findUnconnectedInsts into several smaller functions
+- rename floating to unconnected
+- add unit test for error report
+- add more unit tests for connectivity checking
+- add connectivity checks for instances without any connectivity
+- add nodes on iterms with overlap with a pdn shape
+- use macro pin shapes to form connections
+- update readme
+- fix optional access
+- remove unused variable
+- add em enabled message back
+- add message about voltage for net
+- move get_power to ir_solver
+- remove voltage map from IRSolver and move code over to pdnsim
+- simplify voltage handeling
+- break readSource into several smaller functions
+- update tests with diffs
+- break readSource into several smaller functions
+- switch power_net from string to dbNet
+- fix command names
+- add check for missing power net before running
+- use iter
+- fixed formatting for psm
+- add zerosoc test for padring conenctions
+- add support to use pad instances as sources
+- ensure corner_ is initialized to nullptr
+- ensure to_layer gets set before added sources
+- use layer for source instead of assumed top_layer_
+- enforce corner is not nullptr to avoid segfault
+- rename bterm source creation function
+- correct tests to account for reordered warnings
+- add net and corner to IR drop metrics
+- add voltage text to nodes in debug_gui
+- rename C4 bumps to sources
+- generate warnings only on user specified nodes
+- use bterm information to supply power if available
+- fix formatting
+- add corner information to the output of PSM
+- add ability to get analysis across corners
+- add hooks to use resizer for IR drop across corners
+- make metrics consistant with matric naming scheme
+- fix disconnected test
+- adding powergrid metrics
+- convert logger messages from printing routing layer to layer names
+- move disconnected def to test folder
+- fix failing tests due to removed check for voltage
+- remove unused files
+- move asap7 tests to use /test data instead
+- move sky130 tests to use /test data instead
+- move Nangate45 tests to use /test data instead
+- add tests for check_power_grid
+- dont require voltage or liberty when doing connectivity checks
+- use exceptions on error for ofstream error_report
+- write unconnected nodes to rpt for loading in the GUI
+- clang-tidy
+- Add test for block via on rail
+- Handle block vias on rails
+- fix compile error, missing fwd decl
+- clang-format
+- Flag if pad is connected to grid
+- Extracting enclousre from box shapes
+- Handle vias with non-overlapping cuts
+- Merge master and resolve conflicts
+- coverity fixes
+- clang-format
+- Update comment
+- Updating ok files
+- Distribute nodes on bottom layers evenly
+- Remove code which considers that the  bottom layer can be vertical
+- Update ok files
+- Adding function nodes at the bottom layer for vias and stripes
+- minor gmat refactors
+- fix color of first edge of first cluster
+- error if no Liberty loaded and voltage is unspecified by the user
+- remove unused bbox and misc cleanup
+- more code cleanups
+- move matrix related classes to gmat.h
+- minor cleanups
+- correctly center the bumps
+- Return dbInst* not std::string followed by name lookup
+- refactoring
+- convert member naming to our style
+- clang-format
+- clang-format
+- error when analysis can't run
+- Node density and node density factor are mutually exclusive
+- Clean up
+- Order of intialization of members
+- Node density to be a factor of standard cell height
+- bug fix in nearest node search
+- convert BumpData to a struct
+- draw larger circle for the bumps
+- update tests for bump centering fix
+- quick debug gui to visualize the nodes & bumps
+- skip analyzing empty nets
+- fix wrong layer in error message
+- skip power nets with no shapes
+- support tech vias
+- check_power_grid report error on problems
+- remove prefix since we have a namespace
+
+### Rcx
+- fix compile warnings
+- add -coordinates option to write_spef to get "*C <x> <y>" per node
+- rm extSpef::initSearchForNets()
+- rm unneeded _searchFP from extMain
+- rm unused _search from extSpef
+- add uint for osx
+- clang-format
+- remove Ath__ prefix in name.h/cpp
+- rm unused extDielectric::printDielectric
+- rm unused extConductor::printConductor
+- rm dead code
+- rm unused extSpef::_node2nodeHashTable and associated methods
+- general cleanup
+- continuing cleanups
+- rm more deadcode
+- rm more dead code
+- rm a lot of unused code and options
+- fix coverity warnings
+- remove remaining sdb
+- remove some sdb
+- rm _reuseMetalFill
+- clang-format
+- more signal table & tile cleanup
+- rm signal_table
+- rm extMain::_alwaysNewGs
+- rm extMain::_unifiedMeasureInit
+- remove more caller-less fns
+- remove many caller-less fns
+- remove window based extraction
+- rm preserve_geom
+- rm litho
+- rm tile/btermThreshold
+- rm rlog
+- rm over_cell, remove_cc, and unlink_ext
+- remove commented out code and useless comments
+- rm dbNetSdb
+- rm eco & re_extract
+- fix copyright header in extBenchDB.cpp
+- rm match report_total_cap report_total_cc
+- rm Ext::set_block
+- clang-format
+- rm useless conditionals
+- rm HI_ACC_2 conditional
+- rm DAVID_ACC_08_02 conditional
+- rm MIN_FOR_LOOPS conditional
+- rm FRINGE_UP_DOWN conditional
+- rm DEBUG_gs conditional
+- rm EXT_SI conditional
+- rm GS_OLD conditional
+- rm CHECK_SAME_NET conditional
+- remove commented fields
+- remove useless comments
+- rm OLD_READ_QCAP conditional
+- rm SKIP_SOLVER conditional
+- rm GS_CROSS_LINES_ONLY conditional
+- rm HI_ACC_1 conditional
+- rm DIAG_FIRST code
+- rm TEST_SIGNAL_TABLE code
+- rm WIN32 code
+- rm TEST_SIGNAL_TABLE
+- rm #if ZDEBUG code
+- rm bbox
+- rm ibox
+- rm _currentDir and misc related
+- rm extMain::createExtBlock
+- rm extMain::fillWindowsDB
+- rm extMain::createWindowsDB
+- rm extMain::couplingWindowFlow
+- rm cc_band_tracks and misc vars
+- rm extMain::_debug
+- remove single use variables in Ext::extract
+- rm #ifdef ZUI code
+- rm test & tiling options
+- rm extSpef::adjustNodeCoords
+- rm extSpef::getITermShapeId
+- rm extSpef::getBTermShapeId
+- rm extSpef::readNmCoords
+- rm extSpef::findShapeId
+- rm extSpef::parseAndFindShapeId
+- rm extSpef::getShapeIdFromNodeCoords
+- rm extDistRC::debugRC
+- rm ext_test_wire.cpp
+- Use ADS_MAX_CORNER
+- remove unused vars
+- clang-format
+- add -over_dist & -under_dist options to bench_wires
+- run_130.sh -> run.sh (undo old bad rename)
+- fix mac build yet again (uint undefined)
+- fix mac build again (uint undefined)
+- fix mac build (uint undefined)
+- disable generate_rules not generate_pattern
+- scrub .spefok
+- check design is loaded to avoid crash
+- fix possible buffer overrun
+- fix unused return warnings on more system calls
+- fix unused return warnings on system calls
+- fix valgrind errors
+- simplify routing layer check
+- fix var name
+- check routing level
+- cleanup many compiler warnings
+- remove usage of printControl
+- update ok files for def ordering change
+- add .gitignore for test/results
+- update regression for opendb change
+- remove cmake_minimum_required as no longer a submodule
+- fix compiler warning
+
+### Replace
+- plot using single function for consistancy in file naming
+- restore file deleted by mistake
+- large tests
+- fix command string
+- add explanatory comment
+- using float point constants to avoid float/double conversion for efficiency
+- init graphics earlier
+- const correctness
+- add initial placement debug graphics
+- remove unused minAvgCut & maxAvgCut
+- fix bug in assigning final locations to instances in opendb
+- take strings by const& for efficiency
+- remove more unused decls
+- fix force line
+- restore bin drawing condition
+- remove ntuplace
+- update link
+- remove broken links
+- misc & rename coyote_TSMC16.gif to coyote_movie.gif to comply with naming rules
+- plotting updates
+- add module to .gitignore
+- Fix: move blockage marking before fixed instance marking
+- support placement blockages
+- Fix dieArea to come from getDieArea() not getBBox()
+- resolve error when using CImg
+
+### Report_floating_nets
+- only report undriven nets with loads
+
+### Rmp
+- fix PinSet for sta update
+- clang-format
+- remove whole app dependency
+- fix coverity error with using deallocated temp
+- Use correct STA APIs
+- fix logging bug
+- disable yosys-abc dependent tests gcd_restructure & const_cell_removal
+- fix copyright notice holder
+- add missing copyright notices
+- minor formatting of blifParser.h
+- clang-format and add eol at eof
+- out-of-line large methods
+- remove unneeded decls
+- pass non-POD args by reference for efficiency
+- remove messages.txt
+- fix const-ness of methods
+- cleanup member variables
+- clang-format autocluster.*
+- move autocluster files and warning cleanup
+
+### Rsz
+- fix set_dont_use if cell is misspelled ([#3765](https://github.com/luarss/OpenROAD/issues/3765))
+- removing the incremental grt variable after finishing the iterations in recover power function
+- always write design__instance__count__setup_buffer
+- rename last column in repair design verbose to Remaining and left align numbers
+- adjust aligment of table in repair design
+- add verbose to repair design
+- dont print header twice
+- exit out of early when there is nothing to repair
+- fix warning about cells that do not exist
+- remove layerRC(int) and fix single use instance
+- update repair_hold10
+- fix layerRC to use getNumber insteaad of routing level otehrwise all vias as annotated the same
+- add tests for verbose flags
+- add verbose flag to repair_timing
+- update tests to account for new setup message
+- add setup endpoint message to match hold repair
+- dont estimate parasitics on special nets
+- fix comment typos
+- use 200 as msg base index for ORD
+- ensure rsz resets buffer_cells_ when dont_use_ changes to force it to find buffers again ensuring it honors the dont_use changes
+- removing useless log messages
+- check instance position after resize
+- update ok files
+- fix some issues
+- disable pin swapping due to CI degradation
+- removing flag to run repair_design for all pins only when used in GRT
+- get opendp pointer in resizer
+- removing commented code
+- avoiding iterating all cells to move cells out of macros
+- adding flag to run repair_design for all pins only when used in GRT
+- dont run repairDesign with clock pins
+- running repairNet for clock pins
+- do not remove a net attached to a top level port in cloneClkInverter
+- call makeCornersAfter when copying corners
+- fix misnamed paramters per clang-tidy
+- update tests for path group renaming (none) to unconstrained
+- fix swig of PinSet for find_fanin_fanouts
+- Fix int overflow SIGILL
+- moving cells out of macros
+- tmp remove detailed placement for designs with macros
+- moving the instance when the new cell goes out the layout
+- always report hold buffer metric
+- add setup buffer to metrics
+- run dpl only when design has macro
+- use dpl before incremental grt
+- minor refactorings, const, overload removal by renaming
+- fix crash when the global routes contain a dead end
+- update repair_hold10 based on changed results due to using resizer values for parasitics
+- Fix warning in sort lambda expression
+- don't buffer inputs faning out to a dont-touch driver
+- select hold buffer by delay/area rather than just max delay
+- don't buffer outputs driven by a dont-touch driver
+- update tests
+- fix the handling of duplicate nodes in the Steiner tree
+- add missing reference in for loop
+- use unique_ptr per PR feedback
+- fix repair_tie_fanout issue with multiple outputs
+- repair_setup sort
+- fix remove_buffers2.def and results
+- Add rsz::set_worst_slack_nets_percent
+- scope the use of SteinerTreeBuilder
+- small slack diffs for grt change in est parasitics
+- fix bterm below min routing layer in repair_setup1.def
+- or1613 rsz stuck in infinite loop in gf180/aes
+- increase rebuffer buffer penalty
+- OL1371 test
+- RepairHold::mergeInit
+- repair hold use load setup slacks
+- RepairHold::repairEndHold allow_setup_violations condition
+- add missing sta::define_cmd_args "report_design_area"
+- coverity fixes
+- fix typo floatiing -> floating
+- check for nullptr net in clock repair
+- remove unused VertexWeightMap
+- move SteinerTree.hh to src/
+- move BufferedNet.hh to src
+- remove spdlog dependency as utl as enough
+- in repair_tie_fanout put the tie cell in the module with the load
+- drop use_network_api arg to makeInstance per feedback
+- mark created buffers as SOURCE TIMING in DEF
+- add missing args to help for repair_design
+- repair_hold10.ok
+- make report_design_area work without core area
+- fix
+- repair_hold10.ok
+- update test results for filler exclusion from util
+- exclude fillers from area/utilization calculation
+- remove grt
+- minor fix
+- use stt builder
+- remove routingAlpha
+- add stt builder
+- fix sign error in hold buffering
+- switch debug print from %d to {}
+- update tests for new message
+
+### Setup
+- remove possibly harmful advice
+- single source of truth and user oriented documentation
+
+### Src
+- handle -python with no args
+
+### Sta
+- ensure heatmap and renderer is installed
+- Update OpenSTA Version
+- ol1467 Segfault during writing timing model
+- coverity is stupid
+- power enqueue regs in fanout of from user activities
+- update submodule
+- update submodule
+
+### Stt
+- introduce type aliases in LinesRenderer
+- replace DTYPE with int
+- fix compile warnings
+- clang-tidy
+- rename unit test
+- add option to set routing alpha to clock nets
+- use stable_sort to avoid different results between OS
+- fix splitDegree4Nodes bug where not all nodes where fixed
+- clang-format
+- minor cleanups in pd
+- replace the old pdrev code with pd code
+- fix wrong path depth report on two pin nets
+- clang-format
+- use const vectors
+- more renames
+- rename ov to overlap for clarity
+- change det_cost to detour_cost for clarity
+- drop unnecessary std::
+- clang-format
+- fix array size
+- minor refactor
+- try adding alpha-0.1 fallback
+- fix swig wrapper error
+- use double in write_svg for small tree accuracy
+- add check test
+- skip check on high fanout nets
+- check PD results are a valid Steiner tree
+- fix includes
+- move Tree and Branch structs to SteinerTreeBuilder header
+- move methods implementation to cpp file
+- add flute unit tests
+- add helpers to report flute tree
+- fix flute for 1 pin net
+- refactor and fix computeHPWL check
+- fix return type
+- default min_hpwl and min_fanout is 0
+- restore pt and ptp sizes, fix stable_sort call
+- fix checks
+- check min_fanout and min_hpwl before compute it for each net
+- fix pt and ptp sizes
+- fix comp function for stable_sort
+- use const&
+- fanout = term_count -1
+- restore degree parameter to flute functions
+- update flute to use std::vector instead of arrays
+- fix uninitialized members
+- fix array copy
+- minor cleanups
+- fix structs
+- add inst/pin name in error message
+- check if terms are placed
+- simplify checks
+- add option to set alpha per min hpwl
+- add option to set alpha per min fanout
+- flute fixes
+- update pdr api
+- refactor
+- more fixes
+- small fixes
+- const dbNet*
+- remove accuracy from arguments
+- minor fixes
+- add special API for grt
+- use stable sort
+- use vector for tree branches
+- update flt namespace
+- rename function to buildSteinerTree
+- add methods to stt::Tree
+- return net alpha instead of map
+- fix init function
+- minor fixes
+- add .gitignore
+- update tests
+- fix namespaces
+- move flute and pdr to stt lib
+- fixes during compilation
+- fix namespaces
+- move read/delete LUT to stt builder
+- move pdr swig functions to SteinerTreeBuilder
+- remove deprecated pdr files
+- add stt builder into openroad
+- add Make files
+- add initial src files
+- update cmake files
+- mv pdr and flt to src
+- move pdr to stt/
+- move flute files to stt/flt
+- update flute namespace
+- fix uninitialized variables
+- fix maintainability issues
+
+### Ta
+- Rename *WlenHelper2 to *PinCoord
+- Rename wlen2 to pinCoord
+- Fix bug when iterating pins and APs
+
+### Tap
+- add check if unable to complete boundaries
+- correct tests with incorrect right edge endcaps
+- correct missing flip in orientation for right edge boundary cells
+- adjust readme
+- rename boundaries to endcaps
+- correct initial offset for rows
+- rename endcap parameters to match LEF58 naming
+- address clang-tidy feedback
+- rename place_boundary_cells to place_endcaps
+- auto selecting based on LEF types
+- remove r0/mx seperation
+- address clang-tidy
+- update readme to include new commands and add unit tests
+- fix missing edge row tapcells
+- update tests to account for naming
+- make tapcell constent with boundary cells + make to checkerboard
+- correct overlap check
+- improve API
+- correct conversion from tapcell form to boundary form
+- organize header
+- update tests to reflect different naming and print
+- remove old boundary cell code
+- use boost to build boundary regions and have a complete set of options
+- clang-tidy fixes
+- clang-format
+- just count instances in rows
+- add readme
+- check for placed instances before cutting rows
+- expose cut_rows as seperate command
+- introduce options object
+- move members to end of class definition
+- clang-format
+- remove unused tcl api find_blockages
+- update ok files
+- update n45 unit tests to use proper cell
+- add check_argc_eq0 for all commands
+- clang-format
+- add typedef for row fills
+- refactor check for overlap
+- check overlap when inserting around macros
+- small fixes
+- use svg instead of png for figures
+- separate options descriptions
+- add default value for tap/endcap prefix
+- add units info in README
+- change add_boundary to bool and ensure distance is converted to dbu before calling c-code
+- minor fix in doc
+- add figures to README
+- add description for tapcell parameters
+- minor fixes
+- fixed CI tests
+- fixed type name, moved some functions for swig utilization
+- fixed comments, type names
+- optimized and adjusted loops, variables, function returns and data structures along the code
+- updated tcl code to c++ code
+- fix messages
+- false -> 0
+- cover more cases in check_symmetry
+- update check_symmetry function
+- remove wrong code
+- unit test for symmetry check
+- refactor cut_rows function
+- fix symmetry check
+- check cell symmetry before placing it
+- update ok files
+- update check_if_filled
+- fix cells at top/bottom of the core
+- fix typo
+- fix east/west corner cells
+- ok files
+- add SOURCE DIST to tapcells and endcaps
+- correcting incorrect utl::warn call in tapcel
+- cut_rows handle null endcap master
+- remove redundant check
+- support tapcell insertion with no endcaps
+- correct behavior when there is a single site left when inserting boundary cells
+- update README
+- remove deprecated unit test
+- ok files
+- remove skip_tapcell_in_endcap flag
+- unit test for multiple calls
+- clear tapcell
+- rename unit test
+- ok files
+- fixing endcap handling around macros at the edge and adding several test cases to check against, deprecating add_boundary_cell in favor of auto checking for boundry setup cells, adding skip_tapcell_in_endcap to skip placement of tapcells if endcaps contain taps, adding prefix option to tapcells and endcaps, adding tapcell_ripup to remove inserted endcaps and tapcells
+- update README and example scripts
+- fix corner cell orientation
+- update unit tests
+- fix log messages
+- fix indentation
+- avoid iterate over all macros
+- detect all blockages overlapping and at top/bottom rows
+- store blockages bbox instead of inst
+- update sky130 unit tests
+- update proc to detect even rows
+- avoid multiple calls for getBBox
+- consistent usage of TLA
+- fix messages
+- remove warn message
+- add unit test for avoid overlap
+- update messages.txt
+- move tapcells to avoid overlap with endcap
+- get correct x value for checks
+- print positions in microns
+- remove useless information from logger
+- fix coverity UNINIT_CTOR
+
+### Tcl
+- update comment relating to history.tcl
+- handle error from tcl history initial load centrally
+
+### Tech
+- changing prop order, correct via-layer name and spacing format
+- add generate via rules
+
+### Tech
+- add techvialayerrule descriptor
+- viarule descriptors added and registered
+- add nondefaul-rules / corrects every higher case
+
+### Test
+- bump limits to account for possible extraction issue
+- change tests to use pdn tcl
+- update sky cts buf to match ORFS
+
+### Tr
+- add draw edges marked with drc cost
+- add debug filter for gcell
+- draw blocked/costed edges in the grid graph
+- fix refactor mistake
+- add trailing _ to GridGraph member variables
+- refactor grid graph to have a Node instead of bits
+- add detailed_route_num_drvs command
+- append _ to class members variables
+- remove use of OpenRoad::openRoad()
+- make maze markers smaller and give gcell coordinates in the gui
+- draw patch wires in the gui
+- Map opendb layer indices to tr
+- only debug single threaded
+- check the gui is live for debugging
+- init dr debug graphics
+- return error properly
+- fix clang warning about unused capture
+- update README for integration
+
+### TritonMacroPlace
+- remove .gdb_history
+- Fix a partitioning bug and a weighting bug
+- missed a file in the last commit
+- fix site size (was incorrectly row size)
+
+### Upf
+- cleanup dependency on the OpenRoad class
+- clang-tidy fixes
+
+### Ut
+- add a basic timer class for elapsed time
+
+### Utl
+- provide pop_metrics_stage return value
+- add unsuppress_message to mirror suppress_message
+- add to_numeric_string
+- change debug messages to use group rather than level
+- require boost 1.78 to ensure span is available
+- matching common naming
+- add remove metrics sink option and enable metrics regression tests
+- change float to double since SWIG does a cast to double which casues convertion issues, add checks for inf and nan and record those as strings + test cases to check, but cannot enable due to missing close_metrics command
+- clang-format
+- fix return of freed memory
+- fix mac build
+- fix logic bug in validation
+- check find result in Logger::removeSink
+- add ability to remove sink
+- rename utility -> utl
+- limit messages to 1000 per tool-id pair
+- fix variadic macro warning
+- logger use :: as metric separator
+- minor logger update
+- simplify metrics api of the logger
+- avoid ambiguity in the metrics api of the logger
+- give filename default=nullptr in Logger per feedback
+- Add metric methods to Logger
+- move attribute to make g++ & clang++ both happy
+- mark logger warn & error as noreturn
+
+### Via_layer
+- correct getAllObjects loops / corrects uint indexes
+
+### WiP
+- How to reject out of range max slew values
+
+### Reverts
+- ord: bump metrics limits that changed
+- merge updates from master
+- logging: fix lockup when resizing window in Docker
+- Merge pull request [#3457](https://github.com/luarss/OpenROAD/issues/3457) from The-OpenROAD-Project-staging/TR-patch-center
+- gui: Fix undefined behavior sanitizer error
+- Merge pull request [#3110](https://github.com/luarss/OpenROAD/issues/3110) from QuantamHD/cts_div_zero
+- drt: consider block, pad and ring instances during prepPA
+- Merge pull request [#2940](https://github.com/luarss/OpenROAD/issues/2940) from The-OpenROAD-Project-staging/drt-via-selection
+- grt: create fake pin position when another IO/macro pin is inside the offset region
+- grt: add checks for debug
+- drt: fix assignment to areaMap
+- gui: explicitly set background bush on ClockTreeScene
+- gui: force convert images to RGB to avoid transparent backgrounds
+- add jpeg sky130hd/hs to regression tests
+- drt: use WITHIN spacing for every owner
+- test excluded modules
+- gui: add check for effectively empty regex
+- drt: fix modMinimumCutCost
+- grt: sort nets by clock status
+- Merge pull request [#2264](https://github.com/luarss/OpenROAD/issues/2264) from habibayassin/unify-db
+- Merge pull request [#2312](https://github.com/luarss/OpenROAD/issues/2312) from habibayassin/frconstraint-coverity-fix
+- Merge pull request [#2279](https://github.com/luarss/OpenROAD/issues/2279) from jjcherry56/or2270
+- example yaml files for running auto discoverable workers
+- drt: monpathcost mincut
+- closes The-OpenROAD-Project/OpenROAD[#1872](https://github.com/luarss/OpenROAD/issues/1872)
+- pdn: remove partially overlapping vias
+- drt: use capnp with design updates
+- Merge pull request [#1532](https://github.com/luarss/OpenROAD/issues/1532) from jjcherry56/grt_cleanup
+- gui: removing use of fanin/fanout and just to BFS instead
+- drt: transform access point before stroing in odb
+- Revert "Add abc as a submodule and switch to calling vs forking ([#1413](https://github.com/luarss/OpenROAD/issues/1413))"
+- Revert "Add abc as a submodule and switch to calling vs forking ([#1413](https://github.com/luarss/OpenROAD/issues/1413))"
+- Add abc as a submodule and switch to calling vs forking ([#1413](https://github.com/luarss/OpenROAD/issues/1413))
+- update boost hash in dependency installer
+- gui: remove use of singleton and pass around dbDatabase as needed for toString
+- gui: fix selection behavior when deselecting object
+- Updated branch
+- junctions at same origin
+- many: make renderers in other tools always require repainting
+- gui: coverity rand() is not used for crypto, no security concerns
+- Merge pull request [#864](https://github.com/luarss/OpenROAD/issues/864) from eder-matheus/grt_revert
+- Merge pull request [#986](https://github.com/luarss/OpenROAD/issues/986) from eder-matheus/grt_revert
+- Merge pull request [#968](https://github.com/luarss/OpenROAD/issues/968) from eder-matheus/grt_update
+- grt: check for min-max layers before adding obstructions to grid
+- grt: check if layer is MIMCAP
+- Merge pull request [#834](https://github.com/luarss/OpenROAD/issues/834) from The-OpenROAD-Project-staging/pdngen-tcl_api
+- 
+- gui: draw outline of rows when zoomed out
+- gui: correcting row outline loop and selection of rows for outline
+- sta: update submodule
+- Merge pull request [#857](https://github.com/luarss/OpenROAD/issues/857) from eder-matheus/grt_layer_restriction
+- cts max_cap test
+- dynamically adjust action probability
+- fixed bugs
+- enable ignore_net_threshold in PartitionMgr
+- drt: fix assert
+- tap: update check_if_filled
+- Merge pull request [#654](https://github.com/luarss/OpenROAD/issues/654) from The-OpenROAD-Project-staging/label-action-rework
+- grt: remove *100 for congest driven place api
+- grt: add gcell blockage information into database
+- grt: print actual l2v value
+- Merge pull request [#519](https://github.com/luarss/OpenROAD/issues/519) from The-OpenROAD-Project-private/grt_wrong_way_conn
+- grt: minor improvement, take map by const& not value
+- Updating ok files for new message in thread count
+- updating make_parasitics6.ok to include threads statement
+- Merge pull request [#401](https://github.com/luarss/OpenROAD/issues/401) from The-OpenROAD-Project-private/Secure-cts_skew
+- Revert "drt: Fix a number of integer overflow issues (merge from public PR [#605](https://github.com/luarss/OpenROAD/issues/605))"
+- drt: Fix a number of integer overflow issues (merge from public PR [#605](https://github.com/luarss/OpenROAD/issues/605))
+- flow.tcl repair_timing after grt
+- Openroad.timing UI
+- Sky130 lef2
+- Merge branch 'master' into openroad
+- Revert "Merge pull request [#346](https://github.com/luarss/OpenROAD/issues/346) from The-OpenROAD-Project/ARC"
+- Merge pull request [#346](https://github.com/luarss/OpenROAD/issues/346) from The-OpenROAD-Project/ARC
+- reset FR to version before ARC merge to hopefully resolve Jenkins failure
+- print user info for debug
+- try user name not uid
+- try setting UID_MIN
+- setup /OpenROAD dir
+- Add padding to the database
+- temporarily make filler error into warning
+- require c++17 as TritonRoute requires it (integration prep)
+- After via resistance obtained from DB
+
+### Pull Requests
+- Merge pull request [#3843](https://github.com/luarss/OpenROAD/issues/3843) from QuantamHD/fix_double_height_paint_routines
+- Merge pull request [#3932](https://github.com/luarss/OpenROAD/issues/3932) from The-OpenROAD-Project-staging/cts-sink-count-fix
+- Merge pull request [#3930](https://github.com/luarss/OpenROAD/issues/3930) from gadfort/pad-error-on-master
+- Merge pull request [#3929](https://github.com/luarss/OpenROAD/issues/3929) from eder-matheus/ppl_fix_crash
+- Merge pull request [#3926](https://github.com/luarss/OpenROAD/issues/3926) from openroadie/OR3924
+- Merge pull request [#3927](https://github.com/luarss/OpenROAD/issues/3927) from eder-matheus/ppl_place_pin_fix
+- Merge pull request [#3923](https://github.com/luarss/OpenROAD/issues/3923) from eder-matheus/ppl_dump_placement
+- Merge pull request [#3888](https://github.com/luarss/OpenROAD/issues/3888) from luis201420/grt_inc_runtime_updates
+- Merge pull request [#3908](https://github.com/luarss/OpenROAD/issues/3908) from openroadie/OR3907
+- Merge pull request [#3917](https://github.com/luarss/OpenROAD/issues/3917) from refaay/bugfix-init-vias
+- Merge pull request [#3920](https://github.com/luarss/OpenROAD/issues/3920) from The-OpenROAD-Project-staging/gui-uninit-ctor
+- Merge pull request [#3887](https://github.com/luarss/OpenROAD/issues/3887) from refaay/lef57_support
+- Merge pull request [#3919](https://github.com/luarss/OpenROAD/issues/3919) from The-OpenROAD-Project-staging/mpl2-no-unplaced
+- Merge pull request [#3913](https://github.com/luarss/OpenROAD/issues/3913) from gadfort/fix-empty-draw
+- Merge pull request [#3886](https://github.com/luarss/OpenROAD/issues/3886) from The-OpenROAD-Project-staging/gui-multi-view
+- Merge pull request [#3898](https://github.com/luarss/OpenROAD/issues/3898) from eder-matheus/ppl_annealing
+- Merge pull request [#3901](https://github.com/luarss/OpenROAD/issues/3901) from openroadie/refactor_gate_cloning_undo
+- Merge pull request [#3902](https://github.com/luarss/OpenROAD/issues/3902) from openroadie/Issue_3900
+- Merge pull request [#3897](https://github.com/luarss/OpenROAD/issues/3897) from The-OpenROAD-Project-staging/secure-HV-recover_power_test
+- Merge pull request [#3894](https://github.com/luarss/OpenROAD/issues/3894) from gadfort/pdn-macro-fixed
+- Merge pull request [#3895](https://github.com/luarss/OpenROAD/issues/3895) from The-OpenROAD-Project-staging/drt-uniq-inst-refactor
+- Merge pull request [#3889](https://github.com/luarss/OpenROAD/issues/3889) from AcKoucher/gui_adjust_routing_map
+- Merge pull request [#3890](https://github.com/luarss/OpenROAD/issues/3890) from AcKoucher/gui_fix_attribute_filter_defects
+- Merge pull request [#3876](https://github.com/luarss/OpenROAD/issues/3876) from AcKoucher/gui_adjust_heat_map
+- Merge pull request [#3877](https://github.com/luarss/OpenROAD/issues/3877) from eder-matheus/grt_congestion_info
+- Merge pull request [#3882](https://github.com/luarss/OpenROAD/issues/3882) from The-OpenROAD-Project-staging/drt-minor
+- Merge pull request [#3880](https://github.com/luarss/OpenROAD/issues/3880) from gadfort/pdn-error-on-empty-grids
+- Merge pull request [#3821](https://github.com/luarss/OpenROAD/issues/3821) from AcKoucher/gui_select_new_filter
+- Merge pull request [#3837](https://github.com/luarss/OpenROAD/issues/3837) from The-OpenROAD-Project-staging/cts-charblock-destroy
+- Merge pull request [#3873](https://github.com/luarss/OpenROAD/issues/3873) from The-OpenROAD-Project-staging/mpl2-area-check
+- Merge pull request [#3865](https://github.com/luarss/OpenROAD/issues/3865) from openroadie/recover_power
+- Merge pull request [#3870](https://github.com/luarss/OpenROAD/issues/3870) from eder-matheus/ppl_constraint_check
+- Merge pull request [#3869](https://github.com/luarss/OpenROAD/issues/3869) from gadfort/psm-check-grid
+- Merge pull request [#3864](https://github.com/luarss/OpenROAD/issues/3864) from openroadie/coverity_and_formatting
+- Merge pull request [#3756](https://github.com/luarss/OpenROAD/issues/3756) from osamahammad21/drt-warn-off-grid
+- Merge pull request [#3841](https://github.com/luarss/OpenROAD/issues/3841) from openroadie/or_3783
+- Merge pull request [#3858](https://github.com/luarss/OpenROAD/issues/3858) from eder-matheus/drt_blockages
+- Merge pull request [#3857](https://github.com/luarss/OpenROAD/issues/3857) from Pinata-Consulting/gui-centered-text-with-outline
+- Merge pull request [#3818](https://github.com/luarss/OpenROAD/issues/3818) from AcKoucher/gui_cmd_via_timing_report
+- Merge pull request [#3855](https://github.com/luarss/OpenROAD/issues/3855) from gadfort/psm-pins
+- Merge pull request [#3854](https://github.com/luarss/OpenROAD/issues/3854) from The-OpenROAD-Project-staging/ant-grt-dep
+- Merge pull request [#3852](https://github.com/luarss/OpenROAD/issues/3852) from The-OpenROAD-Project-staging/odb-deps
+- Merge pull request [#3851](https://github.com/luarss/OpenROAD/issues/3851) from The-OpenROAD-Project-staging/stt-dtype-int
+- Merge pull request [#3849](https://github.com/luarss/OpenROAD/issues/3849) from ApeachM/hotfix/odb
+- Merge pull request [#3850](https://github.com/luarss/OpenROAD/issues/3850) from The-OpenROAD-Project-staging/stt-header-priv
+- Merge pull request [#3832](https://github.com/luarss/OpenROAD/issues/3832) from Pinata-Consulting/gui-fix-text-elide-rendering-bugs
+- Merge pull request [#3842](https://github.com/luarss/OpenROAD/issues/3842) from QuantamHD/delete_python_tests
+- Merge pull request [#3835](https://github.com/luarss/OpenROAD/issues/3835) from eder-matheus/ppl_annealing_perturbs
+- Merge pull request [#3836](https://github.com/luarss/OpenROAD/issues/3836) from gadfort/gui-fix-segfault
+- Merge pull request [#3819](https://github.com/luarss/OpenROAD/issues/3819) from gadfort/odb-def-parser
+- Merge pull request [#3797](https://github.com/luarss/OpenROAD/issues/3797) from mina1460/dpl_report_failures_to_file_
+- Merge pull request [#3834](https://github.com/luarss/OpenROAD/issues/3834) from The-OpenROAD-Project-staging/par-bad-bal
+- Merge pull request [#3826](https://github.com/luarss/OpenROAD/issues/3826) from Pinata-Consulting/detailed-route-no-step-0-progress-report
+- Merge pull request [#3804](https://github.com/luarss/OpenROAD/issues/3804) from gadfort/psm-cleanup
+- Merge pull request [#3830](https://github.com/luarss/OpenROAD/issues/3830) from The-OpenROAD-Project-staging/gui-exit-crash
+- Merge pull request [#3764](https://github.com/luarss/OpenROAD/issues/3764) from titan73/master
+- Merge pull request [#3823](https://github.com/luarss/OpenROAD/issues/3823) from The-OpenROAD-Project-staging/gui-func-connect
+- Merge pull request [#3814](https://github.com/luarss/OpenROAD/issues/3814) from Pinata-Consulting/gui-render-instance-label-centered
+- Merge pull request [#3610](https://github.com/luarss/OpenROAD/issues/3610) from AcKoucher/gui_pin_marker_text_offset
+- Merge pull request [#3815](https://github.com/luarss/OpenROAD/issues/3815) from gadfort/gui-clock-tree-cmd
+- Merge pull request [#3807](https://github.com/luarss/OpenROAD/issues/3807) from Pinata-Consulting/ppl-infinite-loop-fix
+- Merge pull request [#3816](https://github.com/luarss/OpenROAD/issues/3816) from eder-matheus/ppl_annealing_fix
+- Merge pull request [#3809](https://github.com/luarss/OpenROAD/issues/3809) from The-OpenROAD-Project-staging/grt-ignore-space
+- Merge pull request [#3810](https://github.com/luarss/OpenROAD/issues/3810) from The-OpenROAD-Project-staging/odb-gen
+- Merge pull request [#3792](https://github.com/luarss/OpenROAD/issues/3792) from openroadie/recover_power
+- Merge pull request [#3790](https://github.com/luarss/OpenROAD/issues/3790) from gadfort/gui-pin-select
+- Merge pull request [#3770](https://github.com/luarss/OpenROAD/issues/3770) from eder-matheus/drt_fix
+- Merge pull request [#3787](https://github.com/luarss/OpenROAD/issues/3787) from Pinata-Consulting/support-newer-ubuntu-versions
+- Merge pull request [#3805](https://github.com/luarss/OpenROAD/issues/3805) from The-OpenROAD-Project-staging/odb-code-gen
+- Merge pull request [#3796](https://github.com/luarss/OpenROAD/issues/3796) from gadfort/psm-segfault
+- Merge pull request [#3794](https://github.com/luarss/OpenROAD/issues/3794) from The-OpenROAD-Project-staging/odb-refactoring
+- Merge pull request [#3793](https://github.com/luarss/OpenROAD/issues/3793) from The-OpenROAD-Project-staging/odb-dead-field
+- Merge pull request [#3786](https://github.com/luarss/OpenROAD/issues/3786) from Pinata-Consulting/gui-next-free-message-id
+- Merge pull request [#3785](https://github.com/luarss/OpenROAD/issues/3785) from fgaray/gtest_migration
+- Merge pull request [#3780](https://github.com/luarss/OpenROAD/issues/3780) from mina1460/dpl_report_failures
+- Merge pull request [#3784](https://github.com/luarss/OpenROAD/issues/3784) from eder-matheus/ppl_fix
+- Merge pull request [#3778](https://github.com/luarss/OpenROAD/issues/3778) from gadfort/tap-error
+- Merge pull request [#3776](https://github.com/luarss/OpenROAD/issues/3776) from The-OpenROAD-Project-staging/gui-cts-viewer-skip-virtual
+- Merge pull request [#3774](https://github.com/luarss/OpenROAD/issues/3774) from The-OpenROAD-Project-staging/grt-layer-underscore
+- Merge pull request [#3775](https://github.com/luarss/OpenROAD/issues/3775) from The-OpenROAD-Project-staging/cts-slew-limit
+- Merge pull request [#3767](https://github.com/luarss/OpenROAD/issues/3767) from The-OpenROAD-Project-staging/mpl2-snap-to-tracks
+- Merge pull request [#3690](https://github.com/luarss/OpenROAD/issues/3690) from openroadie/improve_hold_fixing
+- Merge pull request [#3762](https://github.com/luarss/OpenROAD/issues/3762) from openroadie/opensta_update
+- Merge pull request [#3761](https://github.com/luarss/OpenROAD/issues/3761) from gadfort/tap-fix-endcaps
+- Merge pull request [#3757](https://github.com/luarss/OpenROAD/issues/3757) from eder-matheus/grt_repair_antennas_assert
+- Merge pull request [#3758](https://github.com/luarss/OpenROAD/issues/3758) from mina1460/no_report_unless_required
+- Merge pull request [#3751](https://github.com/luarss/OpenROAD/issues/3751) from eder-matheus/grt_report_congestion
+- Merge pull request [#3750](https://github.com/luarss/OpenROAD/issues/3750) from The-OpenROAD-Project-staging/odb-ver-check
+- Merge pull request [#3721](https://github.com/luarss/OpenROAD/issues/3721) from AcKoucher/ppl_visual_debug
+- Merge pull request [#3704](https://github.com/luarss/OpenROAD/issues/3704) from gadfort/tap-types
+- Merge pull request [#3748](https://github.com/luarss/OpenROAD/issues/3748) from The-OpenROAD-Project-staging/order-wires
+- Merge pull request [#3747](https://github.com/luarss/OpenROAD/issues/3747) from The-OpenROAD-Project-staging/fin-mask
+- Merge pull request [#3741](https://github.com/luarss/OpenROAD/issues/3741) from eder-matheus/grt_ant_fix
+- Merge pull request [#3736](https://github.com/luarss/OpenROAD/issues/3736) from The-OpenROAD-Project-staging/dd-flush
+- Merge pull request [#3728](https://github.com/luarss/OpenROAD/issues/3728) from The-OpenROAD-Project-staging/odb-3dic
+- Merge pull request [#3712](https://github.com/luarss/OpenROAD/issues/3712) from luis201420/grt_drc_report
+- Merge pull request [#3734](https://github.com/luarss/OpenROAD/issues/3734) from luis201420/rsz_recover_power_fix
+- Merge pull request [#3679](https://github.com/luarss/OpenROAD/issues/3679) from gadfort/drt-skip-double-cuts
+- Merge pull request [#3725](https://github.com/luarss/OpenROAD/issues/3725) from eder-matheus/grt_zero_length_net
+- Merge pull request [#3667](https://github.com/luarss/OpenROAD/issues/3667) from gadfort/pad-no-cover
+- Merge pull request [#3693](https://github.com/luarss/OpenROAD/issues/3693) from eder-matheus/ppl_annealing_mirrored
+- Merge pull request [#3512](https://github.com/luarss/OpenROAD/issues/3512) from ABKGroup/master
+- Merge pull request [#3707](https://github.com/luarss/OpenROAD/issues/3707) from vvbandeira/update-clang-tidy-gha
+- Merge pull request [#3706](https://github.com/luarss/OpenROAD/issues/3706) from vvbandeira/add-docs-config
+- Merge pull request [#3639](https://github.com/luarss/OpenROAD/issues/3639) from mina1460/dpo_error_reporting
+- Merge pull request [#3699](https://github.com/luarss/OpenROAD/issues/3699) from The-OpenROAD-Project-staging/tap-api2
+- Merge pull request [#3695](https://github.com/luarss/OpenROAD/issues/3695) from The-OpenROAD-Project-staging/cts-special-net-prop
+- Merge pull request [#3691](https://github.com/luarss/OpenROAD/issues/3691) from The-OpenROAD-Project-staging/rsz-missing-metric
+- Merge pull request [#3684](https://github.com/luarss/OpenROAD/issues/3684) from proppy/py-run-main
+- Merge pull request [#3688](https://github.com/luarss/OpenROAD/issues/3688) from gadfort/rsz-more-verbose
+- Merge pull request [#3683](https://github.com/luarss/OpenROAD/issues/3683) from gadfort/pdn-correctly-fix-pins
+- Merge pull request [#3686](https://github.com/luarss/OpenROAD/issues/3686) from luarss/messages_fix
+- Merge pull request [#3678](https://github.com/luarss/OpenROAD/issues/3678) from The-OpenROAD-Project-staging/cts-special-net
+- Merge pull request [#3676](https://github.com/luarss/OpenROAD/issues/3676) from gadfort/drt-layer-check
+- Merge pull request [#3664](https://github.com/luarss/OpenROAD/issues/3664) from eder-matheus/ppl_coverity
+- Merge pull request [#3675](https://github.com/luarss/OpenROAD/issues/3675) from gadfort/rsz-verbose-no-clocks
+- Merge pull request [#3670](https://github.com/luarss/OpenROAD/issues/3670) from openroadie/update_OpenSTA
+- Merge pull request [#3669](https://github.com/luarss/OpenROAD/issues/3669) from The-OpenROAD-Project-staging/psm-iter
+- Merge pull request [#3665](https://github.com/luarss/OpenROAD/issues/3665) from eder-matheus/ppl_order_groups
+- Merge pull request [#3663](https://github.com/luarss/OpenROAD/issues/3663) from vvbandeira/sta-msg
+- Merge pull request [#3641](https://github.com/luarss/OpenROAD/issues/3641) from openroadie/gate_cloning_undo2
+- Merge pull request [#3660](https://github.com/luarss/OpenROAD/issues/3660) from gadfort/psm-pads
+- Merge pull request [#3657](https://github.com/luarss/OpenROAD/issues/3657) from The-OpenROAD-Project-staging/odb-lefout-vias
+- Merge pull request [#3656](https://github.com/luarss/OpenROAD/issues/3656) from gadfort/psm-init-mem
+- Merge pull request [#3630](https://github.com/luarss/OpenROAD/issues/3630) from openroadie/negative_pin_swap_count
+- Merge pull request [#3651](https://github.com/luarss/OpenROAD/issues/3651) from openroadie/recover_power
+- Merge pull request [#3646](https://github.com/luarss/OpenROAD/issues/3646) from rovinski/master
+- Merge pull request [#3647](https://github.com/luarss/OpenROAD/issues/3647) from eder-matheus/ppl_annealing_constraints
+- Merge pull request [#3652](https://github.com/luarss/OpenROAD/issues/3652) from The-OpenROAD-Project-staging/check-tech
+- Merge pull request [#3645](https://github.com/luarss/OpenROAD/issues/3645) from gadfort/psm-bterms
+- Merge pull request [#3648](https://github.com/luarss/OpenROAD/issues/3648) from gadfort/psm-enforce-corner
+- Merge pull request [#3625](https://github.com/luarss/OpenROAD/issues/3625) from Iyury1/gui-dbiterm-selection
+- Merge pull request [#3621](https://github.com/luarss/OpenROAD/issues/3621) from gadfort/psm-layer-names-and-metrics
+- Merge pull request [#3638](https://github.com/luarss/OpenROAD/issues/3638) from gadfort/psm-corners
+- Merge pull request [#3565](https://github.com/luarss/OpenROAD/issues/3565) from openroadie/recover_power
+- Merge pull request [#3637](https://github.com/luarss/OpenROAD/issues/3637) from gadfort/utl-pop-access
+- Merge pull request [#3635](https://github.com/luarss/OpenROAD/issues/3635) from openroadie/update_opensta
+- Merge pull request [#3633](https://github.com/luarss/OpenROAD/issues/3633) from gadfort/rsz-fix-layerrc
+- Merge pull request [#3632](https://github.com/luarss/OpenROAD/issues/3632) from gadfort/utl-unsupress
+- Merge pull request [#3622](https://github.com/luarss/OpenROAD/issues/3622) from gadfort/rsz-print-progress
+- Merge pull request [#3629](https://github.com/luarss/OpenROAD/issues/3629) from gadfort/sta-heatmap
+- Merge pull request [#3627](https://github.com/luarss/OpenROAD/issues/3627) from gadfort/psm-check_grid
+- Merge pull request [#3628](https://github.com/luarss/OpenROAD/issues/3628) from gadfort/psm-cleanup-tests
+- Merge pull request [#3626](https://github.com/luarss/OpenROAD/issues/3626) from luarss/gitguide
+- Merge pull request [#3623](https://github.com/luarss/OpenROAD/issues/3623) from The-OpenROAD-Project-staging/dd-dont-touch
+- Merge pull request [#3579](https://github.com/luarss/OpenROAD/issues/3579) from openroadie/issue_3563
+- Merge pull request [#3620](https://github.com/luarss/OpenROAD/issues/3620) from openroadie/issue_3615
+- Merge pull request [#3618](https://github.com/luarss/OpenROAD/issues/3618) from luarss/mermaidv2
+- Merge pull request [#3452](https://github.com/luarss/OpenROAD/issues/3452) from arthurjolo/fastroute_with_MakeWireParasitics
+- Merge pull request [#3613](https://github.com/luarss/OpenROAD/issues/3613) from eder-matheus/ppl_annealing
+- Merge pull request [#3611](https://github.com/luarss/OpenROAD/issues/3611) from gadfort/gui-trigger
+- Merge pull request [#3614](https://github.com/luarss/OpenROAD/issues/3614) from The-OpenROAD-Project-staging/delta-debug-dont-touch
+- Merge pull request [#3612](https://github.com/luarss/OpenROAD/issues/3612) from gadfort/pdn-straps-in-macros
+- Merge pull request [#3600](https://github.com/luarss/OpenROAD/issues/3600) from openroadie/opensta_update
+- Merge pull request [#3607](https://github.com/luarss/OpenROAD/issues/3607) from The-OpenROAD-Project-staging/sta-ignore-child-block
+- Merge pull request [#3601](https://github.com/luarss/OpenROAD/issues/3601) from openroadie/gate_cloning_centroid
+- Merge pull request [#3606](https://github.com/luarss/OpenROAD/issues/3606) from gadfort/rsz-est-no-special
+- Merge pull request [#3595](https://github.com/luarss/OpenROAD/issues/3595) from The-OpenROAD-Project-staging/drt-drc_report_iter_step
+- Merge pull request [#3603](https://github.com/luarss/OpenROAD/issues/3603) from eder-matheus/ppl_annealing_fix
+- Merge pull request [#3581](https://github.com/luarss/OpenROAD/issues/3581) from eder-matheus/ppl_fix
+- Merge pull request [#3596](https://github.com/luarss/OpenROAD/issues/3596) from The-OpenROAD-Project-staging/rsz-typos
+- Merge pull request [#3594](https://github.com/luarss/OpenROAD/issues/3594) from gadfort/rdl-assign-no-route
+- Merge pull request [#3574](https://github.com/luarss/OpenROAD/issues/3574) from osamahammad21/drt-fix-save-updates
+- Merge pull request [#3568](https://github.com/luarss/OpenROAD/issues/3568) from osamahammad21/drt-mod-distributed
+- Merge pull request [#3558](https://github.com/luarss/OpenROAD/issues/3558) from openroadie/debug_gate_cloning
+- Merge pull request [#3585](https://github.com/luarss/OpenROAD/issues/3585) from AcKoucher/gui_diearea_displacement
+- Merge pull request [#3577](https://github.com/luarss/OpenROAD/issues/3577) from eder-matheus/ppl_annealing_config
+- Merge pull request [#3582](https://github.com/luarss/OpenROAD/issues/3582) from openroadie/issue_3569
+- Merge pull request [#3586](https://github.com/luarss/OpenROAD/issues/3586) from Precision-Innovations/fix-deb-install-path
+- Merge pull request [#3580](https://github.com/luarss/OpenROAD/issues/3580) from vvbandeira/fix-deb
+- Merge pull request [#3576](https://github.com/luarss/OpenROAD/issues/3576) from eder-matheus/ppl_annealing_groups
+- Merge pull request [#3567](https://github.com/luarss/OpenROAD/issues/3567) from The-OpenROAD-Project-staging/TR-init-drworker
+- Merge pull request [#3564](https://github.com/luarss/OpenROAD/issues/3564) from eder-matheus/ppl_fix
+- Merge pull request [#1](https://github.com/luarss/OpenROAD/issues/1) from openroadie/debug_gate_cloning2
+- Merge pull request [#3561](https://github.com/luarss/OpenROAD/issues/3561) from gadfort/pad-rdl-assign-iterm
+- Merge pull request [#3560](https://github.com/luarss/OpenROAD/issues/3560) from gadfort/pad-rdl-costing
+- Merge pull request [#3555](https://github.com/luarss/OpenROAD/issues/3555) from eder-matheus/ppl_annealing
+- Merge pull request [#3557](https://github.com/luarss/OpenROAD/issues/3557) from The-OpenROAD-Project-staging/odb-swig-fix
+- Merge pull request [#3554](https://github.com/luarss/OpenROAD/issues/3554) from fgaray/unique_ptr
+- Merge pull request [#3553](https://github.com/luarss/OpenROAD/issues/3553) from Iyury1/gui-add-iterm-labels
+- Merge pull request [#3550](https://github.com/luarss/OpenROAD/issues/3550) from vijayank88/OR_gui_images_update
+- Merge pull request [#3552](https://github.com/luarss/OpenROAD/issues/3552) from AcKoucher/gui_tech_block_inspect_props
+- Merge pull request [#3528](https://github.com/luarss/OpenROAD/issues/3528) from Iyury1/gui-add-iterm-labels
+- Merge pull request [#3548](https://github.com/luarss/OpenROAD/issues/3548) from openroadie/openroad_dft_3444
+- Merge pull request [#3546](https://github.com/luarss/OpenROAD/issues/3546) from The-OpenROAD-Project-staging/odb-tidy
+- Merge pull request [#3547](https://github.com/luarss/OpenROAD/issues/3547) from fgaray/fix_coverity
+- Merge pull request [#3545](https://github.com/luarss/OpenROAD/issues/3545) from eder-matheus/grt_gcell_grid
+- Merge pull request [#3537](https://github.com/luarss/OpenROAD/issues/3537) from The-OpenROAD-Project-staging/gui-pin-via
+- Merge pull request [#3544](https://github.com/luarss/OpenROAD/issues/3544) from mina1460/dpo_region_constraint
+- Merge pull request [#3543](https://github.com/luarss/OpenROAD/issues/3543) from proppy/missing-include
+- Merge pull request [#3541](https://github.com/luarss/OpenROAD/issues/3541) from The-OpenROAD-Project-staging/odb-gen
+- Merge pull request [#3482](https://github.com/luarss/OpenROAD/issues/3482) from mina1460/dpl-region-constraint
+- Merge pull request [#3538](https://github.com/luarss/OpenROAD/issues/3538) from QuantamHD/fix_double_height_placement
+- Merge pull request [#3534](https://github.com/luarss/OpenROAD/issues/3534) from vvbandeira/messages-id
+- Merge pull request [#3533](https://github.com/luarss/OpenROAD/issues/3533) from fgaray/fix_messages
+- Merge pull request [#3514](https://github.com/luarss/OpenROAD/issues/3514) from vvbandeira/rm-gtest
+- Merge pull request [#3527](https://github.com/luarss/OpenROAD/issues/3527) from gadfort/pad-fix-rotations
+- Merge pull request [#3525](https://github.com/luarss/OpenROAD/issues/3525) from The-OpenROAD-Project-staging/odb-code-gen
+- Merge pull request [#3515](https://github.com/luarss/OpenROAD/issues/3515) from fgaray/def_update_with_commits
+- Merge pull request [#3521](https://github.com/luarss/OpenROAD/issues/3521) from gadfort/cmake-test
+- Merge pull request [#3519](https://github.com/luarss/OpenROAD/issues/3519) from The-OpenROAD-Project-staging/odb-code-gen
+- Merge pull request [#3517](https://github.com/luarss/OpenROAD/issues/3517) from QuantamHD/fix_format_string
+- Merge pull request [#3516](https://github.com/luarss/OpenROAD/issues/3516) from QuantamHD/cts_graphics
+- Merge pull request [#3510](https://github.com/luarss/OpenROAD/issues/3510) from The-OpenROAD-Project-staging/use-optional
+- Merge pull request [#3508](https://github.com/luarss/OpenROAD/issues/3508) from QuantamHD/abstract_lef_fix
+- Merge pull request [#3509](https://github.com/luarss/OpenROAD/issues/3509) from The-OpenROAD-Project-staging/cts-dup
+- Merge pull request [#3507](https://github.com/luarss/OpenROAD/issues/3507) from vvbandeira/fork-lemon
+- Merge pull request [#3505](https://github.com/luarss/OpenROAD/issues/3505) from openroadie/openlane_issue_1823
+- Merge pull request [#3493](https://github.com/luarss/OpenROAD/issues/3493) from QuantamHD/lef_reader_ostream
+- Merge pull request [#3504](https://github.com/luarss/OpenROAD/issues/3504) from The-OpenROAD-Project-staging/gui-bbox
+- Merge pull request [#3503](https://github.com/luarss/OpenROAD/issues/3503) from fgaray/fix_coverity_scan
+- Merge pull request [#3501](https://github.com/luarss/OpenROAD/issues/3501) from Pinata-Consulting/mock-array-rename-fix
+- Merge pull request [#3486](https://github.com/luarss/OpenROAD/issues/3486) from openroadie/consistent_variable_naming
+- Merge pull request [#3500](https://github.com/luarss/OpenROAD/issues/3500) from Pinata-Consulting/out-of-memory-non-zero-exit-code
+- Merge pull request [#3498](https://github.com/luarss/OpenROAD/issues/3498) from gadfort/pdn-specific-rotations
+- Merge pull request [#3496](https://github.com/luarss/OpenROAD/issues/3496) from The-OpenROAD-Project-staging/mpl2-unused-includes
+- Merge pull request [#3469](https://github.com/luarss/OpenROAD/issues/3469) from fgaray/updated_lef_with_commits
+- Merge pull request [#3472](https://github.com/luarss/OpenROAD/issues/3472) from luis201420/grt_incremental_updates
+- Merge pull request [#3491](https://github.com/luarss/OpenROAD/issues/3491) from gadfort/rsz-reset-state
+- Merge pull request [#3392](https://github.com/luarss/OpenROAD/issues/3392) from Pinata-Consulting/docker-resize-crash
+- Merge pull request [#3487](https://github.com/luarss/OpenROAD/issues/3487) from The-OpenROAD-Project-staging/gui-race
+- Merge pull request [#3485](https://github.com/luarss/OpenROAD/issues/3485) from The-OpenROAD-Project-staging/gpl-timing-exclude
+- Merge pull request [#3468](https://github.com/luarss/OpenROAD/issues/3468) from The-OpenROAD-Project-staging/TR-reduce-estCost
+- Merge pull request [#3480](https://github.com/luarss/OpenROAD/issues/3480) from The-OpenROAD-Project-staging/gui-exit
+- Merge pull request [#3476](https://github.com/luarss/OpenROAD/issues/3476) from openroadie/opensta_upgrade2
+- Merge pull request [#3341](https://github.com/luarss/OpenROAD/issues/3341) from openroadie/opensta_upgrade
+- Merge pull request [#3474](https://github.com/luarss/OpenROAD/issues/3474) from openroadie/gate_cloning_off_by_default
+- Merge pull request [#3458](https://github.com/luarss/OpenROAD/issues/3458) from AcKoucher/gui_inspect_block_tech
+- Merge pull request [#3478](https://github.com/luarss/OpenROAD/issues/3478) from ABKGroup/master
+- Merge pull request [#3475](https://github.com/luarss/OpenROAD/issues/3475) from The-OpenROAD-Project-staging/patch-revert
+- Merge pull request [#3473](https://github.com/luarss/OpenROAD/issues/3473) from The-OpenROAD-Project-staging/gui-wait
+- Merge pull request [#3471](https://github.com/luarss/OpenROAD/issues/3471) from eder-matheus/fix_warnings
+- Merge pull request [#3470](https://github.com/luarss/OpenROAD/issues/3470) from openroadie/fix_gate_cloning_option
+- Merge pull request [#3305](https://github.com/luarss/OpenROAD/issues/3305) from mina1460/dpl-fix-one-site-gaps
+- Merge pull request [#3307](https://github.com/luarss/OpenROAD/issues/3307) from mina1460/dpo_multi_height_cells
+- Merge pull request [#3462](https://github.com/luarss/OpenROAD/issues/3462) from openroadie/logic_cloning_undo_support2
+- Merge pull request [#3464](https://github.com/luarss/OpenROAD/issues/3464) from eder-matheus/drt_snapshot
+- Merge pull request [#3463](https://github.com/luarss/OpenROAD/issues/3463) from The-OpenROAD-Project-staging/drt-via-above-max
+- Merge pull request [#3098](https://github.com/luarss/OpenROAD/issues/3098) from mina1460/dpo_disallow_one_site_gap
+- Merge pull request [#3431](https://github.com/luarss/OpenROAD/issues/3431) from openroadie/logic_cloning2
+- Merge pull request [#3459](https://github.com/luarss/OpenROAD/issues/3459) from The-OpenROAD-Project-staging/gui-val-cov
+- Merge pull request [#3457](https://github.com/luarss/OpenROAD/issues/3457) from The-OpenROAD-Project-staging/TR-patch-center
+- Merge pull request [#3424](https://github.com/luarss/OpenROAD/issues/3424) from eder-matheus/grt_congestion_rpt
+- Merge pull request [#3370](https://github.com/luarss/OpenROAD/issues/3370) from The-OpenROAD-Project-staging/gui-draw-interrupt
+- Merge pull request [#3451](https://github.com/luarss/OpenROAD/issues/3451) from andreili/master
+- Merge pull request [#3449](https://github.com/luarss/OpenROAD/issues/3449) from gadfort/dbsta-enable-file-redirect
+- Merge pull request [#3446](https://github.com/luarss/OpenROAD/issues/3446) from The-OpenROAD-Project-staging/par-hypergraph
+- Merge pull request [#3443](https://github.com/luarss/OpenROAD/issues/3443) from vvbandeira/fix-docs-links
+- Merge pull request [#3442](https://github.com/luarss/OpenROAD/issues/3442) from The-OpenROAD-Project-staging/msg-tool-fix
+- Merge pull request [#3440](https://github.com/luarss/OpenROAD/issues/3440) from gadfort/cts-msg
+- Merge pull request [#3439](https://github.com/luarss/OpenROAD/issues/3439) from gadfort/gui-tooltip-fix
+- Merge pull request [#3438](https://github.com/luarss/OpenROAD/issues/3438) from QuantamHD/dpl_vector
+- Merge pull request [#3437](https://github.com/luarss/OpenROAD/issues/3437) from openroadie/pin_swap_cleanup
+- Merge pull request [#3436](https://github.com/luarss/OpenROAD/issues/3436) from The-OpenROAD-Project-staging/TR_fix_pa_wrongwaywidth
+- Merge pull request [#3434](https://github.com/luarss/OpenROAD/issues/3434) from The-OpenROAD-Project-staging/rcx-coordinates
+- Merge pull request [#3419](https://github.com/luarss/OpenROAD/issues/3419) from The-OpenROAD-Project-staging/TR-offgrid-error
+- Merge pull request [#3435](https://github.com/luarss/OpenROAD/issues/3435) from Iyury1/asan_build_docs
+- Merge pull request [#3427](https://github.com/luarss/OpenROAD/issues/3427) from Iyury1/asan_cmake
+- Merge pull request [#3426](https://github.com/luarss/OpenROAD/issues/3426) from luis201420/grt_debug_fix
+- Merge pull request [#3332](https://github.com/luarss/OpenROAD/issues/3332) from niv280/select_all_buffers
+- Merge pull request [#3432](https://github.com/luarss/OpenROAD/issues/3432) from gadfort/honor-halo
+- Merge pull request [#3428](https://github.com/luarss/OpenROAD/issues/3428) from VidyaChhabria/master
+- Merge pull request [#3421](https://github.com/luarss/OpenROAD/issues/3421) from proppy/add-missing-tcl
+- Merge pull request [#3411](https://github.com/luarss/OpenROAD/issues/3411) from eder-matheus/drt_orthogonal
+- Merge pull request [#3420](https://github.com/luarss/OpenROAD/issues/3420) from gadfort/pad-rdl-route-msg
+- Merge pull request [#3388](https://github.com/luarss/OpenROAD/issues/3388) from luis201420/grt_incremental_mode
+- Merge pull request [#3418](https://github.com/luarss/OpenROAD/issues/3418) from The-OpenROAD-Project-staging/drt-test-ta-gf14
+- Merge pull request [#3412](https://github.com/luarss/OpenROAD/issues/3412) from The-OpenROAD-Project-staging/par-split-refiner-h
+- Merge pull request [#3414](https://github.com/luarss/OpenROAD/issues/3414) from The-OpenROAD-Project-staging/pad-err-msg
+- Merge pull request [#2974](https://github.com/luarss/OpenROAD/issues/2974) from niv280/goto_feature
+- Merge pull request [#3413](https://github.com/luarss/OpenROAD/issues/3413) from The-OpenROAD-Project-staging/pad-conn-iterm
+- Merge pull request [#3400](https://github.com/luarss/OpenROAD/issues/3400) from The-OpenROAD-Project-staging/TR-ta-cost-vias
+- Merge pull request [#3384](https://github.com/luarss/OpenROAD/issues/3384) from ahmadelrouby/multi-power-domain
+- Merge pull request [#3406](https://github.com/luarss/OpenROAD/issues/3406) from The-OpenROAD-Project-staging/par-refactor2
+- Merge pull request [#3405](https://github.com/luarss/OpenROAD/issues/3405) from The-OpenROAD-Project-staging/psm-doc
+- Merge pull request [#3403](https://github.com/luarss/OpenROAD/issues/3403) from The-OpenROAD-Project-staging/gpl-bin-init
+- Merge pull request [#3344](https://github.com/luarss/OpenROAD/issues/3344) from AcKoucher/gui_slack_hist
+- Merge pull request [#3402](https://github.com/luarss/OpenROAD/issues/3402) from eder-matheus/grt_ant_fix
+- Merge pull request [#3399](https://github.com/luarss/OpenROAD/issues/3399) from The-OpenROAD-Project-staging/par-refactor
+- Merge pull request [#3398](https://github.com/luarss/OpenROAD/issues/3398) from The-OpenROAD-Project-staging/par-tidy
+- Merge pull request [#3397](https://github.com/luarss/OpenROAD/issues/3397) from The-OpenROAD-Project-staging/tp-v2
+- Merge pull request [#3386](https://github.com/luarss/OpenROAD/issues/3386) from fgaray/clock_mix2
+- Merge pull request [#3387](https://github.com/luarss/OpenROAD/issues/3387) from The-OpenROAD-Project-staging/cts-recursion
+- Merge pull request [#3383](https://github.com/luarss/OpenROAD/issues/3383) from eder-matheus/ant_fix
+- Merge pull request [#3382](https://github.com/luarss/OpenROAD/issues/3382) from The-OpenROAD-Project-staging/mpl2-readme
+- Merge pull request [#3380](https://github.com/luarss/OpenROAD/issues/3380) from gadfort/cts-enable-tests
+- Merge pull request [#3295](https://github.com/luarss/OpenROAD/issues/3295) from cdleary/cts-unittest-with-ethan-2023-05-04
+- Merge pull request [#3375](https://github.com/luarss/OpenROAD/issues/3375) from eder-matheus/grt_net_covered
+- Merge pull request [#3376](https://github.com/luarss/OpenROAD/issues/3376) from eder-matheus/grt_repair_antennas
+- Merge pull request [#3377](https://github.com/luarss/OpenROAD/issues/3377) from The-OpenROAD-Project-staging/drt-err-msg
+- Merge pull request [#3374](https://github.com/luarss/OpenROAD/issues/3374) from eder-matheus/ppl_updates
+- Merge pull request [#3364](https://github.com/luarss/OpenROAD/issues/3364) from osamahammad21/copilot-pa
+- Merge pull request [#3367](https://github.com/luarss/OpenROAD/issues/3367) from luis201420/gui_utf8_fix
+- Merge pull request [#3365](https://github.com/luarss/OpenROAD/issues/3365) from The-OpenROAD-Project-staging/clang-tidy-t
+- Merge pull request [#3363](https://github.com/luarss/OpenROAD/issues/3363) from Pinata-Consulting/gpl-error-message-on-too-big-die-area
+- Merge pull request [#3356](https://github.com/luarss/OpenROAD/issues/3356) from fgaray/scan_stitching
+- Merge pull request [#3358](https://github.com/luarss/OpenROAD/issues/3358) from Pinata-Consulting/gitignore-metals
+- Merge pull request [#3357](https://github.com/luarss/OpenROAD/issues/3357) from The-OpenROAD-Project-staging/mpl2-coverity
+- Merge pull request [#3352](https://github.com/luarss/OpenROAD/issues/3352) from QuantamHD/nested_heatmap
+- Merge pull request [#3354](https://github.com/luarss/OpenROAD/issues/3354) from rovinski/master
+- Merge pull request [#3351](https://github.com/luarss/OpenROAD/issues/3351) from The-OpenROAD-Project-staging/metric-inf
+- Merge pull request [#3347](https://github.com/luarss/OpenROAD/issues/3347) from The-OpenROAD-Project-staging/mpl2-fixes
+- Merge pull request [#3286](https://github.com/luarss/OpenROAD/issues/3286) from rovinski/master
+- Merge pull request [#3348](https://github.com/luarss/OpenROAD/issues/3348) from Pinata-Consulting/gui-more-timers
+- Merge pull request [#3339](https://github.com/luarss/OpenROAD/issues/3339) from The-OpenROAD-Project-staging/gui-hier-def
+- Merge pull request [#3342](https://github.com/luarss/OpenROAD/issues/3342) from The-OpenROAD-Project-staging/gui-row-speedup
+- Merge pull request [#3337](https://github.com/luarss/OpenROAD/issues/3337) from The-OpenROAD-Project-staging/gui-pin
+- Merge pull request [#3335](https://github.com/luarss/OpenROAD/issues/3335) from The-OpenROAD-Project-staging/ppl-fallback-order
+- Merge pull request [#3325](https://github.com/luarss/OpenROAD/issues/3325) from openroadie/minor_cleanup
+- Merge pull request [#3324](https://github.com/luarss/OpenROAD/issues/3324) from The-OpenROAD-Project-staging/coverity
+- Merge pull request [#3317](https://github.com/luarss/OpenROAD/issues/3317) from eder-matheus/ppl_fix
+- Merge pull request [#3323](https://github.com/luarss/OpenROAD/issues/3323) from The-OpenROAD-Project-staging/gui-shape-limit-again
+- Merge pull request [#3281](https://github.com/luarss/OpenROAD/issues/3281) from vijayank88/OR_readme_update
+- Merge pull request [#3320](https://github.com/luarss/OpenROAD/issues/3320) from The-OpenROAD-Project-staging/timer
+- Merge pull request [#3318](https://github.com/luarss/OpenROAD/issues/3318) from fgaray/test_case_replace
+- Merge pull request [#3319](https://github.com/luarss/OpenROAD/issues/3319) from The-OpenROAD-Project-staging/gui-perf2
+- Merge pull request [#3311](https://github.com/luarss/OpenROAD/issues/3311) from The-OpenROAD-Project-staging/gui-perf
+- Merge pull request [#3310](https://github.com/luarss/OpenROAD/issues/3310) from The-OpenROAD-Project-staging/gpl-hpwl-dangling-net
+- Merge pull request [#3309](https://github.com/luarss/OpenROAD/issues/3309) from The-OpenROAD-Project-staging/gui-tidy
+- Merge pull request [#3300](https://github.com/luarss/OpenROAD/issues/3300) from eder-matheus/ppl_random_fallback
+- Merge pull request [#3303](https://github.com/luarss/OpenROAD/issues/3303) from The-OpenROAD-Project-staging/graphviz
+- Merge pull request [#3302](https://github.com/luarss/OpenROAD/issues/3302) from The-OpenROAD-Project-staging/dpo-no-candidates
+- Merge pull request [#3299](https://github.com/luarss/OpenROAD/issues/3299) from gadfort/gui-heatmap-scaling
+- Merge pull request [#3301](https://github.com/luarss/OpenROAD/issues/3301) from The-OpenROAD-Project-staging/cts-blackbox
+- Merge pull request [#3296](https://github.com/luarss/OpenROAD/issues/3296) from eder-matheus/ppl_constraints_doc
+- Merge pull request [#3294](https://github.com/luarss/OpenROAD/issues/3294) from The-OpenROAD-Project-staging/odb-master-destory
+- Merge pull request [#3293](https://github.com/luarss/OpenROAD/issues/3293) from eder-matheus/ppl_conflict_constraints
+- Merge pull request [#3292](https://github.com/luarss/OpenROAD/issues/3292) from gadfort/fix-gui-timer
+- Merge pull request [#3289](https://github.com/luarss/OpenROAD/issues/3289) from The-OpenROAD-Project-staging/gui-clock-inv-color
+- Merge pull request [#3288](https://github.com/luarss/OpenROAD/issues/3288) from The-OpenROAD-Project-staging/mpl2-update
+- Merge pull request [#3284](https://github.com/luarss/OpenROAD/issues/3284) from Pinata-Consulting/setup-remove-possibly-harmful-advice
+- Merge pull request [#3283](https://github.com/luarss/OpenROAD/issues/3283) from eder-matheus/ppl_fix
+- Merge pull request [#3282](https://github.com/luarss/OpenROAD/issues/3282) from The-OpenROAD-Project-staging/secure_fix_pin_swap_degradation2
+- Merge pull request [#3277](https://github.com/luarss/OpenROAD/issues/3277) from The-OpenROAD-Project-staging/cts-cleanups
+- Merge pull request [#3276](https://github.com/luarss/OpenROAD/issues/3276) from The-OpenROAD-Project-staging/grt-hash
+- Merge pull request [#3275](https://github.com/luarss/OpenROAD/issues/3275) from eder-matheus/ppl_fix
+- Merge pull request [#3274](https://github.com/luarss/OpenROAD/issues/3274) from The-OpenROAD-Project-staging/dpl-exclude-pad-rows
+- Merge pull request [#3273](https://github.com/luarss/OpenROAD/issues/3273) from The-OpenROAD-Project-staging/gcell-matrix
+- Merge pull request [#3270](https://github.com/luarss/OpenROAD/issues/3270) from The-OpenROAD-Project-staging/dbSta-format
+- Merge pull request [#3267](https://github.com/luarss/OpenROAD/issues/3267) from The-OpenROAD-Project/revert-3251-gui-ubsan
+- Merge pull request [#3268](https://github.com/luarss/OpenROAD/issues/3268) from gadfort/gui-hier-limit
+- Merge pull request [#3266](https://github.com/luarss/OpenROAD/issues/3266) from gadfort/gui-check-rows
+- Merge pull request [#3265](https://github.com/luarss/OpenROAD/issues/3265) from The-OpenROAD-Project-staging/TR_fix_gc_mincut
+- Merge pull request [#3258](https://github.com/luarss/OpenROAD/issues/3258) from The-OpenROAD-Project-staging/gui-speedup-vias
+- Merge pull request [#3259](https://github.com/luarss/OpenROAD/issues/3259) from antonblanchard/build-fix
+- Merge pull request [#3257](https://github.com/luarss/OpenROAD/issues/3257) from The-OpenROAD-Project-staging/sanitize
+- Merge pull request [#3251](https://github.com/luarss/OpenROAD/issues/3251) from antonblanchard/gui-ubsan
+- Merge pull request [#3255](https://github.com/luarss/OpenROAD/issues/3255) from eder-matheus/ppl_fix
+- Merge pull request [#3254](https://github.com/luarss/OpenROAD/issues/3254) from eder-matheus/ppl_constraint
+- Merge pull request [#3209](https://github.com/luarss/OpenROAD/issues/3209) from gadfort/enable-tests
+- Merge pull request [#3224](https://github.com/luarss/OpenROAD/issues/3224) from Pinata-Consulting/database-read-c++-ifstream
+- Merge pull request [#3250](https://github.com/luarss/OpenROAD/issues/3250) from eder-matheus/drt_ndr_vias
+- Merge pull request [#3246](https://github.com/luarss/OpenROAD/issues/3246) from The-OpenROAD-Project-staging/modules
+- Merge pull request [#3249](https://github.com/luarss/OpenROAD/issues/3249) from The-OpenROAD-Project-staging/clang-warnings
+- Merge pull request [#3248](https://github.com/luarss/OpenROAD/issues/3248) from The-OpenROAD-Project-staging/rsz-disable-pin-swap
+- Merge pull request [#3245](https://github.com/luarss/OpenROAD/issues/3245) from The-OpenROAD-Project-staging/drt-wavefront
+- Merge pull request [#3237](https://github.com/luarss/OpenROAD/issues/3237) from fgaray/type_safe_db_types
+- Merge pull request [#3238](https://github.com/luarss/OpenROAD/issues/3238) from antonblanchard/fmt-fix
+- Merge pull request [#3240](https://github.com/luarss/OpenROAD/issues/3240) from The-OpenROAD-Project-staging/upf-cleanup
+- Merge pull request [#3160](https://github.com/luarss/OpenROAD/issues/3160) from cdleary/dbsta-split-graphics-and-observer
+- Merge pull request [#3239](https://github.com/luarss/OpenROAD/issues/3239) from The-OpenROAD-Project-staging/ifp-test-fix
+- Merge pull request [#3235](https://github.com/luarss/OpenROAD/issues/3235) from eder-matheus/grt_repair_antennas
+- Merge pull request [#3099](https://github.com/luarss/OpenROAD/issues/3099) from mina1460/dpl_multi_height_cell
+- Merge pull request [#3223](https://github.com/luarss/OpenROAD/issues/3223) from gadfort/ifp-site
+- Merge pull request [#3203](https://github.com/luarss/OpenROAD/issues/3203) from eder-matheus/ppl_fallback
+- Merge pull request [#3215](https://github.com/luarss/OpenROAD/issues/3215) from openroadie/resizer2
+- Merge pull request [#3233](https://github.com/luarss/OpenROAD/issues/3233) from The-OpenROAD-Project-staging/odb-box-layer-id
+- Merge pull request [#3232](https://github.com/luarss/OpenROAD/issues/3232) from The-OpenROAD-Project-staging/odb-ftell
+- Merge pull request [#3231](https://github.com/luarss/OpenROAD/issues/3231) from antonblanchard/drt-typos
+- Merge pull request [#3229](https://github.com/luarss/OpenROAD/issues/3229) from The-OpenROAD-Project-staging/rcx-search
+- Merge pull request [#3220](https://github.com/luarss/OpenROAD/issues/3220) from QuantamHD/fix_dbsta
+- Merge pull request [#3221](https://github.com/luarss/OpenROAD/issues/3221) from gadfort/gui-fix-rows
+- Merge pull request [#3210](https://github.com/luarss/OpenROAD/issues/3210) from gadfort/dpl-filler
+- Merge pull request [#3214](https://github.com/luarss/OpenROAD/issues/3214) from eder-matheus/grt_local_nets
+- Merge pull request [#3212](https://github.com/luarss/OpenROAD/issues/3212) from The-OpenROAD-Project-staging/odb-lefout-origin
+- Merge pull request [#3213](https://github.com/luarss/OpenROAD/issues/3213) from eder-matheus/grt_fix_layers
+- Merge pull request [#3206](https://github.com/luarss/OpenROAD/issues/3206) from Pinata-Consulting/odb-read-error-instead-of-crash
+- Merge pull request [#3204](https://github.com/luarss/OpenROAD/issues/3204) from gadfort/gui-sites
+- Merge pull request [#3191](https://github.com/luarss/OpenROAD/issues/3191) from vijayank88/add_hammer
+- Merge pull request [#3200](https://github.com/luarss/OpenROAD/issues/3200) from The-OpenROAD-Project-staging/gpl-bin-cnt
+- Merge pull request [#3198](https://github.com/luarss/OpenROAD/issues/3198) from The-OpenROAD-Project-staging/gui-no-msg
+- Merge pull request [#3196](https://github.com/luarss/OpenROAD/issues/3196) from The-OpenROAD-Project-staging/lefout-rounding
+- Merge pull request [#3195](https://github.com/luarss/OpenROAD/issues/3195) from The-OpenROAD-Project-staging/ignore-debug
+- Merge pull request [#3194](https://github.com/luarss/OpenROAD/issues/3194) from The-OpenROAD-Project-staging/gui-bad-layer
+- Merge pull request [#2110](https://github.com/luarss/OpenROAD/issues/2110) from osamahammad21/drt-dst-doc
+- Merge pull request [#3193](https://github.com/luarss/OpenROAD/issues/3193) from The-OpenROAD-Project-staging/fix-pin-dir-in-sta
+- Merge pull request [#3190](https://github.com/luarss/OpenROAD/issues/3190) from The-OpenROAD-Project-staging/cts-simplify
+- Merge pull request [#3187](https://github.com/luarss/OpenROAD/issues/3187) from gadfort/pdn-shape-cut
+- Merge pull request [#3185](https://github.com/luarss/OpenROAD/issues/3185) from The-OpenROAD-Project-staging/dbsta-fix
+- Merge pull request [#3179](https://github.com/luarss/OpenROAD/issues/3179) from vijayank88/readme_update
+- Merge pull request [#3180](https://github.com/luarss/OpenROAD/issues/3180) from The-OpenROAD-Project-staging/pad-clang-format
+- Merge pull request [#3177](https://github.com/luarss/OpenROAD/issues/3177) from openroadie/master
+- Merge pull request [#3176](https://github.com/luarss/OpenROAD/issues/3176) from The-OpenROAD-Project-staging/gui-cut-disp
+- Merge pull request [#3159](https://github.com/luarss/OpenROAD/issues/3159) from cdleary/dbsta-split-graphics
+- Merge pull request [#3018](https://github.com/luarss/OpenROAD/issues/3018) from antonblanchard/drt-estimate
+- Merge pull request [#3144](https://github.com/luarss/OpenROAD/issues/3144) from QuantamHD/mem_leak_db_prop
+- Merge pull request [#3175](https://github.com/luarss/OpenROAD/issues/3175) from The-OpenROAD-Project-staging/gui-text-alpha
+- Merge pull request [#2913](https://github.com/luarss/OpenROAD/issues/2913) from antonblanchard/ta-gf14-cleanup
+- Merge pull request [#2942](https://github.com/luarss/OpenROAD/issues/2942) from QuantamHD/meters_to_dbu_fix
+- Merge pull request [#3170](https://github.com/luarss/OpenROAD/issues/3170) from The-OpenROAD-Project-staging/gpl-no-grad
+- Merge pull request [#3168](https://github.com/luarss/OpenROAD/issues/3168) from The-OpenROAD-Project-staging/drt-keepout-zone
+- Merge pull request [#3169](https://github.com/luarss/OpenROAD/issues/3169) from osamahammad21/drt-fix-gr-consts
+- Merge pull request [#3095](https://github.com/luarss/OpenROAD/issues/3095) from antonblanchard/drt-pa-extension
+- Merge pull request [#3166](https://github.com/luarss/OpenROAD/issues/3166) from The-OpenROAD-Project-staging/pdn-clang-tidy
+- Merge pull request [#3167](https://github.com/luarss/OpenROAD/issues/3167) from openroadie/master
+- Merge pull request [#3163](https://github.com/luarss/OpenROAD/issues/3163) from antonblanchard/drt-memory-2
+- Merge pull request [#3164](https://github.com/luarss/OpenROAD/issues/3164) from Pinata-Consulting/docs-user-oriented-setup-procedures
+- Merge pull request [#3142](https://github.com/luarss/OpenROAD/issues/3142) from cdleary/dbsta-split
+- Merge pull request [#3161](https://github.com/luarss/OpenROAD/issues/3161) from antonblanchard/drt-memory
+- Merge pull request [#3158](https://github.com/luarss/OpenROAD/issues/3158) from The-OpenROAD-Project-staging/pdn-overlap
+- Merge pull request [#3157](https://github.com/luarss/OpenROAD/issues/3157) from eder-matheus/grt_net_min_layer
+- Merge pull request [#3156](https://github.com/luarss/OpenROAD/issues/3156) from eder-matheus/ppl_check_slots
+- Merge pull request [#3079](https://github.com/luarss/OpenROAD/issues/3079) from fgaray/scan_arquitect
+- Merge pull request [#3150](https://github.com/luarss/OpenROAD/issues/3150) from The-OpenROAD-Project-staging/locale-fallback
+- Merge pull request [#3153](https://github.com/luarss/OpenROAD/issues/3153) from Pinata-Consulting/build-instructions-single-source-of-truth
+- Merge pull request [#3152](https://github.com/luarss/OpenROAD/issues/3152) from The-OpenROAD-Project-staging/gui-dbwire-callback
+- Merge pull request [#3151](https://github.com/luarss/OpenROAD/issues/3151) from The-OpenROAD-Project-staging/dpl-link
+- Merge pull request [#3146](https://github.com/luarss/OpenROAD/issues/3146) from The-OpenROAD-Project-staging/cts-fix-missing-tech-entry
+- Merge pull request [#3145](https://github.com/luarss/OpenROAD/issues/3145) from antonblanchard/drt-ta-reduce-memory
+- Merge pull request [#3143](https://github.com/luarss/OpenROAD/issues/3143) from eder-matheus/ppl_fix
+- Merge pull request [#3089](https://github.com/luarss/OpenROAD/issues/3089) from antonblanchard/drt-gc-leak
+- Merge pull request [#3141](https://github.com/luarss/OpenROAD/issues/3141) from The-OpenROAD-Project-staging/gpl-false-divergence
+- Merge pull request [#3136](https://github.com/luarss/OpenROAD/issues/3136) from QuantamHD/cts_fix_2
+- Merge pull request [#3135](https://github.com/luarss/OpenROAD/issues/3135) from The-OpenROAD-Project-staging/cts-revert
+- Merge pull request [#3134](https://github.com/luarss/OpenROAD/issues/3134) from antonblanchard/grt-stt-gui
+- Merge pull request [#3133](https://github.com/luarss/OpenROAD/issues/3133) from The-OpenROAD-Project-staging/pdn-repair-spacing
+- Merge pull request [#3132](https://github.com/luarss/OpenROAD/issues/3132) from eder-matheus/drt_fix_bterms
+- Merge pull request [#3110](https://github.com/luarss/OpenROAD/issues/3110) from QuantamHD/cts_div_zero
+- Merge pull request [#3109](https://github.com/luarss/OpenROAD/issues/3109) from QuantamHD/mpl2_library
+- Merge pull request [#3130](https://github.com/luarss/OpenROAD/issues/3130) from eder-matheus/ppl_mirrored
+- Merge pull request [#3128](https://github.com/luarss/OpenROAD/issues/3128) from The-OpenROAD-Project-staging/mv-name
+- Merge pull request [#3127](https://github.com/luarss/OpenROAD/issues/3127) from The-OpenROAD-Project-staging/drt-spc-bterm
+- Merge pull request [#3057](https://github.com/luarss/OpenROAD/issues/3057) from eder-matheus/drt_top_level_term
+- Merge pull request [#3123](https://github.com/luarss/OpenROAD/issues/3123) from gadfort/pdn-build-obs-once
+- Merge pull request [#3115](https://github.com/luarss/OpenROAD/issues/3115) from Pinata-Consulting/escaping-problems
+- Merge pull request [#3120](https://github.com/luarss/OpenROAD/issues/3120) from eder-matheus/ppl_fix
+- Merge pull request [#3118](https://github.com/luarss/OpenROAD/issues/3118) from rovinski/master
+- Merge pull request [#3116](https://github.com/luarss/OpenROAD/issues/3116) from QuantamHD/gpl_perf
+- Merge pull request [#3117](https://github.com/luarss/OpenROAD/issues/3117) from eder-matheus/ppl_groups
+- Merge pull request [#3114](https://github.com/luarss/OpenROAD/issues/3114) from Pinata-Consulting/deltadebug-fix-false-negatives
+- Merge pull request [#3111](https://github.com/luarss/OpenROAD/issues/3111) from The-OpenROAD-Project-staging/tidy
+- Merge pull request [#3107](https://github.com/luarss/OpenROAD/issues/3107) from donn/allow_disabling_tests
+- Merge pull request [#3078](https://github.com/luarss/OpenROAD/issues/3078) from openroadie/master
+- Merge pull request [#3104](https://github.com/luarss/OpenROAD/issues/3104) from antonblanchard/drt-underflow
+- Merge pull request [#3097](https://github.com/luarss/OpenROAD/issues/3097) from The-OpenROAD-Project-staging/TR-fix-subFromByte
+- Merge pull request [#3088](https://github.com/luarss/OpenROAD/issues/3088) from osamahammad21/odb-code-generator-schema
+- Merge pull request [#3102](https://github.com/luarss/OpenROAD/issues/3102) from The-OpenROAD-Project-staging/odb-parse
+- Merge pull request [#3100](https://github.com/luarss/OpenROAD/issues/3100) from Pinata-Consulting/ppl-error-message-segfault
+- Merge pull request [#3092](https://github.com/luarss/OpenROAD/issues/3092) from The-OpenROAD-Project-staging/drt-drc-guides
+- Merge pull request [#3091](https://github.com/luarss/OpenROAD/issues/3091) from antonblanchard/odb-leak-port
+- Merge pull request [#3090](https://github.com/luarss/OpenROAD/issues/3090) from The-OpenROAD-Project-staging/odb-parse
+- Merge pull request [#3063](https://github.com/luarss/OpenROAD/issues/3063) from themperek/themperek-rhel-gui
+- Merge pull request [#3081](https://github.com/luarss/OpenROAD/issues/3081) from The-OpenROAD-Project-staging/rm-math.h
+- Merge pull request [#3087](https://github.com/luarss/OpenROAD/issues/3087) from antonblanchard/drt-gc-bbox
+- Merge pull request [#3084](https://github.com/luarss/OpenROAD/issues/3084) from The-OpenROAD-Project-staging/coverity
+- Merge pull request [#3083](https://github.com/luarss/OpenROAD/issues/3083) from The-OpenROAD-Project-staging/odb-ndr
+- Merge pull request [#3074](https://github.com/luarss/OpenROAD/issues/3074) from The-OpenROAD-Project-staging/psm-rpt
+- Merge pull request [#2973](https://github.com/luarss/OpenROAD/issues/2973) from osamahammad21/net-tracks
+- Merge pull request [#3076](https://github.com/luarss/OpenROAD/issues/3076) from The-OpenROAD-Project-staging/odb-clean
+- Merge pull request [#3075](https://github.com/luarss/OpenROAD/issues/3075) from eder-matheus/ppl_fix_mirrored
+- Merge pull request [#3064](https://github.com/luarss/OpenROAD/issues/3064) from gadfort/pdn-obstructions
+- Merge pull request [#3072](https://github.com/luarss/OpenROAD/issues/3072) from The-OpenROAD-Project-staging/sta-bterm-del
+- Merge pull request [#3065](https://github.com/luarss/OpenROAD/issues/3065) from The-OpenROAD-Project-staging/odb-ignore58-region
+- Merge pull request [#3066](https://github.com/luarss/OpenROAD/issues/3066) from antonblanchard/drt-ta-old-tatrack
+- Merge pull request [#3062](https://github.com/luarss/OpenROAD/issues/3062) from openroadie/master
+- Merge pull request [#3060](https://github.com/luarss/OpenROAD/issues/3060) from The-OpenROAD-Project-staging/tidy
+- Merge pull request [#3010](https://github.com/luarss/OpenROAD/issues/3010) from QuantamHD/mask_colors
+- Merge pull request [#3054](https://github.com/luarss/OpenROAD/issues/3054) from rovinski/master
+- Merge pull request [#3053](https://github.com/luarss/OpenROAD/issues/3053) from gadfort/odb-noexit-defin
+- Merge pull request [#3052](https://github.com/luarss/OpenROAD/issues/3052) from eder-matheus/grt_test
+- Merge pull request [#2969](https://github.com/luarss/OpenROAD/issues/2969) from arthurjolo/ifp_LEF58_pitch
+- Merge pull request [#2895](https://github.com/luarss/OpenROAD/issues/2895) from mina1460/one_site_gap_disallow
+- Merge pull request [#3048](https://github.com/luarss/OpenROAD/issues/3048) from eder-matheus/ppl_error
+- Merge pull request [#3047](https://github.com/luarss/OpenROAD/issues/3047) from QuantamHD/update_gtest
+- Merge pull request [#3024](https://github.com/luarss/OpenROAD/issues/3024) from eder-matheus/grt_pin_edge
+- Merge pull request [#3021](https://github.com/luarss/OpenROAD/issues/3021) from antonblanchard/drt-via-selection
+- Merge pull request [#3041](https://github.com/luarss/OpenROAD/issues/3041) from antonblanchard/drt-use-dx
+- Merge pull request [#3042](https://github.com/luarss/OpenROAD/issues/3042) from The-OpenROAD-Project-staging/mpl2-gui
+- Merge pull request [#3036](https://github.com/luarss/OpenROAD/issues/3036) from The-OpenROAD-Project-staging/ifp-block-site-check
+- Merge pull request [#2978](https://github.com/luarss/OpenROAD/issues/2978) from mina1460/multi_height_cell_support
+- Merge pull request [#3032](https://github.com/luarss/OpenROAD/issues/3032) from antonblanchard/drt-wlen
+- Merge pull request [#3031](https://github.com/luarss/OpenROAD/issues/3031) from antonblanchard/drt-private
+- Merge pull request [#3007](https://github.com/luarss/OpenROAD/issues/3007) from antonblanchard/drt-pin-comments
+- Merge pull request [#3027](https://github.com/luarss/OpenROAD/issues/3027) from antonblanchard/initDesign-speedup
+- Merge pull request [#3025](https://github.com/luarss/OpenROAD/issues/3025) from gadfort/pad-warn-bterm
+- Merge pull request [#3026](https://github.com/luarss/OpenROAD/issues/3026) from QuantamHD/cmake_update
+- Merge pull request [#3017](https://github.com/luarss/OpenROAD/issues/3017) from antonblanchard/drt-rp-via2via-2
+- Merge pull request [#3022](https://github.com/luarss/OpenROAD/issues/3022) from The-OpenROAD-Project-staging/ispd-drv-update
+- Merge pull request [#3016](https://github.com/luarss/OpenROAD/issues/3016) from openroadie/master
+- Merge pull request [#2901](https://github.com/luarss/OpenROAD/issues/2901) from QuantamHD/dpl_gtest
+- Merge pull request [#2996](https://github.com/luarss/OpenROAD/issues/2996) from eder-matheus/drt_fix_ta
+- Merge pull request [#3011](https://github.com/luarss/OpenROAD/issues/3011) from The-OpenROAD-Project-staging/odb-cutclass-crash
+- Merge pull request [#3009](https://github.com/luarss/OpenROAD/issues/3009) from The-OpenROAD-Project-staging/par-cmake-cleanup
+- Merge pull request [#3005](https://github.com/luarss/OpenROAD/issues/3005) from antonblanchard/drt-typos
+- Merge pull request [#3006](https://github.com/luarss/OpenROAD/issues/3006) from The-OpenROAD-Project-staging/odb-rm-diffs.rpt
+- Merge pull request [#3003](https://github.com/luarss/OpenROAD/issues/3003) from hpretl/master
+- Merge pull request [#2998](https://github.com/luarss/OpenROAD/issues/2998) from The-OpenROAD-Project-staging/dpo-clang-tidy
+- Merge pull request [#2997](https://github.com/luarss/OpenROAD/issues/2997) from The-OpenROAD-Project-staging/par-read_partitioning
+- Merge pull request [#2938](https://github.com/luarss/OpenROAD/issues/2938) from QuantamHD/bump_opensta
+- Merge pull request [#2995](https://github.com/luarss/OpenROAD/issues/2995) from The-OpenROAD-Project-staging/dpl-clang-tidy
+- Merge pull request [#2994](https://github.com/luarss/OpenROAD/issues/2994) from The-OpenROAD-Project-staging/dft-clang-tidy
+- Merge pull request [#2993](https://github.com/luarss/OpenROAD/issues/2993) from The-OpenROAD-Project-staging/cts-clang-tidy
+- Merge pull request [#2992](https://github.com/luarss/OpenROAD/issues/2992) from The-OpenROAD-Project-staging/par-write_verilog
+- Merge pull request [#2986](https://github.com/luarss/OpenROAD/issues/2986) from antonblanchard/drt-minstep-old
+- Merge pull request [#2987](https://github.com/luarss/OpenROAD/issues/2987) from The-OpenROAD-Project-staging/dft-test
+- Merge pull request [#2979](https://github.com/luarss/OpenROAD/issues/2979) from gadfort/pdn-fix-via
+- Merge pull request [#2985](https://github.com/luarss/OpenROAD/issues/2985) from antonblanchard/minimumcut-comment
+- Merge pull request [#2983](https://github.com/luarss/OpenROAD/issues/2983) from QuantamHD/fix_clang_tidy
+- Merge pull request [#2949](https://github.com/luarss/OpenROAD/issues/2949) from QuantamHD/clang-tidy
+- Merge pull request [#2976](https://github.com/luarss/OpenROAD/issues/2976) from The-OpenROAD-Project-staging/odb-tmg-crash
+- Merge pull request [#2967](https://github.com/luarss/OpenROAD/issues/2967) from zarkin404/develop
+- Merge pull request [#2964](https://github.com/luarss/OpenROAD/issues/2964) from gadfort/pdn-find-pins-outside
+- Merge pull request [#2963](https://github.com/luarss/OpenROAD/issues/2963) from gadfort/ppl-mfg_grid
+- Merge pull request [#2961](https://github.com/luarss/OpenROAD/issues/2961) from gadfort/fix-signal-special
+- Merge pull request [#2960](https://github.com/luarss/OpenROAD/issues/2960) from gadfort/pad-fix-names
+- Merge pull request [#2958](https://github.com/luarss/OpenROAD/issues/2958) from The-OpenROAD-Project-staging/tap-tidy
+- Merge pull request [#2959](https://github.com/luarss/OpenROAD/issues/2959) from eder-matheus/ppl_fix
+- Merge pull request [#2950](https://github.com/luarss/OpenROAD/issues/2950) from The-OpenROAD-Project-staging/TR_fix_corner_spc
+- Merge pull request [#2956](https://github.com/luarss/OpenROAD/issues/2956) from The-OpenROAD-Project-staging/dbsta-override
+- Merge pull request [#2946](https://github.com/luarss/OpenROAD/issues/2946) from eder-matheus/ppl_pin_ordering
+- Merge pull request [#2947](https://github.com/luarss/OpenROAD/issues/2947) from The-OpenROAD-Project-staging/odb-dead-code
+- Merge pull request [#2943](https://github.com/luarss/OpenROAD/issues/2943) from fgaray/memory_leak
+- Merge pull request [#2945](https://github.com/luarss/OpenROAD/issues/2945) from ABKGroup/master
+- Merge pull request [#2944](https://github.com/luarss/OpenROAD/issues/2944) from The-OpenROAD-Project-staging/drt-revert
+- Merge pull request [#2933](https://github.com/luarss/OpenROAD/issues/2933) from QuantamHD/remove_unused
+- Merge pull request [#2939](https://github.com/luarss/OpenROAD/issues/2939) from The-OpenROAD-Project-staging/odb-rm-old-logger
+- Merge pull request [#2940](https://github.com/luarss/OpenROAD/issues/2940) from The-OpenROAD-Project-staging/drt-via-selection
+- Merge pull request [#2937](https://github.com/luarss/OpenROAD/issues/2937) from eder-matheus/grt_fix_tracks
+- Merge pull request [#2900](https://github.com/luarss/OpenROAD/issues/2900) from fgaray/scan_replace
+- Merge pull request [#2936](https://github.com/luarss/OpenROAD/issues/2936) from The-OpenROAD-Project-staging/dpo-mgr-priv
+- Merge pull request [#2935](https://github.com/luarss/OpenROAD/issues/2935) from gadfort/coverity
+- Merge pull request [#2932](https://github.com/luarss/OpenROAD/issues/2932) from The-OpenROAD-Project-staging/dpo-add-orient
+- Merge pull request [#2931](https://github.com/luarss/OpenROAD/issues/2931) from gadfort/grt-heatmap
+- Merge pull request [#2909](https://github.com/luarss/OpenROAD/issues/2909) from gadfort/icewall
+- Merge pull request [#2930](https://github.com/luarss/OpenROAD/issues/2930) from The-OpenROAD-Project-staging/dpo-refactor
+- Merge pull request [#2929](https://github.com/luarss/OpenROAD/issues/2929) from The-OpenROAD-Project-staging/odb-guide-set
+- Merge pull request [#2921](https://github.com/luarss/OpenROAD/issues/2921) from antonblanchard/lef-log-unsupported
+- Merge pull request [#2922](https://github.com/luarss/OpenROAD/issues/2922) from antonblanchard/drt-patterning-comment
+- Merge pull request [#2917](https://github.com/luarss/OpenROAD/issues/2917) from antonblanchard/grt-simplify
+- Merge pull request [#2916](https://github.com/luarss/OpenROAD/issues/2916) from The-OpenROAD-Project-staging/par-coverity
+- Merge pull request [#2915](https://github.com/luarss/OpenROAD/issues/2915) from The-OpenROAD-Project-staging/par-stability
+- Merge pull request [#2911](https://github.com/luarss/OpenROAD/issues/2911) from The-OpenROAD-Project-staging/par-cleanup
+- Merge pull request [#2908](https://github.com/luarss/OpenROAD/issues/2908) from The-OpenROAD-Project-staging/par-coverity
+- Merge pull request [#2907](https://github.com/luarss/OpenROAD/issues/2907) from antonblanchard/drt-debug-ap-gui
+- Merge pull request [#2905](https://github.com/luarss/OpenROAD/issues/2905) from The-OpenROAD-Project-staging/par-tests
+- Merge pull request [#2885](https://github.com/luarss/OpenROAD/issues/2885) from The-OpenROAD-Project-staging/refactor_mpl2
+- Merge pull request [#2902](https://github.com/luarss/OpenROAD/issues/2902) from vvbandeira/fix-coverage
+- Merge pull request [#2899](https://github.com/luarss/OpenROAD/issues/2899) from The-OpenROAD-Project-staging/tpart
+- Merge pull request [#2898](https://github.com/luarss/OpenROAD/issues/2898) from eder-matheus/grt_top_level_terms
+- Merge pull request [#2893](https://github.com/luarss/OpenROAD/issues/2893) from eder-matheus/grt_upper_layer_nets
+- Merge pull request [#2894](https://github.com/luarss/OpenROAD/issues/2894) from The-OpenROAD-Project-staging/rcx-api
+- Merge pull request [#2860](https://github.com/luarss/OpenROAD/issues/2860) from vvbandeira/gha-cpp20
+- Merge pull request [#2890](https://github.com/luarss/OpenROAD/issues/2890) from The-OpenROAD-Project-staging/gpl-extra-iters
+- Merge pull request [#2877](https://github.com/luarss/OpenROAD/issues/2877) from arthurjolo/grt_correct_fixEmbaddedTree_created_edge
+- Merge pull request [#2887](https://github.com/luarss/OpenROAD/issues/2887) from The-OpenROAD-Project-staging/gui-heatmap-bounds
+- Merge pull request [#2886](https://github.com/luarss/OpenROAD/issues/2886) from The-OpenROAD-Project-staging/rcx-cleanups
+- Merge pull request [#2883](https://github.com/luarss/OpenROAD/issues/2883) from The-OpenROAD-Project-staging/rcx-cleanups
+- Merge pull request [#2879](https://github.com/luarss/OpenROAD/issues/2879) from The-OpenROAD-Project-staging/gpl-high-aspect
+- Merge pull request [#2843](https://github.com/luarss/OpenROAD/issues/2843) from antonblanchard/drt-simplify
+- Merge pull request [#2873](https://github.com/luarss/OpenROAD/issues/2873) from QuantamHD/dpl_lib
+- Merge pull request [#2876](https://github.com/luarss/OpenROAD/issues/2876) from The-OpenROAD-Project-staging/gpl-few-inst-convergence
+- Merge pull request [#2878](https://github.com/luarss/OpenROAD/issues/2878) from The-OpenROAD-Project-staging/swig-warn
+- Merge pull request [#2875](https://github.com/luarss/OpenROAD/issues/2875) from The-OpenROAD-Project-staging/boost-ver-check
+- Merge pull request [#2874](https://github.com/luarss/OpenROAD/issues/2874) from The-OpenROAD-Project-staging/steup-buf-metric
+- Merge pull request [#2866](https://github.com/luarss/OpenROAD/issues/2866) from eder-matheus/grt_fix_pin_offset
+- Merge pull request [#2801](https://github.com/luarss/OpenROAD/issues/2801) from cdleary/test-utils
+- Merge pull request [#2636](https://github.com/luarss/OpenROAD/issues/2636) from antonblanchard/grt-bus-route-test
+- Merge pull request [#2867](https://github.com/luarss/OpenROAD/issues/2867) from QuantamHD/fix_upf
+- Merge pull request [#2871](https://github.com/luarss/OpenROAD/issues/2871) from The-OpenROAD-Project-staging/odb-more-gs
+- Merge pull request [#2869](https://github.com/luarss/OpenROAD/issues/2869) from The-OpenROAD-Project-staging/odb-gs-checkOnly
+- Merge pull request [#2848](https://github.com/luarss/OpenROAD/issues/2848) from QuantamHD/new_world_order
+- Merge pull request [#2865](https://github.com/luarss/OpenROAD/issues/2865) from The-OpenROAD-Project-staging/gs-simplify
+- Merge pull request [#2846](https://github.com/luarss/OpenROAD/issues/2846) from habibayassin/improve-reports
+- Merge pull request [#2859](https://github.com/luarss/OpenROAD/issues/2859) from The-OpenROAD-Project-staging/gpl-medium05-update
+- Merge pull request [#2862](https://github.com/luarss/OpenROAD/issues/2862) from antonblanchard/drt-fixes
+- Merge pull request [#2855](https://github.com/luarss/OpenROAD/issues/2855) from Pinata-Consulting/some-rovinsi-cleanup-rebased
+- Merge pull request [#2858](https://github.com/luarss/OpenROAD/issues/2858) from The-OpenROAD-Project-staging/odb-gs
+- Merge pull request [#2857](https://github.com/luarss/OpenROAD/issues/2857) from WRansohoff/WRansohoff-ifp-typo-fix
+- Merge pull request [#2854](https://github.com/luarss/OpenROAD/issues/2854) from antonblanchard/drt-frDirEnum
+- Merge pull request [#2853](https://github.com/luarss/OpenROAD/issues/2853) from antonblanchard/drt-remove-layerPathArea
+- Merge pull request [#2852](https://github.com/luarss/OpenROAD/issues/2852) from antonblanchard/drt-squaredDistance
+- Merge pull request [#2851](https://github.com/luarss/OpenROAD/issues/2851) from antonblanchard/drt-manhattan
+- Merge pull request [#2850](https://github.com/luarss/OpenROAD/issues/2850) from antonblanchard/ta-pincoord
+- Merge pull request [#2849](https://github.com/luarss/OpenROAD/issues/2849) from antonblanchard/drt-via2turn
+- Merge pull request [#2817](https://github.com/luarss/OpenROAD/issues/2817) from antonblanchard/compiler-warnings-2
+- Merge pull request [#2844](https://github.com/luarss/OpenROAD/issues/2844) from antonblanchard/drt-via2vianew
+- Merge pull request [#2842](https://github.com/luarss/OpenROAD/issues/2842) from antonblanchard/ci-actions-version
+- Merge pull request [#2837](https://github.com/luarss/OpenROAD/issues/2837) from jjcherry56/copyright
+- Merge pull request [#2841](https://github.com/luarss/OpenROAD/issues/2841) from vvbandeira/swig-pyton-fix
+- Merge pull request [#2840](https://github.com/luarss/OpenROAD/issues/2840) from The-OpenROAD-Project-staging/via-fix
+- Merge pull request [#2836](https://github.com/luarss/OpenROAD/issues/2836) from The-OpenROAD-Project-staging/lic-fix
+- Merge pull request [#2834](https://github.com/luarss/OpenROAD/issues/2834) from The-OpenROAD-Project-staging/gpl-gui
+- Merge pull request [#2835](https://github.com/luarss/OpenROAD/issues/2835) from The-OpenROAD-Project-staging/gpl-partial-site-fix
+- Merge pull request [#2806](https://github.com/luarss/OpenROAD/issues/2806) from osamahammad21/fix-marker-serialization
+- Merge pull request [#2829](https://github.com/luarss/OpenROAD/issues/2829) from eder-matheus/drt_patch_owner
+- Merge pull request [#2830](https://github.com/luarss/OpenROAD/issues/2830) from The-OpenROAD-Project-staging/gui-heatmap-bounds
+- Merge pull request [#2828](https://github.com/luarss/OpenROAD/issues/2828) from The-OpenROAD-Project-staging/rcx-more-cleanup
+- Merge pull request [#2824](https://github.com/luarss/OpenROAD/issues/2824) from gadfort/gui-anets
+- Merge pull request [#2826](https://github.com/luarss/OpenROAD/issues/2826) from The-OpenROAD-Project-staging/odb-wire-graph-set-obj
+- Merge pull request [#2825](https://github.com/luarss/OpenROAD/issues/2825) from The-OpenROAD-Project-staging/rcx-paring
+- Merge pull request [#2799](https://github.com/luarss/OpenROAD/issues/2799) from arthurjolo/grt_reduce_pinoffset_guides_from_usage
+- Merge pull request [#2822](https://github.com/luarss/OpenROAD/issues/2822) from eder-matheus/ppl_fix_random
+- Merge pull request [#2629](https://github.com/luarss/OpenROAD/issues/2629) from antonblanchard/grt-track-adjust
+- Merge pull request [#2820](https://github.com/luarss/OpenROAD/issues/2820) from The-OpenROAD-Project-staging/odb-wire-graph-cleanup
+- Merge pull request [#2813](https://github.com/luarss/OpenROAD/issues/2813) from eder-matheus/grt_underflow
+- Merge pull request [#2808](https://github.com/luarss/OpenROAD/issues/2808) from fgaray/add_dft_tool
+- Merge pull request [#2785](https://github.com/luarss/OpenROAD/issues/2785) from QuantamHD/c++20
+- Merge pull request [#2816](https://github.com/luarss/OpenROAD/issues/2816) from osamahammad21/drt-fix-tmpAp
+- Merge pull request [#2814](https://github.com/luarss/OpenROAD/issues/2814) from gadfort/pdn-overlapping-vias
+- Merge pull request [#2641](https://github.com/luarss/OpenROAD/issues/2641) from The-OpenROAD-Project-staging/secure-repair_tns
+- Merge pull request [#2657](https://github.com/luarss/OpenROAD/issues/2657) from ahmadelrouby/multi-power-domain
+- Merge pull request [#2798](https://github.com/luarss/OpenROAD/issues/2798) from habibayassin/fix-installer
+- Merge pull request [#2797](https://github.com/luarss/OpenROAD/issues/2797) from The-OpenROAD-Project-staging/issue-2711
+- Merge pull request [#2803](https://github.com/luarss/OpenROAD/issues/2803) from gadfort/pdn-obs-filtering
+- Merge pull request [#2802](https://github.com/luarss/OpenROAD/issues/2802) from gadfort/gui-fix-startup
+- Merge pull request [#2792](https://github.com/luarss/OpenROAD/issues/2792) from The-OpenROAD-Project-staging/rsz-minor
+- Merge pull request [#2796](https://github.com/luarss/OpenROAD/issues/2796) from The-OpenROAD-Project-staging/gpl-api
+- Merge pull request [#2793](https://github.com/luarss/OpenROAD/issues/2793) from cdleary/master
+- Merge pull request [#2786](https://github.com/luarss/OpenROAD/issues/2786) from Pinata-Consulting/grt-erase-old-congestion-report
+- Merge pull request [#2783](https://github.com/luarss/OpenROAD/issues/2783) from eder-matheus/stt_clock_nets
+- Merge pull request [#2788](https://github.com/luarss/OpenROAD/issues/2788) from Pinata-Consulting/ant-ofstream-truncates-by-default
+- Merge pull request [#2787](https://github.com/luarss/OpenROAD/issues/2787) from Pinata-Consulting/grt-ofstream-truncates-by-default
+- Merge pull request [#2789](https://github.com/luarss/OpenROAD/issues/2789) from osamahammad21/drt-dump-multi-workers
+- Merge pull request [#2769](https://github.com/luarss/OpenROAD/issues/2769) from gadfort/grt-corner-parasitics
+- Merge pull request [#2776](https://github.com/luarss/OpenROAD/issues/2776) from gadfort/utl-handle-numbers
+- Merge pull request [#2779](https://github.com/luarss/OpenROAD/issues/2779) from The-OpenROAD-Project-staging/mpl2-refactor
+- Merge pull request [#2778](https://github.com/luarss/OpenROAD/issues/2778) from QuantamHD/patch-5
+- Merge pull request [#2616](https://github.com/luarss/OpenROAD/issues/2616) from antonblanchard/grt-obs-issue
+- Merge pull request [#2761](https://github.com/luarss/OpenROAD/issues/2761) from Pinata-Consulting/grt-congestion-report-tip
+- Merge pull request [#2774](https://github.com/luarss/OpenROAD/issues/2774) from The-OpenROAD-Project-staging/mpl2-msgs
+- Merge pull request [#2750](https://github.com/luarss/OpenROAD/issues/2750) from habibayassin/edit-installer
+- Merge pull request [#2773](https://github.com/luarss/OpenROAD/issues/2773) from The-OpenROAD-Project-staging/drt-ispd-typo
+- Merge pull request [#2772](https://github.com/luarss/OpenROAD/issues/2772) from The-OpenROAD-Project-staging/rsz-dead-end
+- Merge pull request [#2771](https://github.com/luarss/OpenROAD/issues/2771) from antonblanchard/grt-red-unused
+- Merge pull request [#2732](https://github.com/luarss/OpenROAD/issues/2732) from Pinata-Consulting/ppl-going-off-the-rails-assert
+- Merge pull request [#2733](https://github.com/luarss/OpenROAD/issues/2733) from Pinata-Consulting/ppl-seems-like-very-useful-warning
+- Merge pull request [#2768](https://github.com/luarss/OpenROAD/issues/2768) from antonblanchard/missing-braces
+- Merge pull request [#2767](https://github.com/luarss/OpenROAD/issues/2767) from The-OpenROAD-Project-staging/mpl2-fixup
+- Merge pull request [#2765](https://github.com/luarss/OpenROAD/issues/2765) from The-OpenROAD-Project-staging/odb-cleanup
+- Merge pull request [#2766](https://github.com/luarss/OpenROAD/issues/2766) from antonblanchard/boost-include-dir
+- Merge pull request [#2764](https://github.com/luarss/OpenROAD/issues/2764) from antonblanchard/drt-ta-tests
+- Merge pull request [#2760](https://github.com/luarss/OpenROAD/issues/2760) from The-OpenROAD-Project-staging/pragma-once
+- Merge pull request [#2759](https://github.com/luarss/OpenROAD/issues/2759) from The-OpenROAD-Project-staging/gpl-index
+- Merge pull request [#2755](https://github.com/luarss/OpenROAD/issues/2755) from gadfort/lef-windows
+- Merge pull request [#2757](https://github.com/luarss/OpenROAD/issues/2757) from gadfort/gui-fix-tcl
+- Merge pull request [#2756](https://github.com/luarss/OpenROAD/issues/2756) from gadfort/gui-sta-controls
+- Merge pull request [#2741](https://github.com/luarss/OpenROAD/issues/2741) from antonblanchard/compiler-warnings
+- Merge pull request [#2751](https://github.com/luarss/OpenROAD/issues/2751) from fgaray/copy_warnings
+- Merge pull request [#2753](https://github.com/luarss/OpenROAD/issues/2753) from gadfort/metrics-scale
+- Merge pull request [#2749](https://github.com/luarss/OpenROAD/issues/2749) from fgaray/doc_broken_link
+- Merge pull request [#2744](https://github.com/luarss/OpenROAD/issues/2744) from cdleary/small-rcx-cleanups
+- Merge pull request [#2747](https://github.com/luarss/OpenROAD/issues/2747) from eder-matheus/ppl_fix
+- Merge pull request [#2748](https://github.com/luarss/OpenROAD/issues/2748) from The-OpenROAD-Project-staging/ispd-update2
+- Merge pull request [#2713](https://github.com/luarss/OpenROAD/issues/2713) from Pinata-Consulting/build-deb-package
+- Merge pull request [#2743](https://github.com/luarss/OpenROAD/issues/2743) from gadfort/gui-correct-exit
+- Merge pull request [#2737](https://github.com/luarss/OpenROAD/issues/2737) from cdleary/small-rcx-cleanups
+- Merge pull request [#2734](https://github.com/luarss/OpenROAD/issues/2734) from The-OpenROAD-Project-staging/TR_fix_gc_markerid_operator
+- Merge pull request [#2736](https://github.com/luarss/OpenROAD/issues/2736) from The-OpenROAD-Project-staging/pdn-py
+- Merge pull request [#2725](https://github.com/luarss/OpenROAD/issues/2725) from The-OpenROAD-Project-staging/tune_mpl2
+- Merge pull request [#2730](https://github.com/luarss/OpenROAD/issues/2730) from macd/fix-2729
+- Merge pull request [#2581](https://github.com/luarss/OpenROAD/issues/2581) from eder-matheus/drt_patch_metal
+- Merge pull request [#2727](https://github.com/luarss/OpenROAD/issues/2727) from Pinata-Consulting/mirrored-pins-counting
+- Merge pull request [#2726](https://github.com/luarss/OpenROAD/issues/2726) from eder-matheus/ppl_coverity
+- Merge pull request [#2714](https://github.com/luarss/OpenROAD/issues/2714) from macd/pdn-python
+- Merge pull request [#2705](https://github.com/luarss/OpenROAD/issues/2705) from Pinata-Consulting/support-ubuntu-22.10
+- Merge pull request [#2722](https://github.com/luarss/OpenROAD/issues/2722) from eder-matheus/ppl_mirrored_pins
+- Merge pull request [#2723](https://github.com/luarss/OpenROAD/issues/2723) from The-OpenROAD-Project-staging/rsz-input-dont-touch
+- Merge pull request [#2692](https://github.com/luarss/OpenROAD/issues/2692) from The-OpenROAD-Project-staging/rsz-hold-area
+- Merge pull request [#2720](https://github.com/luarss/OpenROAD/issues/2720) from antonblanchard/drt-args
+- Merge pull request [#2719](https://github.com/luarss/OpenROAD/issues/2719) from The-OpenROAD-Project-staging/mpl2-pin-loc
+- Merge pull request [#2721](https://github.com/luarss/OpenROAD/issues/2721) from The-OpenROAD-Project-staging/metrics-util-fix
+- Merge pull request [#2708](https://github.com/luarss/OpenROAD/issues/2708) from gadfort/ant-metric
+- Merge pull request [#2712](https://github.com/luarss/OpenROAD/issues/2712) from gadfort/metrics-format
+- Merge pull request [#2717](https://github.com/luarss/OpenROAD/issues/2717) from gadfort/pdn-check-netmap
+- Merge pull request [#2694](https://github.com/luarss/OpenROAD/issues/2694) from Pinata-Consulting/cts-warning-fix
+- Merge pull request [#2707](https://github.com/luarss/OpenROAD/issues/2707) from arthurjolo/prevent_3Dmazerout_crashing
+- Merge pull request [#2682](https://github.com/luarss/OpenROAD/issues/2682) from gadfort/metrics-erc
+- Merge pull request [#2706](https://github.com/luarss/OpenROAD/issues/2706) from Pinata-Consulting/dependency-installer-remove-out-of-date-error-message
+- Merge pull request [#2701](https://github.com/luarss/OpenROAD/issues/2701) from jjcherry56/or2687
+- Merge pull request [#2702](https://github.com/luarss/OpenROAD/issues/2702) from macd/psm-python
+- Merge pull request [#2703](https://github.com/luarss/OpenROAD/issues/2703) from vijayank88/OR_gf180_doc
+- Merge pull request [#2700](https://github.com/luarss/OpenROAD/issues/2700) from gadfort/ord-typo
+- Merge pull request [#2697](https://github.com/luarss/OpenROAD/issues/2697) from gadfort/gui-sta-endpoints
+- Merge pull request [#2695](https://github.com/luarss/OpenROAD/issues/2695) from Pinata-Consulting/mpl2-warning-fix
+- Merge pull request [#2542](https://github.com/luarss/OpenROAD/issues/2542) from The-OpenROAD-Project-staging/mpl2_part
+- Merge pull request [#2691](https://github.com/luarss/OpenROAD/issues/2691) from The-OpenROAD-Project-staging/rcx-coverity
+- Merge pull request [#2683](https://github.com/luarss/OpenROAD/issues/2683) from jjcherry56/OR2677
+- Merge pull request [#2688](https://github.com/luarss/OpenROAD/issues/2688) from Pinata-Consulting/spelling-fixes
+- Merge pull request [#2663](https://github.com/luarss/OpenROAD/issues/2663) from antonblanchard/grt-clk-net-first
+- Merge pull request [#2686](https://github.com/luarss/OpenROAD/issues/2686) from gadfort/dbreport-enable-redirect-to-string
+- Merge pull request [#2684](https://github.com/luarss/OpenROAD/issues/2684) from gadfort/metric-notfixed
+- Merge pull request [#2685](https://github.com/luarss/OpenROAD/issues/2685) from The-OpenROAD-Project-staging/rcx-rm-unused
+- Merge pull request [#2681](https://github.com/luarss/OpenROAD/issues/2681) from gadfort/pdn-infloop
+- Merge pull request [#2672](https://github.com/luarss/OpenROAD/issues/2672) from gadfort/gui-decouple-tcl
+- Merge pull request [#2671](https://github.com/luarss/OpenROAD/issues/2671) from gadfort/gui-browser-check
+- Merge pull request [#2662](https://github.com/luarss/OpenROAD/issues/2662) from The-OpenROAD-Project-staging/drt-fix-memory-ovrf
+- Merge pull request [#2669](https://github.com/luarss/OpenROAD/issues/2669) from The-OpenROAD-Project-staging/psm_block_via_rail
+- Merge pull request [#2668](https://github.com/luarss/OpenROAD/issues/2668) from macd/stt-python
+- Merge pull request [#2665](https://github.com/luarss/OpenROAD/issues/2665) from vvbandeira/fix-gha-runs-on
+- Merge pull request [#2548](https://github.com/luarss/OpenROAD/issues/2548) from vvbandeira/gha-use-installer
+- Merge pull request [#2664](https://github.com/luarss/OpenROAD/issues/2664) from vvbandeira/docs-fix-org
+- Merge pull request [#2661](https://github.com/luarss/OpenROAD/issues/2661) from macd/rmp-python
+- Merge pull request [#2660](https://github.com/luarss/OpenROAD/issues/2660) from gadfort/gui-pins
+- Merge pull request [#2659](https://github.com/luarss/OpenROAD/issues/2659) from The-OpenROAD-Project-staging/via-in-pin
+- Merge pull request [#2652](https://github.com/luarss/OpenROAD/issues/2652) from gadfort/pdn-tech-layer
+- Merge pull request [#2656](https://github.com/luarss/OpenROAD/issues/2656) from macd/rcx-python
+- Merge pull request [#2658](https://github.com/luarss/OpenROAD/issues/2658) from gadfort/gui-cts-renderer
+- Merge pull request [#2651](https://github.com/luarss/OpenROAD/issues/2651) from arthurjolo/grt_fix_usage_from_underflow
+- Merge pull request [#2655](https://github.com/luarss/OpenROAD/issues/2655) from The-OpenROAD-Project-staging/stt-fix
+- Merge pull request [#2654](https://github.com/luarss/OpenROAD/issues/2654) from jjcherry56/rsz_bad_fakeram
+- Merge pull request [#2647](https://github.com/luarss/OpenROAD/issues/2647) from eder-matheus/ppl_fix_slots
+- Merge pull request [#2648](https://github.com/luarss/OpenROAD/issues/2648) from The-OpenROAD-Project-staging/drt-fix-cutspctbl_check
+- Merge pull request [#2645](https://github.com/luarss/OpenROAD/issues/2645) from The-OpenROAD-Project-staging/drt-fix-cutspctbl_check
+- Merge pull request [#2646](https://github.com/luarss/OpenROAD/issues/2646) from macd/par-python
+- Merge pull request [#2613](https://github.com/luarss/OpenROAD/issues/2613) from osamahammad21/drt-checkdrc-parallel
+- Merge pull request [#2644](https://github.com/luarss/OpenROAD/issues/2644) from macd/fin-python
+- Merge pull request [#2635](https://github.com/luarss/OpenROAD/issues/2635) from The-OpenROAD-Project-staging/cts-seg-builder
+- Merge pull request [#2631](https://github.com/luarss/OpenROAD/issues/2631) from The-OpenROAD-Project-staging/read-def-floorplan-fix
+- Merge pull request [#2628](https://github.com/luarss/OpenROAD/issues/2628) from The-OpenROAD-Project-staging/dbsta-parent
+- Merge pull request [#2626](https://github.com/luarss/OpenROAD/issues/2626) from The-OpenROAD-Project-staging/dpl-improve-msg
+- Merge pull request [#2622](https://github.com/luarss/OpenROAD/issues/2622) from The-OpenROAD-Project-staging/gui-fileopen
+- Merge pull request [#2627](https://github.com/luarss/OpenROAD/issues/2627) from The-OpenROAD-Project-staging/gui-logger
+- Merge pull request [#2624](https://github.com/luarss/OpenROAD/issues/2624) from The-OpenROAD-Project-staging/rsz-dont-touch-driver
+- Merge pull request [#2623](https://github.com/luarss/OpenROAD/issues/2623) from The-OpenROAD-Project-staging/no-reload
+- Merge pull request [#2610](https://github.com/luarss/OpenROAD/issues/2610) from The-OpenROAD-Project-staging/gui-cts-subtree
+- Merge pull request [#2614](https://github.com/luarss/OpenROAD/issues/2614) from The-OpenROAD-Project-staging/gui-cts-clockgate
+- Merge pull request [#2609](https://github.com/luarss/OpenROAD/issues/2609) from osamahammad21/dst-fix-errors
+- Merge pull request [#2600](https://github.com/luarss/OpenROAD/issues/2600) from eder-matheus/grt_fix
+- Merge pull request [#2611](https://github.com/luarss/OpenROAD/issues/2611) from vvbandeira/etc-dep
+- Merge pull request [#2303](https://github.com/luarss/OpenROAD/issues/2303) from osamahammad21/drt-wrongwaywidth
+- Merge pull request [#2602](https://github.com/luarss/OpenROAD/issues/2602) from The-OpenROAD-Project-staging/drt-fix
+- Merge pull request [#2553](https://github.com/luarss/OpenROAD/issues/2553) from The-OpenROAD-Project-staging/stt-new-pd
+- Merge pull request [#2520](https://github.com/luarss/OpenROAD/issues/2520) from antonblanchard/ta-bterm
+- Merge pull request [#2598](https://github.com/luarss/OpenROAD/issues/2598) from antonblanchard/drt-dr-minspacing
+- Merge pull request [#2601](https://github.com/luarss/OpenROAD/issues/2601) from The-OpenROAD-Project-staging/mpl2-comp-fix
+- Merge pull request [#2599](https://github.com/luarss/OpenROAD/issues/2599) from antonblanchard/drt-typos
+- Merge pull request [#2597](https://github.com/luarss/OpenROAD/issues/2597) from The-OpenROAD-Project-staging/odb-cleanup
+- Merge pull request [#2596](https://github.com/luarss/OpenROAD/issues/2596) from The-OpenROAD-Project-staging/gui-null-function
+- Merge pull request [#2595](https://github.com/luarss/OpenROAD/issues/2595) from The-OpenROAD-Project-staging/drt-on-grid-check
+- Merge pull request [#2593](https://github.com/luarss/OpenROAD/issues/2593) from The-OpenROAD-Project-staging/rm-post-cts-opt
+- Merge pull request [#2594](https://github.com/luarss/OpenROAD/issues/2594) from The-OpenROAD-Project-staging/gpl-no-slack-range
+- Merge pull request [#2248](https://github.com/luarss/OpenROAD/issues/2248) from The-OpenROAD-Project-staging/drt-mincut
+- Merge pull request [#2592](https://github.com/luarss/OpenROAD/issues/2592) from The-OpenROAD-Project-staging/gui-cts-paths
+- Merge pull request [#2591](https://github.com/luarss/OpenROAD/issues/2591) from The-OpenROAD-Project-staging/cts-plot-fix
+- Merge pull request [#2588](https://github.com/luarss/OpenROAD/issues/2588) from The-OpenROAD-Project-staging/gui-cts-crash
+- Merge pull request [#2587](https://github.com/luarss/OpenROAD/issues/2587) from The-OpenROAD-Project-staging/gui-max-cts-size2
+- Merge pull request [#2586](https://github.com/luarss/OpenROAD/issues/2586) from The-OpenROAD-Project-staging/gui-fix-message
+- Merge pull request [#2583](https://github.com/luarss/OpenROAD/issues/2583) from gadfort/gui-logger-image
+- Merge pull request [#2584](https://github.com/luarss/OpenROAD/issues/2584) from The-OpenROAD-Project-staging/gui-cts-white-background
+- Merge pull request [#2582](https://github.com/luarss/OpenROAD/issues/2582) from gadfort/gui-cts-inverter
+- Merge pull request [#2578](https://github.com/luarss/OpenROAD/issues/2578) from macd/dpo-python
+- Merge pull request [#2579](https://github.com/luarss/OpenROAD/issues/2579) from The-OpenROAD-Project-staging/gui-fix-hold
+- Merge pull request [#2574](https://github.com/luarss/OpenROAD/issues/2574) from macd/drt-python
+- Merge pull request [#2573](https://github.com/luarss/OpenROAD/issues/2573) from jjcherry56/macos_rm_mpl2
+- Merge pull request [#2576](https://github.com/luarss/OpenROAD/issues/2576) from The-OpenROAD-Project-staging/gui-offscreen-cts
+- Merge pull request [#2571](https://github.com/luarss/OpenROAD/issues/2571) from The-OpenROAD-Project-staging/drt-ta-no-tracks-err
+- Merge pull request [#2570](https://github.com/luarss/OpenROAD/issues/2570) from The-OpenROAD-Project-staging/grt-fix-out-of-bounds
+- Merge pull request [#2519](https://github.com/luarss/OpenROAD/issues/2519) from macd/cts-python
+- Merge pull request [#2568](https://github.com/luarss/OpenROAD/issues/2568) from eder-matheus/grt_fix_crash
+- Merge pull request [#2550](https://github.com/luarss/OpenROAD/issues/2550) from eder-matheus/repair_antennas_flow
+- Merge pull request [#2567](https://github.com/luarss/OpenROAD/issues/2567) from eder-matheus/ppl_place_pin
+- Merge pull request [#2561](https://github.com/luarss/OpenROAD/issues/2561) from The-OpenROAD-Project-staging/gui-cts-continued
+- Merge pull request [#2555](https://github.com/luarss/OpenROAD/issues/2555) from antonblanchard/rcx-corner-arrays
+- Merge pull request [#2559](https://github.com/luarss/OpenROAD/issues/2559) from The-OpenROAD-Project-staging/grt-cost-overflow
+- Merge pull request [#2556](https://github.com/luarss/OpenROAD/issues/2556) from antonblanchard/ta-minspacing
+- Merge pull request [#2554](https://github.com/luarss/OpenROAD/issues/2554) from The-OpenROAD-Project-staging/grt-loop-fix
+- Merge pull request [#2552](https://github.com/luarss/OpenROAD/issues/2552) from The-OpenROAD-Project-staging/rsz-dup-nodes
+- Merge pull request [#2539](https://github.com/luarss/OpenROAD/issues/2539) from eder-matheus/grt_read_guides
+- Merge pull request [#2545](https://github.com/luarss/OpenROAD/issues/2545) from The-OpenROAD-Project-staging/pdn-obs-sort
+- Merge pull request [#2546](https://github.com/luarss/OpenROAD/issues/2546) from The-OpenROAD-Project-staging/dpl-hopeless-adj
+- Merge pull request [#2544](https://github.com/luarss/OpenROAD/issues/2544) from The-OpenROAD-Project-staging/db-diff
+- Merge pull request [#2537](https://github.com/luarss/OpenROAD/issues/2537) from The-OpenROAD-Project-staging/gui-site
+- Merge pull request [#2538](https://github.com/luarss/OpenROAD/issues/2538) from The-OpenROAD-Project-staging/mpl2_opt
+- Merge pull request [#2366](https://github.com/luarss/OpenROAD/issues/2366) from The-OpenROAD-Project-staging/pdn-remove-tcl-access
+- Merge pull request [#2536](https://github.com/luarss/OpenROAD/issues/2536) from The-OpenROAD-Project-staging/gui-sta-fix-timing-widget
+- Merge pull request [#2472](https://github.com/luarss/OpenROAD/issues/2472) from antonblanchard/drt-ta-cleanup
+- Merge pull request [#2522](https://github.com/luarss/OpenROAD/issues/2522) from Pinata-Consulting/typo-fix
+- Merge pull request [#2523](https://github.com/luarss/OpenROAD/issues/2523) from The-OpenROAD-Project-staging/gui-ndr
+- Merge pull request [#2528](https://github.com/luarss/OpenROAD/issues/2528) from antonblanchard/ta-graphics
+- Merge pull request [#2534](https://github.com/luarss/OpenROAD/issues/2534) from QuantamHD/patch-4
+- Merge pull request [#2533](https://github.com/luarss/OpenROAD/issues/2533) from The-OpenROAD-Project-staging/mpl2-cleanup
+- Merge pull request [#2530](https://github.com/luarss/OpenROAD/issues/2530) from antonblanchard/drt-getDbLayer
+- Merge pull request [#2532](https://github.com/luarss/OpenROAD/issues/2532) from The-OpenROAD-Project-staging/fix-rpath
+- Merge pull request [#2529](https://github.com/luarss/OpenROAD/issues/2529) from The-OpenROAD-Project-staging/mpl2-gui
+- Merge pull request [#2527](https://github.com/luarss/OpenROAD/issues/2527) from vvbandeira/cmake-or-tools
+- Merge pull request [#2525](https://github.com/luarss/OpenROAD/issues/2525) from The-OpenROAD-Project-staging/dpl-better-inst-on-macro
+- Merge pull request [#2524](https://github.com/luarss/OpenROAD/issues/2524) from QuantamHD/fix_antenna
+- Merge pull request [#2518](https://github.com/luarss/OpenROAD/issues/2518) from The-OpenROAD-Project-staging/mpl2-local
+- Merge pull request [#2498](https://github.com/luarss/OpenROAD/issues/2498) from macd/tap-python
+- Merge pull request [#2517](https://github.com/luarss/OpenROAD/issues/2517) from The-OpenROAD-Project-staging/mpl-limits
+- Merge pull request [#2507](https://github.com/luarss/OpenROAD/issues/2507) from antonblanchard/drt-minspacing
+- Merge pull request [#2513](https://github.com/luarss/OpenROAD/issues/2513) from The-OpenROAD-Project-staging/clang-format-stragglers
+- Merge pull request [#2511](https://github.com/luarss/OpenROAD/issues/2511) from The-OpenROAD-Project-staging/mpl2-efficiencies
+- Merge pull request [#2512](https://github.com/luarss/OpenROAD/issues/2512) from The-OpenROAD-Project-staging/odb-clang-format
+- Merge pull request [#2510](https://github.com/luarss/OpenROAD/issues/2510) from eder-matheus/fix_warns
+- Merge pull request [#2489](https://github.com/luarss/OpenROAD/issues/2489) from habibayassin/issue-forms
+- Merge pull request [#2509](https://github.com/luarss/OpenROAD/issues/2509) from The-OpenROAD-Project-staging/odb-ndr-check-fix
+- Merge pull request [#2508](https://github.com/luarss/OpenROAD/issues/2508) from osamahammad21/drt-clang-format
+- Merge pull request [#2506](https://github.com/luarss/OpenROAD/issues/2506) from The-OpenROAD-Project-staging/mp2-refactor3
+- Merge pull request [#2505](https://github.com/luarss/OpenROAD/issues/2505) from The-OpenROAD-Project-staging/mp2-refactor2
+- Merge pull request [#2504](https://github.com/luarss/OpenROAD/issues/2504) from The-OpenROAD-Project-staging/mpl2-refactor
+- Merge pull request [#2502](https://github.com/luarss/OpenROAD/issues/2502) from The-OpenROAD-Project-staging/mpl2-include-cleanup
+- Merge pull request [#2501](https://github.com/luarss/OpenROAD/issues/2501) from The-OpenROAD-Project-staging/gui-sta
+- Merge pull request [#2500](https://github.com/luarss/OpenROAD/issues/2500) from The-OpenROAD-Project-staging/odb-arrayspacing
+- Merge pull request [#2499](https://github.com/luarss/OpenROAD/issues/2499) from The-OpenROAD-Project-staging/mpl2-clang-format
+- Merge pull request [#2392](https://github.com/luarss/OpenROAD/issues/2392) from The-OpenROAD-Project-staging/hier_rtlmp
+- Merge pull request [#2495](https://github.com/luarss/OpenROAD/issues/2495) from Pinata-Consulting/floor-plan-liberty-missing-for-tie-cell-error
+- Merge pull request [#2494](https://github.com/luarss/OpenROAD/issues/2494) from macd/ppl-python
+- Merge pull request [#2496](https://github.com/luarss/OpenROAD/issues/2496) from The-OpenROAD-Project-staging/stt-path-depth
+- Merge pull request [#2493](https://github.com/luarss/OpenROAD/issues/2493) from eder-matheus/fix_warnings
+- Merge pull request [#2492](https://github.com/luarss/OpenROAD/issues/2492) from The-OpenROAD-Project-staging/ndr-all-layers
+- Merge pull request [#2486](https://github.com/luarss/OpenROAD/issues/2486) from eder-matheus/ant_update
+- Merge pull request [#2487](https://github.com/luarss/OpenROAD/issues/2487) from eder-matheus/ppl_fix_warns
+- Merge pull request [#2485](https://github.com/luarss/OpenROAD/issues/2485) from macd/mpl-python
+- Merge pull request [#2484](https://github.com/luarss/OpenROAD/issues/2484) from eder-matheus/grt_clang_format
+- Merge pull request [#2479](https://github.com/luarss/OpenROAD/issues/2479) from proppy/python-flags
+- Merge pull request [#2481](https://github.com/luarss/OpenROAD/issues/2481) from macd/dpl-python
+- Merge pull request [#2477](https://github.com/luarss/OpenROAD/issues/2477) from The-OpenROAD-Project-staging/odb-lefbloat
+- Merge pull request [#2483](https://github.com/luarss/OpenROAD/issues/2483) from vvbandeira/or-tools-docker
+- Merge pull request [#2480](https://github.com/luarss/OpenROAD/issues/2480) from The-OpenROAD-Project-staging/ifp-skip-track-too-small
+- Merge pull request [#2478](https://github.com/luarss/OpenROAD/issues/2478) from The-OpenROAD-Project-staging/gpl-medium05-update
+- Merge pull request [#2476](https://github.com/luarss/OpenROAD/issues/2476) from The-OpenROAD-Project-staging/rsz-tie-fix
+- Merge pull request [#2475](https://github.com/luarss/OpenROAD/issues/2475) from eder-matheus/drt_fix_warnings
+- Merge pull request [#2473](https://github.com/luarss/OpenROAD/issues/2473) from habibayassin/swig-update
+- Merge pull request [#2469](https://github.com/luarss/OpenROAD/issues/2469) from The-OpenROAD-Project-staging/grt-flexible-num-nodes
+- Merge pull request [#2466](https://github.com/luarss/OpenROAD/issues/2466) from The-OpenROAD-Project-staging/drt-viamap-fix
+- Merge pull request [#2462](https://github.com/luarss/OpenROAD/issues/2462) from eder-matheus/drt_adj_cuts
+- Merge pull request [#2468](https://github.com/luarss/OpenROAD/issues/2468) from The-OpenROAD-Project-staging/auto-copy
+- Merge pull request [#2467](https://github.com/luarss/OpenROAD/issues/2467) from The-OpenROAD-Project-staging/gpl-medium05-update
+- Merge pull request [#2459](https://github.com/luarss/OpenROAD/issues/2459) from jjcherry56/ol1467
+- Merge pull request [#2461](https://github.com/luarss/OpenROAD/issues/2461) from The-OpenROAD-Project-staging/uninit-ctor
+- Merge pull request [#2465](https://github.com/luarss/OpenROAD/issues/2465) from rovinski/master
+- Merge pull request [#2463](https://github.com/luarss/OpenROAD/issues/2463) from cbalint13/master
+- Merge pull request [#2458](https://github.com/luarss/OpenROAD/issues/2458) from The-OpenROAD-Project-staging/gpl-format
+- Merge pull request [#2457](https://github.com/luarss/OpenROAD/issues/2457) from hzeller/20221102-remove-unused-using-decl
+- Merge pull request [#2404](https://github.com/luarss/OpenROAD/issues/2404) from ramezmoussa/gpl-fix-stds-inside-macros
+- Merge pull request [#2416](https://github.com/luarss/OpenROAD/issues/2416) from antonblanchard/grt-print-pin
+- Merge pull request [#2456](https://github.com/luarss/OpenROAD/issues/2456) from The-OpenROAD-Project-staging/grt-skip-guide
+- Merge pull request [#2455](https://github.com/luarss/OpenROAD/issues/2455) from vvbandeira/or-tools-dep
+- Merge pull request [#2453](https://github.com/luarss/OpenROAD/issues/2453) from The-OpenROAD-Project-staging/dpl-format
+- Merge pull request [#2452](https://github.com/luarss/OpenROAD/issues/2452) from The-OpenROAD-Project-staging/ant-api
+- Merge pull request [#2451](https://github.com/luarss/OpenROAD/issues/2451) from The-OpenROAD-Project-staging/stt-format
+- Merge pull request [#2450](https://github.com/luarss/OpenROAD/issues/2450) from The-OpenROAD-Project-staging/one-format
+- Merge pull request [#2449](https://github.com/luarss/OpenROAD/issues/2449) from The-OpenROAD-Project-staging/format2
+- Merge pull request [#2448](https://github.com/luarss/OpenROAD/issues/2448) from The-OpenROAD-Project-staging/ord-format
+- Merge pull request [#2447](https://github.com/luarss/OpenROAD/issues/2447) from The-OpenROAD-Project-staging/format
+- Merge pull request [#2446](https://github.com/luarss/OpenROAD/issues/2446) from The-OpenROAD-Project-staging/ant-format
+- Merge pull request [#2443](https://github.com/luarss/OpenROAD/issues/2443) from The-OpenROAD-Project-staging/odb-path-err
+- Merge pull request [#2439](https://github.com/luarss/OpenROAD/issues/2439) from hzeller/20221101-use-const-ref-in-loop
+- Merge pull request [#2435](https://github.com/luarss/OpenROAD/issues/2435) from habibayassin/exclude-modules
+- Merge pull request [#2421](https://github.com/luarss/OpenROAD/issues/2421) from macd/gpl-python
+- Merge pull request [#2413](https://github.com/luarss/OpenROAD/issues/2413) from The-OpenROAD-Project-staging/secure-or2354
+- Merge pull request [#2437](https://github.com/luarss/OpenROAD/issues/2437) from vijayank88/tutorial_image_cleanup
+- Merge pull request [#2436](https://github.com/luarss/OpenROAD/issues/2436) from The-OpenROAD-Project-staging/utl-format
+- Merge pull request [#2427](https://github.com/luarss/OpenROAD/issues/2427) from macd/meta-program
+- Merge pull request [#2434](https://github.com/luarss/OpenROAD/issues/2434) from The-OpenROAD-Project-staging/pdn-determinism
+- Merge pull request [#2431](https://github.com/luarss/OpenROAD/issues/2431) from The-OpenROAD-Project-staging/gui-clang
+- Merge pull request [#2430](https://github.com/luarss/OpenROAD/issues/2430) from The-OpenROAD-Project-staging/pdn-clang
+- Merge pull request [#2428](https://github.com/luarss/OpenROAD/issues/2428) from The-OpenROAD-Project-staging/gui-cov
+- Merge pull request [#2424](https://github.com/luarss/OpenROAD/issues/2424) from The-OpenROAD-Project-staging/psm-format
+- Merge pull request [#2426](https://github.com/luarss/OpenROAD/issues/2426) from The-OpenROAD-Project-staging/gui-cov
+- Merge pull request [#2425](https://github.com/luarss/OpenROAD/issues/2425) from The-OpenROAD-Project-staging/lef-cout
+- Merge pull request [#2423](https://github.com/luarss/OpenROAD/issues/2423) from The-OpenROAD-Project-staging/pad
+- Merge pull request [#2417](https://github.com/luarss/OpenROAD/issues/2417) from niv280/abstract_lef_accurate_polygon
+- Merge pull request [#2422](https://github.com/luarss/OpenROAD/issues/2422) from The-OpenROAD-Project-staging/tests-link-lic
+- Merge pull request [#2412](https://github.com/luarss/OpenROAD/issues/2412) from The-OpenROAD-Project-staging/drt-wrongdirspc
+- Merge pull request [#2411](https://github.com/luarss/OpenROAD/issues/2411) from antonblanchard/guides-net
+- Merge pull request [#2410](https://github.com/luarss/OpenROAD/issues/2410) from antonblanchard/sig-handler-exit
+- Merge pull request [#2401](https://github.com/luarss/OpenROAD/issues/2401) from macd/grt-python
+- Merge pull request [#2409](https://github.com/luarss/OpenROAD/issues/2409) from The-OpenROAD-Project-staging/multi-lef-warn
+- Merge pull request [#2328](https://github.com/luarss/OpenROAD/issues/2328) from osamahammad21/metal_width_via_map
+- Merge pull request [#2403](https://github.com/luarss/OpenROAD/issues/2403) from The-OpenROAD-Project-staging/action-update
+- Merge pull request [#2402](https://github.com/luarss/OpenROAD/issues/2402) from The-OpenROAD-Project-staging/grt-refactor5
+- Merge pull request [#2400](https://github.com/luarss/OpenROAD/issues/2400) from The-OpenROAD-Project-staging/secure-grt-refactor4
+- Merge pull request [#2398](https://github.com/luarss/OpenROAD/issues/2398) from The-OpenROAD-Project-staging/grt-refactor3
+- Merge pull request [#2397](https://github.com/luarss/OpenROAD/issues/2397) from eder-matheus/grt_read_guides
+- Merge pull request [#2396](https://github.com/luarss/OpenROAD/issues/2396) from antonblanchard/read_guides-fail
+- Merge pull request [#2394](https://github.com/luarss/OpenROAD/issues/2394) from The-OpenROAD-Project-staging/grt-refactor2
+- Merge pull request [#2393](https://github.com/luarss/OpenROAD/issues/2393) from eder-matheus/drt_fix
+- Merge pull request [#2376](https://github.com/luarss/OpenROAD/issues/2376) from habibayassin/format-gh
+- Merge pull request [#2381](https://github.com/luarss/OpenROAD/issues/2381) from antonblanchard/grt-pin-access-sta
+- Merge pull request [#2371](https://github.com/luarss/OpenROAD/issues/2371) from antonblanchard/fix-pin-boundary
+- Merge pull request [#2356](https://github.com/luarss/OpenROAD/issues/2356) from antonblanchard/placement-fixes-2
+- Merge pull request [#2391](https://github.com/luarss/OpenROAD/issues/2391) from The-OpenROAD-Project-staging/grt-refactoring
+- Merge pull request [#2390](https://github.com/luarss/OpenROAD/issues/2390) from cbalint13/master
+- Merge pull request [#2389](https://github.com/luarss/OpenROAD/issues/2389) from proppy/fix-python-noargs
+- Merge pull request [#2352](https://github.com/luarss/OpenROAD/issues/2352) from The-OpenROAD-Project-staging/gui-global-connect
+- Merge pull request [#2385](https://github.com/luarss/OpenROAD/issues/2385) from QuantamHD/fix_parsing
+- Merge pull request [#2359](https://github.com/luarss/OpenROAD/issues/2359) from macd/add2Design
+- Merge pull request [#2384](https://github.com/luarss/OpenROAD/issues/2384) from The-OpenROAD-Project-staging/odb-multi-write-lef
+- Merge pull request [#2345](https://github.com/luarss/OpenROAD/issues/2345) from macd/ant-python
+- Merge pull request [#2380](https://github.com/luarss/OpenROAD/issues/2380) from The-OpenROAD-Project-staging/update-sta
+- Merge pull request [#2379](https://github.com/luarss/OpenROAD/issues/2379) from The-OpenROAD-Project-staging/stt-includes
+- Merge pull request [#2347](https://github.com/luarss/OpenROAD/issues/2347) from habibayassin/issue-template
+- Merge pull request [#2378](https://github.com/luarss/OpenROAD/issues/2378) from The-OpenROAD-Project-staging/odb-diffs
+- Merge pull request [#2362](https://github.com/luarss/OpenROAD/issues/2362) from The-OpenROAD-Project-staging/grt-pin-via-res
+- Merge pull request [#2375](https://github.com/luarss/OpenROAD/issues/2375) from openroadie/master
+- Merge pull request [#2372](https://github.com/luarss/OpenROAD/issues/2372) from The-OpenROAD-Project-staging/pdn-check-pads-first
+- Merge pull request [#2374](https://github.com/luarss/OpenROAD/issues/2374) from luis201420/grt_incr_usage_bug
+- Merge pull request [#2373](https://github.com/luarss/OpenROAD/issues/2373) from The-OpenROAD-Project-staging/odb-rev-parser
+- Merge pull request [#2369](https://github.com/luarss/OpenROAD/issues/2369) from The-OpenROAD-Project-staging/gui-tracks-crash
+- Merge pull request [#2365](https://github.com/luarss/OpenROAD/issues/2365) from eder-matheus/ppl_fix
+- Merge pull request [#2367](https://github.com/luarss/OpenROAD/issues/2367) from The-OpenROAD-Project-staging/grt-multi-track-pat
+- Merge pull request [#2368](https://github.com/luarss/OpenROAD/issues/2368) from The-OpenROAD-Project-staging/dst-cmake
+- Merge pull request [#2336](https://github.com/luarss/OpenROAD/issues/2336) from The-OpenROAD-Project-staging/psm_flag_unconnected
+- Merge pull request [#2332](https://github.com/luarss/OpenROAD/issues/2332) from osamahammad21/odb-fix-prop-parser
+- Merge pull request [#2363](https://github.com/luarss/OpenROAD/issues/2363) from antonblanchard/warning-1
+- Merge pull request [#2282](https://github.com/luarss/OpenROAD/issues/2282) from jjcherry56/OL1371
+- Merge pull request [#2323](https://github.com/luarss/OpenROAD/issues/2323) from jjcherry56/or2302
+- Merge pull request [#2357](https://github.com/luarss/OpenROAD/issues/2357) from The-OpenROAD-Project-staging/gui-modinst
+- Merge pull request [#2334](https://github.com/luarss/OpenROAD/issues/2334) from jjcherry56/ol1403
+- Merge pull request [#2353](https://github.com/luarss/OpenROAD/issues/2353) from eder-matheus/ifp_make_tracks
+- Merge pull request [#2355](https://github.com/luarss/OpenROAD/issues/2355) from The-OpenROAD-Project-staging/grt-incr-bug
+- Merge pull request [#2351](https://github.com/luarss/OpenROAD/issues/2351) from The-OpenROAD-Project-staging/gui-fanout
+- Merge pull request [#2099](https://github.com/luarss/OpenROAD/issues/2099) from eder-matheus/grt_slacks
+- Merge pull request [#2331](https://github.com/luarss/OpenROAD/issues/2331) from habibayassin/update-installer
+- Merge pull request [#2348](https://github.com/luarss/OpenROAD/issues/2348) from The-OpenROAD-Project-staging/boost-cmake
+- Merge pull request [#2170](https://github.com/luarss/OpenROAD/issues/2170) from eder-matheus/grt_derating
+- Merge pull request [#2340](https://github.com/luarss/OpenROAD/issues/2340) from macd/fixCoverity
+- Merge pull request [#2344](https://github.com/luarss/OpenROAD/issues/2344) from jjcherry56/or1613
+- Merge pull request [#2292](https://github.com/luarss/OpenROAD/issues/2292) from eder-matheus/drt_area
+- Merge pull request [#2338](https://github.com/luarss/OpenROAD/issues/2338) from macd/changeLEF
+- Merge pull request [#2337](https://github.com/luarss/OpenROAD/issues/2337) from The-OpenROAD-Project-staging/secure-TR-bterm-dir
+- Merge pull request [#2245](https://github.com/luarss/OpenROAD/issues/2245) from ahmadelrouby/multi-power-domain
+- Merge pull request [#2258](https://github.com/luarss/OpenROAD/issues/2258) from niv280/abstract_lef_accurate_polygon
+- Merge pull request [#2335](https://github.com/luarss/OpenROAD/issues/2335) from The-OpenROAD-Project-staging/rev
+- Merge pull request [#2315](https://github.com/luarss/OpenROAD/issues/2315) from macd/master
+- Merge pull request [#2333](https://github.com/luarss/OpenROAD/issues/2333) from The-OpenROAD-Project-staging/boost-ver
+- Merge pull request [#2327](https://github.com/luarss/OpenROAD/issues/2327) from vvbandeira/fix-installer
+- Merge pull request [#2322](https://github.com/luarss/OpenROAD/issues/2322) from eder-matheus/ppl_fix
+- Merge pull request [#2319](https://github.com/luarss/OpenROAD/issues/2319) from eder-matheus/ppl_issue
+- Merge pull request [#2317](https://github.com/luarss/OpenROAD/issues/2317) from The-OpenROAD-Project-staging/tap-cut_rows
+- Merge pull request [#2318](https://github.com/luarss/OpenROAD/issues/2318) from The-OpenROAD-Project-staging/gpl-update-larger
+- Merge pull request [#2316](https://github.com/luarss/OpenROAD/issues/2316) from The-OpenROAD-Project-staging/cts-overlapping-clocks
+- Merge pull request [#2313](https://github.com/luarss/OpenROAD/issues/2313) from The-OpenROAD-Project-staging/tap-api
+- Merge pull request [#2312](https://github.com/luarss/OpenROAD/issues/2312) from habibayassin/frconstraint-coverity-fix
+- Merge pull request [#2310](https://github.com/luarss/OpenROAD/issues/2310) from eder-matheus/drt_fix
+- Merge pull request [#2305](https://github.com/luarss/OpenROAD/issues/2305) from luis201420/grt_improve_repair_antennas
+- Merge pull request [#2306](https://github.com/luarss/OpenROAD/issues/2306) from The-OpenROAD-Project-staging/odb-dependencies
+- Merge pull request [#2304](https://github.com/luarss/OpenROAD/issues/2304) from luis201420/grt_save_stt_input_debug
+- Merge pull request [#2289](https://github.com/luarss/OpenROAD/issues/2289) from The-OpenROAD-Project-staging/odb-global-connection
+- Merge pull request [#2271](https://github.com/luarss/OpenROAD/issues/2271) from ramezmoussa/gpl-add-noise-to-initial-location
+- Merge pull request [#2264](https://github.com/luarss/OpenROAD/issues/2264) from habibayassin/unify-db
+- Merge pull request [#2301](https://github.com/luarss/OpenROAD/issues/2301) from antonblanchard/gpl-timing-weight-max
+- Merge pull request [#2298](https://github.com/luarss/OpenROAD/issues/2298) from The-OpenROAD-Project-staging/gpl-debugs
+- Merge pull request [#2299](https://github.com/luarss/OpenROAD/issues/2299) from The-OpenROAD-Project-staging/fix-save-flow-metrics-limits
+- Merge pull request [#2296](https://github.com/luarss/OpenROAD/issues/2296) from The-OpenROAD-Project-staging/ppl-api
+- Merge pull request [#2288](https://github.com/luarss/OpenROAD/issues/2288) from proppy/fix-python
+- Merge pull request [#2293](https://github.com/luarss/OpenROAD/issues/2293) from jjcherry56/restore_test_comments
+- Merge pull request [#2294](https://github.com/luarss/OpenROAD/issues/2294) from The-OpenROAD-Project-staging/gpl-tests-update
+- Merge pull request [#2291](https://github.com/luarss/OpenROAD/issues/2291) from The-OpenROAD-Project-staging/revert-sta
+- Merge pull request [#2290](https://github.com/luarss/OpenROAD/issues/2290) from The-OpenROAD-Project-staging/report_power_metric
+- Merge pull request [#1849](https://github.com/luarss/OpenROAD/issues/1849) from The-OpenROAD-Project-staging/python-api
+- Merge pull request [#2286](https://github.com/luarss/OpenROAD/issues/2286) from The-OpenROAD-Project-staging/write-lef
+- Merge pull request [#2284](https://github.com/luarss/OpenROAD/issues/2284) from The-OpenROAD-Project-staging/pdn-pad-connection
+- Merge pull request [#2285](https://github.com/luarss/OpenROAD/issues/2285) from The-OpenROAD-Project-staging/gui-fix-exit-failure
+- Merge pull request [#2272](https://github.com/luarss/OpenROAD/issues/2272) from The-OpenROAD-Project-staging/pad-rotated-corners
+- Merge pull request [#2274](https://github.com/luarss/OpenROAD/issues/2274) from vijayank88/tutorial_update_1
+- Merge pull request [#2](https://github.com/luarss/OpenROAD/issues/2) from macd/python-api
+- Merge pull request [#2279](https://github.com/luarss/OpenROAD/issues/2279) from jjcherry56/or2270
+- Merge pull request [#2278](https://github.com/luarss/OpenROAD/issues/2278) from The-OpenROAD-Project-staging/odb-width-table
+- Merge pull request [#2261](https://github.com/luarss/OpenROAD/issues/2261) from The-OpenROAD-Project-staging/psm-via-connectivity
+- Merge pull request [#2281](https://github.com/luarss/OpenROAD/issues/2281) from The-OpenROAD-Project-staging/odb-site-before-units
+- Merge pull request [#2273](https://github.com/luarss/OpenROAD/issues/2273) from The-OpenROAD-Project-staging/grt-pin-orient
+- Merge pull request [#2280](https://github.com/luarss/OpenROAD/issues/2280) from antonblanchard/dpl-typo
+- Merge pull request [#2267](https://github.com/luarss/OpenROAD/issues/2267) from eder-matheus/odb_area
+- Merge pull request [#2262](https://github.com/luarss/OpenROAD/issues/2262) from habibayassin/fix-coverity
+- Merge pull request [#2266](https://github.com/luarss/OpenROAD/issues/2266) from The-OpenROAD-Project-staging/gui-focus-drc
+- Merge pull request [#2269](https://github.com/luarss/OpenROAD/issues/2269) from The-OpenROAD-Project-staging/rtlmp_dead_space
+- Merge pull request [#2265](https://github.com/luarss/OpenROAD/issues/2265) from The-OpenROAD-Project-staging/drt-n16
+- Merge pull request [#2263](https://github.com/luarss/OpenROAD/issues/2263) from The-OpenROAD-Project-staging/drt-io-cleanup
+- Merge pull request [#2259](https://github.com/luarss/OpenROAD/issues/2259) from The-OpenROAD-Project-staging/mpl-warn-no-macros
+- Merge pull request [#2257](https://github.com/luarss/OpenROAD/issues/2257) from The-OpenROAD-Project-staging/odb-autoplace
+- Merge pull request [#2256](https://github.com/luarss/OpenROAD/issues/2256) from The-OpenROAD-Project-staging/drt-tmp-ap-fix
+- Merge pull request [#2240](https://github.com/luarss/OpenROAD/issues/2240) from rovinski/master
+- Merge pull request [#2255](https://github.com/luarss/OpenROAD/issues/2255) from The-OpenROAD-Project-staging/dd
+- Merge pull request [#2251](https://github.com/luarss/OpenROAD/issues/2251) from The-OpenROAD-Project-staging/gui-pad-fix
+- Merge pull request [#2109](https://github.com/luarss/OpenROAD/issues/2109) from habibayassin/frlayer-changes
+- Merge pull request [#2249](https://github.com/luarss/OpenROAD/issues/2249) from The-OpenROAD-Project-staging/gui-pitch
+- Merge pull request [#2234](https://github.com/luarss/OpenROAD/issues/2234) from osamahammad21/drt-fix-via-stacking
+- Merge pull request [#2246](https://github.com/luarss/OpenROAD/issues/2246) from The-OpenROAD-Project-staging/gpl-no-placeable
+- Merge pull request [#2237](https://github.com/luarss/OpenROAD/issues/2237) from jjcherry56/or1573
+- Merge pull request [#2242](https://github.com/luarss/OpenROAD/issues/2242) from antonblanchard/grt-ant-typo
+- Merge pull request [#2241](https://github.com/luarss/OpenROAD/issues/2241) from The-OpenROAD-Project-staging/pdn-honor-touch
+- Merge pull request [#2239](https://github.com/luarss/OpenROAD/issues/2239) from The-OpenROAD-Project-staging/pdn-fix-recheck
+- Merge pull request [#2238](https://github.com/luarss/OpenROAD/issues/2238) from The-OpenROAD-Project-staging/pdn-report-vias
+- Merge pull request [#2228](https://github.com/luarss/OpenROAD/issues/2228) from The-OpenROAD-Project-staging/pdn-connect-only-new
+- Merge pull request [#2235](https://github.com/luarss/OpenROAD/issues/2235) from The-OpenROAD-Project-staging/rsz-rda
+- Merge pull request [#2230](https://github.com/luarss/OpenROAD/issues/2230) from antonblanchard/drt-opt-1
+- Merge pull request [#2229](https://github.com/luarss/OpenROAD/issues/2229) from The-OpenROAD-Project-staging/pdn-adjacent
+- Merge pull request [#2227](https://github.com/luarss/OpenROAD/issues/2227) from The-OpenROAD-Project-staging/odb-api
+- Merge pull request [#2156](https://github.com/luarss/OpenROAD/issues/2156) from The-OpenROAD-Project-staging/TR_drt_initdr
+- Merge pull request [#2226](https://github.com/luarss/OpenROAD/issues/2226) from The-OpenROAD-Project-staging/ant-warn
+- Merge pull request [#2225](https://github.com/luarss/OpenROAD/issues/2225) from The-OpenROAD-Project-staging/skew-metric
+- Merge pull request [#2224](https://github.com/luarss/OpenROAD/issues/2224) from The-OpenROAD-Project-staging/ext-crash
+- Merge pull request [#2223](https://github.com/luarss/OpenROAD/issues/2223) from The-OpenROAD-Project-staging/odb-no-libs
+- Merge pull request [#2218](https://github.com/luarss/OpenROAD/issues/2218) from The-OpenROAD-Project-staging/odb-dont-touch
+- Merge pull request [#2219](https://github.com/luarss/OpenROAD/issues/2219) from The-OpenROAD-Project-staging/odb-parse-blank
+- Merge pull request [#2217](https://github.com/luarss/OpenROAD/issues/2217) from The-OpenROAD-Project-staging/gui-action-exception
+- Merge pull request [#2208](https://github.com/luarss/OpenROAD/issues/2208) from ramezmoussa/ant-fix-thickness-warning
+- Merge pull request [#2215](https://github.com/luarss/OpenROAD/issues/2215) from The-OpenROAD-Project-staging/pdn-halo
+- Merge pull request [#2211](https://github.com/luarss/OpenROAD/issues/2211) from The-OpenROAD-Project-staging/cts-clus
+- Merge pull request [#2206](https://github.com/luarss/OpenROAD/issues/2206) from The-OpenROAD-Project-staging/gui-gcell
+- Merge pull request [#2205](https://github.com/luarss/OpenROAD/issues/2205) from The-OpenROAD-Project-staging/gui-exception
+- Merge pull request [#2204](https://github.com/luarss/OpenROAD/issues/2204) from The-OpenROAD-Project-staging/odb-dont-touch
+- Merge pull request [#2203](https://github.com/luarss/OpenROAD/issues/2203) from The-OpenROAD-Project-staging/pdn-fix-topbot-checks
+- Merge pull request [#2201](https://github.com/luarss/OpenROAD/issues/2201) from The-OpenROAD-Project-staging/pdn-report-reports
+- Merge pull request [#2181](https://github.com/luarss/OpenROAD/issues/2181) from vvbandeira/update-usage
+- Merge pull request [#2200](https://github.com/luarss/OpenROAD/issues/2200) from The-OpenROAD-Project-staging/cts-cluster
+- Merge pull request [#2199](https://github.com/luarss/OpenROAD/issues/2199) from The-OpenROAD-Project-staging/ant-thickness-warn
+- Merge pull request [#2198](https://github.com/luarss/OpenROAD/issues/2198) from The-OpenROAD-Project-staging/cts-msg
+- Merge pull request [#2195](https://github.com/luarss/OpenROAD/issues/2195) from jjcherry56/set_dont_touch
+- Merge pull request [#2197](https://github.com/luarss/OpenROAD/issues/2197) from eder-matheus/grt_log
+- Merge pull request [#2194](https://github.com/luarss/OpenROAD/issues/2194) from ramezmoussa/ant-fix-thickness-bugs
+- Merge pull request [#2196](https://github.com/luarss/OpenROAD/issues/2196) from The-OpenROAD-Project-staging/cts-coverity
+- Merge pull request [#2193](https://github.com/luarss/OpenROAD/issues/2193) from The-OpenROAD-Project-staging/cts-cleanup
+- Merge pull request [#2190](https://github.com/luarss/OpenROAD/issues/2190) from The-OpenROAD-Project-staging/ord-dont_touch
+- Merge pull request [#2191](https://github.com/luarss/OpenROAD/issues/2191) from The-OpenROAD-Project-staging/dr-iso
+- Merge pull request [#2171](https://github.com/luarss/OpenROAD/issues/2171) from eder-matheus/grt_layer_range
+- Merge pull request [#2152](https://github.com/luarss/OpenROAD/issues/2152) from osamahammad21/OR-1550-drt-add-unidirectional-option-by-layer
+- Merge pull request [#2155](https://github.com/luarss/OpenROAD/issues/2155) from osamahammad21/drt-viols-report-per-iteration
+- Merge pull request [#2188](https://github.com/luarss/OpenROAD/issues/2188) from jjcherry56/or1558
+- Merge pull request [#2185](https://github.com/luarss/OpenROAD/issues/2185) from The-OpenROAD-Project-staging/worst-slack-setup-hold
+- Merge pull request [#2186](https://github.com/luarss/OpenROAD/issues/2186) from The-OpenROAD-Project-staging/pdn-via-enclosure
+- Merge pull request [#2176](https://github.com/luarss/OpenROAD/issues/2176) from The-OpenROAD-Project-staging/gui-remove-design
+- Merge pull request [#2184](https://github.com/luarss/OpenROAD/issues/2184) from The-OpenROAD-Project-staging/gui-via-drawing
+- Merge pull request [#2169](https://github.com/luarss/OpenROAD/issues/2169) from The-OpenROAD-Project-staging/psm_node_creation
+- Merge pull request [#2180](https://github.com/luarss/OpenROAD/issues/2180) from The-OpenROAD-Project-staging/ant-ref
+- Merge pull request [#2179](https://github.com/luarss/OpenROAD/issues/2179) from The-OpenROAD-Project-staging/coverity
+- Merge pull request [#2177](https://github.com/luarss/OpenROAD/issues/2177) from The-OpenROAD-Project-staging/ifp-units
+- Merge pull request [#2174](https://github.com/luarss/OpenROAD/issues/2174) from The-OpenROAD-Project-staging/pdn-cov
+- Merge pull request [#2172](https://github.com/luarss/OpenROAD/issues/2172) from The-OpenROAD-Project-staging/odb-iso
+- Merge pull request [#2168](https://github.com/luarss/OpenROAD/issues/2168) from The-OpenROAD-Project-staging/gui-control-drcs
+- Merge pull request [#2158](https://github.com/luarss/OpenROAD/issues/2158) from The-OpenROAD-Project-staging/gui-rounding
+- Merge pull request [#2166](https://github.com/luarss/OpenROAD/issues/2166) from The-OpenROAD-Project-staging/gui-mgrid-cosmetic
+- Merge pull request [#2132](https://github.com/luarss/OpenROAD/issues/2132) from ramezmoussa/ant-fix-area-bugs
+- Merge pull request [#2165](https://github.com/luarss/OpenROAD/issues/2165) from The-OpenROAD-Project-staging/pdn-repair-channel-end
+- Merge pull request [#2164](https://github.com/luarss/OpenROAD/issues/2164) from The-OpenROAD-Project-staging/ispd-update
+- Merge pull request [#2162](https://github.com/luarss/OpenROAD/issues/2162) from The-OpenROAD-Project-staging/utl-valgrind-pop
+- Merge pull request [#2161](https://github.com/luarss/OpenROAD/issues/2161) from The-OpenROAD-Project-staging/gpl-remove-cimg
+- Merge pull request [#2160](https://github.com/luarss/OpenROAD/issues/2160) from The-OpenROAD-Project-staging/pdn-sort
+- Merge pull request [#2159](https://github.com/luarss/OpenROAD/issues/2159) from The-OpenROAD-Project-staging/drt-dieviol
+- Merge pull request [#2076](https://github.com/luarss/OpenROAD/issues/2076) from RuijiaoSun/master
+- Merge pull request [#2145](https://github.com/luarss/OpenROAD/issues/2145) from luis201420/grt_fix_boxToGlobalRouting
+- Merge pull request [#2097](https://github.com/luarss/OpenROAD/issues/2097) from cbalint13/master
+- Merge pull request [#2151](https://github.com/luarss/OpenROAD/issues/2151) from The-OpenROAD-Project-staging/gui-mem
+- Merge pull request [#2150](https://github.com/luarss/OpenROAD/issues/2150) from The-OpenROAD-Project-staging/psm-gmat
+- Merge pull request [#2147](https://github.com/luarss/OpenROAD/issues/2147) from jjcherry56/or1565
+- Merge pull request [#2148](https://github.com/luarss/OpenROAD/issues/2148) from The-OpenROAD-Project-staging/ifp-align-vdomain
+- Merge pull request [#2146](https://github.com/luarss/OpenROAD/issues/2146) from The-OpenROAD-Project-staging/gui-special-flywire
+- Merge pull request [#2144](https://github.com/luarss/OpenROAD/issues/2144) from QuantamHD/fix_resizer_gui
+- Merge pull request [#2143](https://github.com/luarss/OpenROAD/issues/2143) from eder-matheus/grt_fix_instability
+- Merge pull request [#2142](https://github.com/luarss/OpenROAD/issues/2142) from The-OpenROAD-Project-staging/rsz-typo
+- Merge pull request [#2139](https://github.com/luarss/OpenROAD/issues/2139) from The-OpenROAD-Project-staging/pdn-halo-inst
+- Merge pull request [#2138](https://github.com/luarss/OpenROAD/issues/2138) from The-OpenROAD-Project-staging/drt-defdist
+- Merge pull request [#2136](https://github.com/luarss/OpenROAD/issues/2136) from eder-matheus/grt_repair_antennas
+- Merge pull request [#2120](https://github.com/luarss/OpenROAD/issues/2120) from osamahammad21/debug_single_worker_fix
+- Merge pull request [#2137](https://github.com/luarss/OpenROAD/issues/2137) from The-OpenROAD-Project-staging/cts-array-rte
+- Merge pull request [#2134](https://github.com/luarss/OpenROAD/issues/2134) from The-OpenROAD-Project-staging/pdn-macro-obs
+- Merge pull request [#2130](https://github.com/luarss/OpenROAD/issues/2130) from The-OpenROAD-Project-staging/cts-array
+- Merge pull request [#2129](https://github.com/luarss/OpenROAD/issues/2129) from The-OpenROAD-Project-staging/psm-first-clus
+- Merge pull request [#2128](https://github.com/luarss/OpenROAD/issues/2128) from The-OpenROAD-Project-staging/psm-no-lib
+- Merge pull request [#2127](https://github.com/luarss/OpenROAD/issues/2127) from The-OpenROAD-Project-staging/cts-white
+- Merge pull request [#2125](https://github.com/luarss/OpenROAD/issues/2125) from The-OpenROAD-Project-staging/cts-draw-links
+- Merge pull request [#2124](https://github.com/luarss/OpenROAD/issues/2124) from The-OpenROAD-Project-staging/psm-bbox
+- Merge pull request [#2123](https://github.com/luarss/OpenROAD/issues/2123) from The-OpenROAD-Project-staging/psm-refactor
+- Merge pull request [#2121](https://github.com/luarss/OpenROAD/issues/2121) from The-OpenROAD-Project-staging/psm-matrix
+- Merge pull request [#2119](https://github.com/luarss/OpenROAD/issues/2119) from The-OpenROAD-Project-staging/secure-grt_ant_wires
+- Merge pull request [#2117](https://github.com/luarss/OpenROAD/issues/2117) from The-OpenROAD-Project-staging/missing_metrics
+- Merge pull request [#2116](https://github.com/luarss/OpenROAD/issues/2116) from The-OpenROAD-Project-staging/psm-clean
+- Merge pull request [#2113](https://github.com/luarss/OpenROAD/issues/2113) from The-OpenROAD-Project-staging/ord-design-created
+- Merge pull request [#2008](https://github.com/luarss/OpenROAD/issues/2008) from antonblanchard/via-in-pin-warning
+- Merge pull request [#2111](https://github.com/luarss/OpenROAD/issues/2111) from rovinski/master
+- Merge pull request [#2112](https://github.com/luarss/OpenROAD/issues/2112) from The-OpenROAD-Project-staging/cts-gui
+- Merge pull request [#2108](https://github.com/luarss/OpenROAD/issues/2108) from The-OpenROAD-Project-staging/cts-rm-char-block
+- Merge pull request [#2092](https://github.com/luarss/OpenROAD/issues/2092) from The-OpenROAD-Project-staging/drt-pa-gc
+- Merge pull request [#2090](https://github.com/luarss/OpenROAD/issues/2090) from luis201420/grt_report_file_congestion
+- Merge pull request [#2105](https://github.com/luarss/OpenROAD/issues/2105) from The-OpenROAD-Project-staging/psm-bump-centering
+- Merge pull request [#2104](https://github.com/luarss/OpenROAD/issues/2104) from The-OpenROAD-Project-staging/psm-use-dbinst
+- Merge pull request [#2103](https://github.com/luarss/OpenROAD/issues/2103) from The-OpenROAD-Project-staging/psm-refact
+- Merge pull request [#2102](https://github.com/luarss/OpenROAD/issues/2102) from The-OpenROAD-Project-staging/psm-style
+- Merge pull request [#2101](https://github.com/luarss/OpenROAD/issues/2101) from The-OpenROAD-Project-staging/psm-format
+- Merge pull request [#2100](https://github.com/luarss/OpenROAD/issues/2100) from The-OpenROAD-Project-staging/psm-err
+- Merge pull request [#2096](https://github.com/luarss/OpenROAD/issues/2096) from The-OpenROAD-Project-staging/gpl-density-check2
+- Merge pull request [#2094](https://github.com/luarss/OpenROAD/issues/2094) from jjcherry56/rsz_coyote_hier
+- Merge pull request [#2093](https://github.com/luarss/OpenROAD/issues/2093) from The-OpenROAD-Project-staging/odb-macro-class
+- Merge pull request [#2087](https://github.com/luarss/OpenROAD/issues/2087) from The-OpenROAD-Project-staging/secure-issue1706
+- Merge pull request [#2049](https://github.com/luarss/OpenROAD/issues/2049) from osamahammad21/drc-cmd
+- Merge pull request [#2002](https://github.com/luarss/OpenROAD/issues/2002) from The-OpenROAD-Project-staging/psm_node_density_bump_centering
+- Merge pull request [#2088](https://github.com/luarss/OpenROAD/issues/2088) from Aidan-McNay/master
+- Merge pull request [#2032](https://github.com/luarss/OpenROAD/issues/2032) from Mahfouz-z/master
+- Merge pull request [#2086](https://github.com/luarss/OpenROAD/issues/2086) from The-OpenROAD-Project-staging/drt-mar-patch-origin
+- Merge pull request [#2085](https://github.com/luarss/OpenROAD/issues/2085) from The-OpenROAD-Project-staging/drt-end-iter-fix
+- Merge pull request [#2080](https://github.com/luarss/OpenROAD/issues/2080) from eder-matheus/odb_cut_rows_fix
+- Merge pull request [#2077](https://github.com/luarss/OpenROAD/issues/2077) from The-OpenROAD-Project-staging/drt-snapshot
+- Merge pull request [#2078](https://github.com/luarss/OpenROAD/issues/2078) from antonblanchard/grt-typo
+- Merge pull request [#2074](https://github.com/luarss/OpenROAD/issues/2074) from eder-matheus/odb_cut_rows
+- Merge pull request [#2071](https://github.com/luarss/OpenROAD/issues/2071) from osamahammad21/cutspctbl-lookup-swig
+- Merge pull request [#2073](https://github.com/luarss/OpenROAD/issues/2073) from The-OpenROAD-Project-staging/gpl-rm-verbose
+- Merge pull request [#2047](https://github.com/luarss/OpenROAD/issues/2047) from The-OpenROAD-Project-staging/JSON-metrics-rebase
+- Merge pull request [#2069](https://github.com/luarss/OpenROAD/issues/2069) from jjcherry56/rsz_cleanup
+- Merge pull request [#2072](https://github.com/luarss/OpenROAD/issues/2072) from eder-matheus/ppl_fix
+- Merge pull request [#2063](https://github.com/luarss/OpenROAD/issues/2063) from eder-matheus/grt_resources
+- Merge pull request [#2070](https://github.com/luarss/OpenROAD/issues/2070) from eder-matheus/ppl_fix
+- Merge pull request [#2067](https://github.com/luarss/OpenROAD/issues/2067) from The-OpenROAD-Project-staging/drt-obsolete-flags
+- Merge pull request [#2068](https://github.com/luarss/OpenROAD/issues/2068) from The-OpenROAD-Project-staging/dpo-queue-empty
+- Merge pull request [#2065](https://github.com/luarss/OpenROAD/issues/2065) from The-OpenROAD-Project-staging/dpl-hopeless-speedup
+- Merge pull request [#2064](https://github.com/luarss/OpenROAD/issues/2064) from The-OpenROAD-Project-staging/drt-endprl
+- Merge pull request [#2062](https://github.com/luarss/OpenROAD/issues/2062) from The-OpenROAD-Project-staging/no-rsz-fixed
+- Merge pull request [#2061](https://github.com/luarss/OpenROAD/issues/2061) from The-OpenROAD-Project-staging/drt-patch-inside
+- Merge pull request [#2060](https://github.com/luarss/OpenROAD/issues/2060) from eder-matheus/flow_drt_layer_range
+- Merge pull request [#2058](https://github.com/luarss/OpenROAD/issues/2058) from The-OpenROAD-Project-staging/grt-layers-heatmap
+- Merge pull request [#2059](https://github.com/luarss/OpenROAD/issues/2059) from The-OpenROAD-Project-staging/ispd-fixes
+- Merge pull request [#2057](https://github.com/luarss/OpenROAD/issues/2057) from The-OpenROAD-Project-staging/format
+- Merge pull request [#2056](https://github.com/luarss/OpenROAD/issues/2056) from The-OpenROAD-Project-staging/odb-cdl-warn
+- Merge pull request [#2053](https://github.com/luarss/OpenROAD/issues/2053) from The-OpenROAD-Project-staging/gui-ruler
+- Merge pull request [#2052](https://github.com/luarss/OpenROAD/issues/2052) from The-OpenROAD-Project-staging/drt-patch-inside
+- Merge pull request [#2035](https://github.com/luarss/OpenROAD/issues/2035) from The-OpenROAD-Project-staging/hier-spef-dbsta
+- Merge pull request [#2051](https://github.com/luarss/OpenROAD/issues/2051) from The-OpenROAD-Project-staging/drt-via-map
+- Merge pull request [#2050](https://github.com/luarss/OpenROAD/issues/2050) from The-OpenROAD-Project-staging/gui-pa-vias
+- Merge pull request [#2046](https://github.com/luarss/OpenROAD/issues/2046) from osamahammad21/LEF58_METALWIDTHVIAMAP
+- Merge pull request [#2048](https://github.com/luarss/OpenROAD/issues/2048) from The-OpenROAD-Project-staging/pdn-inst-tracking
+- Merge pull request [#2026](https://github.com/luarss/OpenROAD/issues/2026) from The-OpenROAD-Project-staging/gui-euclidian
+- Merge pull request [#2016](https://github.com/luarss/OpenROAD/issues/2016) from The-OpenROAD-Project-staging/pdn-pads
+- Merge pull request [#2045](https://github.com/luarss/OpenROAD/issues/2045) from The-OpenROAD-Project-staging/rsz-check-net
+- Merge pull request [#2043](https://github.com/luarss/OpenROAD/issues/2043) from The-OpenROAD-Project-staging/drt-twowidths
+- Merge pull request [#2042](https://github.com/luarss/OpenROAD/issues/2042) from The-OpenROAD-Project-staging/pdn-grid-vias
+- Merge pull request [#2044](https://github.com/luarss/OpenROAD/issues/2044) from The-OpenROAD-Project-staging/rtlmp-region-fix
+- Merge pull request [#2040](https://github.com/luarss/OpenROAD/issues/2040) from The-OpenROAD-Project-staging/odb-abstract-lef-power
+- Merge pull request [#2037](https://github.com/luarss/OpenROAD/issues/2037) from The-OpenROAD-Project-staging/drt-fix-cmt
+- Merge pull request [#2022](https://github.com/luarss/OpenROAD/issues/2022) from titan73/master
+- Merge pull request [#2036](https://github.com/luarss/OpenROAD/issues/2036) from The-OpenROAD-Project-staging/secure-TR-patch-origin
+- Merge pull request [#2034](https://github.com/luarss/OpenROAD/issues/2034) from eder-matheus/tap_unit_tests
+- Merge pull request [#2033](https://github.com/luarss/OpenROAD/issues/2033) from eder-matheus/secure-TR_drt_off_grid
+- Merge pull request [#1966](https://github.com/luarss/OpenROAD/issues/1966) from The-OpenROAD-Project-staging/pad-rdl_route_style
+- Merge pull request [#2020](https://github.com/luarss/OpenROAD/issues/2020) from The-OpenROAD-Project-staging/pdn-repair-vias
+- Merge pull request [#2029](https://github.com/luarss/OpenROAD/issues/2029) from The-OpenROAD-Project-staging/rtlmp-odb
+- Merge pull request [#2030](https://github.com/luarss/OpenROAD/issues/2030) from The-OpenROAD-Project-staging/gui-region-group
+- Merge pull request [#2028](https://github.com/luarss/OpenROAD/issues/2028) from The-OpenROAD-Project-staging/gui-region-box
+- Merge pull request [#2019](https://github.com/luarss/OpenROAD/issues/2019) from luis201420/grt_function_name_fix
+- Merge pull request [#2021](https://github.com/luarss/OpenROAD/issues/2021) from jjcherry56/dpl_fill_check
+- Merge pull request [#2024](https://github.com/luarss/OpenROAD/issues/2024) from The-OpenROAD-Project-staging/gui-fix
+- Merge pull request [#2023](https://github.com/luarss/OpenROAD/issues/2023) from The-OpenROAD-Project-staging/gui-regions
+- Merge pull request [#2017](https://github.com/luarss/OpenROAD/issues/2017) from The-OpenROAD-Project-staging/pdn-fixed-shape-vias
+- Merge pull request [#2015](https://github.com/luarss/OpenROAD/issues/2015) from The-OpenROAD-Project-staging/odb-cdl-masters
+- Merge pull request [#2018](https://github.com/luarss/OpenROAD/issues/2018) from The-OpenROAD-Project-staging/dpl-filler-to-warn
+- Merge pull request [#2010](https://github.com/luarss/OpenROAD/issues/2010) from jjcherry56/ant_repair
+- Merge pull request [#2012](https://github.com/luarss/OpenROAD/issues/2012) from The-OpenROAD-Project-staging/rm-Ath__gridTile
+- Merge pull request [#2009](https://github.com/luarss/OpenROAD/issues/2009) from The-OpenROAD-Project-staging/secure-TR-corner-spc
+- Merge pull request [#1998](https://github.com/luarss/OpenROAD/issues/1998) from osamahammad21/drt-ra
+- Merge pull request [#1996](https://github.com/luarss/OpenROAD/issues/1996) from The-OpenROAD-Project-staging/rtlmp_iopad2
+- Merge pull request [#2005](https://github.com/luarss/OpenROAD/issues/2005) from The-OpenROAD-Project-staging/Stephanommg-patch-1
+- Merge pull request [#2007](https://github.com/luarss/OpenROAD/issues/2007) from The-OpenROAD-Project-staging/drt-rpt
+- Merge pull request [#2006](https://github.com/luarss/OpenROAD/issues/2006) from luis201420/grt_layer_index_fix
+- Merge pull request [#2004](https://github.com/luarss/OpenROAD/issues/2004) from The-OpenROAD-Project-staging/gui-manufacturing-grid
+- Merge pull request [#2001](https://github.com/luarss/OpenROAD/issues/2001) from The-OpenROAD-Project-staging/rcx-lyr-span
+- Merge pull request [#1936](https://github.com/luarss/OpenROAD/issues/1936) from osamahammad21/k8s-drt-cpu-headless
+- Merge pull request [#1992](https://github.com/luarss/OpenROAD/issues/1992) from The-OpenROAD-Project-staging/secure-TR_minAreaFix2
+- Merge pull request [#2000](https://github.com/luarss/OpenROAD/issues/2000) from hzeller/202206027-use-string-view-lef-macro-prop-parser
+- Merge pull request [#1997](https://github.com/luarss/OpenROAD/issues/1997) from The-OpenROAD-Project-staging/pdn-instance-grid-obs
+- Merge pull request [#1999](https://github.com/luarss/OpenROAD/issues/1999) from The-OpenROAD-Project-staging/rect-return
+- Merge pull request [#1975](https://github.com/luarss/OpenROAD/issues/1975) from vijayank88/main_readme_update
+- Merge pull request [#1972](https://github.com/luarss/OpenROAD/issues/1972) from QuantamHD/endcap
+- Merge pull request [#1993](https://github.com/luarss/OpenROAD/issues/1993) from The-OpenROAD-Project-staging/odb-ret-val
+- Merge pull request [#1991](https://github.com/luarss/OpenROAD/issues/1991) from The-OpenROAD-Project-staging/cts-gen-clk
+- Merge pull request [#1914](https://github.com/luarss/OpenROAD/issues/1914) from The-OpenROAD-Project-staging/gui-snap
+- Merge pull request [#1990](https://github.com/luarss/OpenROAD/issues/1990) from The-OpenROAD-Project-staging/Stephanommg-patch-1
+- Merge pull request [#1986](https://github.com/luarss/OpenROAD/issues/1986) from The-OpenROAD-Project-staging/gui-no-select
+- Merge pull request [#1989](https://github.com/luarss/OpenROAD/issues/1989) from jjcherry56/rsz_valgrind
+- Merge pull request [#1985](https://github.com/luarss/OpenROAD/issues/1985) from The-OpenROAD-Project-staging/pdn-repair
+- Merge pull request [#1982](https://github.com/luarss/OpenROAD/issues/1982) from osamahammad21/OR-1127-put-cut-spc-violations-on-the-cut-layer
+- Merge pull request [#1988](https://github.com/luarss/OpenROAD/issues/1988) from osamahammad21/odb-guide
+- Merge pull request [#1984](https://github.com/luarss/OpenROAD/issues/1984) from The-OpenROAD-Project-staging/secure-TR_minAreaQuickFix
+- Merge pull request [#1983](https://github.com/luarss/OpenROAD/issues/1983) from vvbandeira/self-hosted-mac
+- Merge pull request [#1981](https://github.com/luarss/OpenROAD/issues/1981) from The-OpenROAD-Project-staging/pdn-via-spacing
+- Merge pull request [#1979](https://github.com/luarss/OpenROAD/issues/1979) from jjcherry56/issue1950
+- Merge pull request [#1980](https://github.com/luarss/OpenROAD/issues/1980) from osamahammad21/gpl-grt-guides
+- Merge pull request [#1978](https://github.com/luarss/OpenROAD/issues/1978) from The-OpenROAD-Project-staging/pdn-via-enclosure
+- Merge pull request [#1976](https://github.com/luarss/OpenROAD/issues/1976) from The-OpenROAD-Project-staging/odb-test-odb-read
+- Merge pull request [#1974](https://github.com/luarss/OpenROAD/issues/1974) from osamahammad21/odb-utl
+- Merge pull request [#1971](https://github.com/luarss/OpenROAD/issues/1971) from The-OpenROAD-Project-staging/drt-contact-obs
+- Merge pull request [#1935](https://github.com/luarss/OpenROAD/issues/1935) from osamahammad21/odb-guide
+- Merge pull request [#1970](https://github.com/luarss/OpenROAD/issues/1970) from The-OpenROAD-Project-staging/drt-corner
+- Merge pull request [#1969](https://github.com/luarss/OpenROAD/issues/1969) from The-OpenROAD-Project-staging/gui-via-descriptor
+- Merge pull request [#1973](https://github.com/luarss/OpenROAD/issues/1973) from vvbandeira/abc-disable-readline
+- Merge pull request [#1968](https://github.com/luarss/OpenROAD/issues/1968) from luis201420/grt_sort_nets_by_name
+- Merge pull request [#1967](https://github.com/luarss/OpenROAD/issues/1967) from The-OpenROAD-Project-staging/gui-cast
+- Merge pull request [#1965](https://github.com/luarss/OpenROAD/issues/1965) from antonblanchard/compile-fix
+- Merge pull request [#1964](https://github.com/luarss/OpenROAD/issues/1964) from The-OpenROAD-Project-staging/gui-cut-size-obs
+- Merge pull request [#1963](https://github.com/luarss/OpenROAD/issues/1963) from The-OpenROAD-Project-staging/drt-msg
+- Merge pull request [#1960](https://github.com/luarss/OpenROAD/issues/1960) from The-OpenROAD-Project-staging/psm_nearest_node
+- Merge pull request [#1961](https://github.com/luarss/OpenROAD/issues/1961) from The-OpenROAD-Project-staging/dpo-cleanup
+- Merge pull request [#1959](https://github.com/luarss/OpenROAD/issues/1959) from The-OpenROAD-Project-staging/secure-TR_minAreaFix
+- Merge pull request [#1958](https://github.com/luarss/OpenROAD/issues/1958) from The-OpenROAD-Project-staging/par-enable-test
+- Merge pull request [#1954](https://github.com/luarss/OpenROAD/issues/1954) from jjcherry56/sta_api
+- Merge pull request [#1956](https://github.com/luarss/OpenROAD/issues/1956) from vvbandeira/macos-fix
+- Merge pull request [#1944](https://github.com/luarss/OpenROAD/issues/1944) from The-OpenROAD-Project-staging/secure-TR_GuideConnFix
+- Merge pull request [#1937](https://github.com/luarss/OpenROAD/issues/1937) from The-OpenROAD-Project-staging/par-clustering
+- Merge pull request [#1948](https://github.com/luarss/OpenROAD/issues/1948) from The-OpenROAD-Project-staging/pad-bump_pin_layer
+- Merge pull request [#1952](https://github.com/luarss/OpenROAD/issues/1952) from QuantamHD/patch-3
+- Merge pull request [#1942](https://github.com/luarss/OpenROAD/issues/1942) from osamahammad21/coverity-fix
+- Merge pull request [#1924](https://github.com/luarss/OpenROAD/issues/1924) from The-OpenROAD-Project-staging/pad-filler-orientation
+- Merge pull request [#1938](https://github.com/luarss/OpenROAD/issues/1938) from The-OpenROAD-Project-staging/gui-property
+- Merge pull request [#1939](https://github.com/luarss/OpenROAD/issues/1939) from jjcherry56/or1465
+- Merge pull request [#1892](https://github.com/luarss/OpenROAD/issues/1892) from osamahammad21/k8s-drt-cpu
+- Merge pull request [#1932](https://github.com/luarss/OpenROAD/issues/1932) from The-OpenROAD-Project-staging/secure-grt_cleanup2
+- Merge pull request [#1931](https://github.com/luarss/OpenROAD/issues/1931) from jjcherry56/issue1927
+- Merge pull request [#1917](https://github.com/luarss/OpenROAD/issues/1917) from osamahammad21/odb-group
+- Merge pull request [#1928](https://github.com/luarss/OpenROAD/issues/1928) from osamahammad21/drt-masterslice-meol
+- Merge pull request [#1926](https://github.com/luarss/OpenROAD/issues/1926) from Mahfouz-z/master
+- Merge pull request [#1925](https://github.com/luarss/OpenROAD/issues/1925) from osamahammad21/drt-masterslice-meol
+- Merge pull request [#1923](https://github.com/luarss/OpenROAD/issues/1923) from The-OpenROAD-Project-staging/cts-tests
+- Merge pull request [#1918](https://github.com/luarss/OpenROAD/issues/1918) from The-OpenROAD-Project-staging/drt-stop-early
+- Merge pull request [#1916](https://github.com/luarss/OpenROAD/issues/1916) from osamahammad21/drt-guide-coverage
+- Merge pull request [#1912](https://github.com/luarss/OpenROAD/issues/1912) from jjcherry56/or1466
+- Merge pull request [#1913](https://github.com/luarss/OpenROAD/issues/1913) from The-OpenROAD-Project-staging/gui-missing-browser
+- Merge pull request [#1906](https://github.com/luarss/OpenROAD/issues/1906) from The-OpenROAD-Project-staging/par-segv
+- Merge pull request [#1911](https://github.com/luarss/OpenROAD/issues/1911) from The-OpenROAD-Project-staging/odb-sort-blockages
+- Merge pull request [#1902](https://github.com/luarss/OpenROAD/issues/1902) from osamahammad21/drt-guide-coverage
+- Merge pull request [#1909](https://github.com/luarss/OpenROAD/issues/1909) from The-OpenROAD-Project-staging/mpl2-round
+- Merge pull request [#1907](https://github.com/luarss/OpenROAD/issues/1907) from The-OpenROAD-Project-staging/drt-min-ap
+- Merge pull request [#1901](https://github.com/luarss/OpenROAD/issues/1901) from jjcherry56/rsz_coverity
+- Merge pull request [#1905](https://github.com/luarss/OpenROAD/issues/1905) from The-OpenROAD-Project-staging/rcx-rename
+- Merge pull request [#1904](https://github.com/luarss/OpenROAD/issues/1904) from The-OpenROAD-Project-staging/secure-TR_supportNOPRL
+- Merge pull request [#1895](https://github.com/luarss/OpenROAD/issues/1895) from Mahfouz-z/master
+- Merge pull request [#1900](https://github.com/luarss/OpenROAD/issues/1900) from The-OpenROAD-Project-staging/pdn-min-enclosures-2
+- Merge pull request [#1899](https://github.com/luarss/OpenROAD/issues/1899) from The-OpenROAD-Project-staging/mpl2-tests
+- Merge pull request [#1896](https://github.com/luarss/OpenROAD/issues/1896) from The-OpenROAD-Project-staging/ant-msg
+- Merge pull request [#1893](https://github.com/luarss/OpenROAD/issues/1893) from The-OpenROAD-Project-staging/secure-rsz_buffered_net
+- Merge pull request [#1876](https://github.com/luarss/OpenROAD/issues/1876) from osamahammad21/drt-masterslice
+- Merge pull request [#1737](https://github.com/luarss/OpenROAD/issues/1737) from osamahammad21/drt-read-pa
+- Merge pull request [#1891](https://github.com/luarss/OpenROAD/issues/1891) from jjcherry56/rm_unused_vars
+- Merge pull request [#1890](https://github.com/luarss/OpenROAD/issues/1890) from The-OpenROAD-Project-staging/odb-module-fix
+- Merge pull request [#1889](https://github.com/luarss/OpenROAD/issues/1889) from The-OpenROAD-Project-staging/odb-def-pin-count
+- Merge pull request [#1843](https://github.com/luarss/OpenROAD/issues/1843) from antonblanchard/grt-no-warn
+- Merge pull request [#1887](https://github.com/luarss/OpenROAD/issues/1887) from The-OpenROAD-Project-staging/mpl2-report-file
+- Merge pull request [#1886](https://github.com/luarss/OpenROAD/issues/1886) from The-OpenROAD-Project-staging/OR-1452
+- Merge pull request [#1883](https://github.com/luarss/OpenROAD/issues/1883) from The-OpenROAD-Project-staging/ifp-obsolete
+- Merge pull request [#1882](https://github.com/luarss/OpenROAD/issues/1882) from The-OpenROAD-Project-staging/ifp-make-tracks-cpp
+- Merge pull request [#1881](https://github.com/luarss/OpenROAD/issues/1881) from The-OpenROAD-Project-staging/gui-pads
+- Merge pull request [#1867](https://github.com/luarss/OpenROAD/issues/1867) from The-OpenROAD-Project-staging/secure-TR_OutOfDieFix
+- Merge pull request [#1880](https://github.com/luarss/OpenROAD/issues/1880) from The-OpenROAD-Project-staging/odb-1st-term
+- Merge pull request [#1878](https://github.com/luarss/OpenROAD/issues/1878) from jjcherry56/issue1869
+- Merge pull request [#1873](https://github.com/luarss/OpenROAD/issues/1873) from The-OpenROAD-Project-staging/pdn-nets
+- Merge pull request [#1874](https://github.com/luarss/OpenROAD/issues/1874) from The-OpenROAD-Project-staging/pdr-header
+- Merge pull request [#1818](https://github.com/luarss/OpenROAD/issues/1818) from Mahfouz-z/master
+- Merge pull request [#1866](https://github.com/luarss/OpenROAD/issues/1866) from The-OpenROAD-Project-staging/stt-overlap
+- Merge pull request [#1865](https://github.com/luarss/OpenROAD/issues/1865) from The-OpenROAD-Project-staging/gui-escape-html
+- Merge pull request [#1864](https://github.com/luarss/OpenROAD/issues/1864) from The-OpenROAD-Project-staging/pad-msg
+- Merge pull request [#1863](https://github.com/luarss/OpenROAD/issues/1863) from The-OpenROAD-Project-staging/stt-overlap
+- Merge pull request [#1862](https://github.com/luarss/OpenROAD/issues/1862) from The-OpenROAD-Project-staging/pdn-fix-assert
+- Merge pull request [#1860](https://github.com/luarss/OpenROAD/issues/1860) from jjcherry56/issue1856
+- Merge pull request [#1861](https://github.com/luarss/OpenROAD/issues/1861) from The-OpenROAD-Project-staging/stt-clang-format
+- Merge pull request [#1859](https://github.com/luarss/OpenROAD/issues/1859) from QuantamHD/gui_fixes
+- Merge pull request [#1857](https://github.com/luarss/OpenROAD/issues/1857) from The-OpenROAD-Project-staging/gui-pause
+- Merge pull request [#1858](https://github.com/luarss/OpenROAD/issues/1858) from The-OpenROAD-Project-staging/pdn-allow-shape-removal-on-pins
+- Merge pull request [#1854](https://github.com/luarss/OpenROAD/issues/1854) from The-OpenROAD-Project-staging/ifp-api
+- Merge pull request [#1852](https://github.com/luarss/OpenROAD/issues/1852) from The-OpenROAD-Project-staging/secure-TR_connectivityFix2
+- Merge pull request [#1844](https://github.com/luarss/OpenROAD/issues/1844) from The-OpenROAD-Project-staging/gui-speedup
+- Merge pull request [#1847](https://github.com/luarss/OpenROAD/issues/1847) from The-OpenROAD-Project-staging/ifp-dbu
+- Merge pull request [#1760](https://github.com/luarss/OpenROAD/issues/1760) from The-OpenROAD-Project-staging/secure-TR_connectivityFIx
+- Merge pull request [#1846](https://github.com/luarss/OpenROAD/issues/1846) from The-OpenROAD-Project-staging/drt-odb-move-op
+- Merge pull request [#1845](https://github.com/luarss/OpenROAD/issues/1845) from The-OpenROAD-Project-staging/scrub
+- Merge pull request [#1842](https://github.com/luarss/OpenROAD/issues/1842) from The-OpenROAD-Project-staging/dpl-use-row-orient
+- Merge pull request [#1837](https://github.com/luarss/OpenROAD/issues/1837) from The-OpenROAD-Project-staging/pdn-center-vias
+- Merge pull request [#1839](https://github.com/luarss/OpenROAD/issues/1839) from The-OpenROAD-Project-staging/gui-guardforsta
+- Merge pull request [#1835](https://github.com/luarss/OpenROAD/issues/1835) from The-OpenROAD-Project-staging/lefin-bug
+- Merge pull request [#1821](https://github.com/luarss/OpenROAD/issues/1821) from The-OpenROAD-Project-staging/pdn-obstruction
+- Merge pull request [#1833](https://github.com/luarss/OpenROAD/issues/1833) from The-OpenROAD-Project-staging/odb-tcl
+- Merge pull request [#1831](https://github.com/luarss/OpenROAD/issues/1831) from The-OpenROAD-Project-staging/pdn-correct-multiple-cut-tech
+- Merge pull request [#1832](https://github.com/luarss/OpenROAD/issues/1832) from The-OpenROAD-Project-staging/odb-via-encl
+- Merge pull request [#1830](https://github.com/luarss/OpenROAD/issues/1830) from The-OpenROAD-Project-staging/pdn-repair-macro-test
+- Merge pull request [#1829](https://github.com/luarss/OpenROAD/issues/1829) from The-OpenROAD-Project-staging/gui-rename-width
+- Merge pull request [#1828](https://github.com/luarss/OpenROAD/issues/1828) from The-OpenROAD-Project-staging/pdn-generate-enclosure
+- Merge pull request [#1825](https://github.com/luarss/OpenROAD/issues/1825) from The-OpenROAD-Project-staging/gui-techlayer-desc
+- Merge pull request [#1826](https://github.com/luarss/OpenROAD/issues/1826) from The-OpenROAD-Project-staging/pdn-switch-odb
+- Merge pull request [#1822](https://github.com/luarss/OpenROAD/issues/1822) from The-OpenROAD-Project-staging/gui-inst-desc
+- Merge pull request [#1824](https://github.com/luarss/OpenROAD/issues/1824) from The-OpenROAD-Project-staging/psm-BumpData
+- Merge pull request [#1823](https://github.com/luarss/OpenROAD/issues/1823) from The-OpenROAD-Project-staging/psm-gui-update
+- Merge pull request [#1801](https://github.com/luarss/OpenROAD/issues/1801) from The-OpenROAD-Project-staging/psm_macro_power_dist
+- Merge pull request [#1820](https://github.com/luarss/OpenROAD/issues/1820) from The-OpenROAD-Project-staging/psm-gui
+- Merge pull request [#1819](https://github.com/luarss/OpenROAD/issues/1819) from The-OpenROAD-Project-staging/secure-rsz_hold
+- Merge pull request [#1802](https://github.com/luarss/OpenROAD/issues/1802) from The-OpenROAD-Project-staging/psm_connectivity
+- Merge pull request [#1817](https://github.com/luarss/OpenROAD/issues/1817) from The-OpenROAD-Project-staging/odb-py-swig-memleak
+- Merge pull request [#1804](https://github.com/luarss/OpenROAD/issues/1804) from The-OpenROAD-Project-staging/pdn-cpp-power_switch
+- Merge pull request [#1815](https://github.com/luarss/OpenROAD/issues/1815) from The-OpenROAD-Project-staging/secure-new-abc
+- Merge pull request [#1814](https://github.com/luarss/OpenROAD/issues/1814) from The-OpenROAD-Project-staging/odb-tech-leak
+- Merge pull request [#1813](https://github.com/luarss/OpenROAD/issues/1813) from The-OpenROAD-Project-staging/pdn-repair2
+- Merge pull request [#1810](https://github.com/luarss/OpenROAD/issues/1810) from The-OpenROAD-Project-staging/pdn-tech-via
+- Merge pull request [#1811](https://github.com/luarss/OpenROAD/issues/1811) from The-OpenROAD-Project-staging/grt-routes-no-insert
+- Merge pull request [#1808](https://github.com/luarss/OpenROAD/issues/1808) from jjcherry56/flow_hold_metric
+- Merge pull request [#1807](https://github.com/luarss/OpenROAD/issues/1807) from The-OpenROAD-Project-staging/odb-bad-via-check
+- Merge pull request [#1806](https://github.com/luarss/OpenROAD/issues/1806) from vvbandeira/macos-action
+- Merge pull request [#1772](https://github.com/luarss/OpenROAD/issues/1772) from habibayassin/charbuf-maxcap
+- Merge pull request [#1798](https://github.com/luarss/OpenROAD/issues/1798) from jjcherry56/rsz_uwatt
+- Merge pull request [#1799](https://github.com/luarss/OpenROAD/issues/1799) from shenki/lemon-cmake-detection
+- Merge pull request [#1744](https://github.com/luarss/OpenROAD/issues/1744) from minghungumich/master
+- Merge pull request [#1796](https://github.com/luarss/OpenROAD/issues/1796) from jjcherry56/rsz_lib_const_slew
+- Merge pull request [#1795](https://github.com/luarss/OpenROAD/issues/1795) from The-OpenROAD-Project-staging/psm-skip
+- Merge pull request [#1794](https://github.com/luarss/OpenROAD/issues/1794) from The-OpenROAD-Project-staging/pdn-check-offset
+- Merge pull request [#1793](https://github.com/luarss/OpenROAD/issues/1793) from The-OpenROAD-Project-staging/rsz-api
+- Merge pull request [#1792](https://github.com/luarss/OpenROAD/issues/1792) from The-OpenROAD-Project-staging/pdn-repair
+- Merge pull request [#1791](https://github.com/luarss/OpenROAD/issues/1791) from The-OpenROAD-Project-staging/odb-new-no-check
+- Merge pull request [#1790](https://github.com/luarss/OpenROAD/issues/1790) from The-OpenROAD-Project-staging/odb-remove-zexception
+- Merge pull request [#1755](https://github.com/luarss/OpenROAD/issues/1755) from osamahammad21/odb-rules
+- Merge pull request [#1774](https://github.com/luarss/OpenROAD/issues/1774) from jjcherry56/issue1702
+- Merge pull request [#1789](https://github.com/luarss/OpenROAD/issues/1789) from The-OpenROAD-Project-staging/cts-api
+- Merge pull request [#1786](https://github.com/luarss/OpenROAD/issues/1786) from The-OpenROAD-Project-staging/pdn-via-stack
+- Merge pull request [#1788](https://github.com/luarss/OpenROAD/issues/1788) from The-OpenROAD-Project-staging/ant-cleanup
+- Merge pull request [#1787](https://github.com/luarss/OpenROAD/issues/1787) from The-OpenROAD-Project-staging/pdn-coverity
+- Merge pull request [#1784](https://github.com/luarss/OpenROAD/issues/1784) from The-OpenROAD-Project-staging/rmp-no-ord
+- Merge pull request [#1785](https://github.com/luarss/OpenROAD/issues/1785) from The-OpenROAD-Project-staging/rsz-no-spdlog
+- Merge pull request [#1783](https://github.com/luarss/OpenROAD/issues/1783) from The-OpenROAD-Project-staging/grt-no-ord
+- Merge pull request [#1781](https://github.com/luarss/OpenROAD/issues/1781) from The-OpenROAD-Project-staging/pdn-vias2
+- Merge pull request [#1782](https://github.com/luarss/OpenROAD/issues/1782) from The-OpenROAD-Project-staging/gpl-no-stt
+- Merge pull request [#1780](https://github.com/luarss/OpenROAD/issues/1780) from The-OpenROAD-Project-staging/pdn-inst-vias
+- Merge pull request [#1778](https://github.com/luarss/OpenROAD/issues/1778) from The-OpenROAD-Project-staging/pdn-channel-repair
+- Merge pull request [#1777](https://github.com/luarss/OpenROAD/issues/1777) from The-OpenROAD-Project-staging/secure-TR-GLIBCXX_ASSERTIONS
+- Merge pull request [#1776](https://github.com/luarss/OpenROAD/issues/1776) from The-OpenROAD-Project-staging/pdn-missing
+- Merge pull request [#1775](https://github.com/luarss/OpenROAD/issues/1775) from The-OpenROAD-Project-staging/odb-schema-update
+- Merge pull request [#1773](https://github.com/luarss/OpenROAD/issues/1773) from The-OpenROAD-Project-staging/odb-test-leak
+- Merge pull request [#1734](https://github.com/luarss/OpenROAD/issues/1734) from The-OpenROAD-Project-staging/secure-TR_APsWithShapes
+- Merge pull request [#1771](https://github.com/luarss/OpenROAD/issues/1771) from The-OpenROAD-Project-staging/odb-tmg-bug
+- Merge pull request [#1769](https://github.com/luarss/OpenROAD/issues/1769) from The-OpenROAD-Project-staging/odb-rm-GeomShape
+- Merge pull request [#1770](https://github.com/luarss/OpenROAD/issues/1770) from The-OpenROAD-Project-staging/pdn-fix-enclosure
+- Merge pull request [#1767](https://github.com/luarss/OpenROAD/issues/1767) from The-OpenROAD-Project-staging/pdn-check-user-grid
+- Merge pull request [#1768](https://github.com/luarss/OpenROAD/issues/1768) from jjcherry56/max_fanout_limit_init
+- Merge pull request [#1765](https://github.com/luarss/OpenROAD/issues/1765) from The-OpenROAD-Project-staging/misc-bugs
+- Merge pull request [#1761](https://github.com/luarss/OpenROAD/issues/1761) from The-OpenROAD-Project-staging/gui-inspector-history
+- Merge pull request [#1763](https://github.com/luarss/OpenROAD/issues/1763) from cbalint13/master
+- Merge pull request [#1750](https://github.com/luarss/OpenROAD/issues/1750) from jjcherry56/flow_drv_metrics
+- Merge pull request [#1762](https://github.com/luarss/OpenROAD/issues/1762) from The-OpenROAD-Project-staging/pdn-coverity
+- Merge pull request [#1740](https://github.com/luarss/OpenROAD/issues/1740) from vvbandeira/ci-docs
+- Merge pull request [#1749](https://github.com/luarss/OpenROAD/issues/1749) from The-OpenROAD-Project-staging/pdn-cpp
+- Merge pull request [#1746](https://github.com/luarss/OpenROAD/issues/1746) from The-OpenROAD-Project-staging/gui-browser
+- Merge pull request [#1754](https://github.com/luarss/OpenROAD/issues/1754) from The-OpenROAD-Project-staging/rsz-tie-module-name
+- Merge pull request [#1745](https://github.com/luarss/OpenROAD/issues/1745) from The-OpenROAD-Project-staging/drt-single-step
+- Merge pull request [#1752](https://github.com/luarss/OpenROAD/issues/1752) from The-OpenROAD-Project-staging/secure-dpo-sort-insts
+- Merge pull request [#1748](https://github.com/luarss/OpenROAD/issues/1748) from The-OpenROAD-Project-staging/physical-only
+- Merge pull request [#1727](https://github.com/luarss/OpenROAD/issues/1727) from jjcherry56/opt_mirror
+- Merge pull request [#1742](https://github.com/luarss/OpenROAD/issues/1742) from luis201420/grt_mazeMSMD_fix
+- Merge pull request [#1743](https://github.com/luarss/OpenROAD/issues/1743) from The-OpenROAD-Project-staging/fix-tests
+- Merge pull request [#1739](https://github.com/luarss/OpenROAD/issues/1739) from The-OpenROAD-Project-staging/secure-or1046
+- Merge pull request [#1741](https://github.com/luarss/OpenROAD/issues/1741) from The-OpenROAD-Project-staging/drt-search-repair-refactor
+- Merge pull request [#1738](https://github.com/luarss/OpenROAD/issues/1738) from The-OpenROAD-Project-staging/TR-drt-eol
+- Merge pull request [#1709](https://github.com/luarss/OpenROAD/issues/1709) from jjcherry56/or1377
+- Merge pull request [#1735](https://github.com/luarss/OpenROAD/issues/1735) from The-OpenROAD-Project-staging/cts-1730
+- Merge pull request [#1731](https://github.com/luarss/OpenROAD/issues/1731) from jjcherry56/DbInstanceNetIterator2
+- Merge pull request [#1696](https://github.com/luarss/OpenROAD/issues/1696) from osamahammad21/OR-1350
+- Merge pull request [#1721](https://github.com/luarss/OpenROAD/issues/1721) from The-OpenROAD-Project-staging/gui-descriptors
+- Merge pull request [#1726](https://github.com/luarss/OpenROAD/issues/1726) from The-OpenROAD-Project-staging/gui-heatmap-limit
+- Merge pull request [#1728](https://github.com/luarss/OpenROAD/issues/1728) from The-OpenROAD-Project-staging/odb-dump-pa
+- Merge pull request [#1725](https://github.com/luarss/OpenROAD/issues/1725) from jjcherry56/dbNetworkDbInstanceNetIterator
+- Merge pull request [#1724](https://github.com/luarss/OpenROAD/issues/1724) from The-OpenROAD-Project-staging/ifp-insert_tiecells
+- Merge pull request [#1722](https://github.com/luarss/OpenROAD/issues/1722) from jjcherry56/rsz_inst_loc
+- Merge pull request [#1716](https://github.com/luarss/OpenROAD/issues/1716) from The-OpenROAD-Project-staging/psm_warn_unplaced
+- Merge pull request [#1720](https://github.com/luarss/OpenROAD/issues/1720) from The-OpenROAD-Project-staging/odb-rm-old-test
+- Merge pull request [#1719](https://github.com/luarss/OpenROAD/issues/1719) from The-OpenROAD-Project-staging/psm-wrong-layer-msg
+- Merge pull request [#1717](https://github.com/luarss/OpenROAD/issues/1717) from The-OpenROAD-Project-staging/sta-skip-supplies
+- Merge pull request [#1715](https://github.com/luarss/OpenROAD/issues/1715) from jjcherry56/issue1013
+- Merge pull request [#1713](https://github.com/luarss/OpenROAD/issues/1713) from The-OpenROAD-Project-staging/drt-drv-cnts
+- Merge pull request [#1711](https://github.com/luarss/OpenROAD/issues/1711) from The-OpenROAD-Project-staging/secure-TR_convergence4_2
+- Merge pull request [#1712](https://github.com/luarss/OpenROAD/issues/1712) from The-OpenROAD-Project-staging/drt-gcell-fix
+- Merge pull request [#1710](https://github.com/luarss/OpenROAD/issues/1710) from The-OpenROAD-Project-staging/mpl-odb
+- Merge pull request [#1707](https://github.com/luarss/OpenROAD/issues/1707) from The-OpenROAD-Project-staging/drt-autotuner-timer
+- Merge pull request [#1705](https://github.com/luarss/OpenROAD/issues/1705) from vvbandeira/gpl-fix-large
+- Merge pull request [#1704](https://github.com/luarss/OpenROAD/issues/1704) from The-OpenROAD-Project-staging/gui-draw-cut-no-via
+- Merge pull request [#1700](https://github.com/luarss/OpenROAD/issues/1700) from The-OpenROAD-Project-staging/cts-buf
+- Merge pull request [#1701](https://github.com/luarss/OpenROAD/issues/1701) from The-OpenROAD-Project-staging/drt-tuner
+- Merge pull request [#1699](https://github.com/luarss/OpenROAD/issues/1699) from vvbandeira/residual
+- Merge pull request [#1698](https://github.com/luarss/OpenROAD/issues/1698) from The-OpenROAD-Project-staging/fmt-par-mpl2
+- Merge pull request [#1658](https://github.com/luarss/OpenROAD/issues/1658) from The-OpenROAD-Project-staging/secure-TR_convergence4
+- Merge pull request [#1691](https://github.com/luarss/OpenROAD/issues/1691) from The-OpenROAD-Project-staging/odb-cleanup
+- Merge pull request [#1697](https://github.com/luarss/OpenROAD/issues/1697) from The-OpenROAD-Project-staging/gpl-ceil-target-density
+- Merge pull request [#1695](https://github.com/luarss/OpenROAD/issues/1695) from The-OpenROAD-Project-staging/gui-sel
+- Merge pull request [#1694](https://github.com/luarss/OpenROAD/issues/1694) from The-OpenROAD-Project-staging/gui-markers-missing
+- Merge pull request [#1687](https://github.com/luarss/OpenROAD/issues/1687) from eder-matheus/grt_repair_antennas
+- Merge pull request [#1689](https://github.com/luarss/OpenROAD/issues/1689) from osamahammad21/drt-warning-265
+- Merge pull request [#1686](https://github.com/luarss/OpenROAD/issues/1686) from jjcherry56/sky130hd_caps
+- Merge pull request [#1683](https://github.com/luarss/OpenROAD/issues/1683) from The-OpenROAD-Project-staging/stackedmimcap
+- Merge pull request [#1682](https://github.com/luarss/OpenROAD/issues/1682) from The-OpenROAD-Project-staging/ifp-skip-trackpat
+- Merge pull request [#1681](https://github.com/luarss/OpenROAD/issues/1681) from jjcherry56/or1332
+- Merge pull request [#1680](https://github.com/luarss/OpenROAD/issues/1680) from The-OpenROAD-Project-staging/pdn-net_based_tags
+- Merge pull request [#1678](https://github.com/luarss/OpenROAD/issues/1678) from jjcherry56/or958
+- Merge pull request [#1673](https://github.com/luarss/OpenROAD/issues/1673) from The-OpenROAD-Project-staging/rtlmp_qor
+- Merge pull request [#1676](https://github.com/luarss/OpenROAD/issues/1676) from The-OpenROAD-Project-staging/par-cleanup
+- Merge pull request [#1675](https://github.com/luarss/OpenROAD/issues/1675) from vvbandeira/pdn-fix
+- Merge pull request [#1674](https://github.com/luarss/OpenROAD/issues/1674) from The-OpenROAD-Project-staging/gui-coverity
+- Merge pull request [#1660](https://github.com/luarss/OpenROAD/issues/1660) from osamahammad21/drt-nets-error
+- Merge pull request [#1663](https://github.com/luarss/OpenROAD/issues/1663) from The-OpenROAD-Project-staging/pdn-net_based_tags
+- Merge pull request [#1667](https://github.com/luarss/OpenROAD/issues/1667) from jjcherry56/grt_layer_lengths
+- Merge pull request [#1672](https://github.com/luarss/OpenROAD/issues/1672) from The-OpenROAD-Project-staging/pdn-via_constraints
+- Merge pull request [#1671](https://github.com/luarss/OpenROAD/issues/1671) from The-OpenROAD-Project-staging/pdn-gui-coverity
+- Merge pull request [#1651](https://github.com/luarss/OpenROAD/issues/1651) from The-OpenROAD-Project-staging/gui-rotate-io
+- Merge pull request [#1668](https://github.com/luarss/OpenROAD/issues/1668) from eder-matheus/grt_local_conn
+- Merge pull request [#1662](https://github.com/luarss/OpenROAD/issues/1662) from The-OpenROAD-Project-staging/psm_node_reduction
+- Merge pull request [#1666](https://github.com/luarss/OpenROAD/issues/1666) from eder-matheus/grt_coverity
+- Merge pull request [#1665](https://github.com/luarss/OpenROAD/issues/1665) from vvbandeira/coverity-fix
+- Merge pull request [#1664](https://github.com/luarss/OpenROAD/issues/1664) from vvbandeira/coverity-fix
+- Merge pull request [#1661](https://github.com/luarss/OpenROAD/issues/1661) from vvbandeira/fix-coverity
+- Merge pull request [#1657](https://github.com/luarss/OpenROAD/issues/1657) from The-OpenROAD-Project-staging/psm_node_reduction
+- Merge pull request [#1656](https://github.com/luarss/OpenROAD/issues/1656) from The-OpenROAD-Project-staging/cts-style
+- Merge pull request [#1654](https://github.com/luarss/OpenROAD/issues/1654) from The-OpenROAD-Project-staging/ispd-update
+- Merge pull request [#1642](https://github.com/luarss/OpenROAD/issues/1642) from eder-matheus/grt_heatmap
+- Merge pull request [#1650](https://github.com/luarss/OpenROAD/issues/1650) from The-OpenROAD-Project-staging/gui-rows
+- Merge pull request [#1652](https://github.com/luarss/OpenROAD/issues/1652) from The-OpenROAD-Project-staging/gui-repeat
+- Merge pull request [#1649](https://github.com/luarss/OpenROAD/issues/1649) from The-OpenROAD-Project-staging/gui-decap
+- Merge pull request [#1643](https://github.com/luarss/OpenROAD/issues/1643) from eder-matheus/grt_fix_msg
+- Merge pull request [#1648](https://github.com/luarss/OpenROAD/issues/1648) from The-OpenROAD-Project-staging/ispd-pipefail
+- Merge pull request [#1647](https://github.com/luarss/OpenROAD/issues/1647) from The-OpenROAD-Project-staging/psm-null-net
+- Merge pull request [#1645](https://github.com/luarss/OpenROAD/issues/1645) from The-OpenROAD-Project-staging/gui-exit
+- Merge pull request [#1639](https://github.com/luarss/OpenROAD/issues/1639) from osamahammad21/pa-subrow
+- Merge pull request [#1644](https://github.com/luarss/OpenROAD/issues/1644) from The-OpenROAD-Project-staging/ifp-snap-warn
+- Merge pull request [#1641](https://github.com/luarss/OpenROAD/issues/1641) from The-OpenROAD-Project-staging/secure-TR_minAreaPatches
+- Merge pull request [#1622](https://github.com/luarss/OpenROAD/issues/1622) from The-OpenROAD-Project-staging/gui-capture-error
+- Merge pull request [#1638](https://github.com/luarss/OpenROAD/issues/1638) from The-OpenROAD-Project-staging/pad-offset
+- Merge pull request [#1515](https://github.com/luarss/OpenROAD/issues/1515) from jjcherry56/rsz_grt_rc
+- Merge pull request [#1637](https://github.com/luarss/OpenROAD/issues/1637) from The-OpenROAD-Project-staging/TR_drt-skip-planar-enclosed-shape
+- Merge pull request [#1636](https://github.com/luarss/OpenROAD/issues/1636) from jjcherry56/dpl_finish
+- Merge pull request [#1635](https://github.com/luarss/OpenROAD/issues/1635) from eder-matheus/grt_est_rc2
+- Merge pull request [#1631](https://github.com/luarss/OpenROAD/issues/1631) from jjcherry56/or1303
+- Merge pull request [#1633](https://github.com/luarss/OpenROAD/issues/1633) from The-OpenROAD-Project-staging/drt-bterm-pa-gui
+- Merge pull request [#1632](https://github.com/luarss/OpenROAD/issues/1632) from The-OpenROAD-Project-staging/odb-iterm-geometries
+- Merge pull request [#1630](https://github.com/luarss/OpenROAD/issues/1630) from The-OpenROAD-Project-staging/TR_drt-zero-area-markers
+- Merge pull request [#1629](https://github.com/luarss/OpenROAD/issues/1629) from osamahammad21/drt-boundary
+- Merge pull request [#1624](https://github.com/luarss/OpenROAD/issues/1624) from The-OpenROAD-Project-staging/secure-TR_minstepRP
+- Merge pull request [#1628](https://github.com/luarss/OpenROAD/issues/1628) from The-OpenROAD-Project-staging/dpo-updates
+- Merge pull request [#1627](https://github.com/luarss/OpenROAD/issues/1627) from The-OpenROAD-Project-staging/drt-omp-exception
+- Merge pull request [#1625](https://github.com/luarss/OpenROAD/issues/1625) from jjcherry56/flow_io_delays
+- Merge pull request [#1623](https://github.com/luarss/OpenROAD/issues/1623) from jjcherry56/or1264v2
+- Merge pull request [#1621](https://github.com/luarss/OpenROAD/issues/1621) from jjcherry56/or1264
+- Merge pull request [#1616](https://github.com/luarss/OpenROAD/issues/1616) from The-OpenROAD-Project-staging/gui-instance-shapes
+- Merge pull request [#1617](https://github.com/luarss/OpenROAD/issues/1617) from The-OpenROAD-Project-staging/gpl_skip_io
+- Merge pull request [#1615](https://github.com/luarss/OpenROAD/issues/1615) from The-OpenROAD-Project-staging/gui-bigger-orientation-tag
+- Merge pull request [#1611](https://github.com/luarss/OpenROAD/issues/1611) from The-OpenROAD-Project-staging/secure-TR_minstepRP
+- Merge pull request [#1608](https://github.com/luarss/OpenROAD/issues/1608) from The-OpenROAD-Project-staging/gui-edit-highlight
+- Merge pull request [#1612](https://github.com/luarss/OpenROAD/issues/1612) from The-OpenROAD-Project-staging/gui-heatmap-dump
+- Merge pull request [#1613](https://github.com/luarss/OpenROAD/issues/1613) from The-OpenROAD-Project-staging/pad-OR1274
+- Merge pull request [#1590](https://github.com/luarss/OpenROAD/issues/1590) from The-OpenROAD-Project-staging/pdn-OR1253
+- Merge pull request [#1607](https://github.com/luarss/OpenROAD/issues/1607) from eder-matheus/grt_draw_pin_location
+- Merge pull request [#1606](https://github.com/luarss/OpenROAD/issues/1606) from osamahammad21/drt-msg
+- Merge pull request [#1605](https://github.com/luarss/OpenROAD/issues/1605) from The-OpenROAD-Project-staging/rcx-check-chip
+- Merge pull request [#1594](https://github.com/luarss/OpenROAD/issues/1594) from eder-matheus/grt_obs
+- Merge pull request [#1604](https://github.com/luarss/OpenROAD/issues/1604) from The-OpenROAD-Project-staging/gui-timing-widget
+- Merge pull request [#1591](https://github.com/luarss/OpenROAD/issues/1591) from eder-matheus/grt_duplicated_segs
+- Merge pull request [#1599](https://github.com/luarss/OpenROAD/issues/1599) from The-OpenROAD-Project-staging/rtlmp-ci_diffs
+- Merge pull request [#1600](https://github.com/luarss/OpenROAD/issues/1600) from The-OpenROAD-Project-staging/gui-check-display
+- Merge pull request [#1601](https://github.com/luarss/OpenROAD/issues/1601) from vvbandeira/ci-compile-werr
+- Merge pull request [#1598](https://github.com/luarss/OpenROAD/issues/1598) from cbalint13/master
+- Merge pull request [#1595](https://github.com/luarss/OpenROAD/issues/1595) from The-OpenROAD-Project-staging/secure-TR_minStepFix
+- Merge pull request [#1596](https://github.com/luarss/OpenROAD/issues/1596) from The-OpenROAD-Project-staging/gui-init
+- Merge pull request [#1565](https://github.com/luarss/OpenROAD/issues/1565) from The-OpenROAD-Project-staging/gui-minor-fixes
+- Merge pull request [#1589](https://github.com/luarss/OpenROAD/issues/1589) from The-OpenROAD-Project-staging/odb-obsolete-apis
+- Merge pull request [#1587](https://github.com/luarss/OpenROAD/issues/1587) from The-OpenROAD-Project-staging/gui-functional
+- Merge pull request [#1588](https://github.com/luarss/OpenROAD/issues/1588) from jjcherry56/issue1582
+- Merge pull request [#1586](https://github.com/luarss/OpenROAD/issues/1586) from The-OpenROAD-Project-staging/secure-TR_BlockedEdgesFix
+- Merge pull request [#1498](https://github.com/luarss/OpenROAD/issues/1498) from The-OpenROAD-Project-staging/gui-timing-control
+- Merge pull request [#1583](https://github.com/luarss/OpenROAD/issues/1583) from The-OpenROAD-Project-staging/odb-region-destroy
+- Merge pull request [#1581](https://github.com/luarss/OpenROAD/issues/1581) from eder-matheus/grt_pa
+- Merge pull request [#1569](https://github.com/luarss/OpenROAD/issues/1569) from cbalint13/master
+- Merge pull request [#1559](https://github.com/luarss/OpenROAD/issues/1559) from vijayank88/OR_tutorial
+- Merge pull request [#1566](https://github.com/luarss/OpenROAD/issues/1566) from eder-matheus/report_wire_length
+- Merge pull request [#1571](https://github.com/luarss/OpenROAD/issues/1571) from The-OpenROAD-Project-staging/gui-region-outline
+- Merge pull request [#1573](https://github.com/luarss/OpenROAD/issues/1573) from The-OpenROAD-Project-staging/psm-tech-via
+- Merge pull request [#1580](https://github.com/luarss/OpenROAD/issues/1580) from The-OpenROAD-Project-staging/odb-region-add-cb
+- Merge pull request [#1572](https://github.com/luarss/OpenROAD/issues/1572) from jjcherry56/sta_threads
+- Merge pull request [#1568](https://github.com/luarss/OpenROAD/issues/1568) from The-OpenROAD-Project-staging/rsz-timing-type
+- Merge pull request [#1570](https://github.com/luarss/OpenROAD/issues/1570) from The-OpenROAD-Project-staging/psm-check-err
+- Merge pull request [#1567](https://github.com/luarss/OpenROAD/issues/1567) from jjcherry56/grt_coverity
+- Merge pull request [#1524](https://github.com/luarss/OpenROAD/issues/1524) from The-OpenROAD-Project-staging/gui-heatmap-listener
+- Merge pull request [#1564](https://github.com/luarss/OpenROAD/issues/1564) from eder-matheus/grt_fix
+- Merge pull request [#1558](https://github.com/luarss/OpenROAD/issues/1558) from jjcherry56/abc_namespace
+- Merge pull request [#1551](https://github.com/luarss/OpenROAD/issues/1551) from The-OpenROAD-Project-staging/gui-font
+- Merge pull request [#1562](https://github.com/luarss/OpenROAD/issues/1562) from The-OpenROAD-Project-staging/drt-gui-fix
+- Merge pull request [#1561](https://github.com/luarss/OpenROAD/issues/1561) from The-OpenROAD-Project-staging/rtlmp_speedup
+- Merge pull request [#1557](https://github.com/luarss/OpenROAD/issues/1557) from jjcherry56/grt_cleanup2
+- Merge pull request [#1553](https://github.com/luarss/OpenROAD/issues/1553) from The-OpenROAD-Project-staging/gui-functionals
+- Merge pull request [#1552](https://github.com/luarss/OpenROAD/issues/1552) from The-OpenROAD-Project-staging/gui-heatmap-range
+- Merge pull request [#1548](https://github.com/luarss/OpenROAD/issues/1548) from The-OpenROAD-Project-staging/cov
+- Merge pull request [#1547](https://github.com/luarss/OpenROAD/issues/1547) from The-OpenROAD-Project-staging/gui-cone-no-signal
+- Merge pull request [#1540](https://github.com/luarss/OpenROAD/issues/1540) from The-OpenROAD-Project-staging/gui-cone-color
+- Merge pull request [#1541](https://github.com/luarss/OpenROAD/issues/1541) from The-OpenROAD-Project-staging/gui-focus-nets
+- Merge pull request [#1544](https://github.com/luarss/OpenROAD/issues/1544) from rovinski/rovinski-patch-1
+- Merge pull request [#1545](https://github.com/luarss/OpenROAD/issues/1545) from The-OpenROAD-Project-staging/mac-test
+- Merge pull request [#1542](https://github.com/luarss/OpenROAD/issues/1542) from The-OpenROAD-Project-staging/mac-test
+- Merge pull request [#1543](https://github.com/luarss/OpenROAD/issues/1543) from vvbandeira/ci-green
+- Merge pull request [#1536](https://github.com/luarss/OpenROAD/issues/1536) from antonblanchard/grt-README
+- Merge pull request [#1537](https://github.com/luarss/OpenROAD/issues/1537) from The-OpenROAD-Project-staging/grt-read-guides
+- Merge pull request [#1532](https://github.com/luarss/OpenROAD/issues/1532) from jjcherry56/grt_cleanup
+- Merge pull request [#1516](https://github.com/luarss/OpenROAD/issues/1516) from The-OpenROAD-Project-staging/ispd-py
+- Merge pull request [#1531](https://github.com/luarss/OpenROAD/issues/1531) from The-OpenROAD-Project-staging/grt_debug_prints
+- Merge pull request [#1390](https://github.com/luarss/OpenROAD/issues/1390) from The-OpenROAD-Project-staging/secure-TR_frMaster
+- Merge pull request [#1525](https://github.com/luarss/OpenROAD/issues/1525) from The-OpenROAD-Project-staging/gui-set_center_error
+- Merge pull request [#1529](https://github.com/luarss/OpenROAD/issues/1529) from The-OpenROAD-Project-staging/gui-iterm-ap
+- Merge pull request [#1527](https://github.com/luarss/OpenROAD/issues/1527) from jjcherry56/sta_report_thru
+- Merge pull request [#1526](https://github.com/luarss/OpenROAD/issues/1526) from The-OpenROAD-Project-staging/gui-typo
+- Merge pull request [#1522](https://github.com/luarss/OpenROAD/issues/1522) from The-OpenROAD-Project-staging/drt-rp-cleanup
+- Merge pull request [#1513](https://github.com/luarss/OpenROAD/issues/1513) from antonblanchard/grt-remove-clock
+- Merge pull request [#1501](https://github.com/luarss/OpenROAD/issues/1501) from The-OpenROAD-Project-staging/gui-ir-drop
+- Merge pull request [#1506](https://github.com/luarss/OpenROAD/issues/1506) from The-OpenROAD-Project-staging/gui-missing-error
+- Merge pull request [#1521](https://github.com/luarss/OpenROAD/issues/1521) from The-OpenROAD-Project-staging/gui-heatmap-log-reverse
+- Merge pull request [#1520](https://github.com/luarss/OpenROAD/issues/1520) from The-OpenROAD-Project-staging/drt-pa-dup-via
+- Merge pull request [#1519](https://github.com/luarss/OpenROAD/issues/1519) from The-OpenROAD-Project-staging/grt-pos_on_grid-fix
+- Merge pull request [#1517](https://github.com/luarss/OpenROAD/issues/1517) from osamahammad21/OR-1228-bp-single-mismatch-in-number-of-pins-for-bterm-vdd
+- Merge pull request [#1508](https://github.com/luarss/OpenROAD/issues/1508) from The-OpenROAD-Project-staging/grt_pa
+- Merge pull request [#1511](https://github.com/luarss/OpenROAD/issues/1511) from The-OpenROAD-Project-staging/gui-heat-map-log
+- Merge pull request [#1504](https://github.com/luarss/OpenROAD/issues/1504) from The-OpenROAD-Project-staging/drt-pa-xy
+- Merge pull request [#1510](https://github.com/luarss/OpenROAD/issues/1510) from The-OpenROAD-Project-staging/ispd2
+- Merge pull request [#1507](https://github.com/luarss/OpenROAD/issues/1507) from The-OpenROAD-Project-staging/stacktrace
+- Merge pull request [#1453](https://github.com/luarss/OpenROAD/issues/1453) from osamahammad21/odb-pa
+- Merge pull request [#1503](https://github.com/luarss/OpenROAD/issues/1503) from The-OpenROAD-Project-staging/psm_gui_api
+- Merge pull request [#1502](https://github.com/luarss/OpenROAD/issues/1502) from jjcherry56/sta_report_thru_seg_fault
+- Merge pull request [#1500](https://github.com/luarss/OpenROAD/issues/1500) from jjcherry56/grt_db_update
+- Merge pull request [#1488](https://github.com/luarss/OpenROAD/issues/1488) from The-OpenROAD-Project-staging/psm_gui_api
+- Merge pull request [#1499](https://github.com/luarss/OpenROAD/issues/1499) from The-OpenROAD-Project-staging/gui-fix-legend
+- Merge pull request [#1496](https://github.com/luarss/OpenROAD/issues/1496) from jjcherry56/rsz_sm_max_slew
+- Merge pull request [#1497](https://github.com/luarss/OpenROAD/issues/1497) from The-OpenROAD-Project-staging/jenkins-timeout
+- Merge pull request [#1493](https://github.com/luarss/OpenROAD/issues/1493) from The-OpenROAD-Project-staging/rsz-missing-arg
+- Merge pull request [#1495](https://github.com/luarss/OpenROAD/issues/1495) from The-OpenROAD-Project-staging/dpo-private-mem
+- Merge pull request [#1441](https://github.com/luarss/OpenROAD/issues/1441) from The-OpenROAD-Project-staging/gui-timing-cones
+- Merge pull request [#1492](https://github.com/luarss/OpenROAD/issues/1492) from The-OpenROAD-Project-staging/dpo-coverity
+- Merge pull request [#1491](https://github.com/luarss/OpenROAD/issues/1491) from The-OpenROAD-Project-staging/dpo-cleanup
+- Merge pull request [#1479](https://github.com/luarss/OpenROAD/issues/1479) from vijayank88/FlowVar
+- Merge pull request [#1490](https://github.com/luarss/OpenROAD/issues/1490) from The-OpenROAD-Project-staging/dpo-tests
+- Merge pull request [#1489](https://github.com/luarss/OpenROAD/issues/1489) from The-OpenROAD-Project-staging/dpo-missing-lemon
+- Merge pull request [#1384](https://github.com/luarss/OpenROAD/issues/1384) from akennings/master
+- Merge pull request [#1486](https://github.com/luarss/OpenROAD/issues/1486) from eder-matheus/clang_format
+- Merge pull request [#1484](https://github.com/luarss/OpenROAD/issues/1484) from eder-matheus/ppl_min_width
+- Merge pull request [#1482](https://github.com/luarss/OpenROAD/issues/1482) from eder-matheus/grt_obs
+- Merge pull request [#1485](https://github.com/luarss/OpenROAD/issues/1485) from The-OpenROAD-Project-staging/cimg-werror
+- Merge pull request [#2](https://github.com/luarss/OpenROAD/issues/2) from The-OpenROAD-Project/master
+- Merge pull request [#1483](https://github.com/luarss/OpenROAD/issues/1483) from The-OpenROAD-Project-staging/py-no-splash
+- Merge pull request [#1481](https://github.com/luarss/OpenROAD/issues/1481) from eder-matheus/grt_doc
+- Merge pull request [#1474](https://github.com/luarss/OpenROAD/issues/1474) from jjcherry56/grt_incr
+- Merge pull request [#1475](https://github.com/luarss/OpenROAD/issues/1475) from The-OpenROAD-Project-staging/dst-default-arg
+- Merge pull request [#1473](https://github.com/luarss/OpenROAD/issues/1473) from eder-matheus/check_argc
+- Merge pull request [#1472](https://github.com/luarss/OpenROAD/issues/1472) from eder-matheus/grt_types
+- Merge pull request [#1469](https://github.com/luarss/OpenROAD/issues/1469) from The-OpenROAD-Project-staging/autotuner
+- Merge pull request [#1471](https://github.com/luarss/OpenROAD/issues/1471) from The-OpenROAD-Project-staging/drt-prot-to-priv
+- Merge pull request [#1466](https://github.com/luarss/OpenROAD/issues/1466) from The-OpenROAD-Project-staging/drt-pa
+- Merge pull request [#1464](https://github.com/luarss/OpenROAD/issues/1464) from tspyrou/add_linked_abc_again
+- Merge pull request [#1458](https://github.com/luarss/OpenROAD/issues/1458) from The-OpenROAD-Project-staging/gpl-td-tune-iter
+- Merge pull request [#1465](https://github.com/luarss/OpenROAD/issues/1465) from The-OpenROAD-Project-staging/allow-warnings
+- Merge pull request [#1462](https://github.com/luarss/OpenROAD/issues/1462) from eder-matheus/tap_fix
+- Merge pull request [#1463](https://github.com/luarss/OpenROAD/issues/1463) from jjcherry56/sta_define_corners
+- Merge pull request [#1460](https://github.com/luarss/OpenROAD/issues/1460) from cbalint13/master
+- Merge pull request [#1456](https://github.com/luarss/OpenROAD/issues/1456) from eder-matheus/grt_printing
+- Merge pull request [#1461](https://github.com/luarss/OpenROAD/issues/1461) from The-OpenROAD-Project-staging/ispd
+- Merge pull request [#1457](https://github.com/luarss/OpenROAD/issues/1457) from The-OpenROAD-Project-staging/drt-via-in-pin
+- Merge pull request [#1455](https://github.com/luarss/OpenROAD/issues/1455) from The-OpenROAD-Project-staging/gnu-Werror
+- Merge pull request [#1454](https://github.com/luarss/OpenROAD/issues/1454) from The-OpenROAD-Project-staging/drt-coverity
+- Merge pull request [#1452](https://github.com/luarss/OpenROAD/issues/1452) from The-OpenROAD-Project-staging/grt-cleanup
+- Merge pull request [#1451](https://github.com/luarss/OpenROAD/issues/1451) from The-OpenROAD-Project-staging/dst-warnings
+- Merge pull request [#1450](https://github.com/luarss/OpenROAD/issues/1450) from The-OpenROAD-Project-staging/cts-plot
+- Merge pull request [#1448](https://github.com/luarss/OpenROAD/issues/1448) from rovinski/rovinski-patch-1
+- Merge pull request [#1449](https://github.com/luarss/OpenROAD/issues/1449) from The-OpenROAD-Project-staging/ispd-drvs
+- Merge pull request [#1382](https://github.com/luarss/OpenROAD/issues/1382) from jjcherry56/fakeram
+- Merge pull request [#1447](https://github.com/luarss/OpenROAD/issues/1447) from eder-matheus/ppl_error
+- Merge pull request [#1445](https://github.com/luarss/OpenROAD/issues/1445) from The-OpenROAD-Project-staging/drt-pinname
+- Merge pull request [#1446](https://github.com/luarss/OpenROAD/issues/1446) from The-OpenROAD-Project-staging/cts-deadcode
+- Merge pull request [#1444](https://github.com/luarss/OpenROAD/issues/1444) from The-OpenROAD-Project-staging/gui-fix-renderer-segfault
+- Merge pull request [#1435](https://github.com/luarss/OpenROAD/issues/1435) from The-OpenROAD-Project-staging/gui-large-highlighting
+- Merge pull request [#1443](https://github.com/luarss/OpenROAD/issues/1443) from The-OpenROAD-Project-staging/secure-TR_ISPD_timeout_fix
+- Merge pull request [#1434](https://github.com/luarss/OpenROAD/issues/1434) from The-OpenROAD-Project-staging/gpl-td-replace-tuning
+- Merge pull request [#1442](https://github.com/luarss/OpenROAD/issues/1442) from The-OpenROAD-Project-staging/mpl2_halo
+- Merge pull request [#1440](https://github.com/luarss/OpenROAD/issues/1440) from proppy/patch-1
+- Merge pull request [#1439](https://github.com/luarss/OpenROAD/issues/1439) from The-OpenROAD-Project-staging/gui-show-drc-on-load
+- Merge pull request [#1436](https://github.com/luarss/OpenROAD/issues/1436) from The-OpenROAD-Project-staging/gui-return-selects
+- Merge pull request [#1275](https://github.com/luarss/OpenROAD/issues/1275) from The-OpenROAD-Project-staging/mpl2_td
+- Merge pull request [#1418](https://github.com/luarss/OpenROAD/issues/1418) from The-OpenROAD-Project-staging/gui-sink-thread
+- Merge pull request [#1433](https://github.com/luarss/OpenROAD/issues/1433) from The-OpenROAD-Project-staging/drt-paren
+- Merge pull request [#1431](https://github.com/luarss/OpenROAD/issues/1431) from The-OpenROAD-Project-staging/Comment-setIgnoreLongSide-eol
+- Merge pull request [#1432](https://github.com/luarss/OpenROAD/issues/1432) from eder-matheus/cts_fix
+- Merge pull request [#1427](https://github.com/luarss/OpenROAD/issues/1427) from The-OpenROAD-Project-staging/secure-TR_ISPD_timeout_fix
+- Merge pull request [#1426](https://github.com/luarss/OpenROAD/issues/1426) from The-OpenROAD-Project-staging/no-lto
+- Merge pull request [#1268](https://github.com/luarss/OpenROAD/issues/1268) from QuantamHD/lot
+- Merge pull request [#1425](https://github.com/luarss/OpenROAD/issues/1425) from The-OpenROAD-Project-staging/boost-static
+- Merge pull request [#1364](https://github.com/luarss/OpenROAD/issues/1364) from The-OpenROAD-Project-staging/drt-distributed
+- Merge pull request [#1417](https://github.com/luarss/OpenROAD/issues/1417) from antonblanchard/gpl-reset
+- Merge pull request [#1416](https://github.com/luarss/OpenROAD/issues/1416) from antonblanchard/gpl-README
+- Merge pull request [#1397](https://github.com/luarss/OpenROAD/issues/1397) from The-OpenROAD-Project-staging/drt-pa-eol
+- Merge pull request [#1423](https://github.com/luarss/OpenROAD/issues/1423) from The-OpenROAD-Project-staging/drt-gc-eol-fixed
+- Merge pull request [#1422](https://github.com/luarss/OpenROAD/issues/1422) from jjcherry56/or1271
+- Merge pull request [#1420](https://github.com/luarss/OpenROAD/issues/1420) from osamahammad21/boost-update
+- Merge pull request [#1421](https://github.com/luarss/OpenROAD/issues/1421) from The-OpenROAD-Project-staging/grt-ant-padding
+- Merge pull request [#1415](https://github.com/luarss/OpenROAD/issues/1415) from The-OpenROAD-Project-staging/enable-warnings
+- Merge pull request [#1408](https://github.com/luarss/OpenROAD/issues/1408) from The-OpenROAD-Project-staging/psm-sky130-chameleon_hier
+- Merge pull request [#1414](https://github.com/luarss/OpenROAD/issues/1414) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#1406](https://github.com/luarss/OpenROAD/issues/1406) from vvbandeira/docs
+- Merge pull request [#1412](https://github.com/luarss/OpenROAD/issues/1412) from The-OpenROAD-Project-staging/rcx-valgrind
+- Merge pull request [#1411](https://github.com/luarss/OpenROAD/issues/1411) from The-OpenROAD-Project-staging/secure-TR_XFormFix
+- Merge pull request [#1410](https://github.com/luarss/OpenROAD/issues/1410) from The-OpenROAD-Project-staging/ifp-mimcap
+- Merge pull request [#1407](https://github.com/luarss/OpenROAD/issues/1407) from The-OpenROAD-Project-staging/gui-displaycontrol-menus
+- Merge pull request [#1393](https://github.com/luarss/OpenROAD/issues/1393) from The-OpenROAD-Project-staging/gpl-min-steplength
+- Merge pull request [#1409](https://github.com/luarss/OpenROAD/issues/1409) from The-OpenROAD-Project-staging/gui-render-order
+- Merge pull request [#1405](https://github.com/luarss/OpenROAD/issues/1405) from The-OpenROAD-Project-staging/secure-TR_GuideFix
+- Merge pull request [#1404](https://github.com/luarss/OpenROAD/issues/1404) from eder-matheus/cts_format
+- Merge pull request [#1401](https://github.com/luarss/OpenROAD/issues/1401) from The-OpenROAD-Project-staging/gui-fix-offscreen
+- Merge pull request [#1403](https://github.com/luarss/OpenROAD/issues/1403) from The-OpenROAD-Project-staging/gui-expose-display-save-restore
+- Merge pull request [#1400](https://github.com/luarss/OpenROAD/issues/1400) from The-OpenROAD-Project-staging/gui-via-first-color
+- Merge pull request [#1399](https://github.com/luarss/OpenROAD/issues/1399) from The-OpenROAD-Project-staging/gui-heat-map-corners
+- Merge pull request [#1396](https://github.com/luarss/OpenROAD/issues/1396) from eder-matheus/cts_cleanup
+- Merge pull request [#1398](https://github.com/luarss/OpenROAD/issues/1398) from eder-matheus/grt_fix
+- Merge pull request [#1392](https://github.com/luarss/OpenROAD/issues/1392) from The-OpenROAD-Project-staging/odb-conn-disconn
+- Merge pull request [#1389](https://github.com/luarss/OpenROAD/issues/1389) from The-OpenROAD-Project-staging/secure-TR_avoidRipupFix
+- Merge pull request [#1387](https://github.com/luarss/OpenROAD/issues/1387) from eder-matheus/grt_out_of_die
+- Merge pull request [#1274](https://github.com/luarss/OpenROAD/issues/1274) from The-OpenROAD-Project-staging/pad-filler_gaps
+- Merge pull request [#1391](https://github.com/luarss/OpenROAD/issues/1391) from jjcherry56/tap_umr
+- Merge pull request [#1371](https://github.com/luarss/OpenROAD/issues/1371) from osamahammad21/drt-gcellgrid
+- Merge pull request [#1388](https://github.com/luarss/OpenROAD/issues/1388) from The-OpenROAD-Project-staging/secure-TR_fix_overlaps_calls
+- Merge pull request [#1386](https://github.com/luarss/OpenROAD/issues/1386) from The-OpenROAD-Project-staging/rsz-design-area
+- Merge pull request [#1374](https://github.com/luarss/OpenROAD/issues/1374) from The-OpenROAD-Project-staging/secure-TR_connFix
+- Merge pull request [#1375](https://github.com/luarss/OpenROAD/issues/1375) from The-OpenROAD-Project-staging/gui-select-dbu-um
+- Merge pull request [#1380](https://github.com/luarss/OpenROAD/issues/1380) from The-OpenROAD-Project-staging/DRT_GUI_improvements
+- Merge pull request [#1379](https://github.com/luarss/OpenROAD/issues/1379) from The-OpenROAD-Project-staging/gui-display-key-move
+- Merge pull request [#1376](https://github.com/luarss/OpenROAD/issues/1376) from The-OpenROAD-Project-staging/gui-net-descriptor
+- Merge pull request [#1378](https://github.com/luarss/OpenROAD/issues/1378) from minghungumich/ldo
+- Merge pull request [#1377](https://github.com/luarss/OpenROAD/issues/1377) from The-OpenROAD-Project-staging/rmp-coverity
+- Merge pull request [#1365](https://github.com/luarss/OpenROAD/issues/1365) from minghungumich/ldo
+- Merge pull request [#1372](https://github.com/luarss/OpenROAD/issues/1372) from The-OpenROAD-Project-staging/gui-fix-heat-map
+- Merge pull request [#1370](https://github.com/luarss/OpenROAD/issues/1370) from vvbandeira/doc-fix-table
+- Merge pull request [#1350](https://github.com/luarss/OpenROAD/issues/1350) from The-OpenROAD-Project-staging/gui-heat-maps
+- Merge pull request [#1369](https://github.com/luarss/OpenROAD/issues/1369) from The-OpenROAD-Project-staging/rmp_bdbk_fixes
+- Merge pull request [#1368](https://github.com/luarss/OpenROAD/issues/1368) from The-OpenROAD-Project-staging/gpl_initip_fix
+- Merge pull request [#1367](https://github.com/luarss/OpenROAD/issues/1367) from vvbandeira/doc-fixup
+- Merge pull request [#1366](https://github.com/luarss/OpenROAD/issues/1366) from antonblanchard/gpl-tcl-fix
+- Merge pull request [#1363](https://github.com/luarss/OpenROAD/issues/1363) from eder-matheus/grt_out_of_die
+- Merge pull request [#1362](https://github.com/luarss/OpenROAD/issues/1362) from The-OpenROAD-Project-staging/gui-resize-columns
+- Merge pull request [#1359](https://github.com/luarss/OpenROAD/issues/1359) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#1358](https://github.com/luarss/OpenROAD/issues/1358) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#1356](https://github.com/luarss/OpenROAD/issues/1356) from The-OpenROAD-Project-staging/secure-TR_convergence3
+- Merge pull request [#1355](https://github.com/luarss/OpenROAD/issues/1355) from The-OpenROAD-Project-staging/secure-TR_bugfixes
+- Merge pull request [#1354](https://github.com/luarss/OpenROAD/issues/1354) from The-OpenROAD-Project-staging/pad
+- Merge pull request [#1351](https://github.com/luarss/OpenROAD/issues/1351) from jjcherry56/tcl_homebrew
+- Merge pull request [#1353](https://github.com/luarss/OpenROAD/issues/1353) from The-OpenROAD-Project-staging/DRT_addGuideLayerValidation
+- Merge pull request [#1352](https://github.com/luarss/OpenROAD/issues/1352) from The-OpenROAD-Project-staging/utf8
+- Merge pull request [#1335](https://github.com/luarss/OpenROAD/issues/1335) from The-OpenROAD-Project-staging/secure-TR_convergence4
+- Merge pull request [#1348](https://github.com/luarss/OpenROAD/issues/1348) from jjcherry56/or1142
+- Merge pull request [#1336](https://github.com/luarss/OpenROAD/issues/1336) from The-OpenROAD-Project-staging/gui-search-update
+- Merge pull request [#1347](https://github.com/luarss/OpenROAD/issues/1347) from The-OpenROAD-Project-staging/swig-dep
+- Merge pull request [#1341](https://github.com/luarss/OpenROAD/issues/1341) from The-OpenROAD-Project-staging/gui-fix-renderer-segfault
+- Merge pull request [#1308](https://github.com/luarss/OpenROAD/issues/1308) from rjridle/master
+- Merge pull request [#1346](https://github.com/luarss/OpenROAD/issues/1346) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#1345](https://github.com/luarss/OpenROAD/issues/1345) from The-OpenROAD-Project-staging/par-dead-code
+- Merge pull request [#1344](https://github.com/luarss/OpenROAD/issues/1344) from jjcherry56/rsz_pin_overlap
+- Merge pull request [#1343](https://github.com/luarss/OpenROAD/issues/1343) from The-OpenROAD-Project-staging/warnings2
+- Merge pull request [#1342](https://github.com/luarss/OpenROAD/issues/1342) from The-OpenROAD-Project-staging/par-arg-order
+- Merge pull request [#1325](https://github.com/luarss/OpenROAD/issues/1325) from The-OpenROAD-Project-staging/rtlmp_config
+- Merge pull request [#1339](https://github.com/luarss/OpenROAD/issues/1339) from eder-matheus/grt_net_ordering
+- Merge pull request [#1338](https://github.com/luarss/OpenROAD/issues/1338) from eder-matheus/ppl_doc
+- Merge pull request [#1265](https://github.com/luarss/OpenROAD/issues/1265) from The-OpenROAD-Project-staging/gui-net-highlight-segment
+- Merge pull request [#1322](https://github.com/luarss/OpenROAD/issues/1322) from nmoroze/init-floorplan
+- Merge pull request [#1337](https://github.com/luarss/OpenROAD/issues/1337) from The-OpenROAD-Project-staging/gui-icons-for-display-controls
+- Merge pull request [#1334](https://github.com/luarss/OpenROAD/issues/1334) from jjcherry56/rsz_lef_pg_pin
+- Merge pull request [#1333](https://github.com/luarss/OpenROAD/issues/1333) from The-OpenROAD-Project-staging/gui-inspector-highlight
+- Merge pull request [#1330](https://github.com/luarss/OpenROAD/issues/1330) from The-OpenROAD-Project-staging/gui-inspector-pairs
+- Merge pull request [#1328](https://github.com/luarss/OpenROAD/issues/1328) from The-OpenROAD-Project-staging/dpl-check-err
+- Merge pull request [#1327](https://github.com/luarss/OpenROAD/issues/1327) from eder-matheus/ppl_api
+- Merge pull request [#1297](https://github.com/luarss/OpenROAD/issues/1297) from The-OpenROAD-Project-staging/gpl_trivial_design
+- Merge pull request [#1323](https://github.com/luarss/OpenROAD/issues/1323) from The-OpenROAD-Project-staging/dpl-row-cnt
+- Merge pull request [#1321](https://github.com/luarss/OpenROAD/issues/1321) from The-OpenROAD-Project-staging/gui-lang
+- Merge pull request [#1314](https://github.com/luarss/OpenROAD/issues/1314) from The-OpenROAD-Project-staging/gui-menu-actions
+- Merge pull request [#1319](https://github.com/luarss/OpenROAD/issues/1319) from jjcherry56/dpl_error_on_fail
+- Merge pull request [#1318](https://github.com/luarss/OpenROAD/issues/1318) from The-OpenROAD-Project-staging/gui-save-block-layoutviewer
+- Merge pull request [#1320](https://github.com/luarss/OpenROAD/issues/1320) from eder-matheus/cts_coverity
+- Merge pull request [#1317](https://github.com/luarss/OpenROAD/issues/1317) from jjcherry56/power_pg_pins
+- Merge pull request [#1315](https://github.com/luarss/OpenROAD/issues/1315) from jjcherry56/rsz_tri_nets
+- Merge pull request [#1316](https://github.com/luarss/OpenROAD/issues/1316) from jjcherry56/dbsta_init
+- Merge pull request [#1235](https://github.com/luarss/OpenROAD/issues/1235) from The-OpenROAD-Project-staging/lef58-eol
+- Merge pull request [#1312](https://github.com/luarss/OpenROAD/issues/1312) from The-OpenROAD-Project-staging/gui-dont-draw-empty-layout
+- Merge pull request [#1307](https://github.com/luarss/OpenROAD/issues/1307) from jjcherry56/dbsta_init_logger
+- Merge pull request [#1306](https://github.com/luarss/OpenROAD/issues/1306) from The-OpenROAD-Project-staging/odb-tech-warn
+- Merge pull request [#1304](https://github.com/luarss/OpenROAD/issues/1304) from The-OpenROAD-Project-staging/odb-def-57
+- Merge pull request [#1302](https://github.com/luarss/OpenROAD/issues/1302) from The-OpenROAD-Project-staging/gui-select-after-sort
+- Merge pull request [#1298](https://github.com/luarss/OpenROAD/issues/1298) from The-OpenROAD-Project-staging/secure-TR_ap_fix
+- Merge pull request [#1300](https://github.com/luarss/OpenROAD/issues/1300) from The-OpenROAD-Project/tspyrou-bestpractices-badge
+- Merge pull request [#1299](https://github.com/luarss/OpenROAD/issues/1299) from The-OpenROAD-Project-staging/odb-order-wires-fix
+- Merge pull request [#1295](https://github.com/luarss/OpenROAD/issues/1295) from The-OpenROAD-Project-staging/gui-correct-qt-args
+- Merge pull request [#1292](https://github.com/luarss/OpenROAD/issues/1292) from The-OpenROAD-Project-staging/dpl-hopeless
+- Merge pull request [#1291](https://github.com/luarss/OpenROAD/issues/1291) from jjcherry56/repair_hold_no_setup_constraint
+- Merge pull request [#1293](https://github.com/luarss/OpenROAD/issues/1293) from eder-matheus/grt_antennas
+- Merge pull request [#1294](https://github.com/luarss/OpenROAD/issues/1294) from The-OpenROAD-Project-staging/gui-drawrows-detailed
+- Merge pull request [#1282](https://github.com/luarss/OpenROAD/issues/1282) from The-OpenROAD-Project-staging/gui-resizeable-display-controls
+- Merge pull request [#1273](https://github.com/luarss/OpenROAD/issues/1273) from The-OpenROAD-Project-staging/gui-focus-timelimits
+- Merge pull request [#1289](https://github.com/luarss/OpenROAD/issues/1289) from jjcherry56/rsz_no_wire_rc
+- Merge pull request [#1288](https://github.com/luarss/OpenROAD/issues/1288) from The-OpenROAD-Project-staging/odb_conn_fix
+- Merge pull request [#1287](https://github.com/luarss/OpenROAD/issues/1287) from vvbandeira/gui-webp
+- Merge pull request [#1286](https://github.com/luarss/OpenROAD/issues/1286) from vvbandeira/actions-macos
+- Merge pull request [#1283](https://github.com/luarss/OpenROAD/issues/1283) from eder-matheus/grt_obs
+- Merge pull request [#1285](https://github.com/luarss/OpenROAD/issues/1285) from jjcherry56/write_sdf_typ
+- Merge pull request [#1284](https://github.com/luarss/OpenROAD/issues/1284) from The-OpenROAD-Project-staging/grt_guide_drawing
+- Merge pull request [#1270](https://github.com/luarss/OpenROAD/issues/1270) from The-OpenROAD-Project-staging/dr_cleanup
+- Merge pull request [#1279](https://github.com/luarss/OpenROAD/issues/1279) from jjcherry56/flute_init
+- Merge pull request [#1280](https://github.com/luarss/OpenROAD/issues/1280) from The-OpenROAD-Project-staging/fix
+- Merge pull request [#1278](https://github.com/luarss/OpenROAD/issues/1278) from jjcherry56/rsz_umich_proofing
+- Merge pull request [#1276](https://github.com/luarss/OpenROAD/issues/1276) from The-OpenROAD-Project-staging/Stephanommg-patch-1
+- Merge pull request [#1269](https://github.com/luarss/OpenROAD/issues/1269) from The-OpenROAD-Project-staging/change_ispd18_test4_limmits
+- Merge pull request [#1266](https://github.com/luarss/OpenROAD/issues/1266) from eder-matheus/grt_fix
+- Merge pull request [#1262](https://github.com/luarss/OpenROAD/issues/1262) from The-OpenROAD-Project-staging/odb-hier
+- Merge pull request [#1244](https://github.com/luarss/OpenROAD/issues/1244) from The-OpenROAD-Project-staging/pad-bugfixes
+- Merge pull request [#1264](https://github.com/luarss/OpenROAD/issues/1264) from vvbandeira/docs-broken-link
+- Merge pull request [#1263](https://github.com/luarss/OpenROAD/issues/1263) from The-OpenROAD-Project-staging/gui-clang-cleanup
+- Merge pull request [#1259](https://github.com/luarss/OpenROAD/issues/1259) from The-OpenROAD-Project-staging/gui-cleanup-sta
+- Merge pull request [#1261](https://github.com/luarss/OpenROAD/issues/1261) from The-OpenROAD-Project-staging/gui-script-widget-paint
+- Merge pull request [#1254](https://github.com/luarss/OpenROAD/issues/1254) from The-OpenROAD-Project-staging/par-mlpart
+- Merge pull request [#1257](https://github.com/luarss/OpenROAD/issues/1257) from The-OpenROAD-Project-staging/gui-coverity
+- Merge pull request [#1256](https://github.com/luarss/OpenROAD/issues/1256) from The-OpenROAD-Project-staging/gui-add-zoom-update-inspector
+- Merge pull request [#1255](https://github.com/luarss/OpenROAD/issues/1255) from The-OpenROAD-Project-staging/gui-cleanup
+- Merge pull request [#1246](https://github.com/luarss/OpenROAD/issues/1246) from The-OpenROAD-Project-staging/secure-TR_convergence3
+- Merge pull request [#1252](https://github.com/luarss/OpenROAD/issues/1252) from eder-matheus/ppl_place_pin
+- Merge pull request [#1234](https://github.com/luarss/OpenROAD/issues/1234) from The-OpenROAD-Project-staging/gui-sta-widget-timing-start
+- Merge pull request [#1253](https://github.com/luarss/OpenROAD/issues/1253) from The-OpenROAD-Project-staging/ord-round-microns-to-dbu
+- Merge pull request [#1251](https://github.com/luarss/OpenROAD/issues/1251) from eder-matheus/grt_coverity
+- Merge pull request [#1249](https://github.com/luarss/OpenROAD/issues/1249) from vvbandeira/docs-or-bin
+- Merge pull request [#1248](https://github.com/luarss/OpenROAD/issues/1248) from vvbandeira/docs-compiler
+- Merge pull request [#1247](https://github.com/luarss/OpenROAD/issues/1247) from jjcherry56/or805
+- Merge pull request [#1250](https://github.com/luarss/OpenROAD/issues/1250) from The-OpenROAD-Project-staging/gui-snap-die
+- Merge pull request [#1242](https://github.com/luarss/OpenROAD/issues/1242) from The-OpenROAD-Project-staging/dr_cleanup
+- Merge pull request [#1147](https://github.com/luarss/OpenROAD/issues/1147) from The-OpenROAD-Project-staging/mpl2_td
+- Merge pull request [#1245](https://github.com/luarss/OpenROAD/issues/1245) from The-OpenROAD-Project-staging/gui-limit-animations
+- Merge pull request [#1243](https://github.com/luarss/OpenROAD/issues/1243) from The-OpenROAD-Project-staging/pad-bugfixes
+- Merge pull request [#1240](https://github.com/luarss/OpenROAD/issues/1240) from The-OpenROAD-Project-staging/odb-drw-fix
+- Merge pull request [#1241](https://github.com/luarss/OpenROAD/issues/1241) from The-OpenROAD-Project-staging/drt-planar-pa-gui
+- Merge pull request [#1239](https://github.com/luarss/OpenROAD/issues/1239) from jjcherry56/rsz_repair_design
+- Merge pull request [#1238](https://github.com/luarss/OpenROAD/issues/1238) from The-OpenROAD-Project-staging/gui-drc-deselect
+- Merge pull request [#1209](https://github.com/luarss/OpenROAD/issues/1209) from The-OpenROAD-Project-staging/gui-highlight-selected-and-focus
+- Merge pull request [#1236](https://github.com/luarss/OpenROAD/issues/1236) from jjcherry56/rcx_issue842
+- Merge pull request [#1237](https://github.com/luarss/OpenROAD/issues/1237) from The-OpenROAD-Project-staging/drt_debug_rpt
+- Merge pull request [#1233](https://github.com/luarss/OpenROAD/issues/1233) from The-OpenROAD-Project-staging/gui-coverity
+- Merge pull request [#1096](https://github.com/luarss/OpenROAD/issues/1096) from The-OpenROAD-Project-staging/dr_cleanup
+- Merge pull request [#1232](https://github.com/luarss/OpenROAD/issues/1232) from The-OpenROAD-Project-staging/utl-sink-check
+- Merge pull request [#1231](https://github.com/luarss/OpenROAD/issues/1231) from jjcherry56/rsz_or496
+- Merge pull request [#1230](https://github.com/luarss/OpenROAD/issues/1230) from The-OpenROAD-Project-staging/gui-sta-iterm-clk
+- Merge pull request [#1228](https://github.com/luarss/OpenROAD/issues/1228) from jjcherry56/gf12_coyote_seg_fault
+- Merge pull request [#1223](https://github.com/luarss/OpenROAD/issues/1223) from eder-matheus/grt_fix
+- Merge pull request [#1226](https://github.com/luarss/OpenROAD/issues/1226) from jjcherry56/rsz_or991
+- Merge pull request [#1220](https://github.com/luarss/OpenROAD/issues/1220) from The-OpenROAD-Project-staging/secure-TR_ignoreSPNetpins
+- Merge pull request [#1222](https://github.com/luarss/OpenROAD/issues/1222) from The-OpenROAD-Project-staging/cts_already_buffered
+- Merge pull request [#1219](https://github.com/luarss/OpenROAD/issues/1219) from The-OpenROAD-Project-staging/gui-sta-render-net
+- Merge pull request [#1218](https://github.com/luarss/OpenROAD/issues/1218) from ahmadelrouby/rmp-bugs
+- Merge pull request [#949](https://github.com/luarss/OpenROAD/issues/949) from ahmadelrouby/db-swig-unification
+- Merge pull request [#1208](https://github.com/luarss/OpenROAD/issues/1208) from The-OpenROAD-Project-staging/drt-ndr
+- Merge pull request [#1216](https://github.com/luarss/OpenROAD/issues/1216) from jjcherry56/issue1164
+- Merge pull request [#1217](https://github.com/luarss/OpenROAD/issues/1217) from osamahammad21/ispd-update
+- Merge pull request [#1215](https://github.com/luarss/OpenROAD/issues/1215) from eder-matheus/grt_fix
+- Merge pull request [#1212](https://github.com/luarss/OpenROAD/issues/1212) from The-OpenROAD-Project-staging/secure-TR_ignoreViolsOutsideWorker
+- Merge pull request [#1214](https://github.com/luarss/OpenROAD/issues/1214) from The-OpenROAD-Project-staging/odb_lef_err
+- Merge pull request [#1213](https://github.com/luarss/OpenROAD/issues/1213) from The-OpenROAD-Project-staging/gui-select-glob-escape
+- Merge pull request [#1211](https://github.com/luarss/OpenROAD/issues/1211) from The-OpenROAD-Project-staging/gui-segfault-sta
+- Merge pull request [#1210](https://github.com/luarss/OpenROAD/issues/1210) from vvbandeira/docs-typo
+- Merge pull request [#1196](https://github.com/luarss/OpenROAD/issues/1196) from The-OpenROAD-Project-staging/gui-tcl-selected
+- Merge pull request [#1205](https://github.com/luarss/OpenROAD/issues/1205) from The-OpenROAD-Project-staging/docs
+- Merge pull request [#1204](https://github.com/luarss/OpenROAD/issues/1204) from The-OpenROAD-Project-staging/gui-fix-deselect-message
+- Merge pull request [#1200](https://github.com/luarss/OpenROAD/issues/1200) from The-OpenROAD-Project-staging/gui-descriptor-all-filtering
+- Merge pull request [#1105](https://github.com/luarss/OpenROAD/issues/1105) from eder-matheus/tap_doc
+- Merge pull request [#1201](https://github.com/luarss/OpenROAD/issues/1201) from eder-matheus/grt_pre_routed_nets
+- Merge pull request [#1203](https://github.com/luarss/OpenROAD/issues/1203) from The-OpenROAD-Project-staging/gui-fix-save_image-resolution
+- Merge pull request [#1202](https://github.com/luarss/OpenROAD/issues/1202) from The-OpenROAD-Project-staging/odb_cmake_tcl
+- Merge pull request [#1199](https://github.com/luarss/OpenROAD/issues/1199) from jjcherry56/sync_ports
+- Merge pull request [#1194](https://github.com/luarss/OpenROAD/issues/1194) from The-OpenROAD-Project-staging/secure-TR_macropin_fix
+- Merge pull request [#1195](https://github.com/luarss/OpenROAD/issues/1195) from jjcherry56/ibex_sky130hs_metrics
+- Merge pull request [#1193](https://github.com/luarss/OpenROAD/issues/1193) from The-OpenROAD-Project-staging/gpl_incr300
+- Merge pull request [#1191](https://github.com/luarss/OpenROAD/issues/1191) from The-OpenROAD-Project-staging/gui-selective-detail
+- Merge pull request [#1187](https://github.com/luarss/OpenROAD/issues/1187) from The-OpenROAD-Project-staging/dr-rules
+- Merge pull request [#1189](https://github.com/luarss/OpenROAD/issues/1189) from jjcherry56/read_spef
+- Merge pull request [#1182](https://github.com/luarss/OpenROAD/issues/1182) from The-OpenROAD-Project-staging/gpl_add_option
+- Merge pull request [#1151](https://github.com/luarss/OpenROAD/issues/1151) from yurivict/tcl-fixes
+- Merge pull request [#1192](https://github.com/luarss/OpenROAD/issues/1192) from The-OpenROAD-Project-staging/gui-welltap
+- Merge pull request [#1173](https://github.com/luarss/OpenROAD/issues/1173) from The-OpenROAD-Project-staging/secure-TR_macropin_fix
+- Merge pull request [#1188](https://github.com/luarss/OpenROAD/issues/1188) from eder-matheus/grt_layer_assignment
+- Merge pull request [#1181](https://github.com/luarss/OpenROAD/issues/1181) from The-OpenROAD-Project-staging/gui-delay-loading-files
+- Merge pull request [#1185](https://github.com/luarss/OpenROAD/issues/1185) from TimeExceed/fix_broken_syntax_in_pdngen
+- Merge pull request [#1154](https://github.com/luarss/OpenROAD/issues/1154) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#1180](https://github.com/luarss/OpenROAD/issues/1180) from The-OpenROAD-Project-staging/par_const
+- Merge pull request [#1177](https://github.com/luarss/OpenROAD/issues/1177) from The-OpenROAD-Project-staging/gui-ignore-empty-selected
+- Merge pull request [#1179](https://github.com/luarss/OpenROAD/issues/1179) from jjcherry56/report_clock_min_period
+- Merge pull request [#1178](https://github.com/luarss/OpenROAD/issues/1178) from The-OpenROAD-Project-staging/gui-use-qt-quit
+- Merge pull request [#1175](https://github.com/luarss/OpenROAD/issues/1175) from jjcherry56/rsz_rebuffer
+- Merge pull request [#1172](https://github.com/luarss/OpenROAD/issues/1172) from The-OpenROAD-Project-staging/rmp_logging
+- Merge pull request [#1171](https://github.com/luarss/OpenROAD/issues/1171) from The-OpenROAD-Project-staging/par_cov_cleanup
+- Merge pull request [#1161](https://github.com/luarss/OpenROAD/issues/1161) from ahmadelrouby/dbpin-abutment
+- Merge pull request [#1170](https://github.com/luarss/OpenROAD/issues/1170) from The-OpenROAD-Project-staging/par_mem_fmt
+- Merge pull request [#1167](https://github.com/luarss/OpenROAD/issues/1167) from The-OpenROAD-Project-staging/par_verilog_cleanup
+- Merge pull request [#1168](https://github.com/luarss/OpenROAD/issues/1168) from The-OpenROAD-Project-staging/gui_drc
+- Merge pull request [#1166](https://github.com/luarss/OpenROAD/issues/1166) from The-OpenROAD-Project-staging/par_cleanup
+- Merge pull request [#1162](https://github.com/luarss/OpenROAD/issues/1162) from jjcherry56/rsz_coverity
+- Merge pull request [#1165](https://github.com/luarss/OpenROAD/issues/1165) from eder-matheus/grt_embedding
+- Merge pull request [#1144](https://github.com/luarss/OpenROAD/issues/1144) from The-OpenROAD-Project-staging/gui-cleanup-singletons
+- Merge pull request [#1150](https://github.com/luarss/OpenROAD/issues/1150) from The-OpenROAD-Project-staging/gui-select-region
+- Merge pull request [#1158](https://github.com/luarss/OpenROAD/issues/1158) from jjcherry56/flow_metrics
+- Merge pull request [#1155](https://github.com/luarss/OpenROAD/issues/1155) from The-OpenROAD-Project-staging/dr-costs
+- Merge pull request [#1145](https://github.com/luarss/OpenROAD/issues/1145) from The-OpenROAD-Project-staging/gui-warn33-glob
+- Merge pull request [#1157](https://github.com/luarss/OpenROAD/issues/1157) from The-OpenROAD-Project-staging/dpl_gui
+- Merge pull request [#1156](https://github.com/luarss/OpenROAD/issues/1156) from jjcherry56/repair_timing_use_grt
+- Merge pull request [#1153](https://github.com/luarss/OpenROAD/issues/1153) from The-OpenROAD-Project-staging/grt-plot-refresh
+- Merge pull request [#1120](https://github.com/luarss/OpenROAD/issues/1120) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#1031](https://github.com/luarss/OpenROAD/issues/1031) from osamahammad21/drt-masks
+- Merge pull request [#1137](https://github.com/luarss/OpenROAD/issues/1137) from The-OpenROAD-Project-staging/cutspctbl-opt
+- Merge pull request [#1142](https://github.com/luarss/OpenROAD/issues/1142) from The-OpenROAD-Project-staging/gui-glob-display-controls
+- Merge pull request [#1143](https://github.com/luarss/OpenROAD/issues/1143) from mathursanjiv/rmp_review_fixes
+- Merge pull request [#1135](https://github.com/luarss/OpenROAD/issues/1135) from The-OpenROAD-Project-staging/gui-toggle-gui
+- Merge pull request [#1141](https://github.com/luarss/OpenROAD/issues/1141) from The-OpenROAD-Project-staging/gui-congestion-save
+- Merge pull request [#1139](https://github.com/luarss/OpenROAD/issues/1139) from The-OpenROAD-Project-staging/drt_conn_misc
+- Merge pull request [#1138](https://github.com/luarss/OpenROAD/issues/1138) from The-OpenROAD-Project-staging/drt_conn_mt
+- Merge pull request [#1132](https://github.com/luarss/OpenROAD/issues/1132) from mathursanjiv/rmp_review_fixes
+- Merge pull request [#1107](https://github.com/luarss/OpenROAD/issues/1107) from The-OpenROAD-Project-staging/ICeWall_Pad_placement
+- Merge pull request [#1134](https://github.com/luarss/OpenROAD/issues/1134) from The-OpenROAD-Project-staging/tap-allow-non-int
+- Merge pull request [#1128](https://github.com/luarss/OpenROAD/issues/1128) from The-OpenROAD-Project-staging/TR_ClockNets_preroutes
+- Merge pull request [#1131](https://github.com/luarss/OpenROAD/issues/1131) from The-OpenROAD-Project-staging/sta-bring-back
+- Merge pull request [#1130](https://github.com/luarss/OpenROAD/issues/1130) from The-OpenROAD-Project-staging/drt_conn_refactor
+- Merge pull request [#1129](https://github.com/luarss/OpenROAD/issues/1129) from The-OpenROAD-Project-staging/gui-net-special
+- Merge pull request [#1122](https://github.com/luarss/OpenROAD/issues/1122) from The-OpenROAD-Project-staging/gui-pin-markers-painter
+- Merge pull request [#1123](https://github.com/luarss/OpenROAD/issues/1123) from The-OpenROAD-Project-staging/pdn-fix-upper_rect
+- Merge pull request [#1125](https://github.com/luarss/OpenROAD/issues/1125) from The-OpenROAD-Project-staging/gui-fix-sta-segfault
+- Merge pull request [#1104](https://github.com/luarss/OpenROAD/issues/1104) from luis201420/grt_visualization_step
+- Merge pull request [#1124](https://github.com/luarss/OpenROAD/issues/1124) from The-OpenROAD-Project-staging/drt_tweaks
+- Merge pull request [#807](https://github.com/luarss/OpenROAD/issues/807) from The-OpenROAD-Project-private/cutspctbl-opt2
+- Merge pull request [#1127](https://github.com/luarss/OpenROAD/issues/1127) from eder-matheus/aes45_metrics
+- Merge pull request [#1126](https://github.com/luarss/OpenROAD/issues/1126) from eder-matheus/grt_pin_layer
+- Merge pull request [#1121](https://github.com/luarss/OpenROAD/issues/1121) from eder-matheus/grt_leak
+- Merge pull request [#1119](https://github.com/luarss/OpenROAD/issues/1119) from jjcherry56/flow_verilog
+- Merge pull request [#1109](https://github.com/luarss/OpenROAD/issues/1109) from The-OpenROAD-Project-staging/gui-fix-save-image
+- Merge pull request [#1106](https://github.com/luarss/OpenROAD/issues/1106) from The-OpenROAD-Project-staging/drt_include_loop
+- Merge pull request [#1116](https://github.com/luarss/OpenROAD/issues/1116) from The-OpenROAD-Project-staging/drt_no_friends
+- Merge pull request [#1115](https://github.com/luarss/OpenROAD/issues/1115) from The-OpenROAD-Project-staging/drt_reserve
+- Merge pull request [#1113](https://github.com/luarss/OpenROAD/issues/1113) from The-OpenROAD-Project-staging/drt-minstep
+- Merge pull request [#1114](https://github.com/luarss/OpenROAD/issues/1114) from eder-matheus/grt_fix
+- Merge pull request [#1108](https://github.com/luarss/OpenROAD/issues/1108) from jjcherry56/sta_missing_lib
+- Merge pull request [#1097](https://github.com/luarss/OpenROAD/issues/1097) from The-OpenROAD-Project-staging/TR_otl_aps_conn_fix
+- Merge pull request [#1103](https://github.com/luarss/OpenROAD/issues/1103) from The-OpenROAD-Project-staging/gui-drc-view-json
+- Merge pull request [#1102](https://github.com/luarss/OpenROAD/issues/1102) from The-OpenROAD-Project-staging/gui-improve-input-widget
+- Merge pull request [#1088](https://github.com/luarss/OpenROAD/issues/1088) from vvbandeira/docs-ppl
+- Merge pull request [#1085](https://github.com/luarss/OpenROAD/issues/1085) from vvbandeira/cmake-min-compiler
+- Merge pull request [#1101](https://github.com/luarss/OpenROAD/issues/1101) from jjcherry56/dpl_mirror
+- Merge pull request [#1100](https://github.com/luarss/OpenROAD/issues/1100) from eder-matheus/grt_fix_embedding
+- Merge pull request [#1095](https://github.com/luarss/OpenROAD/issues/1095) from The-OpenROAD-Project-staging/gui-readme
+- Merge pull request [#1091](https://github.com/luarss/OpenROAD/issues/1091) from mathursanjiv/rmp_warning
+- Merge pull request [#1084](https://github.com/luarss/OpenROAD/issues/1084) from vvbandeira/docs-mv-warning
+- Merge pull request [#1092](https://github.com/luarss/OpenROAD/issues/1092) from vvbandeira/jenkins-email
+- Merge pull request [#1090](https://github.com/luarss/OpenROAD/issues/1090) from jjcherry56/pd_cross_test
+- Merge pull request [#1093](https://github.com/luarss/OpenROAD/issues/1093) from The-OpenROAD-Project-staging/gui-descriptor-missing-header
+- Merge pull request [#1094](https://github.com/luarss/OpenROAD/issues/1094) from The-OpenROAD-Project-staging/rp_warn
+- Merge pull request [#1089](https://github.com/luarss/OpenROAD/issues/1089) from The-OpenROAD-Project-staging/gpl_doc
+- Merge pull request [#1087](https://github.com/luarss/OpenROAD/issues/1087) from vvbandeira/cmake-or-version
+- Merge pull request [#1086](https://github.com/luarss/OpenROAD/issues/1086) from vvbandeira/odb-py-readme
+- Merge pull request [#1083](https://github.com/luarss/OpenROAD/issues/1083) from The-OpenROAD-Project-staging/gui-ruler-sqrt
+- Merge pull request [#1076](https://github.com/luarss/OpenROAD/issues/1076) from The-OpenROAD-Project-staging/dr_cleanup
+- Merge pull request [#1073](https://github.com/luarss/OpenROAD/issues/1073) from The-OpenROAD-Project-staging/gui-responsive
+- Merge pull request [#1035](https://github.com/luarss/OpenROAD/issues/1035) from The-OpenROAD-Project-staging/pdn-fix_enclosure
+- Merge pull request [#1081](https://github.com/luarss/OpenROAD/issues/1081) from The-OpenROAD-Project-staging/gui-layer-tooltips
+- Merge pull request [#1082](https://github.com/luarss/OpenROAD/issues/1082) from The-OpenROAD-Project-staging/sstream
+- Merge pull request [#1077](https://github.com/luarss/OpenROAD/issues/1077) from The-OpenROAD-Project-staging/gui-par-coverity
+- Merge pull request [#1075](https://github.com/luarss/OpenROAD/issues/1075) from The-OpenROAD-Project-staging/cdl
+- Merge pull request [#1074](https://github.com/luarss/OpenROAD/issues/1074) from mathursanjiv/remap_delay
+- Merge pull request [#1066](https://github.com/luarss/OpenROAD/issues/1066) from The-OpenROAD-Project-staging/gui-rulers
+- Merge pull request [#1055](https://github.com/luarss/OpenROAD/issues/1055) from mathursanjiv/remap_delay
+- Merge pull request [#1070](https://github.com/luarss/OpenROAD/issues/1070) from The-OpenROAD-Project-staging/pdn-slim_vias
+- Merge pull request [#1059](https://github.com/luarss/OpenROAD/issues/1059) from shuolai/tapcell_update
+- Merge pull request [#1067](https://github.com/luarss/OpenROAD/issues/1067) from The-OpenROAD-Project-staging/version
+- Merge pull request [#1043](https://github.com/luarss/OpenROAD/issues/1043) from The-OpenROAD-Project-staging/gui-comments
+- Merge pull request [#1062](https://github.com/luarss/OpenROAD/issues/1062) from The-OpenROAD-Project-staging/version
+- Merge pull request [#1063](https://github.com/luarss/OpenROAD/issues/1063) from vvbandeira/docs-deps
+- Merge pull request [#1060](https://github.com/luarss/OpenROAD/issues/1060) from The-OpenROAD-Project-staging/gui-undo-dual-paint
+- Merge pull request [#1054](https://github.com/luarss/OpenROAD/issues/1054) from The-OpenROAD-Project-staging/TR_otl_aps_conn_fix
+- Merge pull request [#1051](https://github.com/luarss/OpenROAD/issues/1051) from The-OpenROAD-Project-staging/gpl_incremental
+- Merge pull request [#1048](https://github.com/luarss/OpenROAD/issues/1048) from vvbandeira/rm-rcx-define
+- Merge pull request [#1050](https://github.com/luarss/OpenROAD/issues/1050) from The-OpenROAD-Project-staging/gui-update-on-dock
+- Merge pull request [#1047](https://github.com/luarss/OpenROAD/issues/1047) from The-OpenROAD-Project-staging/gui-descriptor-names
+- Merge pull request [#1045](https://github.com/luarss/OpenROAD/issues/1045) from The-OpenROAD-Project-staging/secure-TR_Intel22_bugfixes
+- Merge pull request [#1042](https://github.com/luarss/OpenROAD/issues/1042) from The-OpenROAD-Project-staging/gui-fix-redraw
+- Merge pull request [#1044](https://github.com/luarss/OpenROAD/issues/1044) from osamahammad21/drt-obs
+- Merge pull request [#1039](https://github.com/luarss/OpenROAD/issues/1039) from The-OpenROAD-Project-staging/gui-drc-keyboard
+- Merge pull request [#1004](https://github.com/luarss/OpenROAD/issues/1004) from Salmaafifi98/update_tap
+- Merge pull request [#1041](https://github.com/luarss/OpenROAD/issues/1041) from The-OpenROAD-Project-staging/gui-timing-segfault
+- Merge pull request [#1040](https://github.com/luarss/OpenROAD/issues/1040) from jjcherry56/stt_check
+- Merge pull request [#1037](https://github.com/luarss/OpenROAD/issues/1037) from The-OpenROAD-Project-staging/gui-zoom
+- Merge pull request [#1007](https://github.com/luarss/OpenROAD/issues/1007) from The-OpenROAD-Project-staging/gui-drc-view
+- Merge pull request [#1034](https://github.com/luarss/OpenROAD/issues/1034) from The-OpenROAD-Project-staging/pdn-smart_channels
+- Merge pull request [#1033](https://github.com/luarss/OpenROAD/issues/1033) from The-OpenROAD-Project-staging/gui-scale
+- Merge pull request [#1032](https://github.com/luarss/OpenROAD/issues/1032) from The-OpenROAD-Project-staging/gui-pause-timeout
+- Merge pull request [#1026](https://github.com/luarss/OpenROAD/issues/1026) from The-OpenROAD-Project-staging/TR_GF14_hardcodes
+- Merge pull request [#1029](https://github.com/luarss/OpenROAD/issues/1029) from jjcherry56/pd_check
+- Merge pull request [#996](https://github.com/luarss/OpenROAD/issues/996) from The-OpenROAD-Project-staging/pdn-smart_channels
+- Merge pull request [#1024](https://github.com/luarss/OpenROAD/issues/1024) from The-OpenROAD-Project-staging/gui-coverity
+- Merge pull request [#1025](https://github.com/luarss/OpenROAD/issues/1025) from The-OpenROAD-Project-staging/gui-icon-help
+- Merge pull request [#1022](https://github.com/luarss/OpenROAD/issues/1022) from jjcherry56/pdr_cleanup
+- Merge pull request [#1023](https://github.com/luarss/OpenROAD/issues/1023) from The-OpenROAD-Project-staging/gui-fix-macos-segfault
+- Merge pull request [#1018](https://github.com/luarss/OpenROAD/issues/1018) from The-OpenROAD-Project-staging/gui-fix-macos
+- Merge pull request [#1016](https://github.com/luarss/OpenROAD/issues/1016) from The-OpenROAD-Project-staging/gui-clear-timing-path
+- Merge pull request [#1020](https://github.com/luarss/OpenROAD/issues/1020) from The-OpenROAD-Project-staging/gui-inspector-coverty
+- Merge pull request [#1021](https://github.com/luarss/OpenROAD/issues/1021) from The-OpenROAD-Project-staging/db-memory-leak
+- Merge pull request [#1019](https://github.com/luarss/OpenROAD/issues/1019) from osamahammad21/master
+- Merge pull request [#1006](https://github.com/luarss/OpenROAD/issues/1006) from The-OpenROAD-Project-staging/gui-dockify-timing
+- Merge pull request [#1006](https://github.com/luarss/OpenROAD/issues/1006) from The-OpenROAD-Project-staging/gui-dockify-timing
+- Merge pull request [#932](https://github.com/luarss/OpenROAD/issues/932) from vvbandeira/new-docs
+- Merge pull request [#999](https://github.com/luarss/OpenROAD/issues/999) from eder-matheus/grt_plot_guides
+- Merge pull request [#1001](https://github.com/luarss/OpenROAD/issues/1001) from eder-matheus/grt_layer_restrict
+- Merge pull request [#1005](https://github.com/luarss/OpenROAD/issues/1005) from The-OpenROAD-Project-staging/drt_ispd
+- Merge pull request [#1003](https://github.com/luarss/OpenROAD/issues/1003) from The-OpenROAD-Project-staging/drt_pa_iters
+- Merge pull request [#1002](https://github.com/luarss/OpenROAD/issues/1002) from The-OpenROAD-Project-staging/gui-row-color-inst-obs
+- Merge pull request [#987](https://github.com/luarss/OpenROAD/issues/987) from nmoroze/init-floorplan
+- Merge pull request [#975](https://github.com/luarss/OpenROAD/issues/975) from The-OpenROAD-Project-staging/gui-actions-editing
+- Merge pull request [#1000](https://github.com/luarss/OpenROAD/issues/1000) from The-OpenROAD-Project-staging/drt_pa_gui
+- Merge pull request [#998](https://github.com/luarss/OpenROAD/issues/998) from The-OpenROAD-Project-staging/gpl_nightly
+- Merge pull request [#997](https://github.com/luarss/OpenROAD/issues/997) from The-OpenROAD-Project-staging/gui-ruler-pause-zoom
+- Merge pull request [#993](https://github.com/luarss/OpenROAD/issues/993) from The-OpenROAD-Project-staging/spacingtable
+- Merge pull request [#995](https://github.com/luarss/OpenROAD/issues/995) from The-OpenROAD-Project-staging/grt_maze
+- Merge pull request [#994](https://github.com/luarss/OpenROAD/issues/994) from The-OpenROAD-Project-staging/pdngen-fix
+- Merge pull request [#991](https://github.com/luarss/OpenROAD/issues/991) from jjcherry56/pdr_bugs
+- Merge pull request [#990](https://github.com/luarss/OpenROAD/issues/990) from The-OpenROAD-Project-staging/gui-draw-vias
+- Merge pull request [#988](https://github.com/luarss/OpenROAD/issues/988) from jjcherry56/write_verilog_bus
+- Merge pull request [#989](https://github.com/luarss/OpenROAD/issues/989) from eder-matheus/fix_mimcap
+- Merge pull request [#985](https://github.com/luarss/OpenROAD/issues/985) from luis201420/grt_fix_vectors
+- Merge pull request [#986](https://github.com/luarss/OpenROAD/issues/986) from eder-matheus/grt_revert
+- Merge pull request [#984](https://github.com/luarss/OpenROAD/issues/984) from jjcherry56/replace_gpl
+- Merge pull request [#982](https://github.com/luarss/OpenROAD/issues/982) from eder-matheus/grt_fix
+- Merge pull request [#983](https://github.com/luarss/OpenROAD/issues/983) from The-OpenROAD-Project-staging/odb_rename
+- Merge pull request [#981](https://github.com/luarss/OpenROAD/issues/981) from eder-matheus/grt_update
+- Merge pull request [#980](https://github.com/luarss/OpenROAD/issues/980) from The-OpenROAD-Project-staging/stt_check
+- Merge pull request [#968](https://github.com/luarss/OpenROAD/issues/968) from eder-matheus/grt_update
+- Merge pull request [#978](https://github.com/luarss/OpenROAD/issues/978) from eder-matheus/grt_fix_loops
+- Merge pull request [#976](https://github.com/luarss/OpenROAD/issues/976) from eder-matheus/grt_plot_guides
+- Merge pull request [#974](https://github.com/luarss/OpenROAD/issues/974) from eder-matheus/stt_fix
+- Merge pull request [#970](https://github.com/luarss/OpenROAD/issues/970) from The-OpenROAD-Project-staging/gui-rotate-ellipse-inst-names
+- Merge pull request [#952](https://github.com/luarss/OpenROAD/issues/952) from The-OpenROAD-Project-staging/dr-eol
+- Merge pull request [#971](https://github.com/luarss/OpenROAD/issues/971) from jjcherry56/rsz_no_est_ideal_clks
+- Merge pull request [#972](https://github.com/luarss/OpenROAD/issues/972) from The-OpenROAD-Project-staging/gui-clang-return-value-warning
+- Merge pull request [#966](https://github.com/luarss/OpenROAD/issues/966) from eder-matheus/stt_fix
+- Merge pull request [#967](https://github.com/luarss/OpenROAD/issues/967) from The-OpenROAD-Project-staging/pdn-allow_lef_orientations
+- Merge pull request [#969](https://github.com/luarss/OpenROAD/issues/969) from The-OpenROAD-Project-staging/gui-cong-reorder-checks
+- Merge pull request [#955](https://github.com/luarss/OpenROAD/issues/955) from The-OpenROAD-Project-staging/gui-blockages-inst-names
+- Merge pull request [#959](https://github.com/luarss/OpenROAD/issues/959) from The-OpenROAD-Project-staging/gui-tcl-buttons
+- Merge pull request [#963](https://github.com/luarss/OpenROAD/issues/963) from The-OpenROAD-Project-staging/grt_cleanups
+- Merge pull request [#962](https://github.com/luarss/OpenROAD/issues/962) from The-OpenROAD-Project-staging/revert-834
+- Merge pull request [#961](https://github.com/luarss/OpenROAD/issues/961) from jjcherry56/rsz_overlapping_pins
+- Merge pull request [#953](https://github.com/luarss/OpenROAD/issues/953) from The-OpenROAD-Project-staging/ICeWall-no_cover
+- Merge pull request [#806](https://github.com/luarss/OpenROAD/issues/806) from mooredan/pdn_not_enough_vias
+- Merge pull request [#958](https://github.com/luarss/OpenROAD/issues/958) from jjcherry56/rsz_repair_output_wire
+- Merge pull request [#956](https://github.com/luarss/OpenROAD/issues/956) from The-OpenROAD-Project-staging/pdn_hack
+- Merge pull request [#957](https://github.com/luarss/OpenROAD/issues/957) from eder-matheus/grt_fix
+- Merge pull request [#954](https://github.com/luarss/OpenROAD/issues/954) from eder-matheus/grt_update
+- Merge pull request [#936](https://github.com/luarss/OpenROAD/issues/936) from The-OpenROAD-Project-staging/gui-save-image-tcl
+- Merge pull request [#834](https://github.com/luarss/OpenROAD/issues/834) from The-OpenROAD-Project-staging/pdngen-tcl_api
+- Merge pull request [#951](https://github.com/luarss/OpenROAD/issues/951) from The-OpenROAD-Project-staging/grt_cleanups
+- Merge pull request [#950](https://github.com/luarss/OpenROAD/issues/950) from The-OpenROAD-Project-staging/odb-setbbox-inst
+- Merge pull request [#859](https://github.com/luarss/OpenROAD/issues/859) from mathursanjiv/parallel_abc
+- Merge pull request [#948](https://github.com/luarss/OpenROAD/issues/948) from The-OpenROAD-Project-staging/grt_maze_cleanups
+- Merge pull request [#939](https://github.com/luarss/OpenROAD/issues/939) from eder-matheus/grt_fix_memory
+- Merge pull request [#947](https://github.com/luarss/OpenROAD/issues/947) from The-OpenROAD-Project-staging/gui-fix-transform
+- Merge pull request [#946](https://github.com/luarss/OpenROAD/issues/946) from The-OpenROAD-Project-staging/grt-format
+- Merge pull request [#945](https://github.com/luarss/OpenROAD/issues/945) from jjcherry56/rsz_special2
+- Merge pull request [#942](https://github.com/luarss/OpenROAD/issues/942) from vvbandeira/docker-split
+- Merge pull request [#940](https://github.com/luarss/OpenROAD/issues/940) from jjcherry56/rsz_special
+- Merge pull request [#937](https://github.com/luarss/OpenROAD/issues/937) from rovinski/master
+- Merge pull request [#938](https://github.com/luarss/OpenROAD/issues/938) from The-OpenROAD-Project-staging/gui-resize-columns
+- Merge pull request [#935](https://github.com/luarss/OpenROAD/issues/935) from The-OpenROAD-Project-staging/gui-limit-iterms
+- Merge pull request [#922](https://github.com/luarss/OpenROAD/issues/922) from The-OpenROAD-Project-staging/gui-center-zoom
+- Merge pull request [#933](https://github.com/luarss/OpenROAD/issues/933) from The-OpenROAD-Project-staging/cts_debug_fix
+- Merge pull request [#931](https://github.com/luarss/OpenROAD/issues/931) from The-OpenROAD-Project-staging/rcx_cleanup
+- Merge pull request [#930](https://github.com/luarss/OpenROAD/issues/930) from mathursanjiv/abc_script_bug_fix
+- Merge pull request [#929](https://github.com/luarss/OpenROAD/issues/929) from trepetti/undefined-sprintf-behavior
+- Merge pull request [#927](https://github.com/luarss/OpenROAD/issues/927) from mooredan/IFP-metersToDbu__rounding
+- Merge pull request [#928](https://github.com/luarss/OpenROAD/issues/928) from The-OpenROAD-Project-staging/misc_cleanup
+- Merge pull request [#926](https://github.com/luarss/OpenROAD/issues/926) from The-OpenROAD-Project-staging/pad-fix-utl
+- Merge pull request [#912](https://github.com/luarss/OpenROAD/issues/912) from eder-matheus/ppl_fix
+- Merge pull request [#906](https://github.com/luarss/OpenROAD/issues/906) from The-OpenROAD-Project-staging/gui-select-overlapping
+- Merge pull request [#924](https://github.com/luarss/OpenROAD/issues/924) from eder-matheus/stt_update
+- Merge pull request [#925](https://github.com/luarss/OpenROAD/issues/925) from vvbandeira/docker-dep
+- Merge pull request [#923](https://github.com/luarss/OpenROAD/issues/923) from The-OpenROAD-Project-staging/TR_iter_fix
+- Merge pull request [#920](https://github.com/luarss/OpenROAD/issues/920) from The-OpenROAD-Project-staging/misc_cleanups2
+- Merge pull request [#919](https://github.com/luarss/OpenROAD/issues/919) from The-OpenROAD-Project-staging/misc_cleanups
+- Merge pull request [#918](https://github.com/luarss/OpenROAD/issues/918) from eder-matheus/fix_coverity
+- Merge pull request [#914](https://github.com/luarss/OpenROAD/issues/914) from mooredan/max_merge_res_formatting
+- Merge pull request [#916](https://github.com/luarss/OpenROAD/issues/916) from The-OpenROAD-Project-staging/swig-catch-exception
+- Merge pull request [#873](https://github.com/luarss/OpenROAD/issues/873) from The-OpenROAD-Project-staging/sta_update
+- Merge pull request [#913](https://github.com/luarss/OpenROAD/issues/913) from The-OpenROAD-Project-staging/stt_cleanup
+- Merge pull request [#863](https://github.com/luarss/OpenROAD/issues/863) from dralabeing/dralabeing-patch-1
+- Merge pull request [#888](https://github.com/luarss/OpenROAD/issues/888) from The-OpenROAD-Project-staging/msg-pdn
+- Merge pull request [#875](https://github.com/luarss/OpenROAD/issues/875) from The-OpenROAD-Project-staging/msg-par
+- Merge pull request [#876](https://github.com/luarss/OpenROAD/issues/876) from The-OpenROAD-Project-staging/msg-ppl
+- Merge pull request [#877](https://github.com/luarss/OpenROAD/issues/877) from The-OpenROAD-Project-staging/msg-drt
+- Merge pull request [#878](https://github.com/luarss/OpenROAD/issues/878) from The-OpenROAD-Project-staging/msg-rmp
+- Merge pull request [#879](https://github.com/luarss/OpenROAD/issues/879) from The-OpenROAD-Project-staging/msg-replace
+- Merge pull request [#880](https://github.com/luarss/OpenROAD/issues/880) from The-OpenROAD-Project-staging/msg-tap
+- Merge pull request [#881](https://github.com/luarss/OpenROAD/issues/881) from The-OpenROAD-Project-staging/msg-grt
+- Merge pull request [#882](https://github.com/luarss/OpenROAD/issues/882) from The-OpenROAD-Project-staging/msg-fin
+- Merge pull request [#883](https://github.com/luarss/OpenROAD/issues/883) from The-OpenROAD-Project-staging/msg-cts
+- Merge pull request [#884](https://github.com/luarss/OpenROAD/issues/884) from The-OpenROAD-Project-staging/msg-or
+- Merge pull request [#885](https://github.com/luarss/OpenROAD/issues/885) from The-OpenROAD-Project-staging/msg-psm
+- Merge pull request [#886](https://github.com/luarss/OpenROAD/issues/886) from The-OpenROAD-Project-staging/msg-mpl
+- Merge pull request [#889](https://github.com/luarss/OpenROAD/issues/889) from The-OpenROAD-Project-staging/msg-icewall
+- Merge pull request [#905](https://github.com/luarss/OpenROAD/issues/905) from The-OpenROAD-Project-staging/gui-inspect-segfault
+- Merge pull request [#904](https://github.com/luarss/OpenROAD/issues/904) from The-OpenROAD-Project-staging/TR_improved_gui
+- Merge pull request [#897](https://github.com/luarss/OpenROAD/issues/897) from The-OpenROAD-Project-staging/gui-inst-controls
+- Merge pull request [#725](https://github.com/luarss/OpenROAD/issues/725) from QuantamHD/abstract_lef
+- Merge pull request [#903](https://github.com/luarss/OpenROAD/issues/903) from The-OpenROAD-Project-staging/odb_isfill
+- Merge pull request [#902](https://github.com/luarss/OpenROAD/issues/902) from eder-matheus/stt_fix
+- Merge pull request [#899](https://github.com/luarss/OpenROAD/issues/899) from The-OpenROAD-Project-staging/gui-nets-selectable
+- Merge pull request [#898](https://github.com/luarss/OpenROAD/issues/898) from eder-matheus/stt_options
+- Merge pull request [#901](https://github.com/luarss/OpenROAD/issues/901) from The-OpenROAD-Project-staging/mpl_memfix
+- Merge pull request [#900](https://github.com/luarss/OpenROAD/issues/900) from jjcherry56/rsz_no_special
+- Merge pull request [#896](https://github.com/luarss/OpenROAD/issues/896) from The-OpenROAD-Project-staging/gui-disable-selectable
+- Merge pull request [#871](https://github.com/luarss/OpenROAD/issues/871) from The-OpenROAD-Project-staging/doc-metrics
+- Merge pull request [#895](https://github.com/luarss/OpenROAD/issues/895) from jjcherry56/pdr_dup_pts
+- Merge pull request [#894](https://github.com/luarss/OpenROAD/issues/894) from The-OpenROAD-Project-staging/gui-layoutviewer-speedup
+- Merge pull request [#893](https://github.com/luarss/OpenROAD/issues/893) from The-OpenROAD-Project-staging/rsz_util
+- Merge pull request [#892](https://github.com/luarss/OpenROAD/issues/892) from vvbandeira/docs-spell
+- Merge pull request [#891](https://github.com/luarss/OpenROAD/issues/891) from The-OpenROAD-Project-staging/jenkins-ispd
+- Merge pull request [#838](https://github.com/luarss/OpenROAD/issues/838) from The-OpenROAD-Project-staging/gui-cmd-completion
+- Merge pull request [#865](https://github.com/luarss/OpenROAD/issues/865) from eder-matheus/ppl_runtime
+- Merge pull request [#890](https://github.com/luarss/OpenROAD/issues/890) from vvbandeira/docs-fixup
+- Merge pull request [#887](https://github.com/luarss/OpenROAD/issues/887) from jjcherry56/rsz_corner_tgt_slews
+- Merge pull request [#862](https://github.com/luarss/OpenROAD/issues/862) from eder-matheus/stt_builder
+- Merge pull request [#874](https://github.com/luarss/OpenROAD/issues/874) from eder-matheus/grt_fix
+- Merge pull request [#872](https://github.com/luarss/OpenROAD/issues/872) from The-OpenROAD-Project-staging/boost176
+- Merge pull request [#869](https://github.com/luarss/OpenROAD/issues/869) from The-OpenROAD-Project-staging/gui-partialchecked
+- Merge pull request [#867](https://github.com/luarss/OpenROAD/issues/867) from jjcherry56/dpl_max_displacement
+- Merge pull request [#868](https://github.com/luarss/OpenROAD/issues/868) from The-OpenROAD-Project-staging/drt_enable_via_gen
+- Merge pull request [#864](https://github.com/luarss/OpenROAD/issues/864) from eder-matheus/grt_revert
+- Merge pull request [#857](https://github.com/luarss/OpenROAD/issues/857) from eder-matheus/grt_layer_restriction
+- Merge pull request [#860](https://github.com/luarss/OpenROAD/issues/860) from The-OpenROAD-Project-staging/TR_truncate_style
+- Merge pull request [#861](https://github.com/luarss/OpenROAD/issues/861) from The-OpenROAD-Project-staging/tcl-handle-history-return
+- Merge pull request [#855](https://github.com/luarss/OpenROAD/issues/855) from jjcherry56/rsz_hold
+- Merge pull request [#858](https://github.com/luarss/OpenROAD/issues/858) from eder-matheus/grt_fix
+- Merge pull request [#854](https://github.com/luarss/OpenROAD/issues/854) from jjcherry56/cts_cleanup
+- Merge pull request [#856](https://github.com/luarss/OpenROAD/issues/856) from The-OpenROAD-Project-staging/gui-record-history
+- Merge pull request [#852](https://github.com/luarss/OpenROAD/issues/852) from eder-matheus/ppl_minor_fix
+- Merge pull request [#851](https://github.com/luarss/OpenROAD/issues/851) from The-OpenROAD-Project-staging/rsz_sign
+- Merge pull request [#848](https://github.com/luarss/OpenROAD/issues/848) from The-OpenROAD-Project-staging/gui_cong
+- Merge pull request [#847](https://github.com/luarss/OpenROAD/issues/847) from The-OpenROAD-Project-staging/odb_swig
+- Merge pull request [#844](https://github.com/luarss/OpenROAD/issues/844) from mathursanjiv/clean_up_name_refs
+- Merge pull request [#841](https://github.com/luarss/OpenROAD/issues/841) from eder-matheus/grt_cleanup
+- Merge pull request [#840](https://github.com/luarss/OpenROAD/issues/840) from jjcherry56/flow_gpl_rd
+- Merge pull request [#839](https://github.com/luarss/OpenROAD/issues/839) from jjcherry56/rsz_alpha
+- Merge pull request [#836](https://github.com/luarss/OpenROAD/issues/836) from The-OpenROAD-Project-staging/malformed-rules
+- Merge pull request [#835](https://github.com/luarss/OpenROAD/issues/835) from eder-matheus/grt_fix
+- Merge pull request [#826](https://github.com/luarss/OpenROAD/issues/826) from The-OpenROAD-Project-staging/icewall-flip_chip_updates
+- Merge pull request [#742](https://github.com/luarss/OpenROAD/issues/742) from mathursanjiv/remove_buffer
+- Merge pull request [#833](https://github.com/luarss/OpenROAD/issues/833) from osamahammad21/eolkeepout-within
+- Merge pull request [#831](https://github.com/luarss/OpenROAD/issues/831) from jjcherry56/findlogicconstants
+- Merge pull request [#830](https://github.com/luarss/OpenROAD/issues/830) from eder-matheus/grt_global
+- Merge pull request [#829](https://github.com/luarss/OpenROAD/issues/829) from The-OpenROAD-Project-staging/msgs
+- Merge pull request [#814](https://github.com/luarss/OpenROAD/issues/814) from eder-matheus/grt_code_style
+- Merge pull request [#818](https://github.com/luarss/OpenROAD/issues/818) from eder-matheus/grt_pd_fix
+- Merge pull request [#752](https://github.com/luarss/OpenROAD/issues/752) from mathursanjiv/abc_remap
+- Merge pull request [#828](https://github.com/luarss/OpenROAD/issues/828) from The-OpenROAD-Project-staging/mpl2_test1_ok
+- Merge pull request [#827](https://github.com/luarss/OpenROAD/issues/827) from The-OpenROAD-Project-staging/mpl2_unit_tests
+- Merge pull request [#822](https://github.com/luarss/OpenROAD/issues/822) from jjcherry56/cleanup
+- Merge pull request [#825](https://github.com/luarss/OpenROAD/issues/825) from eder-matheus/grt_fix
+- Merge pull request [#824](https://github.com/luarss/OpenROAD/issues/824) from The-OpenROAD-Project-staging/par_iter
+- Merge pull request [#823](https://github.com/luarss/OpenROAD/issues/823) from The-OpenROAD-Project-staging/mpl2_fixes
+- Merge pull request [#821](https://github.com/luarss/OpenROAD/issues/821) from The-OpenROAD-Project-staging/wxl_fix
+- Merge pull request [#820](https://github.com/luarss/OpenROAD/issues/820) from jjcherry56/flow_metrics
+- Merge pull request [#816](https://github.com/luarss/OpenROAD/issues/816) from jjcherry56/ifp_core_ceil
+- Merge pull request [#817](https://github.com/luarss/OpenROAD/issues/817) from The-OpenROAD-Project-staging/gui_tabs
+- Merge pull request [#815](https://github.com/luarss/OpenROAD/issues/815) from eder-matheus/grt_mem_fix
+- Merge pull request [#811](https://github.com/luarss/OpenROAD/issues/811) from The-OpenROAD-Project-staging/TR_conn_fix2
+- Merge pull request [#780](https://github.com/luarss/OpenROAD/issues/780) from The-OpenROAD-Project-staging/rtl_mp
+- Merge pull request [#813](https://github.com/luarss/OpenROAD/issues/813) from The-OpenROAD-Project-staging/gui-output
+- Merge pull request [#812](https://github.com/luarss/OpenROAD/issues/812) from eder-matheus/tap_fix
+- Merge pull request [#810](https://github.com/luarss/OpenROAD/issues/810) from eder-matheus/grt_fix
+- Merge pull request [#804](https://github.com/luarss/OpenROAD/issues/804) from eder-matheus/ppl_dist_units
+- Merge pull request [#809](https://github.com/luarss/OpenROAD/issues/809) from The-OpenROAD-Project-staging/gui-fix-missing-highlights
+- Merge pull request [#750](https://github.com/luarss/OpenROAD/issues/750) from vvbandeira/messages
+- Merge pull request [#802](https://github.com/luarss/OpenROAD/issues/802) from jjcherry56/rsz_repair_slew
+- Merge pull request [#799](https://github.com/luarss/OpenROAD/issues/799) from The-OpenROAD-Project-staging/icewall-error-typo
+- Merge pull request [#801](https://github.com/luarss/OpenROAD/issues/801) from The-OpenROAD-Project/add-code-of-conduct-1
+- Merge pull request [#800](https://github.com/luarss/OpenROAD/issues/800) from The-OpenROAD-Project-staging/drt_drc_names
+- Merge pull request [#797](https://github.com/luarss/OpenROAD/issues/797) from The-OpenROAD-Project-staging/icewall-or1034
+- Merge pull request [#794](https://github.com/luarss/OpenROAD/issues/794) from eder-matheus/grt_congestion
+- Merge pull request [#796](https://github.com/luarss/OpenROAD/issues/796) from The-OpenROAD-Project-staging/drt_no_special_net_graph
+- Merge pull request [#795](https://github.com/luarss/OpenROAD/issues/795) from The-OpenROAD-Project-staging/gpl_min_bins
+- Merge pull request [#788](https://github.com/luarss/OpenROAD/issues/788) from eder-matheus/grt_pdrev
+- Merge pull request [#791](https://github.com/luarss/OpenROAD/issues/791) from eder-matheus/grt_random
+- Merge pull request [#793](https://github.com/luarss/OpenROAD/issues/793) from The-OpenROAD-Project-staging/gpl_debug_uniform_density
+- Merge pull request [#790](https://github.com/luarss/OpenROAD/issues/790) from jjcherry56/rsz_iter
+- Merge pull request [#751](https://github.com/luarss/OpenROAD/issues/751) from msaligane/master
+- Merge pull request [#668](https://github.com/luarss/OpenROAD/issues/668) from The-OpenROAD-Project-staging/icewall-flip_chip_updates
+- Merge pull request [#786](https://github.com/luarss/OpenROAD/issues/786) from jjcherry56/rsz_use_pd2
+- Merge pull request [#787](https://github.com/luarss/OpenROAD/issues/787) from eder-matheus/grt_fix
+- Merge pull request [#785](https://github.com/luarss/OpenROAD/issues/785) from jjcherry56/propagate_constants
+- Merge pull request [#783](https://github.com/luarss/OpenROAD/issues/783) from eder-matheus/grt_ant_fix
+- Merge pull request [#784](https://github.com/luarss/OpenROAD/issues/784) from The-OpenROAD-Project-staging/drt-revert
+- Merge pull request [#782](https://github.com/luarss/OpenROAD/issues/782) from eder-matheus/grt_repair_antennas
+- Merge pull request [#781](https://github.com/luarss/OpenROAD/issues/781) from osamahammad21/coverity_fixes
+- Merge pull request [#763](https://github.com/luarss/OpenROAD/issues/763) from The-OpenROAD-Project-staging/gpl_enable_lb
+- Merge pull request [#776](https://github.com/luarss/OpenROAD/issues/776) from The-OpenROAD-Project-staging/Update_run_ispd
+- Merge pull request [#777](https://github.com/luarss/OpenROAD/issues/777) from eder-matheus/grt_fix
+- Merge pull request [#775](https://github.com/luarss/OpenROAD/issues/775) from dralabeing/DocCleanup
+- Merge pull request [#769](https://github.com/luarss/OpenROAD/issues/769) from The-OpenROAD-Project/dralabeing-patch-1
+- Merge pull request [#772](https://github.com/luarss/OpenROAD/issues/772) from The-OpenROAD-Project-staging/TR_conn_fix2
+- Merge pull request [#773](https://github.com/luarss/OpenROAD/issues/773) from The-OpenROAD-Project-staging/gui-coverity-fixes
+- Merge pull request [#771](https://github.com/luarss/OpenROAD/issues/771) from The-OpenROAD-Project-staging/Update_run_ispd
+- Merge pull request [#770](https://github.com/luarss/OpenROAD/issues/770) from The-OpenROAD-Project-staging/copyright
+- Merge pull request [#768](https://github.com/luarss/OpenROAD/issues/768) from The-OpenROAD-Project-staging/no-msg
+- Merge pull request [#767](https://github.com/luarss/OpenROAD/issues/767) from jjcherry56/pdr_cleanup
+- Merge pull request [#762](https://github.com/luarss/OpenROAD/issues/762) from vvbandeira/docs-docker
+- Merge pull request [#741](https://github.com/luarss/OpenROAD/issues/741) from The-OpenROAD-Project-staging/gui-cmd-widget-input
+- Merge pull request [#760](https://github.com/luarss/OpenROAD/issues/760) from The-OpenROAD-Project/dralabeing-patch-1
+- Merge pull request [#758](https://github.com/luarss/OpenROAD/issues/758) from vvbandeira/docs-flow-name
+- Merge pull request [#757](https://github.com/luarss/OpenROAD/issues/757) from eder-matheus/grt_fix
+- Merge pull request [#756](https://github.com/luarss/OpenROAD/issues/756) from The-OpenROAD-Project-staging/pdr-limits-header
+- Merge pull request [#747](https://github.com/luarss/OpenROAD/issues/747) from jjcherry56/pdr_lala
+- Merge pull request [#748](https://github.com/luarss/OpenROAD/issues/748) from jjcherry56/rsz_est_no_driver
+- Merge pull request [#749](https://github.com/luarss/OpenROAD/issues/749) from The-OpenROAD-Project-staging/docs
+- Merge pull request [#724](https://github.com/luarss/OpenROAD/issues/724) from The-OpenROAD-Project-staging/TR_ViaInPin_fix
+- Merge pull request [#744](https://github.com/luarss/OpenROAD/issues/744) from eder-matheus/fix_msgs
+- Merge pull request [#729](https://github.com/luarss/OpenROAD/issues/729) from The-OpenROAD-Project-staging/NDR_fixes
+- Merge pull request [#739](https://github.com/luarss/OpenROAD/issues/739) from jjcherry56/pdrev
+- Merge pull request [#730](https://github.com/luarss/OpenROAD/issues/730) from jjcherry56/rsz_pdrev
+- Merge pull request [#727](https://github.com/luarss/OpenROAD/issues/727) from mathursanjiv/cts_no_clk
+- Merge pull request [#711](https://github.com/luarss/OpenROAD/issues/711) from eder-matheus/ppl_fix
+- Merge pull request [#709](https://github.com/luarss/OpenROAD/issues/709) from osamahammad21/ext-spc
+- Merge pull request [#682](https://github.com/luarss/OpenROAD/issues/682) from osamahammad21/eolkeepout
+- Merge pull request [#723](https://github.com/luarss/OpenROAD/issues/723) from jjcherry56/pdrev_test
+- Merge pull request [#721](https://github.com/luarss/OpenROAD/issues/721) from jjcherry56/misc
+- Merge pull request [#715](https://github.com/luarss/OpenROAD/issues/715) from The-OpenROAD-Project-staging/drt_gc_tech
+- Merge pull request [#692](https://github.com/luarss/OpenROAD/issues/692) from osamahammad21/gc-obs
+- Merge pull request [#710](https://github.com/luarss/OpenROAD/issues/710) from The-OpenROAD-Project-staging/docker-doc
+- Merge pull request [#705](https://github.com/luarss/OpenROAD/issues/705) from eder-matheus/ppl_constraints
+- Merge pull request [#699](https://github.com/luarss/OpenROAD/issues/699) from shuolai/ifp_update
+- Merge pull request [#698](https://github.com/luarss/OpenROAD/issues/698) from eder-matheus/tap_update
+- Merge pull request [#697](https://github.com/luarss/OpenROAD/issues/697) from eder-matheus/ifp_blockages
+- Merge pull request [#701](https://github.com/luarss/OpenROAD/issues/701) from TobiasKaiser/master
+- Merge pull request [#693](https://github.com/luarss/OpenROAD/issues/693) from jjcherry56/flow_metrics2
+- Merge pull request [#689](https://github.com/luarss/OpenROAD/issues/689) from jjcherry56/flow_metrics
+- Merge pull request [#687](https://github.com/luarss/OpenROAD/issues/687) from jjcherry56/rsz_hold
+- Merge pull request [#678](https://github.com/luarss/OpenROAD/issues/678) from dralabeing/patch-1
+- Merge pull request [#684](https://github.com/luarss/OpenROAD/issues/684) from The-OpenROAD-Project-staging/gui-layoutview-gated
+- Merge pull request [#680](https://github.com/luarss/OpenROAD/issues/680) from The-OpenROAD-Project-staging/NDR_fixes
+- Merge pull request [#676](https://github.com/luarss/OpenROAD/issues/676) from The-OpenROAD-Project-staging/docker-fix
+- Merge pull request [#675](https://github.com/luarss/OpenROAD/issues/675) from The-OpenROAD-Project-staging/ppl-top-obstruction
+- Merge pull request [#677](https://github.com/luarss/OpenROAD/issues/677) from The-OpenROAD-Project-staging/flow_drt_no_param
+- Merge pull request [#674](https://github.com/luarss/OpenROAD/issues/674) from The-OpenROAD-Project-staging/gui-fit-fix
+- Merge pull request [#673](https://github.com/luarss/OpenROAD/issues/673) from The-OpenROAD-Project-staging/drt-cleanup
+- Merge pull request [#648](https://github.com/luarss/OpenROAD/issues/648) from osamahammad21/master
+- Merge pull request [#671](https://github.com/luarss/OpenROAD/issues/671) from The-OpenROAD-Project-staging/Stephanommg-patch-1
+- Merge pull request [#670](https://github.com/luarss/OpenROAD/issues/670) from The-OpenROAD-Project-staging/warnings
+- Merge pull request [#669](https://github.com/luarss/OpenROAD/issues/669) from The-OpenROAD-Project-staging/drt_assert
+- Merge pull request [#657](https://github.com/luarss/OpenROAD/issues/657) from jjcherry56/ifp_row_orient
+- Merge pull request [#666](https://github.com/luarss/OpenROAD/issues/666) from eder-matheus/tap_fix
+- Merge pull request [#667](https://github.com/luarss/OpenROAD/issues/667) from eder-matheus/ppl_fix
+- Merge pull request [#664](https://github.com/luarss/OpenROAD/issues/664) from jjcherry56/dpl_obs
+- Merge pull request [#661](https://github.com/luarss/OpenROAD/issues/661) from The-OpenROAD-Project-staging/NDR_testing
+- Merge pull request [#663](https://github.com/luarss/OpenROAD/issues/663) from The-OpenROAD-Project-staging/drt_inspector
+- Merge pull request [#660](https://github.com/luarss/OpenROAD/issues/660) from The-OpenROAD-Project-staging/test_mithro_label_dont_merge2
+- Merge pull request [#659](https://github.com/luarss/OpenROAD/issues/659) from The-OpenROAD-Project-staging/Stephanommg-patch-1
+- Merge pull request [#658](https://github.com/luarss/OpenROAD/issues/658) from The-OpenROAD-Project-staging/label-action-rework
+- Merge pull request [#656](https://github.com/luarss/OpenROAD/issues/656) from The-OpenROAD-Project-staging/par-fix-solutions
+- Merge pull request [#655](https://github.com/luarss/OpenROAD/issues/655) from eder-matheus/grt_cleanup
+- Merge pull request [#654](https://github.com/luarss/OpenROAD/issues/654) from The-OpenROAD-Project-staging/label-action-rework
+- Merge pull request [#652](https://github.com/luarss/OpenROAD/issues/652) from The-OpenROAD-Project-staging/tritonroute_typo
+- Merge pull request [#653](https://github.com/luarss/OpenROAD/issues/653) from The-OpenROAD-Project-staging/Stephanommg-patch-1
+- Merge pull request [#651](https://github.com/luarss/OpenROAD/issues/651) from eder-matheus/iop_random_groups
+- Merge pull request [#650](https://github.com/luarss/OpenROAD/issues/650) from The-OpenROAD-Project-staging/designrulewidth
+- Merge pull request [#649](https://github.com/luarss/OpenROAD/issues/649) from eder-matheus/tap_fixes
+- Merge pull request [#646](https://github.com/luarss/OpenROAD/issues/646) from jjcherry56/dpl_rtn_error_count
+- Merge pull request [#647](https://github.com/luarss/OpenROAD/issues/647) from jjcherry56/internal_power
+- Merge pull request [#642](https://github.com/luarss/OpenROAD/issues/642) from jjcherry56/flow_rcx3
+- Merge pull request [#639](https://github.com/luarss/OpenROAD/issues/639) from The-OpenROAD-Project-staging/par-verilog-output
+- Merge pull request [#640](https://github.com/luarss/OpenROAD/issues/640) from The-OpenROAD-Project-staging/fasoc
+- Merge pull request [#641](https://github.com/luarss/OpenROAD/issues/641) from jjcherry56/flow_rcx2
+- Merge pull request [#638](https://github.com/luarss/OpenROAD/issues/638) from The-OpenROAD-Project-staging/test_new_workflow
+- Merge pull request [#637](https://github.com/luarss/OpenROAD/issues/637) from The-OpenROAD-Project-staging/test_new_workflow
+- Merge pull request [#575](https://github.com/luarss/OpenROAD/issues/575) from The-OpenROAD-Project-private/gui_inspector
+- Merge pull request [#574](https://github.com/luarss/OpenROAD/issues/574) from The-OpenROAD-Project-private/flow_rcx
+- Merge pull request [#573](https://github.com/luarss/OpenROAD/issues/573) from The-OpenROAD-Project-private/gpl_rd
+- Merge pull request [#564](https://github.com/luarss/OpenROAD/issues/564) from The-OpenROAD-Project-private/rcx_logger
+- Merge pull request [#572](https://github.com/luarss/OpenROAD/issues/572) from The-OpenROAD-Project-private/ppl_fix_constraints
+- Merge pull request [#566](https://github.com/luarss/OpenROAD/issues/566) from The-OpenROAD-Project-private/rsz-debug-typo
+- Merge pull request [#547](https://github.com/luarss/OpenROAD/issues/547) from The-OpenROAD-Project-private/ifp-core-die-area
+- Merge pull request [#570](https://github.com/luarss/OpenROAD/issues/570) from The-OpenROAD-Project-private/jenkins-fix-archive
+- Merge pull request [#569](https://github.com/luarss/OpenROAD/issues/569) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#568](https://github.com/luarss/OpenROAD/issues/568) from The-OpenROAD-Project-private/tap_source_dist
+- Merge pull request [#497](https://github.com/luarss/OpenROAD/issues/497) from The-OpenROAD-Project-private/FR-L2V
+- Merge pull request [#558](https://github.com/luarss/OpenROAD/issues/558) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#630](https://github.com/luarss/OpenROAD/issues/630) from mithro/master
+- Merge pull request [#562](https://github.com/luarss/OpenROAD/issues/562) from The-OpenROAD-Project-private/grt_ndrs
+- Merge pull request [#556](https://github.com/luarss/OpenROAD/issues/556) from The-OpenROAD-Project-private/par-seeds
+- Merge pull request [#559](https://github.com/luarss/OpenROAD/issues/559) from The-OpenROAD-Project-private/getFrOrient_fix
+- Merge pull request [#560](https://github.com/luarss/OpenROAD/issues/560) from The-OpenROAD-Project-private/ppl-port-bterm
+- Merge pull request [#546](https://github.com/luarss/OpenROAD/issues/546) from The-OpenROAD-Project-private/dr_width
+- Merge pull request [#557](https://github.com/luarss/OpenROAD/issues/557) from The-OpenROAD-Project-private/ppl-warn-44
+- Merge pull request [#555](https://github.com/luarss/OpenROAD/issues/555) from The-OpenROAD-Project-private/par-swig-vectors
+- Merge pull request [#554](https://github.com/luarss/OpenROAD/issues/554) from The-OpenROAD-Project-private/rcx_order_wires
+- Merge pull request [#549](https://github.com/luarss/OpenROAD/issues/549) from The-OpenROAD-Project-private/par-swig-vector
+- Merge pull request [#548](https://github.com/luarss/OpenROAD/issues/548) from The-OpenROAD-Project-private/par-headers-pragma
+- Merge pull request [#553](https://github.com/luarss/OpenROAD/issues/553) from The-OpenROAD-Project-private/rcx_seg_fault
+- Merge pull request [#552](https://github.com/luarss/OpenROAD/issues/552) from The-OpenROAD-Project-private/gpl_seg_fault
+- Merge pull request [#551](https://github.com/luarss/OpenROAD/issues/551) from The-OpenROAD-Project-private/end_count
+- Merge pull request [#545](https://github.com/luarss/OpenROAD/issues/545) from The-OpenROAD-Project-private/ppl_constraints
+- Merge pull request [#543](https://github.com/luarss/OpenROAD/issues/543) from The-OpenROAD-Project-private/nighlty-archive
+- Merge pull request [#542](https://github.com/luarss/OpenROAD/issues/542) from The-OpenROAD-Project-private/flow_check_ant
+- Merge pull request [#541](https://github.com/luarss/OpenROAD/issues/541) from The-OpenROAD-Project-private/dpl_filler
+- Merge pull request [#534](https://github.com/luarss/OpenROAD/issues/534) from The-OpenROAD-Project-private/grt_db_congestion
+- Merge pull request [#540](https://github.com/luarss/OpenROAD/issues/540) from The-OpenROAD-Project-private/flow_clks
+- Merge pull request [#538](https://github.com/luarss/OpenROAD/issues/538) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#539](https://github.com/luarss/OpenROAD/issues/539) from The-OpenROAD-Project-private/grt_gui_congest
+- Merge pull request [#517](https://github.com/luarss/OpenROAD/issues/517) from The-OpenROAD-Project-private/jenkins-nightly-email
+- Merge pull request [#536](https://github.com/luarss/OpenROAD/issues/536) from The-OpenROAD-Project-private/TR_SharedBoundary
+- Merge pull request [#537](https://github.com/luarss/OpenROAD/issues/537) from The-OpenROAD-Project-private/ppl_random
+- Merge pull request [#525](https://github.com/luarss/OpenROAD/issues/525) from The-OpenROAD-Project-private/grt_log
+- Merge pull request [#515](https://github.com/luarss/OpenROAD/issues/515) from The-OpenROAD-Project-private/rcx_fix
+- Merge pull request [#535](https://github.com/luarss/OpenROAD/issues/535) from The-OpenROAD-Project-private/tap-fix-warn
+- Merge pull request [#533](https://github.com/luarss/OpenROAD/issues/533) from The-OpenROAD-Project-private/ndr-all-clks
+- Merge pull request [#531](https://github.com/luarss/OpenROAD/issues/531) from The-OpenROAD-Project-private/DRT-TW
+- Merge pull request [#532](https://github.com/luarss/OpenROAD/issues/532) from The-OpenROAD-Project-private/sta_power
+- Merge pull request [#530](https://github.com/luarss/OpenROAD/issues/530) from The-OpenROAD-Project-private/all_clks
+- Merge pull request [#529](https://github.com/luarss/OpenROAD/issues/529) from The-OpenROAD-Project-private/rcx_init
+- Merge pull request [#528](https://github.com/luarss/OpenROAD/issues/528) from The-OpenROAD-Project-private/rsz_rm_buffers
+- Merge pull request [#527](https://github.com/luarss/OpenROAD/issues/527) from The-OpenROAD-Project-private/rcx_name_mapping
+- Merge pull request [#526](https://github.com/luarss/OpenROAD/issues/526) from The-OpenROAD-Project-private/grt_fix
+- Merge pull request [#524](https://github.com/luarss/OpenROAD/issues/524) from The-OpenROAD-Project-private/rsz_in_port_
+- Merge pull request [#522](https://github.com/luarss/OpenROAD/issues/522) from The-OpenROAD-Project-private/dpl_obstruction
+- Merge pull request [#523](https://github.com/luarss/OpenROAD/issues/523) from The-OpenROAD-Project-private/boost-url
+- Merge pull request [#511](https://github.com/luarss/OpenROAD/issues/511) from The-OpenROAD-Project-private/DRT-SPTBL-INFL
+- Merge pull request [#521](https://github.com/luarss/OpenROAD/issues/521) from The-OpenROAD-Project-private/lef_origin
+- Merge pull request [#520](https://github.com/luarss/OpenROAD/issues/520) from The-OpenROAD-Project-private/ppl_place_pin
+- Merge pull request [#519](https://github.com/luarss/OpenROAD/issues/519) from The-OpenROAD-Project-private/grt_wrong_way_conn
+- Merge pull request [#510](https://github.com/luarss/OpenROAD/issues/510) from The-OpenROAD-Project-private/ppl_top_layer_placement
+- Merge pull request [#518](https://github.com/luarss/OpenROAD/issues/518) from The-OpenROAD-Project-private/tap_no_endcaps
+- Merge pull request [#514](https://github.com/luarss/OpenROAD/issues/514) from The-OpenROAD-Project-private/ispd-drv
+- Merge pull request [#516](https://github.com/luarss/OpenROAD/issues/516) from The-OpenROAD-Project-private/db_macro_lef
+- Merge pull request [#512](https://github.com/luarss/OpenROAD/issues/512) from The-OpenROAD-Project-private/defout-gcell
+- Merge pull request [#513](https://github.com/luarss/OpenROAD/issues/513) from The-OpenROAD-Project-private/db-ndr
+- Merge pull request [#501](https://github.com/luarss/OpenROAD/issues/501) from The-OpenROAD-Project-private/grt_ndrs
+- Merge pull request [#509](https://github.com/luarss/OpenROAD/issues/509) from The-OpenROAD-Project-private/dpl_obstructions
+- Merge pull request [#507](https://github.com/luarss/OpenROAD/issues/507) from The-OpenROAD-Project-private/drt_deadcode
+- Merge pull request [#506](https://github.com/luarss/OpenROAD/issues/506) from The-OpenROAD-Project-private/ndr-defout
+- Merge pull request [#459](https://github.com/luarss/OpenROAD/issues/459) from The-OpenROAD-Project-private/ord-thread-controls
+- Merge pull request [#505](https://github.com/luarss/OpenROAD/issues/505) from The-OpenROAD-Project-private/rsz_nc_no_buffer
+- Merge pull request [#504](https://github.com/luarss/OpenROAD/issues/504) from The-OpenROAD-Project-private/rsz_wire_delay
+- Merge pull request [#502](https://github.com/luarss/OpenROAD/issues/502) from The-OpenROAD-Project-private/pdn-cpp
+- Merge pull request [#494](https://github.com/luarss/OpenROAD/issues/494) from The-OpenROAD-Project-private/pdn-cpp
+- Merge pull request [#500](https://github.com/luarss/OpenROAD/issues/500) from The-OpenROAD-Project-private/gui-capture-tcl-exit
+- Merge pull request [#499](https://github.com/luarss/OpenROAD/issues/499) from The-OpenROAD-Project-private/tla_naming
+- Merge pull request [#468](https://github.com/luarss/OpenROAD/issues/468) from The-OpenROAD-Project-private/stt_coverity
+- Merge pull request [#496](https://github.com/luarss/OpenROAD/issues/496) from The-OpenROAD-Project-private/ppl_constraints
+- Merge pull request [#495](https://github.com/luarss/OpenROAD/issues/495) from The-OpenROAD-Project-private/TR_initRouteShapeCost_param
+- Merge pull request [#485](https://github.com/luarss/OpenROAD/issues/485) from The-OpenROAD-Project-private/dpl-filler-prefix
+- Merge pull request [#488](https://github.com/luarss/OpenROAD/issues/488) from The-OpenROAD-Project-private/db-ndr
+- Merge pull request [#490](https://github.com/luarss/OpenROAD/issues/490) from The-OpenROAD-Project-private/drt-mimcap
+- Merge pull request [#493](https://github.com/luarss/OpenROAD/issues/493) from The-OpenROAD-Project-private/rsz_corner
+- Merge pull request [#492](https://github.com/luarss/OpenROAD/issues/492) from The-OpenROAD-Project-private/rsz_corner
+- Merge pull request [#491](https://github.com/luarss/OpenROAD/issues/491) from The-OpenROAD-Project-private/rsz_fanin_fanout
+- Merge pull request [#435](https://github.com/luarss/OpenROAD/issues/435) from The-OpenROAD-Project-private/BugFixes_ISPD
+- Merge pull request [#482](https://github.com/luarss/OpenROAD/issues/482) from The-OpenROAD-Project-private/cts_levels_fix
+- Merge pull request [#486](https://github.com/luarss/OpenROAD/issues/486) from The-OpenROAD-Project-private/add_git_action_scan_code
+- Merge pull request [#466](https://github.com/luarss/OpenROAD/issues/466) from The-OpenROAD-Project-private/ifp_cleanups
+- Merge pull request [#483](https://github.com/luarss/OpenROAD/issues/483) from The-OpenROAD-Project-private/jenkins-nightly
+- Merge pull request [#481](https://github.com/luarss/OpenROAD/issues/481) from The-OpenROAD-Project-private/ppl_rand
+- Merge pull request [#484](https://github.com/luarss/OpenROAD/issues/484) from The-OpenROAD-Project-private/rsz_fanin_fanout
+- Merge pull request [#480](https://github.com/luarss/OpenROAD/issues/480) from The-OpenROAD-Project-private/ppl_layer_names
+- Merge pull request [#479](https://github.com/luarss/OpenROAD/issues/479) from The-OpenROAD-Project-private/NDRs_nondefVias
+- Merge pull request [#478](https://github.com/luarss/OpenROAD/issues/478) from The-OpenROAD-Project-private/grt_doc
+- Merge pull request [#477](https://github.com/luarss/OpenROAD/issues/477) from The-OpenROAD-Project-private/grt_coverity
+- Merge pull request [#474](https://github.com/luarss/OpenROAD/issues/474) from The-OpenROAD-Project-private/tap-fix-boundry
+- Merge pull request [#473](https://github.com/luarss/OpenROAD/issues/473) from The-OpenROAD-Project-private/read_def-file-check
+- Merge pull request [#476](https://github.com/luarss/OpenROAD/issues/476) from The-OpenROAD-Project-private/grt_cmds
+- Merge pull request [#475](https://github.com/luarss/OpenROAD/issues/475) from The-OpenROAD-Project-private/dpl_endcap
+- Merge pull request [#472](https://github.com/luarss/OpenROAD/issues/472) from The-OpenROAD-Project-private/get_lib_pins
+- Merge pull request [#471](https://github.com/luarss/OpenROAD/issues/471) from The-OpenROAD-Project-private/ifp_rm_tracks
+- Merge pull request [#470](https://github.com/luarss/OpenROAD/issues/470) from The-OpenROAD-Project-private/ConnBugfix
+- Merge pull request [#469](https://github.com/luarss/OpenROAD/issues/469) from The-OpenROAD-Project-private/gpl_diverge
+- Merge pull request [#465](https://github.com/luarss/OpenROAD/issues/465) from The-OpenROAD-Project-private/ConnBugfix
+- Merge pull request [#463](https://github.com/luarss/OpenROAD/issues/463) from The-OpenROAD-Project-private/grt_crash
+- Merge pull request [#464](https://github.com/luarss/OpenROAD/issues/464) from The-OpenROAD-Project-private/replace-cimg-wrap
+- Merge pull request [#462](https://github.com/luarss/OpenROAD/issues/462) from The-OpenROAD-Project-private/grt_fixes
+- Merge pull request [#461](https://github.com/luarss/OpenROAD/issues/461) from The-OpenROAD-Project-private/grt_determinism
+- Merge pull request [#460](https://github.com/luarss/OpenROAD/issues/460) from The-OpenROAD-Project-private/log_count
+- Merge pull request [#441](https://github.com/luarss/OpenROAD/issues/441) from The-OpenROAD-Project-private/grt_layer_names
+- Merge pull request [#457](https://github.com/luarss/OpenROAD/issues/457) from The-OpenROAD-Project-private/ppl_coverity
+- Merge pull request [#458](https://github.com/luarss/OpenROAD/issues/458) from The-OpenROAD-Project-private/grt_coverity
+- Merge pull request [#454](https://github.com/luarss/OpenROAD/issues/454) from The-OpenROAD-Project-private/io-logger
+- Merge pull request [#433](https://github.com/luarss/OpenROAD/issues/433) from The-OpenROAD-Project-private/DRT-EOL-ENCCUT
+- Merge pull request [#453](https://github.com/luarss/OpenROAD/issues/453) from The-OpenROAD-Project-private/tritonroute-enableOutput
+- Merge pull request [#456](https://github.com/luarss/OpenROAD/issues/456) from The-OpenROAD-Project-private/ARC_updates
+- Merge pull request [#455](https://github.com/luarss/OpenROAD/issues/455) from The-OpenROAD-Project-private/db-logger
+- Merge pull request [#443](https://github.com/luarss/OpenROAD/issues/443) from The-OpenROAD-Project-private/icewall
+- Merge pull request [#452](https://github.com/luarss/OpenROAD/issues/452) from The-OpenROAD-Project-private/set_via_rc
+- Merge pull request [#451](https://github.com/luarss/OpenROAD/issues/451) from The-OpenROAD-Project-private/grt_layer_range
+- Merge pull request [#450](https://github.com/luarss/OpenROAD/issues/450) from The-OpenROAD-Project-private/jenkins-coverage
+- Merge pull request [#445](https://github.com/luarss/OpenROAD/issues/445) from The-OpenROAD-Project-private/jenkins-retry-docker-pull
+- Merge pull request [#444](https://github.com/luarss/OpenROAD/issues/444) from The-OpenROAD-Project-private/bulk-sbox
+- Merge pull request [#446](https://github.com/luarss/OpenROAD/issues/446) from The-OpenROAD-Project-private/tritonroute-defout
+- Merge pull request [#447](https://github.com/luarss/OpenROAD/issues/447) from The-OpenROAD-Project-private/db-site
+- Merge pull request [#449](https://github.com/luarss/OpenROAD/issues/449) from The-OpenROAD-Project-private/dpl_obs
+- Merge pull request [#448](https://github.com/luarss/OpenROAD/issues/448) from The-OpenROAD-Project-private/sta_report_caps
+- Merge pull request [#442](https://github.com/luarss/OpenROAD/issues/442) from The-OpenROAD-Project-private/rsz_corners
+- Merge pull request [#437](https://github.com/luarss/OpenROAD/issues/437) from The-OpenROAD-Project-private/python-build-flag
+- Merge pull request [#438](https://github.com/luarss/OpenROAD/issues/438) from The-OpenROAD-Project-private/gui-redirect-puts
+- Merge pull request [#440](https://github.com/luarss/OpenROAD/issues/440) from The-OpenROAD-Project-private/grt_update
+- Merge pull request [#439](https://github.com/luarss/OpenROAD/issues/439) from The-OpenROAD-Project-private/grt_fixes
+- Merge pull request [#436](https://github.com/luarss/OpenROAD/issues/436) from The-OpenROAD-Project-private/tclx-developer-option
+- Merge pull request [#432](https://github.com/luarss/OpenROAD/issues/432) from The-OpenROAD-Project-private/DRT-EOL
+- Merge pull request [#434](https://github.com/luarss/OpenROAD/issues/434) from The-OpenROAD-Project-private/pdngen-dbwrite-speedup
+- Merge pull request [#424](https://github.com/luarss/OpenROAD/issues/424) from The-OpenROAD-Project-private/pdngen-lef-vias
+- Merge pull request [#428](https://github.com/luarss/OpenROAD/issues/428) from The-OpenROAD-Project-private/lef-def-gzip
+- Merge pull request [#425](https://github.com/luarss/OpenROAD/issues/425) from The-OpenROAD-Project-private/jenkins-reorg
+- Merge pull request [#430](https://github.com/luarss/OpenROAD/issues/430) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#427](https://github.com/luarss/OpenROAD/issues/427) from The-OpenROAD-Project-private/secure_cts_level_balance
+- Merge pull request [#429](https://github.com/luarss/OpenROAD/issues/429) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#426](https://github.com/luarss/OpenROAD/issues/426) from The-OpenROAD-Project-private/remove-defheader
+- Merge pull request [#416](https://github.com/luarss/OpenROAD/issues/416) from The-OpenROAD-Project-private/ppl_units
+- Merge pull request [#420](https://github.com/luarss/OpenROAD/issues/420) from The-OpenROAD-Project-private/opendb-spacing
+- Merge pull request [#411](https://github.com/luarss/OpenROAD/issues/411) from The-OpenROAD-Project-private/docs-badge
+- Merge pull request [#417](https://github.com/luarss/OpenROAD/issues/417) from The-OpenROAD-Project-private/tap_update
+- Merge pull request [#423](https://github.com/luarss/OpenROAD/issues/423) from The-OpenROAD-Project-private/dbsta_corner
+- Merge pull request [#422](https://github.com/luarss/OpenROAD/issues/422) from The-OpenROAD-Project-private/sta_incr_const_func
+- Merge pull request [#421](https://github.com/luarss/OpenROAD/issues/421) from The-OpenROAD-Project-private/sta_corners
+- Merge pull request [#419](https://github.com/luarss/OpenROAD/issues/419) from The-OpenROAD-Project-private/rsz_test
+- Merge pull request [#418](https://github.com/luarss/OpenROAD/issues/418) from The-OpenROAD-Project-private/sta_power
+- Merge pull request [#413](https://github.com/luarss/OpenROAD/issues/413) from The-OpenROAD-Project-private/secure_try_backout_latest_cts
+- Merge pull request [#377](https://github.com/luarss/OpenROAD/issues/377) from The-OpenROAD-Project-private/timingUI
+- Merge pull request [#400](https://github.com/luarss/OpenROAD/issues/400) from The-OpenROAD-Project-private/ppl_constraints
+- Merge pull request [#394](https://github.com/luarss/OpenROAD/issues/394) from The-OpenROAD-Project-private/docs-fix-links
+- Merge pull request [#401](https://github.com/luarss/OpenROAD/issues/401) from The-OpenROAD-Project-private/Secure-cts_skew
+- Merge pull request [#410](https://github.com/luarss/OpenROAD/issues/410) from The-OpenROAD-Project-private/rsz_latch
+- Merge pull request [#399](https://github.com/luarss/OpenROAD/issues/399) from The-OpenROAD-Project-private/icewall-or838
+- Merge pull request [#407](https://github.com/luarss/OpenROAD/issues/407) from The-OpenROAD-Project-private/DRT-EOL
+- Merge pull request [#395](https://github.com/luarss/OpenROAD/issues/395) from The-OpenROAD-Project-private/tap_fix
+- Merge pull request [#405](https://github.com/luarss/OpenROAD/issues/405) from The-OpenROAD-Project-private/markerUi
+- Merge pull request [#408](https://github.com/luarss/OpenROAD/issues/408) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#406](https://github.com/luarss/OpenROAD/issues/406) from The-OpenROAD-Project-private/docs-coding-practices
+- Merge pull request [#396](https://github.com/luarss/OpenROAD/issues/396) from The-OpenROAD-Project-private/grt_clr
+- Merge pull request [#402](https://github.com/luarss/OpenROAD/issues/402) from The-OpenROAD-Project-private/ppl_blocked_regions
+- Merge pull request [#404](https://github.com/luarss/OpenROAD/issues/404) from The-OpenROAD-Project-private/tritonroute-negative-sqrt
+- Merge pull request [#403](https://github.com/luarss/OpenROAD/issues/403) from The-OpenROAD-Project-private/ifp_aspect
+- Merge pull request [#383](https://github.com/luarss/OpenROAD/issues/383) from The-OpenROAD-Project-private/fasoc
+- Merge pull request [#397](https://github.com/luarss/OpenROAD/issues/397) from The-OpenROAD-Project-private/ppl_fixes
+- Merge pull request [#398](https://github.com/luarss/OpenROAD/issues/398) from The-OpenROAD-Project-private/msg_limit
+- Merge pull request [#393](https://github.com/luarss/OpenROAD/issues/393) from The-OpenROAD-Project-private/tr-logger
+- Merge pull request [#392](https://github.com/luarss/OpenROAD/issues/392) from The-OpenROAD-Project-private/DRT-TW
+- Merge pull request [#385](https://github.com/luarss/OpenROAD/issues/385) from The-OpenROAD-Project-private/opendb-enclosure
+- Merge pull request [#391](https://github.com/luarss/OpenROAD/issues/391) from The-OpenROAD-Project-private/lib_expr
+- Merge pull request [#390](https://github.com/luarss/OpenROAD/issues/390) from The-OpenROAD-Project-private/tr-minwidth
+- Merge pull request [#387](https://github.com/luarss/OpenROAD/issues/387) from The-OpenROAD-Project-private/grt_fixes
+- Merge pull request [#389](https://github.com/luarss/OpenROAD/issues/389) from The-OpenROAD-Project-private/rsz_hold_parasitics
+- Merge pull request [#386](https://github.com/luarss/OpenROAD/issues/386) from The-OpenROAD-Project-private/BugFix40nm
+- Merge pull request [#382](https://github.com/luarss/OpenROAD/issues/382) from The-OpenROAD-Project-private/ICeWall-Jenkins-fix
+- Merge pull request [#363](https://github.com/luarss/OpenROAD/issues/363) from The-OpenROAD-Project-private/pdnsim
+- Merge pull request [#384](https://github.com/luarss/OpenROAD/issues/384) from The-OpenROAD-Project-private/cts_clang_fix
+- Merge pull request [#381](https://github.com/luarss/OpenROAD/issues/381) from The-OpenROAD-Project-private/rsz_logger
+- Merge pull request [#380](https://github.com/luarss/OpenROAD/issues/380) from The-OpenROAD-Project-private/gpl_uniform
+- Merge pull request [#379](https://github.com/luarss/OpenROAD/issues/379) from The-OpenROAD-Project-private/tap_indent
+- Merge pull request [#378](https://github.com/luarss/OpenROAD/issues/378) from The-OpenROAD-Project-private/mpl_no_soln
+- Merge pull request [#355](https://github.com/luarss/OpenROAD/issues/355) from The-OpenROAD-Project-private/cts_2_level
+- Merge pull request [#376](https://github.com/luarss/OpenROAD/issues/376) from The-OpenROAD-Project-private/tap_refactor
+- Merge pull request [#293](https://github.com/luarss/OpenROAD/issues/293) from The-OpenROAD-Project-private/opendb-journal
+- Merge pull request [#366](https://github.com/luarss/OpenROAD/issues/366) from The-OpenROAD-Project-private/opendb-generator
+- Merge pull request [#374](https://github.com/luarss/OpenROAD/issues/374) from The-OpenROAD-Project-private/make_tracks
+- Merge pull request [#373](https://github.com/luarss/OpenROAD/issues/373) from The-OpenROAD-Project-private/export_unencode
+- Merge pull request [#372](https://github.com/luarss/OpenROAD/issues/372) from The-OpenROAD-Project-private/flow_cleanup
+- Merge pull request [#371](https://github.com/luarss/OpenROAD/issues/371) from The-OpenROAD-Project-private/make_tracks_idiot_proofing
+- Merge pull request [#370](https://github.com/luarss/OpenROAD/issues/370) from The-OpenROAD-Project-private/dpl_erase_pixel
+- Merge pull request [#369](https://github.com/luarss/OpenROAD/issues/369) from The-OpenROAD-Project-private/read_lib_gz
+- Merge pull request [#367](https://github.com/luarss/OpenROAD/issues/367) from The-OpenROAD-Project-private/tap_tla
+- Merge pull request [#368](https://github.com/luarss/OpenROAD/issues/368) from The-OpenROAD-Project-private/grt_tla
+- Merge pull request [#365](https://github.com/luarss/OpenROAD/issues/365) from The-OpenROAD-Project-private/ppl_tla
+- Merge pull request [#360](https://github.com/luarss/OpenROAD/issues/360) from The-OpenROAD-Project-private/ispd
+- Merge pull request [#356](https://github.com/luarss/OpenROAD/issues/356) from The-OpenROAD-Project-private/icewall-extract_footprint
+- Merge pull request [#364](https://github.com/luarss/OpenROAD/issues/364) from The-OpenROAD-Project-private/ppl_on_grid
+- Merge pull request [#352](https://github.com/luarss/OpenROAD/issues/352) from The-OpenROAD-Project-private/NDRs
+- Merge pull request [#346](https://github.com/luarss/OpenROAD/issues/346) from The-OpenROAD-Project-private/ppl_unplaced_cells
+- Merge pull request [#362](https://github.com/luarss/OpenROAD/issues/362) from The-OpenROAD-Project-private/opendb-private
+- Merge pull request [#361](https://github.com/luarss/OpenROAD/issues/361) from The-OpenROAD-Project-private/gui-drt
+- Merge pull request [#358](https://github.com/luarss/OpenROAD/issues/358) from The-OpenROAD-Project-private/opendb-layer-props
+- Merge pull request [#359](https://github.com/luarss/OpenROAD/issues/359) from The-OpenROAD-Project-private/rsz_repair_design
+- Merge pull request [#357](https://github.com/luarss/OpenROAD/issues/357) from The-OpenROAD-Project-private/opendb-error
+- Merge pull request [#354](https://github.com/luarss/OpenROAD/issues/354) from The-OpenROAD-Project-private/read_verilog_constant
+- Merge pull request [#353](https://github.com/luarss/OpenROAD/issues/353) from The-OpenROAD-Project-private/drt-use-area-helper
+- Merge pull request [#351](https://github.com/luarss/OpenROAD/issues/351) from The-OpenROAD-Project-private/fasterIdx
+- Merge pull request [#349](https://github.com/luarss/OpenROAD/issues/349) from The-OpenROAD-Project-private/cacheEdgeLength
+- Merge pull request [#350](https://github.com/luarss/OpenROAD/issues/350) from The-OpenROAD-Project-private/astar
+- Merge pull request [#347](https://github.com/luarss/OpenROAD/issues/347) from The-OpenROAD-Project-private/OR-796
+- Merge pull request [#348](https://github.com/luarss/OpenROAD/issues/348) from The-OpenROAD-Project-private/opendb-python
+- Merge pull request [#334](https://github.com/luarss/OpenROAD/issues/334) from The-OpenROAD-Project-private/incremental-defin
+- Merge pull request [#345](https://github.com/luarss/OpenROAD/issues/345) from The-OpenROAD-Project-private/OR-773
+- Merge pull request [#343](https://github.com/luarss/OpenROAD/issues/343) from The-OpenROAD-Project-private/OR-774
+- Merge pull request [#344](https://github.com/luarss/OpenROAD/issues/344) from The-OpenROAD-Project-private/dpl_cleanup
+- Merge pull request [#339](https://github.com/luarss/OpenROAD/issues/339) from The-OpenROAD-Project-private/tritonroute-remove-def
+- Merge pull request [#336](https://github.com/luarss/OpenROAD/issues/336) from The-OpenROAD-Project-private/opendb-congestion
+- Merge pull request [#328](https://github.com/luarss/OpenROAD/issues/328) from The-OpenROAD-Project-private/cts_buffering
+- Merge pull request [#331](https://github.com/luarss/OpenROAD/issues/331) from The-OpenROAD-Project-private/tap_fix
+- Merge pull request [#341](https://github.com/luarss/OpenROAD/issues/341) from The-OpenROAD-Project-private/flow_rm_cts_vars
+- Merge pull request [#340](https://github.com/luarss/OpenROAD/issues/340) from The-OpenROAD-Project-private/mpl_c
+- Merge pull request [#337](https://github.com/luarss/OpenROAD/issues/337) from The-OpenROAD-Project-private/ibrahimkhairy-patch-1
+- Merge pull request [#338](https://github.com/luarss/OpenROAD/issues/338) from The-OpenROAD-Project-private/make_tracks
+- Merge pull request [#335](https://github.com/luarss/OpenROAD/issues/335) from The-OpenROAD-Project-private/tla_dirs
+- Merge pull request [#333](https://github.com/luarss/OpenROAD/issues/333) from The-OpenROAD-Project-private/repair_setup
+- Merge pull request [#330](https://github.com/luarss/OpenROAD/issues/330) from The-OpenROAD-Project-private/tritonroute-opendb-layer-props
+- Merge pull request [#332](https://github.com/luarss/OpenROAD/issues/332) from The-OpenROAD-Project-private/mpl_rm_config
+- Merge pull request [#329](https://github.com/luarss/OpenROAD/issues/329) from The-OpenROAD-Project-private/ax3ghazy_fastroute_ignore_obs_outside
+- Merge pull request [#326](https://github.com/luarss/OpenROAD/issues/326) from The-OpenROAD-Project-private/opendb-congestion
+- Merge pull request [#327](https://github.com/luarss/OpenROAD/issues/327) from The-OpenROAD-Project-private/ppl_fix
+- Merge pull request [#323](https://github.com/luarss/OpenROAD/issues/323) from The-OpenROAD-Project-private/NDRs
+- Merge pull request [#308](https://github.com/luarss/OpenROAD/issues/308) from The-OpenROAD-Project-private/pdnsim_bug_fixes
+- Merge pull request [#306](https://github.com/luarss/OpenROAD/issues/306) from The-OpenROAD-Project-private/ppl_group_pins
+- Merge pull request [#325](https://github.com/luarss/OpenROAD/issues/325) from The-OpenROAD-Project-private/resizer_rsz
+- Merge pull request [#324](https://github.com/luarss/OpenROAD/issues/324) from The-OpenROAD-Project-private/write_verilog_pwr_ports
+- Merge pull request [#322](https://github.com/luarss/OpenROAD/issues/322) from The-OpenROAD-Project-private/gpl_options
+- Merge pull request [#307](https://github.com/luarss/OpenROAD/issues/307) from The-OpenROAD-Project-private/congestionUI
+- Merge pull request [#321](https://github.com/luarss/OpenROAD/issues/321) from The-OpenROAD-Project-private/mpl_cleanup
+- Merge pull request [#319](https://github.com/luarss/OpenROAD/issues/319) from The-OpenROAD-Project-private/cmake_cleanup
+- Merge pull request [#576](https://github.com/luarss/OpenROAD/issues/576) from antonblanchard/opendb-hash
+- Merge pull request [#318](https://github.com/luarss/OpenROAD/issues/318) from The-OpenROAD-Project-private/cts_pdrev_fix
+- Merge pull request [#317](https://github.com/luarss/OpenROAD/issues/317) from The-OpenROAD-Project-private/ifp_tracks
+- Merge pull request [#304](https://github.com/luarss/OpenROAD/issues/304) from The-OpenROAD-Project-private/cts_sink_clustering
+- Merge pull request [#316](https://github.com/luarss/OpenROAD/issues/316) from The-OpenROAD-Project-private/td-replace2
+- Merge pull request [#313](https://github.com/luarss/OpenROAD/issues/313) from The-OpenROAD-Project-private/tritonroute-opendb
+- Merge pull request [#315](https://github.com/luarss/OpenROAD/issues/315) from The-OpenROAD-Project-private/flow_fail
+- Merge pull request [#314](https://github.com/luarss/OpenROAD/issues/314) from The-OpenROAD-Project-private/opensta
+- Merge pull request [#311](https://github.com/luarss/OpenROAD/issues/311) from The-OpenROAD-Project-private/docs
+- Merge pull request [#312](https://github.com/luarss/OpenROAD/issues/312) from The-OpenROAD-Project-private/mpl_dance2
+- Merge pull request [#310](https://github.com/luarss/OpenROAD/issues/310) from The-OpenROAD-Project-private/mpl_dance
+- Merge pull request [#309](https://github.com/luarss/OpenROAD/issues/309) from The-OpenROAD-Project-private/fakerams
+- Merge pull request [#300](https://github.com/luarss/OpenROAD/issues/300) from The-OpenROAD-Project-private/cts_partition_fix
+- Merge pull request [#305](https://github.com/luarss/OpenROAD/issues/305) from The-OpenROAD-Project-private/grt_ndr
+- Merge pull request [#302](https://github.com/luarss/OpenROAD/issues/302) from The-OpenROAD-Project-private/fr_congest_info
+- Merge pull request [#303](https://github.com/luarss/OpenROAD/issues/303) from The-OpenROAD-Project-private/mpl_umr
+- Merge pull request [#301](https://github.com/luarss/OpenROAD/issues/301) from The-OpenROAD-Project-private/odb_include
+- Merge pull request [#297](https://github.com/luarss/OpenROAD/issues/297) from The-OpenROAD-Project-private/grt_fix
+- Merge pull request [#299](https://github.com/luarss/OpenROAD/issues/299) from The-OpenROAD-Project-private/icewall-padring_connections
+- Merge pull request [#280](https://github.com/luarss/OpenROAD/issues/280) from The-OpenROAD-Project-private/rcx
+- Merge pull request [#298](https://github.com/luarss/OpenROAD/issues/298) from The-OpenROAD-Project-private/highlight_groute
+- Merge pull request [#295](https://github.com/luarss/OpenROAD/issues/295) from The-OpenROAD-Project-private/grt_fix_merge_segs
+- Merge pull request [#296](https://github.com/luarss/OpenROAD/issues/296) from The-OpenROAD-Project-private/cleanup
+- Merge pull request [#294](https://github.com/luarss/OpenROAD/issues/294) from The-OpenROAD-Project-private/grt_pin_location
+- Merge pull request [#291](https://github.com/luarss/OpenROAD/issues/291) from The-OpenROAD-Project-private/grt_logger
+- Merge pull request [#286](https://github.com/luarss/OpenROAD/issues/286) from The-OpenROAD-Project-private/docs
+- Merge pull request [#292](https://github.com/luarss/OpenROAD/issues/292) from The-OpenROAD-Project-private/flow_gr
+- Merge pull request [#290](https://github.com/luarss/OpenROAD/issues/290) from The-OpenROAD-Project-private/grt_tests
+- Merge pull request [#289](https://github.com/luarss/OpenROAD/issues/289) from The-OpenROAD-Project-private/minor_cleanup
+- Merge pull request [#288](https://github.com/luarss/OpenROAD/issues/288) from The-OpenROAD-Project-private/dbBTerm_connect
+- Merge pull request [#281](https://github.com/luarss/OpenROAD/issues/281) from The-OpenROAD-Project-private/remove-cdl
+- Merge pull request [#285](https://github.com/luarss/OpenROAD/issues/285) from The-OpenROAD-Project-private/pdnsim_tests
+- Merge pull request [#284](https://github.com/luarss/OpenROAD/issues/284) from The-OpenROAD-Project-private/tap_logger
+- Merge pull request [#282](https://github.com/luarss/OpenROAD/issues/282) from The-OpenROAD-Project-private/partitionmgr
+- Merge pull request [#279](https://github.com/luarss/OpenROAD/issues/279) from The-OpenROAD-Project-private/readme
+- Merge pull request [#259](https://github.com/luarss/OpenROAD/issues/259) from The-OpenROAD-Project-private/openrcx
+- Merge pull request [#277](https://github.com/luarss/OpenROAD/issues/277) from The-OpenROAD-Project-private/sky130hd
+- Merge pull request [#276](https://github.com/luarss/OpenROAD/issues/276) from The-OpenROAD-Project-private/replace-logfix
+- Merge pull request [#275](https://github.com/luarss/OpenROAD/issues/275) from The-OpenROAD-Project-private/rm_ord_error
+- Merge pull request [#274](https://github.com/luarss/OpenROAD/issues/274) from The-OpenROAD-Project-private/rm_ord_error
+- Merge pull request [#273](https://github.com/luarss/OpenROAD/issues/273) from The-OpenROAD-Project-private/gui_warnings
+- Merge pull request [#272](https://github.com/luarss/OpenROAD/issues/272) from The-OpenROAD-Project-private/rsz_swap_fail
+- Merge pull request [#271](https://github.com/luarss/OpenROAD/issues/271) from The-OpenROAD-Project-private/icewall_restore_get_core_area
+- Merge pull request [#270](https://github.com/luarss/OpenROAD/issues/270) from The-OpenROAD-Project-private/fr_core_logger
+- Merge pull request [#265](https://github.com/luarss/OpenROAD/issues/265) from The-OpenROAD-Project-private/partition_log
+- Merge pull request [#263](https://github.com/luarss/OpenROAD/issues/263) from The-OpenROAD-Project-private/tcl_log_msgs
+- Merge pull request [#269](https://github.com/luarss/OpenROAD/issues/269) from The-OpenROAD-Project-private/metrics-doc
+- Merge pull request [#251](https://github.com/luarss/OpenROAD/issues/251) from The-OpenROAD-Project-private/sky130
+- Merge pull request [#228](https://github.com/luarss/OpenROAD/issues/228) from The-OpenROAD-Project-private/opendb-test-regression
+- Merge pull request [#268](https://github.com/luarss/OpenROAD/issues/268) from The-OpenROAD-Project-private/parasitic_reduce
+- Merge pull request [#266](https://github.com/luarss/OpenROAD/issues/266) from The-OpenROAD-Project-private/metrics
+- Merge pull request [#267](https://github.com/luarss/OpenROAD/issues/267) from The-OpenROAD-Project-private/tr_tcl_error
+- Merge pull request [#261](https://github.com/luarss/OpenROAD/issues/261) from The-OpenROAD-Project-private/coverity-support
+- Merge pull request [#264](https://github.com/luarss/OpenROAD/issues/264) from The-OpenROAD-Project-private/opendp_cleanup
+- Merge pull request [#262](https://github.com/luarss/OpenROAD/issues/262) from The-OpenROAD-Project-private/update-email-notification
+- Merge pull request [#247](https://github.com/luarss/OpenROAD/issues/247) from The-OpenROAD-Project-private/openroad.timingUI
+- Merge pull request [#260](https://github.com/luarss/OpenROAD/issues/260) from The-OpenROAD-Project-private/ant_logger
+- Merge pull request [#249](https://github.com/luarss/OpenROAD/issues/249) from The-OpenROAD-Project-private/defout-halo-syntax
+- Merge pull request [#258](https://github.com/luarss/OpenROAD/issues/258) from The-OpenROAD-Project-private/level_shifters_aint_buffers
+- Merge pull request [#257](https://github.com/luarss/OpenROAD/issues/257) from The-OpenROAD-Project-private/logger_tcl_utl
+- Merge pull request [#256](https://github.com/luarss/OpenROAD/issues/256) from The-OpenROAD-Project-private/logger_utl_tcl
+- Merge pull request [#254](https://github.com/luarss/OpenROAD/issues/254) from The-OpenROAD-Project-private/resizer_journal
+- Merge pull request [#253](https://github.com/luarss/OpenROAD/issues/253) from The-OpenROAD-Project-private/tritonroute-opendb
+- Merge pull request [#252](https://github.com/luarss/OpenROAD/issues/252) from The-OpenROAD-Project-private/fix_cmake
+- Merge pull request [#227](https://github.com/luarss/OpenROAD/issues/227) from The-OpenROAD-Project-private/opendb-cpp-test
+- Merge pull request [#235](https://github.com/luarss/OpenROAD/issues/235) from The-OpenROAD-Project-private/opendb-cdl
+- Merge pull request [#241](https://github.com/luarss/OpenROAD/issues/241) from The-OpenROAD-Project-private/db-logger
+- Merge pull request [#250](https://github.com/luarss/OpenROAD/issues/250) from The-OpenROAD-Project-private/opendp
+- Merge pull request [#248](https://github.com/luarss/OpenROAD/issues/248) from The-OpenROAD-Project-private/opendb-PAGE_SIZE
+- Merge pull request [#246](https://github.com/luarss/OpenROAD/issues/246) from The-OpenROAD-Project-private/lib_op_cond
+- Merge pull request [#242](https://github.com/luarss/OpenROAD/issues/242) from The-OpenROAD-Project-private/revert-234-openroad.timingUI
+- Merge pull request [#244](https://github.com/luarss/OpenROAD/issues/244) from The-OpenROAD-Project-private/opensta
+- Merge pull request [#243](https://github.com/luarss/OpenROAD/issues/243) from The-OpenROAD-Project-private/replace_arg_doc
+- Merge pull request [#234](https://github.com/luarss/OpenROAD/issues/234) from The-OpenROAD-Project-private/openroad.timingUI
+- Merge pull request [#239](https://github.com/luarss/OpenROAD/issues/239) from The-OpenROAD-Project-private/cts_gcc10.2
+- Merge pull request [#240](https://github.com/luarss/OpenROAD/issues/240) from The-OpenROAD-Project-private/pdngen_file_space
+- Merge pull request [#238](https://github.com/luarss/OpenROAD/issues/238) from The-OpenROAD-Project-private/opendp
+- Merge pull request [#237](https://github.com/luarss/OpenROAD/issues/237) from The-OpenROAD-Project-private/repair_timing_max_buffer_percent
+- Merge pull request [#564](https://github.com/luarss/OpenROAD/issues/564) from vvbandeira/coverity
+- Merge pull request [#236](https://github.com/luarss/OpenROAD/issues/236) from The-OpenROAD-Project-private/keep-diffs
+- Merge pull request [#191](https://github.com/luarss/OpenROAD/issues/191) from The-OpenROAD-Project-private/cts_auto_char
+- Merge pull request [#233](https://github.com/luarss/OpenROAD/issues/233) from The-OpenROAD-Project-private/cts_clustering_issue
+- Merge pull request [#226](https://github.com/luarss/OpenROAD/issues/226) from The-OpenROAD-Project-private/replace_spdlog
+- Merge pull request [#232](https://github.com/luarss/OpenROAD/issues/232) from The-OpenROAD-Project-private/repair_hold
+- Merge pull request [#231](https://github.com/luarss/OpenROAD/issues/231) from The-OpenROAD-Project-private/hold_info
+- Merge pull request [#230](https://github.com/luarss/OpenROAD/issues/230) from The-OpenROAD-Project-private/opendp
+- Merge pull request [#217](https://github.com/luarss/OpenROAD/issues/217) from The-OpenROAD-Project-private/zutil-issue
+- Merge pull request [#225](https://github.com/luarss/OpenROAD/issues/225) from The-OpenROAD-Project-private/warnings
+- Merge pull request [#224](https://github.com/luarss/OpenROAD/issues/224) from The-OpenROAD-Project-private/tap_fix
+- Merge pull request [#211](https://github.com/luarss/OpenROAD/issues/211) from The-OpenROAD-Project-private/tritonroute-opendb
+- Merge pull request [#223](https://github.com/luarss/OpenROAD/issues/223) from The-OpenROAD-Project-private/sky130_lef2
+- Merge pull request [#222](https://github.com/luarss/OpenROAD/issues/222) from The-OpenROAD-Project-private/revert-218-sky130_lef2
+- Merge pull request [#221](https://github.com/luarss/OpenROAD/issues/221) from The-OpenROAD-Project-private/db_sta
+- Merge pull request [#220](https://github.com/luarss/OpenROAD/issues/220) from The-OpenROAD-Project-private/max_wire_info
+- Merge pull request [#206](https://github.com/luarss/OpenROAD/issues/206) from The-OpenROAD-Project-private/opendb-test-regression
+- Merge pull request [#219](https://github.com/luarss/OpenROAD/issues/219) from The-OpenROAD-Project-private/iop_fix_logger
+- Merge pull request [#218](https://github.com/luarss/OpenROAD/issues/218) from The-OpenROAD-Project-private/sky130_lef2
+- Merge pull request [#213](https://github.com/luarss/OpenROAD/issues/213) from The-OpenROAD-Project-private/fr_logger
+- Merge pull request [#216](https://github.com/luarss/OpenROAD/issues/216) from The-OpenROAD-Project-private/fr_fix
+- Merge pull request [#215](https://github.com/luarss/OpenROAD/issues/215) from The-OpenROAD-Project-private/opendp_mv_cells_on_macros
+- Merge pull request [#214](https://github.com/luarss/OpenROAD/issues/214) from The-OpenROAD-Project-private/resize_tgt_loads
+- Merge pull request [#204](https://github.com/luarss/OpenROAD/issues/204) from The-OpenROAD-Project-private/cts_logger
+- Merge pull request [#212](https://github.com/luarss/OpenROAD/issues/212) from The-OpenROAD-Project-private/lefwWriter-issue
+- Merge pull request [#210](https://github.com/luarss/OpenROAD/issues/210) from The-OpenROAD-Project-private/critical_exit
+- Merge pull request [#209](https://github.com/luarss/OpenROAD/issues/209) from The-OpenROAD-Project-private/flow_rm_max_wl
+- Merge pull request [#208](https://github.com/luarss/OpenROAD/issues/208) from The-OpenROAD-Project-private/sky130_dont_use
+- Merge pull request [#207](https://github.com/luarss/OpenROAD/issues/207) from The-OpenROAD-Project-private/resize_net_names
+- Merge pull request [#202](https://github.com/luarss/OpenROAD/issues/202) from The-OpenROAD-Project-private/dbunits
+- Merge pull request [#203](https://github.com/luarss/OpenROAD/issues/203) from The-OpenROAD-Project-private/keep-diffs
+- Merge pull request [#148](https://github.com/luarss/OpenROAD/issues/148) from The-OpenROAD-Project-private/partitionmgr
+- Merge pull request [#200](https://github.com/luarss/OpenROAD/issues/200) from The-OpenROAD-Project-private/cts_reorg
+- Merge pull request [#164](https://github.com/luarss/OpenROAD/issues/164) from The-OpenROAD-Project-private/multiple-boxes-bpin
+- Merge pull request [#201](https://github.com/luarss/OpenROAD/issues/201) from The-OpenROAD-Project-private/fr_fix
+- Merge pull request [#185](https://github.com/luarss/OpenROAD/issues/185) from The-OpenROAD-Project-private/gallery_update
+- Merge pull request [#192](https://github.com/luarss/OpenROAD/issues/192) from The-OpenROAD-Project-private/openroad.findInUi
+- Merge pull request [#194](https://github.com/luarss/OpenROAD/issues/194) from The-OpenROAD-Project-private/openrcx_test
+- Merge pull request [#173](https://github.com/luarss/OpenROAD/issues/173) from The-OpenROAD-Project-private/replace_logger
+- Merge pull request [#199](https://github.com/luarss/OpenROAD/issues/199) from The-OpenROAD-Project-private/iop_fix_random
+- Merge pull request [#168](https://github.com/luarss/OpenROAD/issues/168) from The-OpenROAD-Project-private/opendb-win32-remove
+- Merge pull request [#198](https://github.com/luarss/OpenROAD/issues/198) from The-OpenROAD-Project-private/repair_hold_cmd
+- Merge pull request [#193](https://github.com/luarss/OpenROAD/issues/193) from The-OpenROAD-Project-private/fr_fix_clear
+- Merge pull request [#197](https://github.com/luarss/OpenROAD/issues/197) from The-OpenROAD-Project-private/dcalc_mem_error
+- Merge pull request [#196](https://github.com/luarss/OpenROAD/issues/196) from The-OpenROAD-Project-private/sta_warnings
+- Merge pull request [#195](https://github.com/luarss/OpenROAD/issues/195) from The-OpenROAD-Project-private/eigen-fix
+- Merge pull request [#530](https://github.com/luarss/OpenROAD/issues/530) from vvbandeira/coverity
+- Merge pull request [#166](https://github.com/luarss/OpenROAD/issues/166) from The-OpenROAD-Project-private/tritonroute-opendb
+- Merge pull request [#536](https://github.com/luarss/OpenROAD/issues/536) from ax3ghazy/patch-1
+- Merge pull request [#186](https://github.com/luarss/OpenROAD/issues/186) from The-OpenROAD-Project-private/pdngen-viarule
+- Merge pull request [#190](https://github.com/luarss/OpenROAD/issues/190) from The-OpenROAD-Project-private/debug_print
+- Merge pull request [#189](https://github.com/luarss/OpenROAD/issues/189) from The-OpenROAD-Project-private/rm_psn_results
+- Merge pull request [#188](https://github.com/luarss/OpenROAD/issues/188) from The-OpenROAD-Project-private/repair_combinational
+- Merge pull request [#187](https://github.com/luarss/OpenROAD/issues/187) from The-OpenROAD-Project-private/replace_routability
+- Merge pull request [#174](https://github.com/luarss/OpenROAD/issues/174) from The-OpenROAD-Project-private/pdnsim_logger
+- Merge pull request [#184](https://github.com/luarss/OpenROAD/issues/184) from The-OpenROAD-Project-private/splash
+- Merge pull request [#183](https://github.com/luarss/OpenROAD/issues/183) from The-OpenROAD-Project-private/set_layer_rc
+- Merge pull request [#182](https://github.com/luarss/OpenROAD/issues/182) from The-OpenROAD-Project-private/sta_report
+- Merge pull request [#181](https://github.com/luarss/OpenROAD/issues/181) from The-OpenROAD-Project-private/resizer_tests
+- Merge pull request [#180](https://github.com/luarss/OpenROAD/issues/180) from The-OpenROAD-Project-private/random_shuffle2
+- Merge pull request [#179](https://github.com/luarss/OpenROAD/issues/179) from The-OpenROAD-Project-private/debug_logger
+- Merge pull request [#167](https://github.com/luarss/OpenROAD/issues/167) from The-OpenROAD-Project-private/openroad.qtviews
+- Merge pull request [#177](https://github.com/luarss/OpenROAD/issues/177) from The-OpenROAD-Project-private/tap_logger
+- Merge pull request [#176](https://github.com/luarss/OpenROAD/issues/176) from The-OpenROAD-Project-private/iop_logger
+- Merge pull request [#172](https://github.com/luarss/OpenROAD/issues/172) from The-OpenROAD-Project-private/fr_logger
+- Merge pull request [#547](https://github.com/luarss/OpenROAD/issues/547) from antonblanchard/fix-optimize_mirroring-typo
+- Merge pull request [#175](https://github.com/luarss/OpenROAD/issues/175) from The-OpenROAD-Project-private/opensta_logger
+- Merge pull request [#170](https://github.com/luarss/OpenROAD/issues/170) from The-OpenROAD-Project-private/fr_indentation
+- Merge pull request [#171](https://github.com/luarss/OpenROAD/issues/171) from The-OpenROAD-Project-private/file_arg_spaces
+- Merge pull request [#169](https://github.com/luarss/OpenROAD/issues/169) from The-OpenROAD-Project-private/tap_logger
+- Merge pull request [#165](https://github.com/luarss/OpenROAD/issues/165) from The-OpenROAD-Project-private/fr_fix_guides
+- Merge pull request [#163](https://github.com/luarss/OpenROAD/issues/163) from The-OpenROAD-Project-private/iop_fix
+- Merge pull request [#162](https://github.com/luarss/OpenROAD/issues/162) from The-OpenROAD-Project-private/find_msgs
+- Merge pull request [#161](https://github.com/luarss/OpenROAD/issues/161) from The-OpenROAD-Project-private/logger
+- Merge pull request [#160](https://github.com/luarss/OpenROAD/issues/160) from The-OpenROAD-Project-private/rm_psn
+- Merge pull request [#159](https://github.com/luarss/OpenROAD/issues/159) from The-OpenROAD-Project-private/logger_doc
+- Merge pull request [#158](https://github.com/luarss/OpenROAD/issues/158) from The-OpenROAD-Project-private/est_rc
+- Merge pull request [#156](https://github.com/luarss/OpenROAD/issues/156) from The-OpenROAD-Project-private/tapcell_fix
+- Merge pull request [#124](https://github.com/luarss/OpenROAD/issues/124) from The-OpenROAD-Project-private/pdnsim/remove_vsrc
+- Merge pull request [#108](https://github.com/luarss/OpenROAD/issues/108) from The-OpenROAD-Project-private/cts_fix
+- Merge pull request [#151](https://github.com/luarss/OpenROAD/issues/151) from The-OpenROAD-Project-private/module-hierarchy
+- Merge pull request [#153](https://github.com/luarss/OpenROAD/issues/153) from The-OpenROAD-Project-private/sky130
+- Merge pull request [#157](https://github.com/luarss/OpenROAD/issues/157) from The-OpenROAD-Project-private/repair_timing_slack_margin
+- Merge pull request [#143](https://github.com/luarss/OpenROAD/issues/143) from The-OpenROAD-Project-private/iop_multi_layers
+- Merge pull request [#155](https://github.com/luarss/OpenROAD/issues/155) from The-OpenROAD-Project-private/sta_logger
+- Merge pull request [#154](https://github.com/luarss/OpenROAD/issues/154) from The-OpenROAD-Project-private/resizer_util
+- Merge pull request [#152](https://github.com/luarss/OpenROAD/issues/152) from The-OpenROAD-Project-private/opendb_logger
+- Merge pull request [#149](https://github.com/luarss/OpenROAD/issues/149) from The-OpenROAD-Project-private/logger
+- Merge pull request [#147](https://github.com/luarss/OpenROAD/issues/147) from The-OpenROAD-Project-private/resizer_deprecate_arg
+- Merge pull request [#146](https://github.com/luarss/OpenROAD/issues/146) from The-OpenROAD-Project-private/partition_compile_error
+- Merge pull request [#145](https://github.com/luarss/OpenROAD/issues/145) from The-OpenROAD-Project-private/opendb-remove-warnings
+- Merge pull request [#144](https://github.com/luarss/OpenROAD/issues/144) from The-OpenROAD-Project-private/flow_cts
+- Merge pull request [#114](https://github.com/luarss/OpenROAD/issues/114) from The-OpenROAD-Project-private/partclusmanager
+- Merge pull request [#142](https://github.com/luarss/OpenROAD/issues/142) from The-OpenROAD-Project-private/ant_namespace
+- Merge pull request [#141](https://github.com/luarss/OpenROAD/issues/141) from The-OpenROAD-Project-private/compile_warnings
+- Merge pull request [#140](https://github.com/luarss/OpenROAD/issues/140) from The-OpenROAD-Project-private/mpl_namespace
+- Merge pull request [#139](https://github.com/luarss/OpenROAD/issues/139) from The-OpenROAD-Project-private/gcd_resize
+- Merge pull request [#138](https://github.com/luarss/OpenROAD/issues/138) from The-OpenROAD-Project-private/highlight_inst
+- Merge pull request [#137](https://github.com/luarss/OpenROAD/issues/137) from The-OpenROAD-Project-private/namespaces
+- Merge pull request [#136](https://github.com/luarss/OpenROAD/issues/136) from The-OpenROAD-Project-private/rm_cmake_version
+- Merge pull request [#135](https://github.com/luarss/OpenROAD/issues/135) from The-OpenROAD-Project-private/opendp_namespace
+- Merge pull request [#134](https://github.com/luarss/OpenROAD/issues/134) from The-OpenROAD-Project-private/resizer_namespace
+- Merge pull request [#133](https://github.com/luarss/OpenROAD/issues/133) from The-OpenROAD-Project-private/init_fp_namespace
+- Merge pull request [#132](https://github.com/luarss/OpenROAD/issues/132) from The-OpenROAD-Project-private/flute_namespace
+- Merge pull request [#130](https://github.com/luarss/OpenROAD/issues/130) from The-OpenROAD-Project-private/openrcx
+- Merge pull request [#131](https://github.com/luarss/OpenROAD/issues/131) from The-OpenROAD-Project-private/flute_rm_submodule
+- Merge pull request [#106](https://github.com/luarss/OpenROAD/issues/106) from The-OpenROAD-Project-private/opendb-updates
+- Merge pull request [#129](https://github.com/luarss/OpenROAD/issues/129) from The-OpenROAD-Project-private/flute
+- Merge pull request [#128](https://github.com/luarss/OpenROAD/issues/128) from The-OpenROAD-Project-private/init_check
+- Merge pull request [#126](https://github.com/luarss/OpenROAD/issues/126) from The-OpenROAD-Project-private/incr_parasitics
+- Merge pull request [#125](https://github.com/luarss/OpenROAD/issues/125) from The-OpenROAD-Project-private/resizer_cleanup
+- Merge pull request [#123](https://github.com/luarss/OpenROAD/issues/123) from The-OpenROAD-Project-private/highlight_path
+- Merge pull request [#122](https://github.com/luarss/OpenROAD/issues/122) from The-OpenROAD-Project-private/repair_timing2
+- Merge pull request [#120](https://github.com/luarss/OpenROAD/issues/120) from The-OpenROAD-Project-private/fix_namespaces
+- Merge pull request [#119](https://github.com/luarss/OpenROAD/issues/119) from The-OpenROAD-Project-private/fr_rm_flags
+- Merge pull request [#115](https://github.com/luarss/OpenROAD/issues/115) from The-OpenROAD-Project-private/fr_rename_cmd
+- Merge pull request [#118](https://github.com/luarss/OpenROAD/issues/118) from The-OpenROAD-Project-private/resizer_dbg
+- Merge pull request [#93](https://github.com/luarss/OpenROAD/issues/93) from The-OpenROAD-Project-private/fr_clock_route
+- Merge pull request [#117](https://github.com/luarss/OpenROAD/issues/117) from The-OpenROAD-Project-private/sky130_clk_layers
+- Merge pull request [#107](https://github.com/luarss/OpenROAD/issues/107) from The-OpenROAD-Project-private/iop_pin_constraints
+- Merge pull request [#113](https://github.com/luarss/OpenROAD/issues/113) from The-OpenROAD-Project-private/docker-flex-2.6.4
+- Merge pull request [#112](https://github.com/luarss/OpenROAD/issues/112) from The-OpenROAD-Project-private/find_clks
+- Merge pull request [#111](https://github.com/luarss/OpenROAD/issues/111) from The-OpenROAD-Project-private/rm_resize_cmd
+- Merge pull request [#110](https://github.com/luarss/OpenROAD/issues/110) from The-OpenROAD-Project-private/opensta
+- Merge pull request [#78](https://github.com/luarss/OpenROAD/issues/78) from The-OpenROAD-Project-private/tapcell_fixes
+- Merge pull request [#109](https://github.com/luarss/OpenROAD/issues/109) from The-OpenROAD-Project-private/fastroute_clks
+- Merge pull request [#101](https://github.com/luarss/OpenROAD/issues/101) from The-OpenROAD-Project-private/iop_fixes
+- Merge pull request [#105](https://github.com/luarss/OpenROAD/issues/105) from The-OpenROAD-Project-private/resizer_scratchpad
+- Merge pull request [#104](https://github.com/luarss/OpenROAD/issues/104) from The-OpenROAD-Project-private/sta_db_cbk
+- Merge pull request [#103](https://github.com/luarss/OpenROAD/issues/103) from The-OpenROAD-Project-private/exit_error
+- Merge pull request [#102](https://github.com/luarss/OpenROAD/issues/102) from The-OpenROAD-Project-private/jpeg_sky130
+- Merge pull request [#100](https://github.com/luarss/OpenROAD/issues/100) from The-OpenROAD-Project-private/resizer_target_load2
+- Merge pull request [#98](https://github.com/luarss/OpenROAD/issues/98) from The-OpenROAD-Project-private/cdl
+- Merge pull request [#97](https://github.com/luarss/OpenROAD/issues/97) from The-OpenROAD-Project-private/pdnsim
+- Merge pull request [#99](https://github.com/luarss/OpenROAD/issues/99) from The-OpenROAD-Project-private/resize_ports
+- Merge pull request [#96](https://github.com/luarss/OpenROAD/issues/96) from The-OpenROAD-Project-private/sta_dcalc
+- Merge pull request [#95](https://github.com/luarss/OpenROAD/issues/95) from The-OpenROAD-Project-private/resize_regs
+- Merge pull request [#94](https://github.com/luarss/OpenROAD/issues/94) from The-OpenROAD-Project-private/resizer_max_wire_warn
+- Merge pull request [#89](https://github.com/luarss/OpenROAD/issues/89) from The-OpenROAD-Project-private/fr_antenna
+- Merge pull request [#90](https://github.com/luarss/OpenROAD/issues/90) from The-OpenROAD-Project-private/fr_fix
+- Merge pull request [#92](https://github.com/luarss/OpenROAD/issues/92) from The-OpenROAD-Project-private/sta_dcalc
+- Merge pull request [#91](https://github.com/luarss/OpenROAD/issues/91) from The-OpenROAD-Project-private/flow
+- Merge pull request [#79](https://github.com/luarss/OpenROAD/issues/79) from The-OpenROAD-Project-private/fr_only_signal
+- Merge pull request [#88](https://github.com/luarss/OpenROAD/issues/88) from The-OpenROAD-Project-private/power_nan
+- Merge pull request [#87](https://github.com/luarss/OpenROAD/issues/87) from The-OpenROAD-Project-private/sta_dcalc
+- Merge pull request [#86](https://github.com/luarss/OpenROAD/issues/86) from The-OpenROAD-Project-private/resizer_dcls
+- Merge pull request [#85](https://github.com/luarss/OpenROAD/issues/85) from The-OpenROAD-Project-private/init_fpX2
+- Merge pull request [#84](https://github.com/luarss/OpenROAD/issues/84) from The-OpenROAD-Project-private/resize
+- Merge pull request [#83](https://github.com/luarss/OpenROAD/issues/83) from The-OpenROAD-Project-private/resizer_no_wire_rc
+- Merge pull request [#81](https://github.com/luarss/OpenROAD/issues/81) from The-OpenROAD-Project-private/untabify
+- Merge pull request [#80](https://github.com/luarss/OpenROAD/issues/80) from The-OpenROAD-Project-private/repair_hold5
+- Merge pull request [#77](https://github.com/luarss/OpenROAD/issues/77) from The-OpenROAD-Project-private/flow
+- Merge pull request [#75](https://github.com/luarss/OpenROAD/issues/75) from The-OpenROAD-Project-private/flow_tests
+- Merge pull request [#71](https://github.com/luarss/OpenROAD/issues/71) from The-OpenROAD-Project-private/fr_diode_insertion
+- Merge pull request [#62](https://github.com/luarss/OpenROAD/issues/62) from The-OpenROAD-Project-private/iop_warnings
+- Merge pull request [#72](https://github.com/luarss/OpenROAD/issues/72) from The-OpenROAD-Project-private/fr_macro_extension
+- Merge pull request [#74](https://github.com/luarss/OpenROAD/issues/74) from The-OpenROAD-Project-private/write_verilog
+- Merge pull request [#70](https://github.com/luarss/OpenROAD/issues/70) from The-OpenROAD-Project-private/read_verilog
+- Merge pull request [#69](https://github.com/luarss/OpenROAD/issues/69) from The-OpenROAD-Project-private/update_opendb_boost_with_test
+- Merge pull request [#66](https://github.com/luarss/OpenROAD/issues/66) from The-OpenROAD-Project-private/gui-updates
+- Merge pull request [#67](https://github.com/luarss/OpenROAD/issues/67) from The-OpenROAD-Project-private/jennkins-build-parallel
+- Merge pull request [#65](https://github.com/luarss/OpenROAD/issues/65) from The-OpenROAD-Project-private/repair_clk_nets
+- Merge pull request [#64](https://github.com/luarss/OpenROAD/issues/64) from The-OpenROAD-Project-private/fr_fixes
+- Merge pull request [#63](https://github.com/luarss/OpenROAD/issues/63) from The-OpenROAD-Project-private/flow_tapcell
+- Merge pull request [#61](https://github.com/luarss/OpenROAD/issues/61) from The-OpenROAD-Project-private/or_version
+- Merge pull request [#60](https://github.com/luarss/OpenROAD/issues/60) from The-OpenROAD-Project-private/repair_clk_nets
+- Merge pull request [#59](https://github.com/luarss/OpenROAD/issues/59) from The-OpenROAD-Project-private/iop_add_exclude_cmd
+- Merge pull request [#58](https://github.com/luarss/OpenROAD/issues/58) from The-OpenROAD-Project-private/resize
+- Merge pull request [#57](https://github.com/luarss/OpenROAD/issues/57) from The-OpenROAD-Project-private/resizer
+- Merge pull request [#54](https://github.com/luarss/OpenROAD/issues/54) from The-OpenROAD-Project-private/iop_rm_dead_code
+- Merge pull request [#56](https://github.com/luarss/OpenROAD/issues/56) from The-OpenROAD-Project-private/resizer_copyright
+- Merge pull request [#55](https://github.com/luarss/OpenROAD/issues/55) from The-OpenROAD-Project-private/fr_rm_file
+- Merge pull request [#53](https://github.com/luarss/OpenROAD/issues/53) from The-OpenROAD-Project-private/opendp_mv
+- Merge pull request [#52](https://github.com/luarss/OpenROAD/issues/52) from The-OpenROAD-Project-private/flow_tests
+- Merge pull request [#51](https://github.com/luarss/OpenROAD/issues/51) from The-OpenROAD-Project-private/fr_rm_pin
+- Merge pull request [#50](https://github.com/luarss/OpenROAD/issues/50) from The-OpenROAD-Project-private/iop_update_classes
+- Merge pull request [#49](https://github.com/luarss/OpenROAD/issues/49) from The-OpenROAD-Project-private/fr_fix_fake_pin
+- Merge pull request [#48](https://github.com/luarss/OpenROAD/issues/48) from The-OpenROAD-Project-private/fr_fix_antenna_repair
+- Merge pull request [#47](https://github.com/luarss/OpenROAD/issues/47) from The-OpenROAD-Project-private/genclk_net
+- Merge pull request [#46](https://github.com/luarss/OpenROAD/issues/46) from The-OpenROAD-Project-private/add_tool
+- Merge pull request [#45](https://github.com/luarss/OpenROAD/issues/45) from The-OpenROAD-Project-private/dbsta_copyright
+- Merge pull request [#44](https://github.com/luarss/OpenROAD/issues/44) from The-OpenROAD-Project-private/init_fp_warning
+- Merge pull request [#43](https://github.com/luarss/OpenROAD/issues/43) from The-OpenROAD-Project-private/coverage-update
+- Merge pull request [#42](https://github.com/luarss/OpenROAD/issues/42) from The-OpenROAD-Project-private/issue_513
+- Merge pull request [#41](https://github.com/luarss/OpenROAD/issues/41) from The-OpenROAD-Project-private/fr_clock_nets
+- Merge pull request [#39](https://github.com/luarss/OpenROAD/issues/39) from The-OpenROAD-Project-private/fr_fixes
+- Merge pull request [#40](https://github.com/luarss/OpenROAD/issues/40) from The-OpenROAD-Project-private/cmake_clang
+- Merge pull request [#38](https://github.com/luarss/OpenROAD/issues/38) from The-OpenROAD-Project-private/fr_fix_layer_range
+- Merge pull request [#37](https://github.com/luarss/OpenROAD/issues/37) from The-OpenROAD-Project-private/icewall-flipchip
+- Merge pull request [#36](https://github.com/luarss/OpenROAD/issues/36) from The-OpenROAD-Project-private/opensta_update
+- Merge pull request [#35](https://github.com/luarss/OpenROAD/issues/35) from The-OpenROAD-Project-private/fr_rm_classes
+- Merge pull request [#34](https://github.com/luarss/OpenROAD/issues/34) from The-OpenROAD-Project-private/fr_repair_antennas
+- Merge pull request [#33](https://github.com/luarss/OpenROAD/issues/33) from The-OpenROAD-Project-private/clang_cmake2
+- Merge pull request [#32](https://github.com/luarss/OpenROAD/issues/32) from The-OpenROAD-Project-private/qt_find_pkg_quiet
+- Merge pull request [#31](https://github.com/luarss/OpenROAD/issues/31) from The-OpenROAD-Project-private/sky130_diode_lib
+- Merge pull request [#27](https://github.com/luarss/OpenROAD/issues/27) from The-OpenROAD-Project-private/jenkins_update
+- Merge pull request [#29](https://github.com/luarss/OpenROAD/issues/29) from The-OpenROAD-Project-private/fr_cleanup
+- Merge pull request [#30](https://github.com/luarss/OpenROAD/issues/30) from The-OpenROAD-Project-private/sta_to_db_lib_port
+- Merge pull request [#28](https://github.com/luarss/OpenROAD/issues/28) from The-OpenROAD-Project-private/fr_mem_issue
+- Merge pull request [#26](https://github.com/luarss/OpenROAD/issues/26) from The-OpenROAD-Project-private/fr_region_adjust
+- Merge pull request [#18](https://github.com/luarss/OpenROAD/issues/18) from The-OpenROAD-Project-private/iop_fix_dirs
+- Merge pull request [#25](https://github.com/luarss/OpenROAD/issues/25) from The-OpenROAD-Project-private/opensta_block_overflow
+- Merge pull request [#24](https://github.com/luarss/OpenROAD/issues/24) from The-OpenROAD-Project-private/resizer_leaks
+- Merge pull request [#23](https://github.com/luarss/OpenROAD/issues/23) from The-OpenROAD-Project-private/jenkins-report-failed-build
+- Merge pull request [#22](https://github.com/luarss/OpenROAD/issues/22) from The-OpenROAD-Project-private/fr_clk_options
+- Merge pull request [#20](https://github.com/luarss/OpenROAD/issues/20) from The-OpenROAD-Project-private/ARC
+- Merge pull request [#21](https://github.com/luarss/OpenROAD/issues/21) from The-OpenROAD-Project-private/fr_layer_options
+- Merge pull request [#16](https://github.com/luarss/OpenROAD/issues/16) from The-OpenROAD-Project-private/jenkins_new_docker_builds
+- Merge pull request [#15](https://github.com/luarss/OpenROAD/issues/15) from The-OpenROAD-Project-private/fr_pdrev_topology
+- Merge pull request [#13](https://github.com/luarss/OpenROAD/issues/13) from The-OpenROAD-Project-private/fr_write_guides
+- Merge pull request [#14](https://github.com/luarss/OpenROAD/issues/14) from The-OpenROAD-Project-private/opendp_multi_row_detection
+- Merge pull request [#452](https://github.com/luarss/OpenROAD/issues/452) from ax3ghazy/opendp_multi_row_detection
+- Merge pull request [#11](https://github.com/luarss/OpenROAD/issues/11) from The-OpenROAD-Project-private/resizer_leaks
+- Merge pull request [#10](https://github.com/luarss/OpenROAD/issues/10) from The-OpenROAD-Project-private/resizer
+- Merge pull request [#8](https://github.com/luarss/OpenROAD/issues/8) from The-OpenROAD-Project-private/fr_check_layer
+- Merge pull request [#9](https://github.com/luarss/OpenROAD/issues/9) from The-OpenROAD-Project-private/resizer
+- Merge pull request [#7](https://github.com/luarss/OpenROAD/issues/7) from The-OpenROAD-Project-private/fr_set_layer_pitch
+- Merge pull request [#2](https://github.com/luarss/OpenROAD/issues/2) from The-OpenROAD-Project-private/fr_set_layer_adj
+- Merge pull request [#6](https://github.com/luarss/OpenROAD/issues/6) from The-OpenROAD-Project-private/resizer
+- Merge pull request [#5](https://github.com/luarss/OpenROAD/issues/5) from The-OpenROAD-Project-private/opendp_rm_pwr_gnd
+- Merge pull request [#3](https://github.com/luarss/OpenROAD/issues/3) from The-OpenROAD-Project-private/lib_port_to_dbmterm
+- Merge pull request [#1](https://github.com/luarss/OpenROAD/issues/1) from The-OpenROAD-Project-private/pdrev_include
+- Merge pull request [#493](https://github.com/luarss/OpenROAD/issues/493) from The-OpenROAD-Project/est_rc_multi_corner
+- Merge pull request [#492](https://github.com/luarss/OpenROAD/issues/492) from The-OpenROAD-Project/fr_reorg
+- Merge pull request [#491](https://github.com/luarss/OpenROAD/issues/491) from The-OpenROAD-Project/fr_reorg
+- Merge pull request [#489](https://github.com/luarss/OpenROAD/issues/489) from The-OpenROAD-Project/fr_db_net
+- Merge pull request [#488](https://github.com/luarss/OpenROAD/issues/488) from The-OpenROAD-Project/fr_small_fixes
+- Merge pull request [#433](https://github.com/luarss/OpenROAD/issues/433) from The-OpenROAD-Project/pdn-issue_416
+- Merge pull request [#487](https://github.com/luarss/OpenROAD/issues/487) from The-OpenROAD-Project/fr_fix_classes
+- Merge pull request [#486](https://github.com/luarss/OpenROAD/issues/486) from The-OpenROAD-Project/fr_fix_dirs
+- Merge pull request [#485](https://github.com/luarss/OpenROAD/issues/485) from The-OpenROAD-Project/pdrev
+- Merge pull request [#484](https://github.com/luarss/OpenROAD/issues/484) from The-OpenROAD-Project/fr_rm_dead_code
+- Merge pull request [#479](https://github.com/luarss/OpenROAD/issues/479) from The-OpenROAD-Project/fr_tcl_updates
+- Merge pull request [#480](https://github.com/luarss/OpenROAD/issues/480) from The-OpenROAD-Project/cmake
+- Merge pull request [#446](https://github.com/luarss/OpenROAD/issues/446) from The-OpenROAD-Project/iop_unit_tests
+- Merge pull request [#474](https://github.com/luarss/OpenROAD/issues/474) from The-OpenROAD-Project/fr_unit_tests
+- Merge pull request [#477](https://github.com/luarss/OpenROAD/issues/477) from The-OpenROAD-Project/est_delete_rc
+- Merge pull request [#451](https://github.com/luarss/OpenROAD/issues/451) from The-OpenROAD-Project/fr_est_rc
+- Merge pull request [#449](https://github.com/luarss/OpenROAD/issues/449) from The-OpenROAD-Project/fr_est_rc_seg_fault
+- Merge pull request [#448](https://github.com/luarss/OpenROAD/issues/448) from The-OpenROAD-Project/pdnsim_cmake
+- Merge pull request [#447](https://github.com/luarss/OpenROAD/issues/447) from The-OpenROAD-Project/sky130_tests
+- Merge pull request [#441](https://github.com/luarss/OpenROAD/issues/441) from The-OpenROAD-Project/fix/replace-headers
+- Merge pull request [#442](https://github.com/luarss/OpenROAD/issues/442) from The-OpenROAD-Project/fix/tritonmp-headers
+- Merge pull request [#440](https://github.com/luarss/OpenROAD/issues/440) from The-OpenROAD-Project/fr_unit_tests
+- Merge pull request [#439](https://github.com/luarss/OpenROAD/issues/439) from The-OpenROAD-Project/clang_warnings
+- Merge pull request [#438](https://github.com/luarss/OpenROAD/issues/438) from The-OpenROAD-Project/clk_api
+- Merge pull request [#431](https://github.com/luarss/OpenROAD/issues/431) from The-OpenROAD-Project/fastroute_fixes
+- Merge pull request [#437](https://github.com/luarss/OpenROAD/issues/437) from The-OpenROAD-Project/macroplace_rm_submodule
+- Merge pull request [#436](https://github.com/luarss/OpenROAD/issues/436) from The-OpenROAD-Project/ioplacer_reformat
+- Merge pull request [#435](https://github.com/luarss/OpenROAD/issues/435) from The-OpenROAD-Project/replace_rm_submodule
+- Merge pull request [#434](https://github.com/luarss/OpenROAD/issues/434) from The-OpenROAD-Project/ioplacer_rm_submodule
+- Merge pull request [#432](https://github.com/luarss/OpenROAD/issues/432) from The-OpenROAD-Project/gui
+- Merge pull request [#427](https://github.com/luarss/OpenROAD/issues/427) from The-OpenROAD-Project/fr_rm_netlist
+- Merge pull request [#424](https://github.com/luarss/OpenROAD/issues/424) from The-OpenROAD-Project/find_clk_nets
+- Merge pull request [#423](https://github.com/luarss/OpenROAD/issues/423) from The-OpenROAD-Project/rm_fastroute_submodule
+- Merge pull request [#422](https://github.com/luarss/OpenROAD/issues/422) from The-OpenROAD-Project/fr_update
+- Merge pull request [#421](https://github.com/luarss/OpenROAD/issues/421) from The-OpenROAD-Project/ioplacer_update
+- Merge pull request [#420](https://github.com/luarss/OpenROAD/issues/420) from The-OpenROAD-Project/fr_update
+- Merge pull request [#418](https://github.com/luarss/OpenROAD/issues/418) from The-OpenROAD-Project/ARC
+- Merge pull request [#419](https://github.com/luarss/OpenROAD/issues/419) from The-OpenROAD-Project/set_power_activity
+- Merge pull request [#415](https://github.com/luarss/OpenROAD/issues/415) from The-OpenROAD-Project/compile_error
+- Merge pull request [#414](https://github.com/luarss/OpenROAD/issues/414) from The-OpenROAD-Project/fastroute_rm_names
+- Merge pull request [#412](https://github.com/luarss/OpenROAD/issues/412) from The-OpenROAD-Project/fr_est_rc
+- Merge pull request [#411](https://github.com/luarss/OpenROAD/issues/411) from The-OpenROAD-Project/power
+- Merge pull request [#410](https://github.com/luarss/OpenROAD/issues/410) from The-OpenROAD-Project/power
+- Merge pull request [#409](https://github.com/luarss/OpenROAD/issues/409) from The-OpenROAD-Project/resizer
+- Merge pull request [#406](https://github.com/luarss/OpenROAD/issues/406) from The-OpenROAD-Project/sky130
+- Merge pull request [#405](https://github.com/luarss/OpenROAD/issues/405) from The-OpenROAD-Project/resizer
+- Merge pull request [#404](https://github.com/luarss/OpenROAD/issues/404) from The-OpenROAD-Project/resizer
+- Merge pull request [#403](https://github.com/luarss/OpenROAD/issues/403) from The-OpenROAD-Project/resizer
+- Merge pull request [#400](https://github.com/luarss/OpenROAD/issues/400) from The-OpenROAD-Project/sky130
+- Merge pull request [#398](https://github.com/luarss/OpenROAD/issues/398) from The-OpenROAD-Project/sky130
+- Merge pull request [#396](https://github.com/luarss/OpenROAD/issues/396) from The-OpenROAD-Project/opt_mirror
+- Merge pull request [#388](https://github.com/luarss/OpenROAD/issues/388) from The-OpenROAD-Project/fix/macro-place-fence
+- Merge pull request [#394](https://github.com/luarss/OpenROAD/issues/394) from The-OpenROAD-Project/opt_mirror
+- Merge pull request [#392](https://github.com/luarss/OpenROAD/issues/392) from The-OpenROAD-Project/sky130
+- Merge pull request [#391](https://github.com/luarss/OpenROAD/issues/391) from The-OpenROAD-Project/gcd_sky130
+- Merge pull request [#387](https://github.com/luarss/OpenROAD/issues/387) from The-OpenROAD-Project/resizer
+- Merge pull request [#385](https://github.com/luarss/OpenROAD/issues/385) from The-OpenROAD-Project/resizer
+- Merge pull request [#384](https://github.com/luarss/OpenROAD/issues/384) from The-OpenROAD-Project/write_verilog
+- Merge pull request [#382](https://github.com/luarss/OpenROAD/issues/382) from The-OpenROAD-Project/fix_ioplacer_tapcell
+- Merge pull request [#350](https://github.com/luarss/OpenROAD/issues/350) from The-OpenROAD-Project/ft/openphysyn-timing-repair
+- Merge pull request [#380](https://github.com/luarss/OpenROAD/issues/380) from The-OpenROAD-Project/restore_docker_optional_capability
+- Merge pull request [#379](https://github.com/luarss/OpenROAD/issues/379) from The-OpenROAD-Project/ARC_updates
+- Merge pull request [#361](https://github.com/luarss/OpenROAD/issues/361) from osamahammad21/openroad
+- Merge pull request [#373](https://github.com/luarss/OpenROAD/issues/373) from The-OpenROAD-Project/pdn-halo-adjust
+- Merge pull request [#377](https://github.com/luarss/OpenROAD/issues/377) from The-OpenROAD-Project/jenkins
+- Merge pull request [#372](https://github.com/luarss/OpenROAD/issues/372) from The-OpenROAD-Project/resizer
+- Merge pull request [#371](https://github.com/luarss/OpenROAD/issues/371) from The-OpenROAD-Project/ARC_65
+- Merge pull request [#370](https://github.com/luarss/OpenROAD/issues/370) from The-OpenROAD-Project/resizer
+- Merge pull request [#369](https://github.com/luarss/OpenROAD/issues/369) from The-OpenROAD-Project/fix_fastroute
+- Merge pull request [#368](https://github.com/luarss/OpenROAD/issues/368) from The-OpenROAD-Project/pdn-connect-macros
+- Merge pull request [#365](https://github.com/luarss/OpenROAD/issues/365) from MarceloDanigno/fix_copyright
+- Merge pull request [#367](https://github.com/luarss/OpenROAD/issues/367) from The-OpenROAD-Project/merge_openroad
+- Merge pull request [#366](https://github.com/luarss/OpenROAD/issues/366) from The-OpenROAD-Project/resizer
+- Merge pull request [#364](https://github.com/luarss/OpenROAD/issues/364) from The-OpenROAD-Project/resizer
+- Merge pull request [#346](https://github.com/luarss/OpenROAD/issues/346) from The-OpenROAD-Project/ARC
+- Merge pull request [#355](https://github.com/luarss/OpenROAD/issues/355) from The-OpenROAD-Project/resizer
+- Merge pull request [#352](https://github.com/luarss/OpenROAD/issues/352) from The-OpenROAD-Project/resizer
+- Merge pull request [#351](https://github.com/luarss/OpenROAD/issues/351) from The-OpenROAD-Project/resizer
+- Merge pull request [#349](https://github.com/luarss/OpenROAD/issues/349) from The-OpenROAD-Project/resizer
+- Merge pull request [#345](https://github.com/luarss/OpenROAD/issues/345) from The-OpenROAD-Project/pdn-keep_pg_nets
+- Merge pull request [#347](https://github.com/luarss/OpenROAD/issues/347) from The-OpenROAD-Project/resizer
+- Merge pull request [#344](https://github.com/luarss/OpenROAD/issues/344) from The-OpenROAD-Project/resizer
+- Merge pull request [#337](https://github.com/luarss/OpenROAD/issues/337) from The-OpenROAD-Project/fix_tapcell
+- Merge pull request [#339](https://github.com/luarss/OpenROAD/issues/339) from The-OpenROAD-Project/icewall-pg_labels
+- Merge pull request [#343](https://github.com/luarss/OpenROAD/issues/343) from The-OpenROAD-Project/resizer
+- Merge pull request [#342](https://github.com/luarss/OpenROAD/issues/342) from The-OpenROAD-Project/resizer
+- Merge pull request [#341](https://github.com/luarss/OpenROAD/issues/341) from The-OpenROAD-Project/resizer
+- Merge pull request [#340](https://github.com/luarss/OpenROAD/issues/340) from The-OpenROAD-Project/resizer1
+- Merge pull request [#338](https://github.com/luarss/OpenROAD/issues/338) from The-OpenROAD-Project/resizer
+- Merge pull request [#336](https://github.com/luarss/OpenROAD/issues/336) from The-OpenROAD-Project/fix/tritonmp-libbug
+- Merge pull request [#326](https://github.com/luarss/OpenROAD/issues/326) from The-OpenROAD-Project/expose-resizer-methods
+- Merge pull request [#335](https://github.com/luarss/OpenROAD/issues/335) from The-OpenROAD-Project/pdn-core_rings_over_stdcells
+- Merge pull request [#334](https://github.com/luarss/OpenROAD/issues/334) from The-OpenROAD-Project/resizer
+- Merge pull request [#333](https://github.com/luarss/OpenROAD/issues/333) from The-OpenROAD-Project/opt_mirror
+- Merge pull request [#332](https://github.com/luarss/OpenROAD/issues/332) from The-OpenROAD-Project/resizer
+- Merge pull request [#331](https://github.com/luarss/OpenROAD/issues/331) from The-OpenROAD-Project/fastroute_update
+- Merge pull request [#330](https://github.com/luarss/OpenROAD/issues/330) from The-OpenROAD-Project/fix_tapcell
+- Merge pull request [#329](https://github.com/luarss/OpenROAD/issues/329) from The-OpenROAD-Project/resizer
+- Merge pull request [#327](https://github.com/luarss/OpenROAD/issues/327) from The-OpenROAD-Project/openroad_change_version
+- Merge pull request [#325](https://github.com/luarss/OpenROAD/issues/325) from The-OpenROAD-Project/resizer
+- Merge pull request [#324](https://github.com/luarss/OpenROAD/issues/324) from The-OpenROAD-Project/resizer
+- Merge pull request [#323](https://github.com/luarss/OpenROAD/issues/323) from The-OpenROAD-Project/resizer
+- Merge pull request [#322](https://github.com/luarss/OpenROAD/issues/322) from The-OpenROAD-Project/fix_tapcell
+- Merge pull request [#321](https://github.com/luarss/OpenROAD/issues/321) from The-OpenROAD-Project/report_power
+- Merge pull request [#320](https://github.com/luarss/OpenROAD/issues/320) from The-OpenROAD-Project/report_max_fanout
+- Merge pull request [#319](https://github.com/luarss/OpenROAD/issues/319) from The-OpenROAD-Project/tie_block_location
+- Merge pull request [#318](https://github.com/luarss/OpenROAD/issues/318) from The-OpenROAD-Project/wire_layer_units
+- Merge pull request [#317](https://github.com/luarss/OpenROAD/issues/317) from The-OpenROAD-Project/resizer_wire_est
+- Merge pull request [#316](https://github.com/luarss/OpenROAD/issues/316) from The-OpenROAD-Project/resize_balance_buffers
+- Merge pull request [#315](https://github.com/luarss/OpenROAD/issues/315) from The-OpenROAD-Project/resizer_checks
+- Merge pull request [#314](https://github.com/luarss/OpenROAD/issues/314) from The-OpenROAD-Project/lib_lef_port_check
+- Merge pull request [#313](https://github.com/luarss/OpenROAD/issues/313) from The-OpenROAD-Project/tapcell_fix
+- Merge pull request [#312](https://github.com/luarss/OpenROAD/issues/312) from The-OpenROAD-Project/warn_missing_lib_cell
+- Merge pull request [#311](https://github.com/luarss/OpenROAD/issues/311) from The-OpenROAD-Project/init_fp_tests
+- Merge pull request [#310](https://github.com/luarss/OpenROAD/issues/310) from The-OpenROAD-Project/fix_tapcell
+- Merge pull request [#309](https://github.com/luarss/OpenROAD/issues/309) from The-OpenROAD-Project/filler_error
+- Merge pull request [#308](https://github.com/luarss/OpenROAD/issues/308) from The-OpenROAD-Project/repair_tie
+- Merge pull request [#306](https://github.com/luarss/OpenROAD/issues/306) from The-OpenROAD-Project/enh_fastroute
+- Merge pull request [#305](https://github.com/luarss/OpenROAD/issues/305) from The-OpenROAD-Project/flow_tests
+- Merge pull request [#304](https://github.com/luarss/OpenROAD/issues/304) from The-OpenROAD-Project/opensta
+- Merge pull request [#302](https://github.com/luarss/OpenROAD/issues/302) from The-OpenROAD-Project/steiner_svg
+- Merge pull request [#301](https://github.com/luarss/OpenROAD/issues/301) from The-OpenROAD-Project/add_set_layer_rc
+- Merge pull request [#300](https://github.com/luarss/OpenROAD/issues/300) from MarceloDanigno/fr_obs_extensions
+- Merge pull request [#298](https://github.com/luarss/OpenROAD/issues/298) from The-OpenROAD-Project/fix_fastroute
+- Merge pull request [#297](https://github.com/luarss/OpenROAD/issues/297) from The-OpenROAD-Project/resizer_error
+- Merge pull request [#296](https://github.com/luarss/OpenROAD/issues/296) from The-OpenROAD-Project/fix/docker
+- Merge pull request [#294](https://github.com/luarss/OpenROAD/issues/294) from MarceloDanigno/cts_tcl
+- Merge pull request [#287](https://github.com/luarss/OpenROAD/issues/287) from MarceloDanigno/cts_dbwrapper_update
+- Merge pull request [#293](https://github.com/luarss/OpenROAD/issues/293) from The-OpenROAD-Project/fastroute_updates
+- Merge pull request [#292](https://github.com/luarss/OpenROAD/issues/292) from The-OpenROAD-Project/fix_ioplacer_tapcell
+- Merge pull request [#291](https://github.com/luarss/OpenROAD/issues/291) from The-OpenROAD-Project/ord_flow_clear
+- Merge pull request [#290](https://github.com/luarss/OpenROAD/issues/290) from The-OpenROAD-Project/license
+- Merge pull request [#288](https://github.com/luarss/OpenROAD/issues/288) from The-OpenROAD-Project/fix_fastroute
+- Merge pull request [#285](https://github.com/luarss/OpenROAD/issues/285) from The-OpenROAD-Project/fastroute_fixes
+- Merge pull request [#284](https://github.com/luarss/OpenROAD/issues/284) from The-OpenROAD-Project/ioplacer_updates
+- Merge pull request [#282](https://github.com/luarss/OpenROAD/issues/282) from The-OpenROAD-Project/fix_tapcell
+- Merge pull request [#283](https://github.com/luarss/OpenROAD/issues/283) from The-OpenROAD-Project/report_floating_nets
+- Merge pull request [#281](https://github.com/luarss/OpenROAD/issues/281) from The-OpenROAD-Project/check_placement
+- Merge pull request [#279](https://github.com/luarss/OpenROAD/issues/279) from The-OpenROAD-Project/tests_use_nangate45
+- Merge pull request [#278](https://github.com/luarss/OpenROAD/issues/278) from The-OpenROAD-Project/flow_tests
+- Merge pull request [#277](https://github.com/luarss/OpenROAD/issues/277) from The-OpenROAD-Project/dbsta_cleanup
+- Merge pull request [#275](https://github.com/luarss/OpenROAD/issues/275) from The-OpenROAD-Project/dbSta_find_clks
+- Merge pull request [#272](https://github.com/luarss/OpenROAD/issues/272) from The-OpenROAD-Project/share_helpers
+- Merge pull request [#271](https://github.com/luarss/OpenROAD/issues/271) from The-OpenROAD-Project/share_helpers
+- Merge pull request [#268](https://github.com/luarss/OpenROAD/issues/268) from The-OpenROAD-Project/pdn-icewall-corerings
+- Merge pull request [#270](https://github.com/luarss/OpenROAD/issues/270) from The-OpenROAD-Project/fix_tapcell
+- Merge pull request [#267](https://github.com/luarss/OpenROAD/issues/267) from The-OpenROAD-Project/opendp_cut_rows
+- Merge pull request [#266](https://github.com/luarss/OpenROAD/issues/266) from The-OpenROAD-Project/opendp_masters_arg_parser
+- Merge pull request [#261](https://github.com/luarss/OpenROAD/issues/261) from ax3ghazy/init_fp/tracks_orientation_fix
+- Merge pull request [#265](https://github.com/luarss/OpenROAD/issues/265) from The-OpenROAD-Project/fastroute_fixes
+- Merge pull request [#263](https://github.com/luarss/OpenROAD/issues/263) from The-OpenROAD-Project/resize_before
+- Merge pull request [#262](https://github.com/luarss/OpenROAD/issues/262) from The-OpenROAD-Project/opt_mirror
+- Merge pull request [#260](https://github.com/luarss/OpenROAD/issues/260) from The-OpenROAD-Project/opt_mirror
+- Merge pull request [#259](https://github.com/luarss/OpenROAD/issues/259) from The-OpenROAD-Project/opendp_padding
+- Merge pull request [#258](https://github.com/luarss/OpenROAD/issues/258) from The-OpenROAD-Project/opendp_pad_inst
+- Merge pull request [#257](https://github.com/luarss/OpenROAD/issues/257) from The-OpenROAD-Project/opendp_hpwl
+- Merge pull request [#256](https://github.com/luarss/OpenROAD/issues/256) from The-OpenROAD-Project/resize_dont_use_cmd
+- Merge pull request [#255](https://github.com/luarss/OpenROAD/issues/255) from The-OpenROAD-Project/opendp_sin_block_fillers
+- Merge pull request [#254](https://github.com/luarss/OpenROAD/issues/254) from The-OpenROAD-Project/fix/nets_with_pad
+- Merge pull request [#252](https://github.com/luarss/OpenROAD/issues/252) from The-OpenROAD-Project/resizer_tests
+- Merge pull request [#251](https://github.com/luarss/OpenROAD/issues/251) from The-OpenROAD-Project/resizer_use_pin_loc
+- Merge pull request [#250](https://github.com/luarss/OpenROAD/issues/250) from The-OpenROAD-Project/fix/transition_via_layers
+- Merge pull request [#237](https://github.com/luarss/OpenROAD/issues/237) from The-OpenROAD-Project/add/replace-rd
+- Merge pull request [#248](https://github.com/luarss/OpenROAD/issues/248) from The-OpenROAD-Project/opensta_slew_limit
+- Merge pull request [#247](https://github.com/luarss/OpenROAD/issues/247) from The-OpenROAD-Project/resize_max_slew
+- Merge pull request [#246](https://github.com/luarss/OpenROAD/issues/246) from The-OpenROAD-Project/max_slew_respect_disable
+- Merge pull request [#245](https://github.com/luarss/OpenROAD/issues/245) from The-OpenROAD-Project/mem_internal_power_seg_fault
+- Merge pull request [#244](https://github.com/luarss/OpenROAD/issues/244) from The-OpenROAD-Project/mem_internal_power_seg_fault
+- Merge pull request [#243](https://github.com/luarss/OpenROAD/issues/243) from The-OpenROAD-Project/repair_max_fanout_allow_resize
+- Merge pull request [#241](https://github.com/luarss/OpenROAD/issues/241) from The-OpenROAD-Project/resizer_buffer_names
+- Merge pull request [#239](https://github.com/luarss/OpenROAD/issues/239) from The-OpenROAD-Project/opensta_power
+- Merge pull request [#238](https://github.com/luarss/OpenROAD/issues/238) from The-OpenROAD-Project/icewall-filler-fix
+- Merge pull request [#236](https://github.com/luarss/OpenROAD/issues/236) from The-OpenROAD-Project/enh/tapcell
+- Merge pull request [#235](https://github.com/luarss/OpenROAD/issues/235) from The-OpenROAD-Project/read_verilog_input_tri
+- Merge pull request [#234](https://github.com/luarss/OpenROAD/issues/234) from The-OpenROAD-Project/opensta_power
+- Merge pull request [#233](https://github.com/luarss/OpenROAD/issues/233) from The-OpenROAD-Project/pdn-channels
+- Merge pull request [#232](https://github.com/luarss/OpenROAD/issues/232) from The-OpenROAD-Project/fix/fastroute
+- Merge pull request [#229](https://github.com/luarss/OpenROAD/issues/229) from kareefardi/feature/core_space_array
+- Merge pull request [#231](https://github.com/luarss/OpenROAD/issues/231) from The-OpenROAD-Project/resizer_dont_touch_special
+- Merge pull request [#230](https://github.com/luarss/OpenROAD/issues/230) from The-OpenROAD-Project/resize_rm_flag
+- Merge pull request [#227](https://github.com/luarss/OpenROAD/issues/227) from The-OpenROAD-Project/fix/pdnsim-check-pg-bug
+- Merge pull request [#228](https://github.com/luarss/OpenROAD/issues/228) from The-OpenROAD-Project/resizer_dont_use
+- Merge pull request [#224](https://github.com/luarss/OpenROAD/issues/224) from The-OpenROAD-Project/fix/tapcell_overlaps
+- Merge pull request [#223](https://github.com/luarss/OpenROAD/issues/223) from The-OpenROAD-Project/flow-test-updates
+- Merge pull request [#225](https://github.com/luarss/OpenROAD/issues/225) from The-OpenROAD-Project/fix/pdnsim-check-pg
+- Merge pull request [#226](https://github.com/luarss/OpenROAD/issues/226) from The-OpenROAD-Project/resize_cmd
+- Merge pull request [#222](https://github.com/luarss/OpenROAD/issues/222) from The-OpenROAD-Project/enh/fastroute_checks
+- Merge pull request [#221](https://github.com/luarss/OpenROAD/issues/221) from The-OpenROAD-Project/icewall-map-outputs
+- Merge pull request [#220](https://github.com/luarss/OpenROAD/issues/220) from The-OpenROAD-Project/resizer_no_buffer_tie
+- Merge pull request [#219](https://github.com/luarss/OpenROAD/issues/219) from The-OpenROAD-Project/find_tcl
+- Merge pull request [#218](https://github.com/luarss/OpenROAD/issues/218) from The-OpenROAD-Project/resizer_tie_names
+- Merge pull request [#217](https://github.com/luarss/OpenROAD/issues/217) from The-OpenROAD-Project/icewall-connect-by-abutment
+- Merge pull request [#216](https://github.com/luarss/OpenROAD/issues/216) from The-OpenROAD-Project/enable/tritonmp-core-area
+- Merge pull request [#213](https://github.com/luarss/OpenROAD/issues/213) from The-OpenROAD-Project/fix/replace_padding
+- Merge pull request [#209](https://github.com/luarss/OpenROAD/issues/209) from The-OpenROAD-Project/fix/tapcell
+- Merge pull request [#214](https://github.com/luarss/OpenROAD/issues/214) from The-OpenROAD-Project/fix/pdnsim-check-pg-bug
+- Merge pull request [#212](https://github.com/luarss/OpenROAD/issues/212) from The-OpenROAD-Project/resizer_set_wire_rc
+- Merge pull request [#211](https://github.com/luarss/OpenROAD/issues/211) from The-OpenROAD-Project/fx/update-openphysyn-tests
+- Merge pull request [#208](https://github.com/luarss/OpenROAD/issues/208) from The-OpenROAD-Project/fix/fastroute_memory
+- Merge pull request [#210](https://github.com/luarss/OpenROAD/issues/210) from The-OpenROAD-Project/resizer_bp_single
+- Merge pull request [#207](https://github.com/luarss/OpenROAD/issues/207) from The-OpenROAD-Project/fix/cts_crash
+- Merge pull request [#204](https://github.com/luarss/OpenROAD/issues/204) from The-OpenROAD-Project/pdnsim-spice-support
+- Merge pull request [#199](https://github.com/luarss/OpenROAD/issues/199) from The-OpenROAD-Project/dp_fix
+- Merge pull request [#203](https://github.com/luarss/OpenROAD/issues/203) from The-OpenROAD-Project/icewall-pad-inst-creation
+- Merge pull request [#202](https://github.com/luarss/OpenROAD/issues/202) from The-OpenROAD-Project/fix/tritonmp-border
+- Merge pull request [#200](https://github.com/luarss/OpenROAD/issues/200) from The-OpenROAD-Project/fx/remove-spdlog
+- Merge pull request [#195](https://github.com/luarss/OpenROAD/issues/195) from The-OpenROAD-Project/fix/documentation
+- Merge pull request [#192](https://github.com/luarss/OpenROAD/issues/192) from The-OpenROAD-Project/remove-superlu
+- Merge pull request [#194](https://github.com/luarss/OpenROAD/issues/194) from The-OpenROAD-Project/opensta_include_dirs
+- Merge pull request [#193](https://github.com/luarss/OpenROAD/issues/193) from The-OpenROAD-Project/pdn-fix-macro-grid
+- Merge pull request [#188](https://github.com/luarss/OpenROAD/issues/188) from The-OpenROAD-Project/enh/fastroute
+- Merge pull request [#191](https://github.com/luarss/OpenROAD/issues/191) from The-OpenROAD-Project/pdnsim-remove-superlu
+- Merge pull request [#190](https://github.com/luarss/OpenROAD/issues/190) from The-OpenROAD-Project/fx/remove-doctest-from-openphysyn
+- Merge pull request [#187](https://github.com/luarss/OpenROAD/issues/187) from The-OpenROAD-Project/fx/clean-openphysyn-headers
+- Merge pull request [#189](https://github.com/luarss/OpenROAD/issues/189) from The-OpenROAD-Project/mv_eigen
+- Merge pull request [#167](https://github.com/luarss/OpenROAD/issues/167) from The-OpenROAD-Project/fix/replace-issue
+- Merge pull request [#179](https://github.com/luarss/OpenROAD/issues/179) from The-OpenROAD-Project/fix/pdnsim-multi-cut-via-and-crash
+- Merge pull request [#184](https://github.com/luarss/OpenROAD/issues/184) from The-OpenROAD-Project/fix/tapcell
+- Merge pull request [#186](https://github.com/luarss/OpenROAD/issues/186) from The-OpenROAD-Project/opendp_check_placement
+- Merge pull request [#185](https://github.com/luarss/OpenROAD/issues/185) from The-OpenROAD-Project/fix/remove_find_tcl
+- Merge pull request [#173](https://github.com/luarss/OpenROAD/issues/173) from MarceloDanigno/openroad
+- Merge pull request [#183](https://github.com/luarss/OpenROAD/issues/183) from The-OpenROAD-Project/fix/check_placement
+- Merge pull request [#177](https://github.com/luarss/OpenROAD/issues/177) from The-OpenROAD-Project/fix/ioplacer_crash
+- Merge pull request [#176](https://github.com/luarss/OpenROAD/issues/176) from The-OpenROAD-Project/fix/remove_casts
+- Merge pull request [#168](https://github.com/luarss/OpenROAD/issues/168) from The-OpenROAD-Project/pdn-missing-track-info
+- Merge pull request [#175](https://github.com/luarss/OpenROAD/issues/175) from The-OpenROAD-Project/fx/remove-openphysyn-test-results
+- Merge pull request [#165](https://github.com/luarss/OpenROAD/issues/165) from The-OpenROAD-Project/fix/pdnsim-clang-superlu-options
+- Merge pull request [#171](https://github.com/luarss/OpenROAD/issues/171) from The-OpenROAD-Project/fix/remove_times
+- Merge pull request [#174](https://github.com/luarss/OpenROAD/issues/174) from The-OpenROAD-Project/abk_cleanup
+- Merge pull request [#172](https://github.com/luarss/OpenROAD/issues/172) from The-OpenROAD-Project/gcd_flow
+- Merge pull request [#170](https://github.com/luarss/OpenROAD/issues/170) from The-OpenROAD-Project/opendp
+- Merge pull request [#166](https://github.com/luarss/OpenROAD/issues/166) from The-OpenROAD-Project/opendp
+- Merge pull request [#163](https://github.com/luarss/OpenROAD/issues/163) from The-OpenROAD-Project/pdn-macrotypes
+- Merge pull request [#162](https://github.com/luarss/OpenROAD/issues/162) from The-OpenROAD-Project/pdn-fix-padcells-to-core-rings
+- Merge pull request [#161](https://github.com/luarss/OpenROAD/issues/161) from The-OpenROAD-Project/resizer
+- Merge pull request [#160](https://github.com/luarss/OpenROAD/issues/160) from The-OpenROAD-Project/pdn-fix-via-arrays
+- Merge pull request [#157](https://github.com/luarss/OpenROAD/issues/157) from The-OpenROAD-Project/pdn-obstructions
+- Merge pull request [#156](https://github.com/luarss/OpenROAD/issues/156) from The-OpenROAD-Project/fix/PDNSim-clang-warnings-gitignore
+- Merge pull request [#155](https://github.com/luarss/OpenROAD/issues/155) from The-OpenROAD-Project/opendp_checks
+- Merge pull request [#152](https://github.com/luarss/OpenROAD/issues/152) from The-OpenROAD-Project/fx/update-gitignore
+- Merge pull request [#150](https://github.com/luarss/OpenROAD/issues/150) from The-OpenROAD-Project/fix/replace-pad-issue
+- Merge pull request [#146](https://github.com/luarss/OpenROAD/issues/146) from The-OpenROAD-Project/add-openphysyn
+- Merge pull request [#149](https://github.com/luarss/OpenROAD/issues/149) from The-OpenROAD-Project/pdn_obstructions
+- Merge pull request [#147](https://github.com/luarss/OpenROAD/issues/147) from The-OpenROAD-Project/feature/PDNSim-inst-voltage-rpt
+- Merge pull request [#145](https://github.com/luarss/OpenROAD/issues/145) from The-OpenROAD-Project/update_docker_ignore
+- Merge pull request [#143](https://github.com/luarss/OpenROAD/issues/143) from The-OpenROAD-Project/fix/compiler-warnings-fortran
+- Merge pull request [#144](https://github.com/luarss/OpenROAD/issues/144) from The-OpenROAD-Project/fix/fastroute
+- Merge pull request [#141](https://github.com/luarss/OpenROAD/issues/141) from The-OpenROAD-Project/update_docker_ignore
+- Merge pull request [#142](https://github.com/luarss/OpenROAD/issues/142) from The-OpenROAD-Project/fix/ioPlacer
+- Merge pull request [#137](https://github.com/luarss/OpenROAD/issues/137) from The-OpenROAD-Project/fix/compiler-warnings-fortran
+- Merge pull request [#135](https://github.com/luarss/OpenROAD/issues/135) from The-OpenROAD-Project/fix/replace-issues
+- Merge pull request [#132](https://github.com/luarss/OpenROAD/issues/132) from The-OpenROAD-Project/add_pdnsim
+- Merge pull request [#133](https://github.com/luarss/OpenROAD/issues/133) from The-OpenROAD-Project/fix/replace-corearea-bug
+- Merge pull request [#131](https://github.com/luarss/OpenROAD/issues/131) from The-OpenROAD-Project/fix/docker_git_version
+- Merge pull request [#130](https://github.com/luarss/OpenROAD/issues/130) from The-OpenROAD-Project/fix/tapcell_lef_read
+- Merge pull request [#120](https://github.com/luarss/OpenROAD/issues/120) from The-OpenROAD-Project/fix/replace-rewritten
+- Merge pull request [#128](https://github.com/luarss/OpenROAD/issues/128) from The-OpenROAD-Project/fix/fastroute_overflow_segfault
+- Merge pull request [#127](https://github.com/luarss/OpenROAD/issues/127) from The-OpenROAD-Project/fix/pdn
+- Merge pull request [#125](https://github.com/luarss/OpenROAD/issues/125) from The-OpenROAD-Project/sanity
+- Merge pull request [#122](https://github.com/luarss/OpenROAD/issues/122) from The-OpenROAD-Project/fix/fastroute_large_area_segfault
+- Merge pull request [#121](https://github.com/luarss/OpenROAD/issues/121) from The-OpenROAD-Project/fix/tritonmp_bug
+- Merge pull request [#118](https://github.com/luarss/OpenROAD/issues/118) from The-OpenROAD-Project/fix/fastroute_garbage_files
+- Merge pull request [#112](https://github.com/luarss/OpenROAD/issues/112) from The-OpenROAD-Project/fix/fastroute_tapcell_tests
+- Merge pull request [#116](https://github.com/luarss/OpenROAD/issues/116) from ax3ghazy/openroad
+- Merge pull request [#115](https://github.com/luarss/OpenROAD/issues/115) from The-OpenROAD-Project/pdngen_rails
+- Merge pull request [#110](https://github.com/luarss/OpenROAD/issues/110) from The-OpenROAD-Project/fix/replace_divergence
+- Merge pull request [#111](https://github.com/luarss/OpenROAD/issues/111) from The-OpenROAD-Project/fix/replace_divergence
+- Merge pull request [#107](https://github.com/luarss/OpenROAD/issues/107) from The-OpenROAD-Project/pdngen_rails
+- Merge pull request [#106](https://github.com/luarss/OpenROAD/issues/106) from The-OpenROAD-Project/fix/flute_lut
+- Merge pull request [#105](https://github.com/luarss/OpenROAD/issues/105) from The-OpenROAD-Project/enh/fastroute_log
+- Merge pull request [#104](https://github.com/luarss/OpenROAD/issues/104) from The-OpenROAD-Project/cmake_warnings
+- Merge pull request [#100](https://github.com/luarss/OpenROAD/issues/100) from The-OpenROAD-Project/swig_kwargs
+- Merge pull request [#101](https://github.com/luarss/OpenROAD/issues/101) from The-OpenROAD-Project/lefdef58_fixes
+- Merge pull request [#99](https://github.com/luarss/OpenROAD/issues/99) from The-OpenROAD-Project/clang_fix
+- Merge pull request [#98](https://github.com/luarss/OpenROAD/issues/98) from The-OpenROAD-Project/update_rcx
+- Merge pull request [#97](https://github.com/luarss/OpenROAD/issues/97) from The-OpenROAD-Project/order_wires
+- Merge pull request [#94](https://github.com/luarss/OpenROAD/issues/94) from The-OpenROAD-Project/pdngen_updates
+- Merge pull request [#93](https://github.com/luarss/OpenROAD/issues/93) from The-OpenROAD-Project/fastroute_pdrev
+- Merge pull request [#92](https://github.com/luarss/OpenROAD/issues/92) from The-OpenROAD-Project/opendb_update
+- Merge pull request [#91](https://github.com/luarss/OpenROAD/issues/91) from The-OpenROAD-Project/unit_tests_update
+- Merge pull request [#90](https://github.com/luarss/OpenROAD/issues/90) from The-OpenROAD-Project/unit_tests_update
+- Merge pull request [#89](https://github.com/luarss/OpenROAD/issues/89) from The-OpenROAD-Project/fix/update_ioPlacer_tests
+- Merge pull request [#88](https://github.com/luarss/OpenROAD/issues/88) from The-OpenROAD-Project/fix/cts_unit_tests
+- Merge pull request [#87](https://github.com/luarss/OpenROAD/issues/87) from The-OpenROAD-Project/fastroute_submodule_update
+- Merge pull request [#86](https://github.com/luarss/OpenROAD/issues/86) from The-OpenROAD-Project/tapcell_gf14
+- Merge pull request [#84](https://github.com/luarss/OpenROAD/issues/84) from The-OpenROAD-Project/fix/update_cts_dependencies
+- Merge pull request [#82](https://github.com/luarss/OpenROAD/issues/82) from The-OpenROAD-Project/opendb_update
+- Merge pull request [#79](https://github.com/luarss/OpenROAD/issues/79) from mpfogaca/develop
+- Merge pull request [#78](https://github.com/luarss/OpenROAD/issues/78) from mpfogaca/develop
+- Merge pull request [#76](https://github.com/luarss/OpenROAD/issues/76) from eder-matheus/develop
+- Merge pull request [#75](https://github.com/luarss/OpenROAD/issues/75) from mpfogaca/develop
+- Merge pull request [#73](https://github.com/luarss/OpenROAD/issues/73) from mpfogaca/develop
+- Merge pull request [#71](https://github.com/luarss/OpenROAD/issues/71) from isadorasop/develop
+- Merge pull request [#56](https://github.com/luarss/OpenROAD/issues/56) from The-OpenROAD-Project/pdngen_updates
+- Merge pull request [#55](https://github.com/luarss/OpenROAD/issues/55) from eder-matheus/develop
+- Merge pull request [#47](https://github.com/luarss/OpenROAD/issues/47) from mpfogaca/develop
+- Merge pull request [#46](https://github.com/luarss/OpenROAD/issues/46) from mpfogaca/develop
+- Merge pull request [#36](https://github.com/luarss/OpenROAD/issues/36) from The-OpenROAD-Project/add-openphysyn
+- Merge pull request [#45](https://github.com/luarss/OpenROAD/issues/45) from eder-matheus/develop
+- Merge pull request [#1](https://github.com/luarss/OpenROAD/issues/1) from eder-matheus/add_tapcell
+- Merge pull request [#43](https://github.com/luarss/OpenROAD/issues/43) from eder-matheus/develop
+- Merge pull request [#42](https://github.com/luarss/OpenROAD/issues/42) from The-OpenROAD-Project/add_tritoncts
+- Merge pull request [#41](https://github.com/luarss/OpenROAD/issues/41) from mpfogaca/develop
+- Merge pull request [#38](https://github.com/luarss/OpenROAD/issues/38) from The-OpenROAD-Project/add_tritoncts
+- Merge pull request [#37](https://github.com/luarss/OpenROAD/issues/37) from The-OpenROAD-Project/markdown_list
+- Merge pull request [#35](https://github.com/luarss/OpenROAD/issues/35) from eder-matheus/develop
+- Merge pull request [#34](https://github.com/luarss/OpenROAD/issues/34) from eder-matheus/develop
+- Merge pull request [#33](https://github.com/luarss/OpenROAD/issues/33) from eder-matheus/develop
+- Merge pull request [#32](https://github.com/luarss/OpenROAD/issues/32) from mpfogaca/ioPlacer
+- Merge pull request [#29](https://github.com/luarss/OpenROAD/issues/29) from eder-matheus/develop
+- Merge pull request [#27](https://github.com/luarss/OpenROAD/issues/27) from The-OpenROAD-Project/pdn_layer_fix
+- Merge pull request [#26](https://github.com/luarss/OpenROAD/issues/26) from The-OpenROAD-Project/develop
+- Merge pull request [#21](https://github.com/luarss/OpenROAD/issues/21) from eder-matheus/develop
+- Merge pull request [#23](https://github.com/luarss/OpenROAD/issues/23) from The-OpenROAD-Project/add_pdngen
+- Merge pull request [#22](https://github.com/luarss/OpenROAD/issues/22) from The-OpenROAD-Project/add_pdngen
+- Merge pull request [#20](https://github.com/luarss/OpenROAD/issues/20) from The-OpenROAD-Project/add_pdngen
+- Merge pull request [#18](https://github.com/luarss/OpenROAD/issues/18) from The-OpenROAD-Project/opendp-fix
+- Merge pull request [#19](https://github.com/luarss/OpenROAD/issues/19) from The-OpenROAD-Project/add_pdngen
+- Merge pull request [#10](https://github.com/luarss/OpenROAD/issues/10) from mgwoo/master
+- Merge pull request [#16](https://github.com/luarss/OpenROAD/issues/16) from eder-matheus/develop
+- Merge pull request [#15](https://github.com/luarss/OpenROAD/issues/15) from mpfogaca/develop
+- Merge pull request [#13](https://github.com/luarss/OpenROAD/issues/13) from eder-matheus/develop
+- Merge pull request [#14](https://github.com/luarss/OpenROAD/issues/14) from mpfogaca/develop
+- Merge pull request [#11](https://github.com/luarss/OpenROAD/issues/11) from mgwoo/opendp-patch
+- Merge pull request [#9](https://github.com/luarss/OpenROAD/issues/9) from The-OpenROAD-Project/develop
+- Merge pull request [#8](https://github.com/luarss/OpenROAD/issues/8) from mpfogaca/develop
+- Merge pull request [#7](https://github.com/luarss/OpenROAD/issues/7) from The-OpenROAD-Project/develop
+- Merge pull request [#6](https://github.com/luarss/OpenROAD/issues/6) from mpfogaca/add_ioplacer
+- Merge pull request [#5](https://github.com/luarss/OpenROAD/issues/5) from eder-matheus/add_fastroute
+- Merge pull request [#3](https://github.com/luarss/OpenROAD/issues/3) from The-OpenROAD-Project/add_etc_to_install
+
+
+[Unreleased]: https://github.com/luarss/OpenROAD/compare/v0.0.3...HEAD
+[v0.0.3]: https://github.com/luarss/OpenROAD/compare/v0.0.2...v0.0.3
+[v0.0.2]: https://github.com/luarss/OpenROAD/compare/v0.0.1...v0.0.2
