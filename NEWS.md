@@ -1,0 +1,644 @@
+# 2023-10
+- dc3d91be0 luarss 2023-10-21 revert change for on-push action
+# 2023-09
+- 2e642ebff luarss 2023-09-17 revert original push action
+- 8a8a93b55 luarss 2023-09-15 remove paste artifacts
+- 0899a3e99 luarss 2023-09-15 merge main
+- 87a5aa4ba luarss 2023-09-15 remove git chglog
+- 4b4af6b2e luarss 2023-09-15 move pr template
+- 725f2d6d1 Song Luar 2023-09-15 Update and rename pr_template.yml to pull_request_template.md
+- a905e0f3c luarss 2023-09-15 add pr_template
+- f87258703 luarss 2023-09-14 try python script for month filter
+- 84f5c23c0 luarss 2023-09-14 add push
+- 9dba8be37 luarss 2023-09-14 change changelog to indep action
+- 1abe74236 luarss 2023-09-07 update gitchglog workflow
+- c69c0e758 Harsh Vardhan 2023-09-05 updated OpenSTA to the latest code
+- f6979ec9f Matt Liberty 2023-09-05 rsz: skip nets that are isConnectedByAbutment
+- d011a40bd Matt Liberty 2023-09-05 gui: handle cell w/o Liberty in DbMasterDescriptor::getMasterEquivalent
+- c77f4eebd Matt Liberty 2023-09-05 odb: handle multiple techs in write_lef
+- 4b0b3ccfc Eder Monteiro 2023-09-05 ppl: fix coverity issues
+- c066dcc15 luarss 2023-09-06 add release workflow
+- 6f6d54360 Matt Liberty 2023-09-05 Revert "gui: restore gui hide behavior"
+- 268e58a7d luis201420 2023-09-04 modifying unit test congestion7 to check congestion progress report
+- 03aff2b17 luis201420 2023-09-04 grt: iterating all the nets when generating the progress report
+- 1f2481483 Peter Gadfort 2023-09-04 gui: restore gui hide behavior
+- 0bc9c00e0 Song Luar 2023-09-04 [Docs] psm documentation (#3703)
+- 644e719c2 Song Luar 2023-09-04 [Docs] pad documentation (#3714)
+- 6f9e4d97d luarss 2023-09-03 fetch depth 0
+- 21845012e luarss 2023-09-03 try new permission
+- fa1357d5a luarss 2023-09-03 add permissions
+- 427fd571b luarss 2023-09-03 test workflow 2
+- 487fda2da luarss 2023-09-03 test workflow
+- 90c36506f Matt Liberty 2023-09-14 Merge pull request #3987 from openroadie/eqy_fixes
+- 26b61b069 Matt Liberty 2023-09-14 Merge pull request #3990 from The-OpenROAD-Project-staging/rcx-cleanup
+- 733ab461b Matt Liberty 2023-09-13 rcx: rm unused in name.h/cpp
+- a70c5128c Matt Liberty 2023-09-13 Merge pull request #3989 from QuantamHD/remove_annealing
+- 53b650d13 Ethan Mahintorabi 2023-09-14 mpl: Fixes missing implementation of Annealer
+- 8d31ba822 Matt Liberty 2023-09-13 Merge pull request #3966 from eder-matheus/grt_congestion_map
+- b9d32432d Harsh Vardhan 2023-09-13 add another test + fix the cell lib
+- bf3dab0fd Eder Monteiro 2023-09-13 grt: update remaining ok files
+- 62494c7bc Eder Monteiro 2023-09-13 grt: update last gcell usage and blockage data
+- 0e5e5515f Eder Monteiro 2023-09-13 grt: update ok files
+- a2d25ec8e Eder Monteiro 2023-09-13 grt: restore h_edges_ and v_edges_ original size
+- 65053db02 Matt Liberty 2023-09-13 Merge pull request #3983 from openroadie/fix_fanout_for_eqy
+- 8b074ce37 Matt Liberty 2023-09-13 Merge pull request #3981 from rovinski/master
+- 66e88caaa Harsh Vardhan 2023-09-13 Merge branch 'fix_fanout_for_eqy' of https://github.com/openroadie/OpenROAD into fix_fanout_for_eqy
+- f5c183338 Harsh Vardhan 2023-09-13 update test to be more robust
+- 11a0bcfe0 Harsh Vardhan 2023-09-13 Merge branch 'The-OpenROAD-Project:master' into fix_fanout_for_eqy
+- ac2f78594 Song Luar 2023-09-13 [Docs] Fix prebuilt instructions and comments (#3971)
+- ad406757e Austin Rovinski 2023-09-13 grt: clang-format
+- 16f0b2cc4 Austin Rovinski 2023-09-13 grt: print all pins out of die area before erroring
+- 317b3278b Harsh Vardhan 2023-09-12 updated ok file
+- de8110dbc Harsh Vardhan 2023-09-12 Added output nets to fanout flops
+- 5a27687a8 Matt Liberty 2023-09-12 Merge pull request #3979 from eder-matheus/grt_skip_pdn
+- 00a84edd0 Matt Liberty 2023-09-12 Merge pull request #3980 from The-OpenROAD-Project-staging/python-timing-api
+- 2b1ca6959 Matt Liberty 2023-09-12 Merge pull request #3941 from eder-matheus/cut_rows_overflow
+- 301d1ca29 Matt Liberty 2023-09-12 ord: Some sample python timing APIs
+- 57849cf7c Eder Monteiro 2023-09-12 grt: clang-format
+- 2c71195ed Eder Monteiro 2023-09-12 grt: update ok files
+- a58170a59 Eder Monteiro 2023-09-12 grt: ignore power pins out of die
+- 8b23d5272 Matt Liberty 2023-09-12 Merge pull request #3978 from gadfort/via-do
+- eefc4a1b3 Eder Monteiro 2023-09-12 odb: remove overflow check when counting sites
+- 29a56aa58 Matt Liberty 2023-09-12 Merge pull request #3977 from eder-matheus/ppl_fix_overlap
+- 9669cd8ad Matt Liberty 2023-09-12 Merge pull request #3918 from The-OpenROAD-Project-staging/TR-new-ripup-mode
+- fa9c4fa2d Eder Monteiro 2023-09-12 Merge branch 'master' into grt_congestion_map
+- e16f4b024 Eder Monteiro 2023-09-12 Merge branch 'master' into cut_rows_overflow
+- 6f7c81289 Eder Monteiro 2023-09-12 odb: remove unnecessary include
+- fc2f262a8 Eder Monteiro 2023-09-12 Merge branch 'master' into ppl_fix_overlap
+- 43aae23b9 Matt Liberty 2023-09-12 Merge pull request #3976 from openroadie/eqy_negative_check
+- 79691a1c2 Eder Monteiro 2023-09-12 ppl: update ok files
+- b54612aba Eder Monteiro 2023-09-12 ppl: return move_fail_ when shifting group is not possible
+- 5f76715ca Eder Monteiro 2023-09-12 ppl: check if group is mirrored and check for mirrored slots when needed
+- 3f8cfa854 Eder Monteiro 2023-09-12 ppl: fix count of available slots when shifting group to max count
+- bd6556cd4 Matt Liberty 2023-09-12 Merge pull request #3970 from The-OpenROAD-Project-staging/odb-cleanup
+- 4ed8c0056 osamahammad21 2023-09-12 drt: pr requested changes
+- 7ae66c264 osamahammad21 2023-09-12 Merge remote-tracking branch 'origin/master' into TR-new-ripup-mode
+- 30faa4dd2 Matt Liberty 2023-09-09 odb: fix compile error
+- 8c21b58a4 Matt Liberty 2023-09-09 odb: clang-format
+- bcf269483 Matt Liberty 2023-09-09 odb: un-duplicate _dbObject::getObjectPage
+- 6acd94968 Harsh Vardhan 2023-09-11 new ok files
+- 591c95911 Harsh Vardhan 2023-09-11 negative equivalence test
+- c58809820 Matt Liberty 2023-09-11 Merge pull request #3975 from The-OpenROAD-Project-staging/mpl2-area-check
+- b2dd9eb80 Matt Liberty 2023-09-11 mpl2: correct the area check to properly include the halo on each side
+- d8f34b68e Matt Liberty 2023-09-11 Merge pull request #3935 from openroadie/eqy_check
+- e247b4873 Peter Gadfort 2023-09-11 odb: add support to parse VIA DO BY STEP in special nets
+- 744fc9391 Harsh Vardhan 2023-09-11 small change to how we write the eqy script
+- 6b7a20a73 Harsh Vardhan 2023-09-11 more tests with equivalence
+- 31b4d4f45 Harsh Vardhan 2023-09-11 Merge branch 'eqy_check' of https://github.com/openroadie/OpenROAD into eqy_check
+- 09fb280e8 Harsh Vardhan 2023-09-11 add equivalence checking
+- dbc83a182 Vitor Bandeira 2023-09-11 ci: enable eqy
+- 9b2c83338 Harsh Vardhan 2023-09-11 Merge branch 'eqy_check' of https://github.com/openroadie/OpenROAD into eqy_check
+- ec98e75bc Harsh Vardhan 2023-09-11 .gitignore no longer needed
+- b7fac5160 Harsh Vardhan 2023-09-11 Merge branch 'The-OpenROAD-Project:master' into eqy_check
+- 1c3671002 Harsh Vardhan 2023-09-11 add more cells
+- 0de6f5131 Matt Liberty 2023-09-10 Merge pull request #3969 from gadfort/net-mask
+- ddabf1a0f Matt Liberty 2023-09-10 Merge pull request #3960 from Pinata-Consulting/deltadebug-heuristic-tweak-2
+- 3efb2becc Peter Gadfort 2023-09-10 odb: add write_def58 test
+- 052f090c0 Matt Liberty 2023-09-09 odb: rm #if 0 code
+- d5fe46596 Matt Liberty 2023-09-09 odb: rm DB_TRANSFORM_TEST code
+- 099576778 Matt Liberty 2023-09-09 odb: rm SINGLE_WIRE code
+- bdcb9065a Matt Liberty 2023-09-09 odb: rm EXT code
+- ced667996 Matt Liberty 2023-09-09 odb: rm FULL_ECO code
+- 36cc95b69 Matt Liberty 2023-09-09 odb: rm ifdef FAST_INST_TERMS
+- aaead6dcb Matt Liberty 2023-09-09 odb: rm ZUI code
+- 92bd1cd37 Matt Liberty 2023-09-09 odb: ADS_DB_MAGIC -> DB_MAGIC
+- 50023cb35 Matt Liberty 2023-09-09 odb: limit scope for max_name_length
+- 43e720d6c Matt Liberty 2023-09-09 odb: rm dbObject::getDbName
+- 87ed51618 Matt Liberty 2023-09-09 odb: rm dbObject::resolveDbName
+- 8d40b1927 Matt Liberty 2023-09-09 odb: rm unused parts of DList
+- 5a49f5d01 Matt Liberty 2023-09-09 odb: rm useless commented line
+- b0beb5609 Matt Liberty 2023-09-09 Merge pull request #3968 from The-OpenROAD-Project-staging/odb-obsolete-code
+- 6bcf6ba69 Matt Liberty 2023-09-09 odb: rm dbRtEdge & dbRtNode
+- 82ce5bd54 Matt Liberty 2023-09-09 odb: rm dbRtTree and odbAllocator
+- dcaeb3839 Harsh Vardhan 2023-09-09 Replace ! with ~ (logical->bitwise)
+- a18363639 Harsh Vardhan 2023-09-08 add more modules for library
+- dee9a59db Matt Liberty 2023-09-08 odb: rm ZInterface.h
+- 8b30c580a Matt Liberty 2023-09-08 odb: rm ZContext
+- da3c540ce Matt Liberty 2023-09-08 odb: rm ZComponents.h
+- befd717da Matt Liberty 2023-09-08 odb: rm IZdcr.h & ZObject.h
+- 20aec9f32 Matt Liberty 2023-09-08 odb: rm ISdb.h & ZFactory.h
+- bd70f0629 Matt Liberty 2023-09-08 odb: rm unused dbSearch
+- 62e182e6a Matt Liberty 2023-09-08 odb: rm src/tm and all associated dead code.
+- fca2063eb Harsh Vardhan 2023-09-08 add equivalence check
+- e7d130949 Harsh Vardhan 2023-09-08 add support to exclude non logical cells when doing equivalence checks
+- c9fc810ad Harsh Vardhan 2023-09-08 add eqy test
+- 031f0b1f6 Harsh Vardhan 2023-09-08 more tests with equivalence checking
+- 7b0e818f2 Harsh Vardhan 2023-09-08 fix typos
+- 7106d51cc Harsh Vardhan 2023-09-08 refactor how equivalence tests are run + support sky130hd + default is to not run equivalence checks
+- 4d28a2750 Peter Gadfort 2023-09-08 odb: fix def parser test
+- 2e2a604e4 Peter Gadfort 2023-09-08 odb: address clang-tidy comment
+- 3537e1615 Peter Gadfort 2023-09-08 odb: fix clang-format in dbWireCodec
+- 1d7caaedd Peter Gadfort 2023-09-08 odb: add via mask to wire encoder and def reading/writing
+- 2bcc4b391 Peter Gadfort 2023-09-08 odb: fix typo in SNet
+- d9adb1f93 Harsh Vardhan 2023-09-08 Move std cell file to a more appropriate place
+- b87c5f9a1 Harsh Vardhan 2023-09-08 add verilog modules for cell libs
+- 393f20292 Eder Monteiro 2023-09-08 grt: undo unnecessary iteration range changes
+- bb9f768b7 Øyvind Harboe 2023-09-07 deltaDebug: decrease granularity by steps instead of going straight back to 0
+- c54afffab Harsh Vardhan 2023-09-08 Merge branch 'The-OpenROAD-Project:master' into eqy_check
+- b43728e5f Eder Monteiro 2023-09-08 Merge branch 'master' into grt_congestion_map
+- 3b2fb4e1a Eder Monteiro 2023-09-07 grt: update ok files again
+- 8ddb5aac9 Eder Monteiro 2023-09-07 grt: fix report and congestion map for designs that are regular in X or Y
+- 5f062ab46 Eder Monteiro 2023-09-07 grt: save info if design is regular in X and Y
+- df471a229 Eder Monteiro 2023-09-07 grt: update ok files
+- 6dacde2b1 Matt Liberty 2023-09-07 Merge pull request #3965 from The-OpenROAD-Project-staging/bterm-hier
+- 8a9e757fd Eder Monteiro 2023-09-07 grt: apply layer adjustments for every point of the global routing grid
+- 3d6a42860 Matt Liberty 2023-09-07 odb: allow dbBTerm::create to update the dbInst & dbMaster it is bound to
+- 4e6cf969a Eder Monteiro 2023-09-07 grt: store the correct default cap for last col/row
+- 0834e3416 Eder Monteiro 2023-09-07 grt: add vectors to store the default capacities of the last col/row per layer
+- 051b3bf7b Eder Monteiro 2023-09-07 odb: fix overflow in sites count
+- 972137093 Matt Liberty 2023-09-06 Merge pull request #3954 from Pinata-Consulting/delta-debug-heuristic-tweak
+- ab54e3a6c Matt Liberty 2023-09-06 Merge pull request #3959 from The-OpenROAD-Project-staging/gui-block-layers-controls
+- 3e1796b18 Eder Monteiro 2023-09-06 Merge branch 'master' into cut_rows_overflow
+- c353dd8ff Matt Liberty 2023-09-06 gui: draw layers from child blocks that are in a different dbTech
+- bd609d5a6 Matt Liberty 2023-09-06 odb: make dbTechLayer::getTech const
+- 42cb1c739 Matt Liberty 2023-09-06 gui: only show the layers for the current block and its children
+- f35ddf232 Matt Liberty 2023-09-06 Merge pull request #3958 from The-OpenROAD-Project-staging/odb-block-inst
+- 59ea95f1e Song Luar 2023-09-07 [Docs] update cts docs (#3956)
+- 1206b0657 Matt Liberty 2023-09-06 odb: add dbInst::create convenience for block instantiation.
+- bca1071f5 Matt Liberty 2023-09-06 Merge pull request #3957 from The-OpenROAD-Project-staging/lefout-naming
+- 3a859e6ae Matt Liberty 2023-09-06 odb: when writing multiple lef files use <file>_<num>.lef not <file>.lef_<num>
+- d85f49644 Harsh Vardhan 2023-09-06 Merge branch 'The-OpenROAD-Project:master' into eqy_check
+- 94f0c085a Matt Liberty 2023-09-06 Merge pull request #3951 from openroadie/update_sta
+- 8faf71300 Øyvind Harboe 2023-09-06 deltaDebug: tweak heuristic to speed up bisection
+- b8c71cc9a Matt Liberty 2023-09-05 Merge pull request #3952 from The-OpenROAD-Project-staging/rsz-isConnectedByAbutment
+- 9f62a6fa0 Matt Liberty 2023-09-05 rsz: skip nets that are isConnectedByAbutment
+- 56080e59c Harsh Vardhan 2023-09-05 updated OpenSTA to the latest code
+- b7077b361 Matt Liberty 2023-09-05 Merge pull request #3949 from The-OpenROAD-Project-staging/gui-no-cell
+- 79514accf Matt Liberty 2023-09-05 Merge pull request #3948 from The-OpenROAD-Project-staging/lef
+- 65d975f15 Matt Liberty 2023-09-05 gui: handle cell w/o Liberty in DbMasterDescriptor::getMasterEquivalent
+- 315c1a435 Matt Liberty 2023-09-05 odb: handle multiple techs in write_lef
+- 3ab16ae07 Matt Liberty 2023-09-05 Merge pull request #3947 from eder-matheus/ppl_coverity
+- e6f0e753b Harsh Vardhan 2023-09-05 Merge branch 'The-OpenROAD-Project:master' into eqy_check
+- fe1e34614 Eder Monteiro 2023-09-05 odb: use int64_t to represent total number of sites
+- 72c943ec8 Eder Monteiro 2023-09-05 ppl: fix coverity issues
+- 550c620ab Matt Liberty 2023-09-05 Merge pull request #3946 from The-OpenROAD-Project/revert-3940-restore-gui-hide
+- 4f24330e1 Harsh Vardhan 2023-09-05 Merge branch 'eqy_check' of https://github.com/openroadie/OpenROAD into eqy_check
+- a20f0a6af Harsh Vardhan 2023-09-05 ignore files generated for equivalence checks
+- d54aab22d Harsh Vardhan 2023-09-05 remove file that is now generated at runtime
+- 2cef67850 Matt Liberty 2023-09-05 Revert "gui: restore gui hide behavior"
+- 120512054 Harsh Vardhan 2023-09-04 add support for different design names/top cell
+- 7aae17bbb Eder Monteiro 2023-09-04 odb: use lowest instead of min
+- 6e6cd3fad Matt Liberty 2023-09-04 Merge pull request #3942 from luis201420/grt_congestion_report_fix
+- 4b2169a50 luis201420 2023-09-04 modifying unit test congestion7 to check congestion progress report
+- d7550f298 Harsh Vardhan 2023-09-04 more tests with equivalency checking
+- c0f815bcf Eder Monteiro 2023-09-04 odb: add error message for overflow during cut_rows
+- 05a45979e Harsh Vardhan 2023-09-04 wip
+- 2ee00183a Harsh Vardhan 2023-09-04 WiP
+- c3ae8a31a Matt Liberty 2023-09-04 Merge pull request #3940 from gadfort/restore-gui-hide
+- a12a47a10 luis201420 2023-09-04 grt: iterating all the nets when generating the progress report
+- 18ddd0fa4 Peter Gadfort 2023-09-04 gui: restore gui hide behavior
+- 41bc13491 Harsh Vardhan 2023-09-04 Merge branch 'The-OpenROAD-Project:master' into eqy_check
+- 023bc47dd Song Luar 2023-09-04 [Docs] psm documentation (#3703)
+- 334228b23 Song Luar 2023-09-04 [Docs] pad documentation (#3714)
+- 9b66d243f Matt Liberty 2023-09-02 Merge pull request #3843 from QuantamHD/fix_double_height_paint_routines
+- 94b4ca4b4 Harsh Vardhan 2023-09-01 helper routines for equivalency checking
+- 71cca3aba Harsh Vardhan 2023-09-01 basic equivalency checking script
+- dc799c381 Harsh Vardhan 2023-09-01 add equivalence checking
+- 5da8ce132 Harsh Vardhan 2023-09-01 add equivalence checking
+- a9d4eb791 Harsh Vardhan 2023-09-01 updated with equivalence checks
+- 3207ab2c8 Harsh Vardhan 2023-09-01 cell lib for equivalence checks
+# 2023-08
+- 067d1f4be Matt Liberty 2023-08-31 Merge pull request #3932 from The-OpenROAD-Project-staging/cts-sink-count-fix
+- 94519c647 Matt Liberty 2023-08-31 cts: fix miscalculation of sinks in countSinksPostDbWrite
+- b00b20b83 Ethan Mahintorabi 2023-08-31 fixing off-by-one error in assertion check
+- 4b5b48177 Matt Liberty 2023-08-31 Merge pull request #3930 from gadfort/pad-error-on-master
+- 2725682da Peter Gadfort 2023-08-31 fix incorrect pad tests to pass
+- 1f6ccc906 Matt Liberty 2023-08-30 Merge pull request #3929 from eder-matheus/ppl_fix_crash
+- 814f2899d Peter Gadfort 2023-08-30 pad: add error checking for master cell
+- 96d5870df Eder Monteiro 2023-08-30 ppl: update ok file
+- c673a4e9e Eder Monteiro 2023-08-30 ppl: move check to the correct place
+- c9c99a159 Eder Monteiro 2023-08-30 ppl: fix report
+- 68113315c Matt Liberty 2023-08-30 Merge pull request #3926 from openroadie/OR3924
+- 11ac025d4 Matt Liberty 2023-08-30 Merge pull request #3927 from eder-matheus/ppl_place_pin_fix
+- 72adce8c2 Eder Monteiro 2023-08-30 ppl: clang-format
+- 0c1905025 Harsh Vardhan 2023-08-30 update
+- b88b9516e Eder Monteiro 2023-08-30 ppl: update unit tests
+- b7eae1f83 Eder Monteiro 2023-08-30 ppl: place_pin always set pins as fixed
+- f3cd9776f Harsh Vardhan 2023-08-29 retrigger pipeline
+- 4a71135d6 Harsh Vardhan 2023-08-29 update okfile due to input change/no output change
+- 6c1c6b17d Harsh Vardhan 2023-08-29 fix regression to not have floating terminals. No impact to results
+- 70db1404a Matt Liberty 2023-08-29 Merge pull request #3923 from eder-matheus/ppl_dump_placement
+- cacbeed02 Matt Liberty 2023-08-29 Merge pull request #3888 from luis201420/grt_inc_runtime_updates
+- bc7b581e0 Eder Monteiro 2023-08-29 ppl: fix format of floats
+- b50a6186d Eder Monteiro 2023-08-29 clang-format again
+- 030513de8 Matt Liberty 2023-08-29 Merge pull request #3908 from openroadie/OR3907
+- 8b1072b49 Eder Monteiro 2023-08-29 ppl: clang-tidy
+- a99dc486a Eder Monteiro 2023-08-29 ppl: clang-format
+- b1016fe5f Eder Monteiro 2023-08-29 ppl: update readme
+- 260de0915 Matt Liberty 2023-08-29 Merge pull request #3917 from refaay/bugfix-init-vias
+- 90ad4a078 Eder Monteiro 2023-08-29 ppl: add unit tests for write_pin_placement option
+- 0c92604d1 Eder Monteiro 2023-08-29 ppl: fix check for overlap with blocked interval
+- aac1224a0 Eder Monteiro 2023-08-29 ppl: group pins by edge in pin placement tcl file
+- ee43b3e5b Eder Monteiro 2023-08-29 ppl: add Edge information to IOPin
+- 75fd5d297 Eder Monteiro 2023-08-29 ppl: fix float format
+- 2bd9202f1 Eder Monteiro 2023-08-29 ppl: add -write_pin_placement option to dump pin placement to a tcl file
+- c27b5d669 Eder Monteiro 2023-08-29 ppl: add placed_status option to place_pin command
+- 3accaf694 Song Luar 2023-08-29 [Docs] TOC changes + Database Math  (#3860)
+- e4168fb06 Song Luar 2023-08-29 Fix Show source bug (#3921)
+- 4736d9cbf refaay 2023-08-29 Add braces
+- 3506b76ee Osama 2023-08-29 drt: update ispd19_test10 metrics
+- 41d4f928b Osama 2023-08-29 Merge remote-tracking branch 'origin/master' into TR-new-ripup-mode
+- f4d1bf62c Harsh Vardhan 2023-08-28 update ok file with correct gate cloning undo results
+- a432ce0ac Harsh Vardhan 2023-08-28 fix an issue in gate cloning undo code
+- 709cdbdf0 Harsh Vardhan 2023-08-28 refactor for readability
+- ee4234fdb Harsh Vardhan 2023-08-28 Merge branch 'The-OpenROAD-Project:master' into OR3907
+- ea76d3028 Matt Liberty 2023-08-28 Merge pull request #3920 from The-OpenROAD-Project-staging/gui-uninit-ctor
+- d35450ce3 Matt Liberty 2023-08-28 gui: fix two UNINIT_CTOR from Coverity
+- d292ff7ad Matt Liberty 2023-08-28 Merge pull request #3887 from refaay/lef57_support
+- 80a02c633 Matt Liberty 2023-08-28 Merge pull request #3919 from The-OpenROAD-Project-staging/mpl2-no-unplaced
+- 91264e885 Matt Liberty 2023-08-28 mpl2: skip if there are no unplaced macros to work on
+- c95b2b8fa Song Luar 2023-08-29 [Docs] flt documentation (#3904)
+- 652d5be9a Song Luar 2023-08-28 [Docs] Mermaid anchor fix test 2 (#3879)
+- 964ebdebf refaay 2023-08-28 Check not below bottom routing layer
+- 4db2f626d refaay 2023-08-28 Fix duplicate i error
+- cfa696a4d Song Luar 2023-08-28 [Docs] dpl documentation (#3700)
+- 39e818acd refaay 2023-08-28 Fix duplication bugs
+- 91a6a7819 refaay 2023-08-28 Fix testcase files
+- 40a650ced refaay 2023-08-28 Add new error and error ID
+- 6aee6ce3f refaay 2023-08-28 Call the function only once
+- a6c9e44c8 refaay 2023-08-28 Add check for no vias defined to avoid segmentation fault
+- 5e28cea35 Matt Liberty 2023-08-27 Merge pull request #3913 from gadfort/fix-empty-draw
+- c1a449e98 Peter Gadfort 2023-08-27 gui: dont draw if image is null
+- a4c30251b refaay 2023-08-27 Add test for LEF57 parsing of newly supported rules
+- 3bcff659a Harsh Vardhan 2023-08-26 Merge branch 'The-OpenROAD-Project:master' into OR3907
+- 966f4e950 Harsh Vardhan 2023-08-26 delete the created output net when undoing gate cloning
+- 5240893cf Ahmed Refaay 2023-08-26 Merge branch 'The-OpenROAD-Project:master' into lef57_support
+- b8fca2004 osamahammad21 2023-08-26 Merge remote-tracking branch 'origin/master' into TR-new-ripup-mode
+- 37022a297 osamahammad21 2023-08-26 Revert "drt: update strategy"
+- 6dba515c2 Matt Liberty 2023-08-25 Merge pull request #3886 from The-OpenROAD-Project-staging/gui-multi-view
+- 24b3a4df4 Song Luar 2023-08-26 [Docs] ppl documentation (#3715)
+- 0d4d71d2f Song Luar 2023-08-26 [Docs] cts documentation (#3698)
+- 80ac27ab6 Song Luar 2023-08-26 [Docs] drt documentation (#3631)
+- 8ce41dd21 Song Luar 2023-08-26 [Docs] rsz documentation (#3701)
+- 53a32a198 Matt Liberty 2023-08-24 Merge pull request #3898 from eder-matheus/ppl_annealing
+- 500cd97b4 Eder Monteiro 2023-08-24 ppl: avoid accessing invalid indices in slots vector
+- ea8d3c972 Eder Monteiro 2023-08-24 ppl: clang-tidy again
+- 49ec8fca7 Eder Monteiro 2023-08-24 ppl: fix encapsulation issue
+- ccec43352 luis201420 2023-08-24 Merge remote-tracking branch 'origin' into grt_inc_runtime_updates
+- c772f5272 Eder Monteiro 2023-08-24 ppl: clang-tidy
+- add053dbf Eder Monteiro 2023-08-24 ppl: update pins per slot limit to run shiftGroup and rearrangeGroups
+- bfd0102d7 Matt Liberty 2023-08-24 Merge pull request #3901 from openroadie/refactor_gate_cloning_undo
+- 11074f85b Song Luar 2023-08-24 [Docs] upf documentation (#3723)
+- bfb7a1298 Song Luar 2023-08-24 [Docs] rcx documentation (#3718)
+- d4ebc6b38 Song Luar 2023-08-24 [Docs] rmp documentation (#3717)
+- af7733d4a Song Luar 2023-08-24 [Docs] grt documentation (#3697)
+- 68920c2bc Matt Liberty 2023-08-23 Merge pull request #3902 from openroadie/Issue_3900
+- 11b6d804f Harsh Vardhan 2023-08-23 compile error from clang-tidy fix via PR
+- fc066ced6 Harsh Vardhan 2023-08-23 do not repair nets which are connected by abutment
+- e988dc8a4 Harsh Vardhan 2023-08-23 Update src/rsz/src/Resizer.cc
+- 9e6b850f1 Harsh Vardhan 2023-08-23 refactor cloning undo code
+- 4fbe406b9 Eder Monteiro 2023-08-23 ppl: refactor to remove repeated code
+- 318f3042c Vitor Bandeira 2023-08-23 Merge pull request #3897 from The-OpenROAD-Project-staging/secure-HV-recover_power_test
+- a16c4c003 Eder Monteiro 2023-08-23 ppl: update movements for groups
+- 186285bbe Song Luar 2023-08-24 [Docs] mpl documentation  (#3713)
+- 60d2a3896 Song Luar 2023-08-24 [Docs] tap documentation (#3711)
+- 651e7af6f Eder Monteiro 2023-08-23 ppl: add rearrangeConstrainedGroups function
+- 8fc1f5bf6 Song Luar 2023-08-24 [Docs] ifp documentation (#3716)
+- e850a49db Eder Monteiro 2023-08-23 ppl: add shiftGroup function
+- 210a24f01 Song Luar 2023-08-24 [Docs] ant documentation (#3696)
+- c4905fbe7 Song Luar 2023-08-24 [Docs] mpl2 documentation (#3617)
+- 7b57883aa Matt Liberty 2023-08-23 Merge pull request #3894 from gadfort/pdn-macro-fixed
+- ca42092c9 Matt Liberty 2023-08-23 Merge pull request #3895 from The-OpenROAD-Project-staging/drt-uniq-inst-refactor
+- 4f913303b refaay 2023-08-23 Clang-format the file
+- 7e931c770 Matt Liberty 2023-08-20 drt: factor UniqueInsts out of FlexPA
+- f67337977 Peter Gadfort 2023-08-23 pdn: fix message numbering
+- 41f792a48 Peter Gadfort 2023-08-23 pdn: add error checking for non-fixed macros
+- 81f0df879 Matt Liberty 2023-08-22 Merge pull request #3889 from AcKoucher/gui_adjust_routing_map
+- 047f46064 Matt Liberty 2023-08-22 Merge pull request #3890 from AcKoucher/gui_fix_attribute_filter_defects
+- eb3328326 Arthur Koucher 2023-08-22 gui: fix performance inefficiencies
+- b989394af Arthur Koucher 2023-08-22 gui: consider last row/column when populating routing map
+- 263cc2e5c refaay 2023-08-22 Change to logical operator according to Github comments
+- dc0973d03 Harsh Vardhan 2023-08-21 Merge branch 'recover_power' of https://github.com/openroadie/OpenROAD into secure-HV-recover_power_test
+- 289efb0be Matt Liberty 2023-08-21 Merge pull request #3876 from AcKoucher/gui_adjust_heat_map
+- 973a023cb Matt Liberty 2023-08-21 gui: exit all render threads at exit
+- 18211d955 luis201420 2023-08-21 grt: clang-format
+- c24003052 Matt Liberty 2023-08-21 gui: correct copyright date/owner
+- af016d241 Matt Liberty 2023-08-21 gui: rm unused includes
+- a81d596cf Matt Liberty 2023-08-21 OpenRoad.cc update additional DEF msg
+- 578da41ad luis201420 2023-08-21 grt: removing prints and commented code
+- 8f5e9c6f9 luis201420 2023-08-21 Merge remote-tracking branch 'origin' into grt_inc_runtime_updates
+- a41e29ce6 Matt Liberty 2023-08-21 gui: fix clang-tidy feedback
+- 6ad882a5a refaay 2023-08-21 Add support for LEF57_MINSTEP in ROUTING & LEF57_SPACING in CUT
+- dd37f8c23 Matt Liberty 2023-08-21 clang-format OpenRoad.cc
+- 1b540598e Harsh Vardhan 2023-08-21 Merge branch 'recover_power' of https://github.com/openroadie/OpenROAD into recover_power
+- 618d83911 Harsh Vardhan 2023-08-21 error message code
+- 22b992291 Matt Liberty 2023-08-21 gui: clang-format
+- 84a088722 Matt Liberty 2023-08-21 gui: initial work towards multi-block display for 3D-IC designs
+- b6762467b Eder Monteiro 2023-08-21 ppl: fix bug in random placement for groups to avoid overlaps
+- d632ce248 Harsh Vardhan 2023-08-21 Merge branch 'The-OpenROAD-Project:master' into recover_power
+- ddfd8c7eb Harsh Vardhan 2023-08-21 cleanup
+- 2be6fa714 Matt Liberty 2023-08-21 Merge pull request #3877 from eder-matheus/grt_congestion_info
+- da5e4c367 Harsh Vardhan 2023-08-21 cleanup
+- 4feeacbf5 Eder Monteiro 2023-08-21 grt: correct calculate hor and ver blockages for congestion map
+- ba19714cb Eder Monteiro 2023-08-21 Merge branch 'master' into grt_congestion_info
+- 361a6d7fe Harsh Vardhan 2023-08-20 refine the logic to accept a move when there is positive slack
+- 0a6d0fd46 Matt Liberty 2023-08-20 Merge pull request #3882 from The-OpenROAD-Project-staging/drt-minor
+- 9b66a8dad Matt Liberty 2023-08-19 drt: more pa refactoring
+- c0715d374 Matt Liberty 2023-08-13 drt: pa rm dead code
+- 95f55b4c1 Matt Liberty 2023-08-13 drt: pa const
+- 65612a1c4 Matt Liberty 2023-08-13 drt: minor pa refactoring
+- 00dab597f Harsh Vardhan 2023-08-20 improvements in power recovery logic + added undo for bad moves
+- cd6999ade Matt Liberty 2023-08-19 Merge pull request #3880 from gadfort/pdn-error-on-empty-grids
+- 2d2869136 Peter Gadfort 2023-08-19 pdn: add check for empty grids and error out
+- 9b971ed2a Eder Monteiro 2023-08-18 grt: fix updateDbCongestion with the correct values for the last col/row
+- 2f2fd3dbe Matt Liberty 2023-08-18 Merge pull request #3821 from AcKoucher/gui_select_new_filter
+- 66d37229a Arthur Koucher 2023-08-18 gui: remove unneeded else
+- 98dbdd432 Arthur Koucher 2023-08-18 gui: add special case to README
+- 0b4abfd9d luis201420 2023-08-17 Merge remote-tracking branch 'origin' into grt_inc_runtime_updates
+- 01e6343a4 Matt Liberty 2023-08-17 Merge pull request #3837 from The-OpenROAD-Project-staging/cts-charblock-destroy
+- 0011f9ef3 Arthur Koucher 2023-08-17 gui: fix map view
+- c9819b1d5 Matt Liberty 2023-08-17 Merge pull request #3873 from The-OpenROAD-Project-staging/mpl2-area-check
+- 9bba415a9 Matt Liberty 2023-08-17 mpl2: add error if the instance area with halos exceeds the core area
+- 0489fee87 Matt Liberty 2023-08-17 mpl2: rm unused inflated areas
+- ad1deef3d Matt Liberty 2023-08-16 Merge pull request #3865 from openroadie/recover_power
+- e065e5ca4 Harsh Vardhan 2023-08-16 Merge branch 'The-OpenROAD-Project:master' into recover_power
+- 6f17f5224 Harsh Vardhan 2023-08-16 address PR feedback
+- c7a7ab9fa Matt Liberty 2023-08-16 Merge pull request #3870 from eder-matheus/ppl_constraint_check
+- cf62bac31 Eder Monteiro 2023-08-16 ppl: error out when constraint does not have enough slots for its pins
+- db87128e2 Matt Liberty 2023-08-16 Merge pull request #3869 from gadfort/psm-check-grid
+- 9ccc2cfd4 Peter Gadfort 2023-08-16 psm: split findUnconnectedInsts into several smaller functions
+- 7875a8d4b Peter Gadfort 2023-08-16 psm: rename floating to unconnected
+- f6587caf6 Peter Gadfort 2023-08-16 psm: add unit test for error report
+- c9417e865 Peter Gadfort 2023-08-15 psm: add more unit tests for connectivity checking
+- d0efada3a Peter Gadfort 2023-08-15 psm: add connectivity checks for instances without any connectivity
+- fb2af0eca Arthur Koucher 2023-08-16 Merge branch 'master' of https://github.com/The-OpenROAD-Project/OpenROAD into gui_select_new_filter
+- 24b01723f Harsh Vardhan 2023-08-15 disable verbose messages for incremental routing
+- 96b068a5c Harsh Vardhan 2023-08-15 Merge branch 'recover_power' of https://github.com/openroadie/OpenROAD into recover_power
+- ce7eb4019 Harsh Vardhan 2023-08-15 clear the dirty nets list after processing them + formatting
+- 6d06022cd Harsh Vardhan 2023-08-15 Merge branch 'The-OpenROAD-Project:master' into recover_power
+- 4ba7a4bfc Arthur Koucher 2023-08-15 gui: update readme
+- c5f92a0b2 Matt Liberty 2023-08-15 Merge pull request #3864 from openroadie/coverity_and_formatting
+- d4dff39e0 Arthur Koucher 2023-08-15 gui: add case for IO nets
+- 8eb444582 Harsh Vardhan 2023-08-15 remove redundant parasitics computation call
+- 99562451b Arthur Koucher 2023-08-15 gui: allow filtering properties
+- b6253e77e Harsh Vardhan 2023-08-15 coverity issues and error message formatting
+- 3c3c2cef7 Matt Liberty 2023-08-15 Merge pull request #3756 from osamahammad21/drt-warn-off-grid
+- 83e3e5a65 Arthur Koucher 2023-08-15 gui: allow attribute filter to be used with name
+- 26bea4e95 luis201420 2023-08-15 grt: running without prints
+- bcce07fcc Arthur Koucher 2023-08-14 gui: compare values
+- fac7bdc16 luis201420 2023-08-15 grt: removing runtime prints
+- 6a66a6b07 Matt Liberty 2023-08-14 Merge pull request #3841 from openroadie/or_3783
+- 2d179d133 Matt Liberty 2023-08-14 Merge pull request #3858 from eder-matheus/drt_blockages
+- add1eca54 Eder Monteiro 2023-08-14 drt/grt: add unit tests for dbObstruction
+- 086406f30 luis201420 2023-08-14 Merge remote-tracking branch 'origin' into grt_inc_runtime_updates
+- 50f8a2429 luis201420 2023-08-14 grt: avoiding iterating all ggrids
+- 6dc697a44 Matt Liberty 2023-08-14 Merge pull request #3857 from Pinata-Consulting/gui-centered-text-with-outline
+- 28702e8f8 luis201420 2023-08-14 grt: adding prints to get runtime
+- 3d788da72 luis201420 2023-08-14 grt: avoiding iterating all nets to count ways
+- 1e1a9bd51 Øyvind Harboe 2023-08-14 gui: use black outline for macro labels and other centered text
+- 69d5d4343 Harsh Vardhan 2023-08-14 address PR feedback/compact code
+- 7430f83d9 Matt Liberty 2023-08-14 Merge pull request #3818 from AcKoucher/gui_cmd_via_timing_report
+- 2462c1a1d Matt Liberty 2023-08-14 Merge pull request #3855 from gadfort/psm-pins
+- 8963cdab8 Arthur Koucher 2023-08-14 gui: -through intermediate points
+- 2f216a5cf Arthur Koucher 2023-08-14 Merge branch 'master' into gui_cmd_via_timing_report
+- 581f528cd osamahammad21 2023-08-14 drt: required pr changes
+- dae825d76 Peter Gadfort 2023-08-13 psm: add nodes on iterms with overlap with a pdn shape
+- 2bc631eec Peter Gadfort 2023-08-05 psm: use macro pin shapes to form connections
+- 3a7331022 Matt Liberty 2023-08-12 Merge pull request #3854 from The-OpenROAD-Project-staging/ant-grt-dep
+- 552eaa4ac Matt Liberty 2023-08-12 ant: remove the circular dependency between ant_lib & grt_lib
+- 273ff1365 Matt Liberty 2023-08-11 Merge pull request #3852 from The-OpenROAD-Project-staging/odb-deps
+- bc8a82f1d Matt Liberty 2023-08-11 Update write_abstract_lef for odb API change
+- 996fa539e Matt Liberty 2023-08-11 Merge pull request #3851 from The-OpenROAD-Project-staging/stt-dtype-int
+- 55f9da619 Matt Liberty 2023-08-11 Merge pull request #3849 from ApeachM/hotfix/odb
+- e4650db98 Matt Liberty 2023-08-11 odb: rm obsolete apis for writing lef & def
+- 560a3145d Matt Liberty 2023-08-11 Merge branch 'master' into stt-dtype-int
+- f96a2193e Matt Liberty 2023-08-11 Merge pull request #3850 from The-OpenROAD-Project-staging/stt-header-priv
+- 7a7e04dcc Matt Liberty 2023-08-11 stt: introduce type aliases in LinesRenderer
+- 268340810 Matt Liberty 2023-08-11 stt: replace DTYPE with int
+- aee2f29f3 Matt Liberty 2023-08-11 Keep src out of public target_include_directories
+- 38901173a Ethan Mahintorabi 2023-08-12 Change overpaint to an error
+- eeff9efbd minjae 2023-08-10 odb: exception handling when `ITerm` is trying to be connected with a net in the other block
+- 65f8f2bfa Arthur Koucher 2023-08-11 gui: traverse properties
+- 69db11f6a Matt Liberty 2023-08-11 Merge pull request #3832 from Pinata-Consulting/gui-fix-text-elide-rendering-bugs
+- cff98fa4a Arthur Koucher 2023-08-11 Merge branch 'master' into gui_select_new_filter
+- 3d18d7174 Arthur Koucher 2023-08-11 gui: unneeded include
+- 5ea05843c Arthur Koucher 2023-08-11 gui: clean and format
+- 21fa7ee0a Harsh Vardhan 2023-08-10 missing file from last commit
+- b31a3b960 Matt Liberty 2023-08-10 Merge pull request #3842 from QuantamHD/delete_python_tests
+- a1c85b7af Arthur Koucher 2023-08-10 gui: handle different commands
+- e18262037 Arthur Koucher 2023-08-10 gui: menu for injecting commands
+- 1e3e3f39b Ethan Mahintorabi 2023-08-10 dpl: Fixes out of bounds in grid paint
+- 09f11bb24 Harsh Vardhan 2023-08-10 refactor as per PR comments
+- 0e3d0353d Ethan Mahintorabi 2023-08-10 odb: Remove old python tests that are not run.
+- da9cd9d19 Harsh Vardhan 2023-08-10 Merge branch 'The-OpenROAD-Project:master' into or_3783
+- 6dcbfd802 Harsh Vardhan 2023-08-10 Refactor per PR comments
+- 535e58b10 Harsh Vardhan 2023-08-10 make clang tidy happy
+- a96c1173d Song Luar 2023-08-11 [Docs] add link to ORFS (#3798)
+- a43d08d50 Harsh Vardhan 2023-08-10 cleanup
+- 6537a579e Harsh Vardhan 2023-08-10 remove debug code
+- 1d47fefd6 Harsh Vardhan 2023-08-10 handle the case where there are no buffer equivalent cells (just 1 buffer)
+- 7c595092a Harsh Vardhan 2023-08-10 update golden
+- 92e1714a6 Harsh Vardhan 2023-08-10 Merge branch 'or_3783' of https://github.com/openroadie/OpenROAD into or_3783
+- d7f8998cd Harsh Vardhan 2023-08-10 check that max_transition limits are reasonable
+- 323375ad6 Arthur Koucher 2023-08-10 gui: rightclick will select a path in timing report
+- b4643e711 Arthur Koucher 2023-08-10 gui: use rise and fall
+- e26842d0b Harsh Vardhan 2023-08-10 Merge branch 'The-OpenROAD-Project:master' into or_3783
+- 738a469bb Harsh Vardhan 2023-08-10 WiP: How to reject out of range max slew values
+- 36bd481ac Matt Liberty 2023-08-09 Merge pull request #3835 from eder-matheus/ppl_annealing_perturbs
+- 620a8c0f1 Matt Liberty 2023-08-09 Merge pull request #3836 from gadfort/gui-fix-segfault
+- cc73fb992 Arthur Koucher 2023-08-09 gui: script receives command from timing through mainwindow
+- 131af69c9 Harsh Vardhan 2023-08-09 fixes to handle cases where the wire split length is 0 (infinite loop follows)
+- d3de8e48a Matt Liberty 2023-08-09 cts: destroy charBlock_ at the end of TechChar
+- 56fe0a132 Arthur Koucher 2023-08-09 Merge branch 'master' into gui_cmd_via_timing_report
+- b9a58c1a3 Peter Gadfort 2023-08-09 dbsta: ensure gui is active when registering the path renderer
+- 61e6fbb4a Eder Monteiro 2023-08-09 ppl: clang-format
+- e567c79e8 Matt Liberty 2023-08-09 Merge pull request #3819 from gadfort/odb-def-parser
+- 23b3b66a9 Eder Monteiro 2023-08-09 ppl: update ok files
+- 46db80385 Peter Gadfort 2023-08-09 odb: fix comment in dbDatabase.h and remove unused destructor
+- b8efd0899 Peter Gadfort 2023-08-09 odb: add regression test for read_def 5.8
+- 1db1adf39 Eder Monteiro 2023-08-09 ppl: calculate perturb per iterations based on number of pin groups
+- 4e4293bbe Matt Liberty 2023-08-09 Merge pull request #3797 from mina1460/dpl_report_failures_to_file_
+- 3a1c1dc25 Eder Monteiro 2023-08-09 ppl: add debug message for annealing config
+- 3e12bbef4 Matt Liberty 2023-08-09 Merge pull request #3834 from The-OpenROAD-Project-staging/par-bad-bal
+- 4474922bd mina1460 2023-08-09 compilation error fix
+- 659188e06 Mina Ashraf 2023-08-09 Update src/dpl/src/Opendp.cpp
+- c74f7b9bb Matt Liberty 2023-08-09 par: fix copy-paste error with GetLowerVertexBalance
+- 6aa988d5d Matt Liberty 2023-08-09 par: rm dead code
+- a2fc4465a Matt Liberty 2023-08-09 Merge pull request #3826 from Pinata-Consulting/detailed-route-no-step-0-progress-report
+- 2888885df Matt Liberty 2023-08-09 Merge pull request #3804 from gadfort/psm-cleanup
+- 1e6df820a osamahammad21 2023-08-09 drt: address gh-actions suggestions
+- 63b78af87 Øyvind Harboe 2023-08-09 gui: fix text rendering, recalculate dimensions after elide
+- fd175e5f3 Harsh Vardhan 2023-08-09 use emplace instead of push_back
+- 04a2015a3 Harsh Vardhan 2023-08-09 use emplace instead of push_back
+- ea56b56a9 Vitor Bandeira 2023-08-09 Merge pull request #3830 from The-OpenROAD-Project-staging/gui-exit-crash
+- cd819d840 Matt Liberty 2023-08-09 gui: fix a crash related to ScriptWidget destruction
+- e45cee15a osamahammad21 2023-08-09 drt: macro only
+- 85d284a74 Vitor Bandeira 2023-08-09 Merge pull request #3764 from titan73/master
+- f1199ad3c Peter Gadfort 2023-08-09 odb: address clang-tidy feedback
+- 0937addbc Osama 2023-08-09 drt: update strategy
+- 3934c5795 Peter Gadfort 2023-08-09 psm: update readme
+- 0f30b04ba Peter Gadfort 2023-08-09 psm: fix optional access
+- 3a840e052 Øyvind Harboe 2023-08-09 detailed route: do not save step 0 when -drc_report_iter_step is set
+- 83770be33 Matt Liberty 2023-08-08 Merge pull request #3823 from The-OpenROAD-Project-staging/gui-func-connect
+- 0a9d09183 Matt Liberty 2023-08-08 gui: fix mac build error
+- 22f349b9e Matt Liberty 2023-08-08 gui: clang-format
+- 1962511d2 Matt Liberty 2023-08-08 gui: convert mainWindow.cpp to functor-based connections
+- 28ca3308c Matt Liberty 2023-08-08 gui: convert timingWidget.cpp to functor-based connections
+- cc0a631d6 Matt Liberty 2023-08-08 gui: convert timingWidget.cpp to functor-based connections
+- 44550804e Matt Liberty 2023-08-08 gui: convert tclCmdInputWidget.cpp to functor-based connections
+- 2c26ad4e7 Matt Liberty 2023-08-08 gui: convert staGui.cpp to functor-based connections
+- 733d4a93a Matt Liberty 2023-08-08 gui: convert selectHighlightWindow.cpp to functor-based connections
+- 4aac59594 Matt Liberty 2023-08-08 gui: convert scriptWidget.cpp to functor-based connections
+- 26d59c77a Matt Liberty 2023-08-08 gui: convert layoutViewer.cpp to functor-based connections
+- dab01b711 Matt Liberty 2023-08-08 gui: convert inspector.cpp to functor-based connections
+- bc2c6c212 Matt Liberty 2023-08-08 gui: convert heatMapSetup.cpp to functor-based connections
+- 4ffdce679 Matt Liberty 2023-08-08 gui: convert gui.cpp to functor-based connections
+- e88117f7e Matt Liberty 2023-08-08 gui: convert GotoLocationDialog to functor-based connections
+- d921fd620 Matt Liberty 2023-08-08 gui: convert globalConnectDialog.cpp to functor-based connections
+- 3f51bd4af Matt Liberty 2023-08-08 Merge pull request #3814 from Pinata-Consulting/gui-render-instance-label-centered
+- 76e14d91b Matt Liberty 2023-08-08 gui: convert drcWidget.cpp to functor-based connections
+- 62fecc72c Matt Liberty 2023-08-08 gui: convert displayControls.cpp to functor-based connections
+- cd8d6af35 Matt Liberty 2023-08-08 gui: convert CmdInputWidget to functor-based connections
+- ab9fd2225 Matt Liberty 2023-08-08 gui: convert clockWidget.cpp to functor-based connections
+- 88d5b3ec3 Arthur Koucher 2023-08-08 gui: correct input format
+- ce3e82568 Matt Liberty 2023-08-08 gui: convert ChartsWidget to functor-based connections
+- 01413241c Matt Liberty 2023-08-08 gui: convert BrowserWidget to functor-based connections
+- 1ef60db3d Matt Liberty 2023-08-08 Merge pull request #3610 from AcKoucher/gui_pin_marker_text_offset
+- e088bf159 Matt Liberty 2023-08-08 Merge pull request #3815 from gadfort/gui-clock-tree-cmd
+- 5347b949d Matt Liberty 2023-08-08 Merge pull request #3807 from Pinata-Consulting/ppl-infinite-loop-fix
+- a92c89ef0 Øyvind Harboe 2023-08-08 gui: coding style for centering text
+- 3c8c00ada Arthur Koucher 2023-08-08 gui: remove unneeded include
+- 9dd5a78f0 Arthur Koucher 2023-08-08 gui: tclcmd access method public
+- 2f1d02661 Matt Liberty 2023-08-08 Merge pull request #3816 from eder-matheus/ppl_annealing_fix
+- 468522dec Arthur Koucher 2023-08-08 gui: complete report cmd
+- 02127c2fd Matt Liberty 2023-08-08 Merge pull request #3809 from The-OpenROAD-Project-staging/grt-ignore-space
+- e2e062580 Eder Monteiro 2023-08-08 ppl: update ok files
+- 50def96bc Eder Monteiro 2023-08-08 ppl: print design info on annealing runs
+- 7bf4c7351 Eder Monteiro 2023-08-08 ppl: allow move pin groups to slots that it was previously using
+- edd10bfcd osamahammad21 2023-08-08 drt: fix bugs
+- 1e9ee58c1 Peter Gadfort 2023-08-08 odb: defIn add parsing and writing of COMPONENTMASKSHIFT
+- f919c07ca osamahammad21 2023-08-08 drt: warning when no routing tracks pass through the center of the pin
+- e8bb84ba5 Øyvind Harboe 2023-08-08 gui: only center text for macros and pads
+- b11506d55 Øyvind Harboe 2023-08-08 gui: render instance text centered, easier to read
+- c3b517c22 Peter Gadfort 2023-08-08 gui: switch to use optional
+- b997dbc62 Peter Gadfort 2023-08-08 gui: make same_clocktree_image a regular tcl command and add options to save with width/height and specify timing corner
+- 21f5382d7 Matt Liberty 2023-08-07 Merge pull request #3810 from The-OpenROAD-Project-staging/odb-gen
+- b7388994e Matt Liberty 2023-08-07 odb: codgen - simplify with shutil.copy
+- 72ae02a6b Matt Liberty 2023-08-07 odb: codgen - use exceptions rather than return codes
+- 7d7a83279 Arthur Koucher 2023-08-07 gui: error messages for selection attribute filter
+- fd305ed0b Arthur Koucher 2023-08-07 gui: attribute filtering divided in methods based on type
+- 6ecea5af4 Arthur Koucher 2023-08-07 gui: selection filter attribute==value
+- 5710fbe43 Matt Liberty 2023-08-07 grt: ignore trailing whitespace in a layer range
+- 185d90942 Matt Liberty 2023-08-07 Merge pull request #3792 from openroadie/recover_power
+- 4425eb0b6 Harsh Vardhan 2023-08-07 fix formatting
+- 6557af89a Øyvind Harboe 2023-08-07 ppl: fix infinite loop in simulated annealing
+- 9f21bc8c5 Osama 2023-08-07 drt: add ripup mode 2
+- a5806d8c7 Harsh Vardhan 2023-08-07 fix typo
+- 2e0376d3d Harsh Vardhan 2023-08-07 update documentation for repair_timing
+- 6fe5668ae Matt Liberty 2023-08-07 Merge pull request #3790 from gadfort/gui-pin-select
+- e0779f4cf Matt Liberty 2023-08-07 Merge pull request #3770 from eder-matheus/drt_fix
+- 26fd28fd1 Peter Gadfort 2023-08-07 gui: remove layer selectability as requirement for drawing text iterm label
+- 2ccb93902 Vitor Bandeira 2023-08-07 Merge pull request #3787 from Pinata-Consulting/support-newer-ubuntu-versions
+- 4e01f568f Eder Monteiro 2023-08-07 drt: fix var name
+- 50092214b Eder Monteiro 2023-08-07 Merge branch 'master' into drt_fix
+- 828e699ee Matt Liberty 2023-08-07 Merge pull request #3805 from The-OpenROAD-Project-staging/odb-code-gen
+- 1da902ceb Matt Liberty 2023-08-06 odb: correct issue where a previously removed section reappeared
+- 56f3bd9ee Matt Liberty 2023-08-06 odb: rm empty sections (result of codegen update)
+- dbe16c8e3 Matt Liberty 2023-08-06 odb: elide empty sections from code gen
+- ffb589842 Matt Liberty 2023-08-06 odb: updates from re-running codegen (no schema change)
+- 3513f7365 Matt Liberty 2023-08-06 odb: fomat codeGenerator/generate
+- 2cf35b680 mina1460 2023-08-06 fixing python code
+- ee87079a0 mina1460 2023-08-06 test case
+- 42816041c mina1460 2023-08-06 resolving clang comments and warnings 2
+- 67fba7de4 mina1460 2023-08-06 Merge branch 'dpl_report_failures_to_file_' of https://github.com/mina1460/OpenROAD into dpl_report_failures_to_file_
+- 9f157150e mina1460 2023-08-06 resolving clang comments and warnings
+- f624b9344 Peter Gadfort 2023-08-06 psm: remove unused variable
+- 5fa4cb1f8 Peter Gadfort 2023-08-06 psm: add em enabled message back
+- b76114214 Peter Gadfort 2023-08-05 psm: add message about voltage for net
+- 70cde8905 Matt Liberty 2023-08-05 Merge pull request #3796 from gadfort/psm-segfault
+- 51f650589 Mina Ashraf 2023-08-05 Update src/dpl/src/Opendp.cpp
+- 40ea60181 mina1460 2023-08-05 merge
+- 9c83fcf23 mina1460 2023-08-05 dpl report comment
+- cf2480d77 mina1460 2023-08-05 dpl report
+- 555678f82 Peter Gadfort 2023-08-05 psm: move get_power to ir_solver
+- 6f405139b Peter Gadfort 2023-08-05 psm: add check for missing power net before running
+- a5c01a88b Matt Liberty 2023-08-04 Merge pull request #3794 from The-OpenROAD-Project-staging/odb-refactoring
+- d7dd5bfd7 Matt Liberty 2023-08-04 odb: refactor dbAttrTable
+- b6406bd54 Matt Liberty 2023-08-04 Merge pull request #3793 from The-OpenROAD-Project-staging/odb-dead-field
+- 1c48b442a Matt Liberty 2023-08-04 odb: rm unneeded fwd decl
+- 74e2e9687 Matt Liberty 2023-08-04 rm unused dbDatabase::_file
+- dbf0e5714 Matt Liberty 2023-08-04 rm unused struct _dbBTermPin
+- 046dbcb97 Matt Liberty 2023-08-04 rename _spare_bits_27 to _spare_bits
+- 5641d0ea3 Matt Liberty 2023-08-04 odb: rm unused INVALIDATETIMING
+- 6155de743 Matt Liberty 2023-08-04 odb: rm unused bits in dbBlock
+- 2d63a92d7 Matt Liberty 2023-08-04 odb: remove dbBlock::_(max|min)ExtModelIndex.  Update schema.
+- 81181d6c2 Matt Liberty 2023-08-04 odb: rm unused dbBlock::_WNS/_TNS
+- da96141fd Matt Liberty 2023-08-04 odb: rm unused dbBlock::_ptFile
+- b4baa6edf Matt Liberty 2023-08-04 odb: rm unused dbBlock::_bterm_pins
+- 55a3074ad Arthur Koucher 2023-08-04 gui: add filter to display only IO nets
+- 6eb93a570 Harsh Vardhan 2023-08-04 Update src/rsz/src/RecoverPower.cc
+- aee3dcd57 Matt Liberty 2023-08-04 Merge pull request #3786 from Pinata-Consulting/gui-next-free-message-id
+- 1a7fa8226 Harsh Vardhan 2023-08-04 Merge branch 'master' into recover_power
+- 5a3a227f3 Arthur Koucher 2023-08-04 gui: call right method
+- cf8b4ffc9 Peter Gadfort 2023-08-04 gui: draw pin labels on pin shapes to avoid pins floating around
+- 1a7fc65ff Peter Gadfort 2023-08-04 gui: ensure open DB is disabled during DB read to avoid segfault if triggered again
+- 4e342ff7a Peter Gadfort 2023-08-04 gui: ensure pin selections can be controlled
+- 440af0fc4 Petter Kvalvaag 2023-08-04 Support Ubuntu 23.04++
+- 187ad752e Øyvind Harboe 2023-08-04 messages: print out next free message id on duplicate
+- 688efc0e2 Matt Liberty 2023-08-03 Merge pull request #3785 from fgaray/gtest_migration
+- aa911695d Matt Liberty 2023-08-03 Merge pull request #3780 from mina1460/dpl_report_failures
+- 287d53ace Matt Liberty 2023-08-03 Merge pull request #3784 from eder-matheus/ppl_fix
+- 4898eac9f Eder Monteiro 2023-08-03 ppl: update missing ok files
+- fb088cceb Eder Monteiro 2023-08-03 ppl: int instead of int_64
+- e44c56899 Felipe Garay 2023-08-03 dft: migrate unit testing to gtest
+- aa57a48ce Eder Monteiro 2023-08-03 ppl: limit default offset to 1 micron
+- cd2d97bb6 Eder Monteiro 2023-08-03 ppl: update ok files
+- 853baec13 Eder Monteiro 2023-08-03 ppl: change default offset from corner to 15 tracks on the specific layer
+- d4bbc11bc Eder Monteiro 2023-08-03 ppl: remove default 1 micron offset from the corners
+- 7e7cf4af8 Eder Monteiro 2023-08-03 ppl: add error message when cannot place group during fallback
+- 4bf3305c1 Eder Monteiro 2023-08-03 ppl: during random assignment, return after adding pin group to fallback
+- 12c7d47a0 Arthur Koucher 2023-08-03 gui: timing report has access to script
+- fc0d41046 Matt Liberty 2023-08-03 Merge pull request #3778 from gadfort/tap-error
+- 199340332 mina1460 2023-08-03 draw overlapping parts only
+- 9a9baca1c Harsh Vardhan 2023-08-03 Gate cloning default (#3668)
+- fddbd79c8 mina1460 2023-08-03 clang-formatting
+- 03c198718 mina1460 2023-08-03 no warn on layer -
+- 805a1c7af mina1460 2023-08-03 handle overlapping cells report differently
+- 6fa99c85d Peter Gadfort 2023-08-03 tap: add check if unable to complete boundaries
+- 029b4874b Harsh Vardhan 2023-08-03 added an option to control power recovery
+- 72f633346 Matt Liberty 2023-08-03 Merge pull request #3776 from The-OpenROAD-Project-staging/gui-cts-viewer-skip-virtual
+- 1298d0c7c Matt Liberty 2023-08-03 gui: skip virtual clocks in the clock tree viewer
+- 771a26011 Matt Liberty 2023-08-03 Merge pull request #3774 from The-OpenROAD-Project-staging/grt-layer-underscore
+- 03aa6732f Matt Liberty 2023-08-03 Merge pull request #3775 from The-OpenROAD-Project-staging/cts-slew-limit
+- 5212107b9 Matt Liberty 2023-08-03 cts: fix check for slew_limit to output pin
+- 7f449467a Matt Liberty 2023-08-03 grt: generalize layer name regex in layer range parsing
+- b8cbd6671 Eder Monteiro 2023-08-03 drt: fix bug when creating segments between non-orthogonal connections
+- f2dc74c82 Arthur Koucher 2023-08-03 gui: hold paths also use new subclass
+- f402f369e Matt Liberty 2023-08-03 Merge pull request #3767 from The-OpenROAD-Project-staging/mpl2-snap-to-tracks
+- 1ab769edf Harsh Vardhan 2023-08-02 update
+- 5453f114b Harsh Vardhan 2023-08-02 update
+- 5756de40a Eder Monteiro 2023-08-02 drt: create different PathSegs for non orthogonal wires
+- 84d6d4a93 Harsh Vardhan 2023-08-02 Merge branch 'recover_power' of https://github.com/openroadie/OpenROAD into recover_power
+- cd851e447 Harsh Vardhan 2023-08-02 update tests with recover_timing call
+- 43e0a65cb Arthur Koucher 2023-08-02 gui: call method from right clicking selected row
+- 1460e4eb7 Harsh Vardhan 2023-08-02 Merge branch 'The-OpenROAD-Project:master' into recover_power
+- e088c4e5d Eder Monteiro 2023-08-02 drt: update error message with net name information
+- 6e5b031dc Matt Liberty 2023-08-02 mpl2: remove exit from test/bp_fe_top.tcl
+- f6e67adc8 Matt Liberty 2023-08-02 mpl2: fix snapping the macro so that the pins are on the routing tracks
+- a61f6e86f Arthur Koucher 2023-08-02 Merge branch 'master' into gui_timing_path_cmds_test
+- 7dab0a59d Arthur Koucher 2023-08-02 gui: format
+- 2b329c471 Matt Liberty 2023-08-02 Merge pull request #3690 from openroadie/improve_hold_fixing
+- d2f3c8566 Peter 2023-08-02 rsz: fix set_dont_use if cell is misspelled (#3765)
+- db9389625 Arthur Koucher 2023-08-02 gui: available space from bounds
+- 66278066b Christian Costa 2023-08-02 Use relative paths for submodules so they use the same protocol as the top one.
+- 0cfb9a45b Matt Liberty 2023-08-01 Merge pull request #3762 from openroadie/opensta_update
+- 5d7c6e90d Harsh Vardhan 2023-08-01 latest opensta code
+- 6ef9b5f9b Matt Liberty 2023-08-01 Merge pull request #3761 from gadfort/tap-fix-endcaps
+- 62dba95e8 Peter Gadfort 2023-08-01 tap: correct tests with incorrect right edge endcaps
+- f405534ff Peter Gadfort 2023-08-01 tap: correct missing flip in orientation for right edge boundary cells
+- 215de303e Arthur Koucher 2023-08-01 gui: correct available space
+- 6dae6de1c Arthur Koucher 2023-08-01 gui: format
+- d27c60005 Matt Liberty 2023-08-01 Merge pull request #3757 from eder-matheus/grt_repair_antennas_assert
+- 2a62242b2 Matt Liberty 2023-08-01 Merge pull request #3758 from mina1460/no_report_unless_required
+- 3b4995b3e Matt Liberty 2023-08-01 Merge pull request #3751 from eder-matheus/grt_report_congestion
+- 04ee35176 Arthur Koucher 2023-08-01 gui: correct semicolon
+- 36c74aa65 Arthur Koucher 2023-08-01 gui: markers' texts scaled from default font
+- f02141071 Eder Monteiro 2023-08-01 grt: refactor copied code into a small function
+- 91523852a mina1460 2023-08-01 no report unless asked explicitly# 2023-07
+- 336743874 Peter Gadfort 2023-07-26 psm: remove voltage map from IRSolver and move code over to pdnsim
+- 0fb2aff8f Peter Gadfort 2023-07-25 psm: simplify voltage handeling
+- 3b4bcf948 Peter Gadfort 2023-07-25 psm: break readSource into several smaller functions
+- 96c93cc63 Peter Gadfort 2023-07-25 psm: update tests with diffs
+- 6950cf50c Peter Gadfort 2023-07-22 psm: break readSource into several smaller functions
+- 4ff32ebb7 Peter Gadfort 2023-07-18 psm: switch power_net from string to dbNet
+- 7c751e6fa Peter Gadfort 2023-07-18 psm: fix command names
