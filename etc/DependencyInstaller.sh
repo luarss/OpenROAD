@@ -397,12 +397,14 @@ _installRHELPackages() {
         gdb \
         git \
         glibc-devel \
+        libcurl-devel \
         libffi-devel \
         libtool \
         llvm \
         llvm-devel \
         llvm-libs \
         make \
+        openssl-devel \
         pcre-devel \
         pcre2-devel \
         pkgconf \
