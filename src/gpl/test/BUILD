@@ -4,7 +4,7 @@ load("//test:regression.bzl", "regression_test")
 
 package(features = ["layering_check"])
 
-TESTS = [
+COMPULSORY_TESTS = [
     "ar01",
     "ar02",
     "clust01",
@@ -42,6 +42,14 @@ TESTS = [
     "region01",
 ]
 
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "gpl_readme_msgs_check",
+    "gpl_man_tcl_check",
+]
+
+TESTS = COMPULSORY_TESTS + MANUAL_TESTS
+
 py_library(
     name = "helpers",
     srcs = ["helpers.py"],
@@ -59,6 +67,15 @@ filegroup(
         "asap7/*.lef",
         "asap7/*.tcl",
     ]),
+)
+
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/gpl:README.md",
+    ],
 )
 
 filegroup(
@@ -84,11 +101,23 @@ MANUAL_FOR_BAZEL_TESTS = [
     "incremental02",
 ]
 
-[regression_test(
-    name = test_name,
-    data = [":test_resources"],
-    tags = ["manual"] if test_name in MANUAL_FOR_BAZEL_TESTS else [],
-) for test_name in TESTS]
+[
+    regression_test(
+        name = test_name,
+        data = [":test_resources"] + ({
+            "gpl_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/gpl:messages.txt",
+            ],
+            "gpl_man_tcl_check": [
+                ":doc_test_resources",
+                "//src/gpl:src/replace.tcl",
+            ],
+        }.get(test_name, [])),
+        tags = ["manual"] if test_name in MANUAL_FOR_BAZEL_TESTS + MANUAL_TESTS else [],
+    )
+    for test_name in TESTS
+]
 
 PY_TESTS = [
     "ar01",

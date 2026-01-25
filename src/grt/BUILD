@@ -11,6 +11,12 @@ package(
     features = ["layering_check"],
 )
 
+exports_files([
+    "README.md",
+    "messages.txt",
+    "src/GlobalRouter.tcl",
+])
+
 cc_library(
     name = "abstract-fastroute",
     hdrs = [

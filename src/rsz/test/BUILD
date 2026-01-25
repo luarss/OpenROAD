@@ -8,7 +8,7 @@ exports_files(
     visibility = ["//visibility:public"],
 )
 
-TESTS = [
+COMPULSORY_TESTS = [
     "buffer_ports1",
     "buffer_ports10",
     "buffer_ports11",
@@ -196,6 +196,23 @@ TESTS = [
     "repair_setup_vt_swap2",
 ]
 
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "rsz_readme_msgs_check",
+    "rsz_man_tcl_check",
+]
+
+TESTS = COMPULSORY_TESTS + MANUAL_TESTS
+
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/rsz:README.md",
+    ],
+)
+
 filegroup(
     name = "test_resources",
     # overly broad glob, could be refined later, but
@@ -237,7 +254,17 @@ BIG_TESTS = [
     regression_test(
         name = test_name,
         size = "large" if test_name in BIG_TESTS else "medium",
-        data = [":test_resources"] + extra_deps.get(test_name, []),
+        data = [":test_resources"] + extra_deps.get(test_name, []) + ({
+            "rsz_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/rsz:messages.txt",
+            ],
+            "rsz_man_tcl_check": [
+                ":doc_test_resources",
+                "//src/rsz:src/Resizer.tcl",
+            ],
+        }.get(test_name, [])),
+        tags = [] if test_name in COMPULSORY_TESTS else ["manual"],
     )
     for test_name in TESTS
 ]

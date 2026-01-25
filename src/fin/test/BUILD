@@ -9,7 +9,13 @@ COMPULSORY_TESTS = [
     "gcd_fill",
 ]
 
-ALL_TESTS = COMPULSORY_TESTS
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "fin_readme_msgs_check",
+    "fin_man_tcl_check",
+]
+
+ALL_TESTS = COMPULSORY_TESTS + MANUAL_TESTS
 
 filegroup(
     name = "regression_resources",
@@ -39,6 +45,15 @@ filegroup(
     ],
 )
 
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/fin:README.md",
+    ],
+)
+
 [
     filegroup(
         name = test_name + "_resources",
@@ -46,7 +61,16 @@ filegroup(
             [
                 test_name + ".*",
             ],
-        ),
+        ) + {
+            "fin_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/fin:messages.txt",
+            ],
+            "fin_man_tcl_check": [
+                ":doc_test_resources",
+                "//src/fin:src/finale.tcl",
+            ],
+        }.get(test_name, []),
     )
     for test_name in ALL_TESTS
 ]

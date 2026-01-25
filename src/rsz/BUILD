@@ -10,6 +10,12 @@ package(
     features = ["layering_check"],
 )
 
+exports_files([
+    "README.md",
+    "messages.txt",
+    "src/Resizer.tcl",
+])
+
 cc_library(
     name = "rsz",
     srcs = [

@@ -13,6 +13,12 @@ package(
     features = ["layering_check"],
 )
 
+exports_files([
+    "README.md",
+    "messages.txt",
+    "src/replace.tcl",
+])
+
 cc_library(
     name = "gpl",
     srcs = [

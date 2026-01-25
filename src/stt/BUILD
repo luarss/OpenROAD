@@ -11,6 +11,12 @@ package(
     features = ["layering_check"],
 )
 
+exports_files([
+    "README.md",
+    "messages.txt",
+    "src/SteinerTreeBuilder.tcl",
+])
+
 genrule(
     name = "post9",
     srcs = [

@@ -1,1 +1,1 @@
-../../../docs/src/scripts/md_roff_compat.py
+../../ant/test/md_roff_compat.py

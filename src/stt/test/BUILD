@@ -2,7 +2,7 @@ load("//test:regression.bzl", "regression_test")
 
 package(features = ["layering_check"])
 
-TESTS = [
+COMPULSORY_TESTS = [
     "check",
     "flute1",
     "flute_gcd",
@@ -11,6 +11,23 @@ TESTS = [
     "pd2",
     "pd_gcd",
 ]
+
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "stt_readme_msgs_check",
+    "stt_man_tcl_check",
+]
+
+TESTS = COMPULSORY_TESTS + MANUAL_TESTS
+
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/stt:README.md",
+    ],
+)
 
 filegroup(
     name = "test_resources",
@@ -30,7 +47,20 @@ filegroup(
     ),
 )
 
-[regression_test(
-    name = test_name,
-    data = [":test_resources"],
-) for test_name in TESTS]
+[
+    regression_test(
+        name = test_name,
+        data = [":test_resources"] + ({
+            "stt_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/stt:messages.txt",
+            ],
+            "stt_man_tcl_check": [
+                ":doc_test_resources",
+                "//src/stt:src/SteinerTreeBuilder.tcl",
+            ],
+        }.get(test_name, [])),
+        tags = [] if test_name in COMPULSORY_TESTS else ["manual"],
+    )
+    for test_name in TESTS
+]

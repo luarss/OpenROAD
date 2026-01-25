@@ -2,7 +2,7 @@ load("//test:regression.bzl", "regression_test")
 
 package(features = ["layering_check"])
 
-TESTS = [
+COMPULSORY_TESTS = [
     "bus_route",
     "clock_route",
     "clock_route_cugr",
@@ -100,6 +100,23 @@ TESTS = [
     "write_segments2",
 ]
 
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "grt_readme_msgs_check",
+    "grt_man_tcl_check",
+]
+
+TESTS = COMPULSORY_TESTS + MANUAL_TESTS
+
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/grt:README.md",
+    ],
+)
+
 filegroup(
     name = "test_resources",
     # overly broad glob, could be refined later, but
@@ -128,8 +145,20 @@ MANUAL_FOR_BAZEL_TESTS = [
     "pin_access2_cugr",
 ]
 
-[regression_test(
-    name = test_name,
-    data = [":test_resources"],
-    tags = ["manual"] if test_name in MANUAL_FOR_BAZEL_TESTS else [],
-) for test_name in TESTS]
+[
+    regression_test(
+        name = test_name,
+        data = [":test_resources"] + ({
+            "grt_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/grt:messages.txt",
+            ],
+            "grt_man_tcl_check": [
+                ":doc_test_resources",
+                "//src/grt:src/GlobalRouter.tcl",
+            ],
+        }.get(test_name, [])),
+        tags = ["manual"] if test_name in MANUAL_FOR_BAZEL_TESTS + MANUAL_TESTS else [],
+    )
+    for test_name in TESTS
+]

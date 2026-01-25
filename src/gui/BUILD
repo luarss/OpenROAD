@@ -14,6 +14,12 @@ package(
     features = ["layering_check"],
 )
 
+exports_files([
+    "README.md",
+    "messages.txt",
+    "src/gui.tcl",
+])
+
 cc_library(
     name = "gui",
     srcs = [
