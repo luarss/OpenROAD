@@ -4,11 +4,20 @@ load("//test:regression.bzl", "regression_test")
 
 package(features = ["layering_check"])
 
-TESTS = [
+# From CMakeLists.txt or_integration_tests(TESTS
+COMPULSORY_TESTS = [
     "aes_nangate45",
     "countdown_asap7",
     "ibex_sky130hd",
 ]
+
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "cgt_man_tcl_check",
+    "cgt_readme_msgs_check",
+]
+
+ALL_TESTS = COMPULSORY_TESTS + MANUAL_TESTS
 
 filegroup(
     name = "regression_resources",
@@ -17,6 +26,15 @@ filegroup(
     # per test glob patterns below.
     srcs = [
         "helpers.tcl",
+    ],
+)
+
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/cgt:README.md",
     ],
 )
 
@@ -46,18 +64,26 @@ filegroup(
                     "sky130hd/sky130hd.tlef",
                     "sky130hd/sky130hd_std_cell.lef",
                 ],
+                "cgt_readme_msgs_check": [
+                    ":doc_test_resources",
+                    "//src/cgt:messages.txt",
+                ],
+                "cgt_man_tcl_check": [
+                    ":doc_test_resources",
+                    "//src/cgt:src/cgt.tcl",
+                ],
             }.get(test_name, []),
         ),
     )
-    for test_name in TESTS
+    for test_name in ALL_TESTS
 ]
 
 [
     regression_test(
         name = test_name,
         data = [":" + test_name + "_resources"],
-        tags = [],
+        tags = [] if test_name in COMPULSORY_TESTS else ["manual"],
         visibility = ["//visibility:public"],
     )
-    for test_name in TESTS
+    for test_name in ALL_TESTS
 ]

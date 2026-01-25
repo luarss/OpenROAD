@@ -2,8 +2,50 @@
 # Copyright (c) 2022-2025, The OpenROAD Authors
 
 load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("//test:regression.bzl", "regression_test")
 
 package(features = ["layering_check"])
+
+# Disabled in CMakeLists.txt
+MANUAL_TESTS = [
+    "cut_man_tcl_check",
+    "cut_readme_msgs_check",
+]
+
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/cut:README.md",
+    ],
+)
+
+[
+    filegroup(
+        name = test_name + "_resources",
+        srcs = glob([test_name + "*"]) + {
+            "cut_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/cut:messages.txt",
+            ],
+            "cut_man_tcl_check": [
+                ":doc_test_resources",
+            ],
+        }.get(test_name, []),
+    )
+    for test_name in MANUAL_TESTS
+]
+
+[
+    regression_test(
+        name = test_name,
+        data = [":" + test_name + "_resources"],
+        tags = ["manual"],
+        visibility = ["//visibility:public"],
+    )
+    for test_name in MANUAL_TESTS
+]
 
 cc_test(
     name = "cut_abc_test",
