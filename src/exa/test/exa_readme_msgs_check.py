@@ -1,1 +1,0 @@
-../../../docs/src/scripts/readme_msgs_check.py
