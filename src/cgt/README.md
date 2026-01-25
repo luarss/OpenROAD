@@ -26,7 +26,7 @@ The process is roughly:
 
 Usage:
 
-```tcl
+```
 read_liberty path/to/pdk/cell/library.lib
 read_db path/to/your/design.odb
 read_sdc path/to/your/constraints.sdc
@@ -41,6 +41,8 @@ All parameters for clock gating are optional, as indicated by square brackets: `
 ```
 
 ### Clock gating
+
+The `clock_gating` command performs automatic insertion of clock gates for reducing power usage.
 
 ```tcl
 clock_gating

@@ -1,22 +1,6 @@
 README.md
-Names: 2,        Desc: 1,        Syn: 2,        Options: 1,        Args: 1
+Names: 1,        Desc: 1,        Syn: 1,        Options: 1,        Args: 1
 Global Examples: None
 Global See Also: None
-Traceback (most recent call last):
-  File "/home/luars/OpenROAD/src/cgt/test/cgt_readme_msgs_check.py", line 17, in <module>
-    man2_translate(readme_path, save_dir)
-  File "/home/luars/OpenROAD/src/cgt/test/md_roff_compat.py", line 180, in man2_translate
-    len(func_names)
-AssertionError: Counts for all 5 categories must match up.
-
-            Names: 2
-
-            Descs: 1
-
-            Synopsis: 2
-
-            Options: 1
-
-            Args: 1
-
-            
+Man2 successfully compiled.
+Man3 successfully compiled.
