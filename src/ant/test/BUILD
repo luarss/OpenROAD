@@ -29,6 +29,15 @@ filegroup(
     ],
 )
 
+filegroup(
+    name = "doc_test_resources",
+    srcs = [
+        "extract_utils.py",
+        "md_roff_compat.py",
+        "//src/ant:README.md",
+    ],
+)
+
 [
     filegroup(
         name = test_name + "_resources",
@@ -59,6 +68,14 @@ filegroup(
                 "gcd_sky130.def",
                 "sky130hs/sky130hs_tt.lib",
                 "sky130hs/sky130hs_std_cell.lef",
+            ],
+            "ant_readme_msgs_check": [
+                ":doc_test_resources",
+                "//src/ant:messages.txt",
+            ],
+            "ant_man_tcl_check": [
+                ":doc_test_resources",
+                "//src/ant:src/AntennaChecker.tcl",
             ],
         }.get(test_name, []),
     )
