@@ -87,7 +87,6 @@ COMPULSORY_TESTS = [
     "regions2-opt",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "dpl_man_tcl_check",
     "dpl_readme_msgs_check",

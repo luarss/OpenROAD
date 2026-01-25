@@ -15,7 +15,6 @@ COMPULSORY_TESTS = [
     "make_parasitics7",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "est_man_tcl_check",
     "est_readme_msgs_check",

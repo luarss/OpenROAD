@@ -40,7 +40,6 @@ COMPULSORY_TESTS = [
     "orientation_improve3",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "mpl_man_tcl_check",
     "mpl_readme_msgs_check",

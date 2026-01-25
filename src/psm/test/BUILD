@@ -45,7 +45,6 @@ COMPULSORY_TESTS = [
     "zerosoc_pads_check_only_disconnected",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "psm_man_tcl_check",
     "psm_readme_msgs_check",

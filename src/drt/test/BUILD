@@ -23,7 +23,6 @@ COMPULSORY_TESTS = [
     "via_access_layer",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "drt_man_tcl_check",
     "drt_readme_msgs_check",

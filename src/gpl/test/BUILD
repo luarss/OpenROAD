@@ -42,7 +42,6 @@ COMPULSORY_TESTS = [
     "region01",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "gpl_readme_msgs_check",
     "gpl_man_tcl_check",

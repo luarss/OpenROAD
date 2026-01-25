@@ -19,7 +19,6 @@ COMPULSORY_TESTS = [
     "sub_modules_sky130",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "dft_man_tcl_check",
     "dft_readme_msgs_check",

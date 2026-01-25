@@ -135,7 +135,6 @@ COMPULSORY_TESTS = [
     "widthtable",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "pdn_man_tcl_check",
     "pdn_readme_msgs_check",

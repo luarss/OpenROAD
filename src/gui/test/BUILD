@@ -9,7 +9,6 @@ COMPULSORY_TESTS = [
     "supported",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "gui_readme_msgs_check",
     "gui_man_tcl_check",

@@ -100,7 +100,6 @@ COMPULSORY_TESTS = [
     "write_segments2",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "grt_readme_msgs_check",
     "grt_man_tcl_check",

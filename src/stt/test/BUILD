@@ -12,7 +12,6 @@ COMPULSORY_TESTS = [
     "pd_gcd",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "stt_readme_msgs_check",
     "stt_man_tcl_check",

@@ -20,7 +20,6 @@ COMPULSORY_TESTS = [
     "test_suppress_message",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "utl_man_tcl_check",
     "utl_readme_msgs_check",

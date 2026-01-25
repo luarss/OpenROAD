@@ -11,7 +11,6 @@ COMPULSORY_TESTS = [
     "ibex_sky130hd",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "cgt_man_tcl_check",
     "cgt_readme_msgs_check",

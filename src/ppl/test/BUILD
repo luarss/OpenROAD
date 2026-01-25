@@ -130,7 +130,6 @@ COMPULSORY_TESTS = [
     "write_pin_placement6",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "ppl_man_tcl_check",
     "ppl_readme_msgs_check",

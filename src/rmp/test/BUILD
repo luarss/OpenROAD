@@ -29,7 +29,6 @@ COMPULSORY_TESTS = [
     "gcd_annealing2",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "rmp_man_tcl_check",
     "rmp_readme_msgs_check",

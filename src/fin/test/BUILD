@@ -9,7 +9,6 @@ COMPULSORY_TESTS = [
     "gcd_fill",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "fin_readme_msgs_check",
     "fin_man_tcl_check",

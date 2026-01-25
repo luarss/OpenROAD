@@ -62,7 +62,6 @@ COMPULSORY_TESTS = [
     "skywater130_overlapping_filler",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "pad_man_tcl_check",
     "pad_readme_msgs_check",

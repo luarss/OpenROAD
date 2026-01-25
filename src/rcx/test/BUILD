@@ -17,7 +17,6 @@ COMPULSORY_TESTS = [
     "coordinates",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "generate_rules",
     "rcx_man_tcl_check",

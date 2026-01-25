@@ -11,7 +11,6 @@ COMPULSORY_TESTS = [
     "write_artnet",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "par_man_tcl_check",
     "par_readme_msgs_check",

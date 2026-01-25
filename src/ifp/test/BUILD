@@ -47,7 +47,6 @@ COMPULSORY_TESTS = [
     "upf_test",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "ifp_man_tcl_check",
     "ifp_readme_msgs_check",

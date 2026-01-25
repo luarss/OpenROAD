@@ -222,7 +222,6 @@ PASSFAIL_TESTS = [
     "test_wire_codec",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "odb_man_tcl_check",
     "odb_readme_msgs_check",

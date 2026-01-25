@@ -196,7 +196,6 @@ COMPULSORY_TESTS = [
     "repair_setup_vt_swap2",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "rsz_readme_msgs_check",
     "rsz_man_tcl_check",

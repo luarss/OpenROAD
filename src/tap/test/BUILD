@@ -41,7 +41,6 @@ COMPULSORY_TESTS = [
     "symmetry",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "tap_man_tcl_check",
     "tap_readme_msgs_check",

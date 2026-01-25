@@ -47,7 +47,6 @@ COMPULSORY_TESTS = [
     "twice",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "cts_man_tcl_check",
     "cts_readme_msgs_check",

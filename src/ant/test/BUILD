@@ -11,7 +11,6 @@ COMPULSORY_TESTS = [
     "check_grt1",
 ]
 
-# Disabled in CMakeLists.txt
 MANUAL_TESTS = [
     "ant_man_tcl_check",
     "ant_readme_msgs_check",
