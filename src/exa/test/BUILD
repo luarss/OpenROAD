@@ -4,8 +4,7 @@ load("//test:regression.bzl", "regression_test")
 
 package(features = ["layering_check"])
 
-# From CMakeLists.txt or_integration_tests(TESTS
-COMPULSORY_TESTS = [
+TESTS = [
     "basic",
 ]
 
@@ -18,7 +17,7 @@ filegroup(
         ["**/*"],
         exclude = [
             test + "." + ext
-            for test in COMPULSORY_TESTS
+            for test in TESTS
             for ext in [
                 "tcl",
                 "py",
@@ -30,4 +29,4 @@ filegroup(
 [regression_test(
     name = test_name,
     data = [":test_resources"],
-) for test_name in COMPULSORY_TESTS]
+) for test_name in TESTS]
