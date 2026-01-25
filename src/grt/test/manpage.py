@@ -1,1 +1,1 @@
-../../ant/test/manpage.py
+../../../docs/src/scripts/manpage.py
